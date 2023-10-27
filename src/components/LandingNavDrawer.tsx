@@ -42,12 +42,15 @@ export default function LandingNavDrawer({ active }: Props) {
             aria-label="close nav drawer"
             icon={<Icon as={X} fontSize={iconSize} />}
             borderRadius={"full"}
-            // size={"sm"}
             position={"absolute"}
             left={-5}
-            top={"50%"}
-            transform={"translate(0, -50%)"}
+            top={"calc(50% - 20px)"}
+            // transform={"translate(0, -50%)"}
             zIndex={99}
+            bg={"white"}
+            _hover={{ bg: "white" }}
+            _active={{ bg: "white" }}
+            className="clicky"
             onClick={onClose}
           />
 

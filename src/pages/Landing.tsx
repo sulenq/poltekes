@@ -37,7 +37,7 @@ export default function Landing() {
             />
 
             <Box>
-              <Text fontSize={32} fontWeight={700} mb={6}>
+              <Text fontSize={32} fontWeight={700} mb={8} lineHeight={1.2}>
                 <span style={{ color: "var(--p500)" }}>Poltekkes</span> Kemenkes
                 Semarang
               </Text>

@@ -39,7 +39,7 @@ export default function FaqItemComponent({ faq }: Props) {
         }}
       >
         <Text
-          fontSize={[18, null, 20]}
+          fontSize={[16, null, 18]}
           fontWeight={500}
           textAlign={"left"}
           mr={8}
@@ -63,8 +63,8 @@ export default function FaqItemComponent({ faq }: Props) {
         </Center>
       </AccordionButton>
 
-      <AccordionPanel p={6} lineHeight={"187.5%"}>
-        {faq.answer}
+      <AccordionPanel p={6}>
+        <Text lineHeight={"187.5%"}>{faq.answer}</Text>
       </AccordionPanel>
     </AccordionItem>
   );
