@@ -8,7 +8,13 @@ import Footer from "../components/Footer";
 export default function Landing() {
   return (
     <VStack gap={0} minH={"100vh"}>
-      <Box w={"100%"} boxShadow={"0 0 5px 5px var(--divider)"}>
+      <Box
+        w={"100%"}
+        boxShadow={"0 0 5px 5px var(--divider)"}
+        position={"sticky"}
+        top={0}
+        bg={"white"}
+      >
         <Container h={"80px"} justify={"center"}>
           <LandingNav active={"Beranda"} />
         </Container>
