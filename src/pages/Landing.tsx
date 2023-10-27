@@ -14,6 +14,7 @@ export default function Landing() {
         position={"sticky"}
         top={0}
         bg={"white"}
+        zIndex={99}
       >
         <Container h={"80px"} justify={"center"}>
           <LandingNav active={"Beranda"} />
