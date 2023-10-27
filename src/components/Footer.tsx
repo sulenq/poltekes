@@ -14,7 +14,7 @@ import { iconSize } from "../const/sizes";
 export default function Footer() {
   return (
     <VStack>
-      <SimpleGrid columns={[1, null, 2]} gap={6} color={"white"} mb={4}>
+      <SimpleGrid columns={[1, null, 2]} gap={6} color={"white"}>
         <HStack gap={4} align={"flex-start"}>
           <Image src={"/logo192.png"} w={"100%"} maxW={"122px"} />
 
@@ -24,7 +24,7 @@ export default function Footer() {
             </Text>
 
             <HStack align={"flex-start"}>
-              <Icon as={MapPin} fontSize={iconSize} />
+              <Icon as={MapPin} fontSize={iconSize} mt={1} />
               <Text>
                 Jl. Tirto Agung, Pedalangan, Banyumanik, Kota Semarang, 50239,
                 Jawa Tengah, Indonesia
@@ -54,12 +54,6 @@ export default function Footer() {
           </HStack>
         </Box>
       </SimpleGrid>
-
-      <Box w={"100%"} h={"1px"} bg={"var(--divider2)"} />
-
-      <Text textAlign={"center"} color={"white"} mt={4}>
-        © 2023 by <span style={{ fontWeight: 600 }}>Distro Studio</span>
-      </Text>
     </VStack>
   );
 }

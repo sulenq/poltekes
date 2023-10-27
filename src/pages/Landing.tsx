@@ -90,9 +90,22 @@ export default function Landing() {
         <Faq />
       </Container>
 
-      <VStack bg={"p.900"} w={"100%"} py={6}>
+      <VStack bg={"p.900"} w={"100%"} py={8}>
         <Container>
           <Footer />
+        </Container>
+      </VStack>
+
+      <VStack w={"100%"} bg={"p.900"}>
+        <Container py={2} borderTop={"1px solid var(--divider)"}>
+          <Text
+            textAlign={"center"}
+            color={"white"}
+            fontSize={[10, null, 12]}
+            opacity={0.5}
+          >
+            © 2023 by <span style={{ fontWeight: 600 }}>Distro Studio</span>
+          </Text>
         </Container>
       </VStack>
     </VStack>
