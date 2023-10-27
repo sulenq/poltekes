@@ -31,11 +31,13 @@ export default function LandingNavItem({ nav }: Props) {
   //     const options = {
   //       root: null,
   //       rootMargin: "0px",
-  //       threshold: 0.57, // seberapa besar elemen yang terlihat akan trigger intersection
+  //       threshold: 0.1, // seberapa besar elemen yang terlihat akan trigger intersection
   //     };
 
   //     const observer = new IntersectionObserver((entries) => {
   //       entries.forEach((entry) => {
+  //         console.log(entry);
+  //         //@ts-ignore
   //         if (entry.isIntersecting) {
   //           setNavActive(true);
   //         } else {
@@ -61,10 +63,10 @@ export default function LandingNavItem({ nav }: Props) {
       borderRadius={"full"}
       className="btn"
       color={"p.500"}
-      w={["70%", null, null]}
+      w={["70%", "fit-content", "fit-content"]}
+      onClick={scrollToSection}
       //   color={navActive ? "p.500" : ""}
       //   borderBottom={navActive ? "2px solid var(--p500)" : ""}
-      onClick={scrollToSection}
     >
       {nav.name}
     </Button>

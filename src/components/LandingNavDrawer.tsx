@@ -76,8 +76,8 @@ export default function LandingNavDrawer({ active }: Props) {
               </VStack>
 
               {landingNav.map((n, i) => (
-                <VStack w={"100%"} onClick={onClose}>
-                  <LandingNavItem key={i} nav={n} />
+                <VStack key={i} w={"100%"} onClick={onClose}>
+                  <LandingNavItem nav={n} />
                 </VStack>
               ))}
             </VStack>
