@@ -1,9 +1,10 @@
-import { Box, Button, HStack, Image, Text } from "@chakra-ui/react";
+import { Box, HStack, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import landingNav from "../const/landingNav";
 import useScreenWidth from "../utils/useGetScreenWidth";
 import LandingNavDrawer from "./LandingNavDrawer";
 import LandingNavItem from "./LandingNavItem";
+import SigninModal from "./SigninModal";
 
 type Props = { active: string };
 
@@ -27,9 +28,7 @@ export default function LandingNav({ active }: Props) {
       </HStack>
 
       <HStack>
-        <Button colorScheme="ap" className="clicky" size={["sm", null, "md"]}>
-          Masuk
-        </Button>
+        <SigninModal />
 
         {sw < 770 && <LandingNavDrawer active={active} />}
       </HStack>

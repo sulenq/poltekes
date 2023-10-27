@@ -3,6 +3,11 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+*:focus-visible {
+  transition: 200ms !important;
+  /* box-shadow: 0 0 0 2px var(--p500) !important; */
+}
+
 /* COLORS */
 :root {
   --p50: #f1f8ff;
@@ -44,6 +49,7 @@ body {
 }
 
 a {
+  font-size: 14px;
   text-decoration: none !important;
 }
 
@@ -178,6 +184,9 @@ select {
 }
 
 @media screen and (min-width: 770px) {
+  a {
+    font-size: 16px;
+  }
   p {
     font-size: 16px;
   }
