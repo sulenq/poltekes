@@ -44,7 +44,7 @@ export default function LandingNavDrawer({ active }: Props) {
             borderRadius={"full"}
             // size={"sm"}
             position={"absolute"}
-            left={-4}
+            left={-5}
             top={"50%"}
             transform={"translate(0, -50%)"}
             zIndex={99}
