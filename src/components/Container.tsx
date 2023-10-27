@@ -1,11 +1,12 @@
 import { VStack } from "@chakra-ui/react";
 import React from "react";
 
-type Props = { children: JSX.Element };
+export default function Container(props: any) {
+  const children: JSX.Element = props.children;
 
-export default function Container({ children }: Props) {
   return (
     <VStack
+      {...props}
       w={"100%"}
       maxW={"1024px"}
       mx={"auto"}

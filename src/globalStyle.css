@@ -8,7 +8,6 @@
   --p50: #f1f8ff;
   --p100: #dafcd5;
   --p200: #aff9ac;
-  --p200a: #2dc6532b;
   --p300: #7fed85;
   --p400: #5cdc70;
   --p500: #2dc653;
@@ -16,12 +15,17 @@
   --p700: #168e4b;
   --p800: #0e7244;
   --p900: #085f3f;
+
+  --p200a: #2dc6532b;
+
   --ba: #050505a6;
   --bt: #333333;
   --wt: #eeeeee;
+
   --divider: #bfbfbf27;
   --divider2: #bfbfbf40;
   --divider3: #bfbfbf60;
+
   --blue: #1672fc;
   --orange: #ff8c00;
   --red: #ff352b;
@@ -65,7 +69,7 @@ button {
 
 .btn-p-outline {
   background: transparent !important;
-  border: 2px solid var(--p500);
+  border: 1px solid var(--p500);
   color: var(--p500) !important;
 }
 .btn-p-outline:hover:not(:disabled) {

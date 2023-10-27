@@ -3,6 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { globalTheme } from "./chakraTheme/globalTheme";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
+import "./globalStyle.css";
 
 export const App = () => (
   <ChakraProvider theme={globalTheme}>
