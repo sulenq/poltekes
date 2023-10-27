@@ -53,7 +53,7 @@ export default function LandingNavDrawer({ active }: Props) {
 
           <DrawerBody p={0} position={"relative"}>
             <Box
-              bgImage={"/images/navDrawerBg.jpg"}
+              bgImage={"/images/navDrawerBg.png"}
               bgSize={"cover"}
               bgPos={"center"}
               w={"100%"}
