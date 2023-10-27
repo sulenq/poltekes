@@ -63,7 +63,6 @@ export default function LandingNavItem({ nav }: Props) {
       borderRadius={"full"}
       className="btn"
       color={"p.500"}
-      w={["70%", "fit-content", "fit-content"]}
       onClick={scrollToSection}
       //   color={navActive ? "p.500" : ""}
       //   borderBottom={navActive ? "2px solid var(--p500)" : ""}

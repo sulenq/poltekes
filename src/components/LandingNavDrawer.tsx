@@ -65,7 +65,7 @@ export default function LandingNavDrawer({ active }: Props) {
               opacity={0.1}
             />
 
-            <VStack minH={"100vh"} bg={"p.900"} p={5} justify={"center"}>
+            <VStack minH={"100vh"} bg={"p.900"} py={5} justify={"center"}>
               <VStack mb={8} gap={0}>
                 <Image src="logo192.png" w={"48px"} mb={2} />
 
@@ -76,7 +76,7 @@ export default function LandingNavDrawer({ active }: Props) {
               </VStack>
 
               {landingNav.map((n, i) => (
-                <VStack key={i} w={"100%"} onClick={onClose}>
+                <VStack key={i} w={"50%"} align={"stretch"} onClick={onClose}>
                   <LandingNavItem nav={n} />
                 </VStack>
               ))}
