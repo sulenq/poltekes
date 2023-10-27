@@ -1,11 +1,11 @@
 const landingNav = [
   {
     name: "Beranda",
-    link: "",
+    link: "#hero",
   },
   {
     name: "FAQ",
-    link: "",
+    link: "#faqs",
   },
 ];
 

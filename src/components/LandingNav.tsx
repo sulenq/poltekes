@@ -1,8 +1,9 @@
-import { Box, Button, HStack, Image, Link, Text } from "@chakra-ui/react";
+import { Box, Button, HStack, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import landingNav from "../const/landingNav";
 import useScreenWidth from "../utils/useGetScreenWidth";
 import LandingNavDrawer from "./LandingNavDrawer";
+import LandingNavItem from "./LandingNavItem";
 
 type Props = { active: string };
 
@@ -22,19 +23,7 @@ export default function LandingNav({ active }: Props) {
         </Box>
 
         {sw >= 770 &&
-          landingNav.map((n, i) => (
-            <Button
-              key={i}
-              as={Link}
-              variant={"ghost"}
-              borderRadius={0}
-              className="btn"
-              color={active === n.name ? "p.500" : ""}
-              borderBottom={active === n.name ? "2px solid var(--p500)" : ""}
-            >
-              {n.name}
-            </Button>
-          ))}
+          landingNav.map((n, i) => <LandingNavItem key={i} nav={n} />)}
       </HStack>
 
       <HStack>

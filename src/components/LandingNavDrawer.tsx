@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Drawer,
   DrawerBody,
   DrawerContent,
@@ -8,7 +7,6 @@ import {
   Icon,
   IconButton,
   Image,
-  Link,
   Text,
   VStack,
   useDisclosure,
@@ -18,6 +16,7 @@ import landingNav from "../const/landingNav";
 import { List } from "@phosphor-icons/react/dist/ssr";
 import { iconSize } from "../const/sizes";
 import { X } from "@phosphor-icons/react";
+import LandingNavItem from "./LandingNavItem";
 
 type Props = { active: string };
 
@@ -77,20 +76,7 @@ export default function LandingNavDrawer({ active }: Props) {
               </VStack>
 
               {landingNav.map((n, i) => (
-                <Button
-                  key={i}
-                  as={Link}
-                  variant={"ghost"}
-                  borderRadius={0}
-                  className="btn"
-                  color={active === n.name ? "p.500" : ""}
-                  borderBottom={
-                    active === n.name ? "2px solid var(--p500)" : ""
-                  }
-                  mb={2}
-                >
-                  {n.name}
-                </Button>
+                <LandingNavItem key={i} nav={n} />
               ))}
             </VStack>
           </DrawerBody>

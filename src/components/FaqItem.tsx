@@ -8,11 +8,11 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
-import { FaqItem } from "../const/types";
+import { FaqItemType } from "../const/types";
 import { CaretDown } from "@phosphor-icons/react";
 
 type Props = {
-  faq: FaqItem;
+  faq: FaqItemType;
 };
 
 export default function FaqItemComponent({ faq }: Props) {
