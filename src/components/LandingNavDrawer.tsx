@@ -42,7 +42,7 @@ export default function LandingNavDrawer({ active }: Props) {
             aria-label="close nav drawer"
             icon={<Icon as={X} fontSize={iconSize} />}
             borderRadius={"full"}
-            size={"sm"}
+            // size={"sm"}
             position={"absolute"}
             left={-4}
             top={"50%"}
