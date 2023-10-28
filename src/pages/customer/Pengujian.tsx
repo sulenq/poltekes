@@ -80,7 +80,7 @@ export default function Pengujian() {
                   {/* TODO show data */}
                   <Tr bg={"var(--divider)"}>
                     <Td>
-                      <Checkbox colorScheme="ap" />
+                      <Checkbox colorScheme="ap" bg={"white"} />
                     </Td>
                     <Td>001</Td>
                     <Td>22 Okt 2023</Td>
