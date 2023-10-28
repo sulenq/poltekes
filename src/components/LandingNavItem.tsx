@@ -27,43 +27,14 @@ export default function LandingNavItem({ nav }: Props) {
     setSectionRef(document.querySelector(`#${nav.name}`));
   }, [nav.name]);
 
-  //   useEffect(() => {
-  //     const options = {
-  //       root: null,
-  //       rootMargin: "0px",
-  //       threshold: 0.1, // seberapa besar elemen yang terlihat akan trigger intersection
-  //     };
-
-  //     const observer = new IntersectionObserver((entries) => {
-  //       entries.forEach((entry) => {
-  //         console.log(entry);
-  //         //@ts-ignore
-  //         if (entry.isIntersecting) {
-  //           setNavActive(true);
-  //         } else {
-  //           setNavActive(false);
-  //         }
-  //       });
-  //     }, options);
-
-  //     if (sectionRef) {
-  //       observer.observe(sectionRef);
-  //     }
-
-  //     return () => {
-  //       if (sectionRef) {
-  //         observer.unobserve(sectionRef);
-  //       }
-  //     };
-  //   }, [sectionRef]);
-
   return (
     <Button
       variant={"ghost"}
-      borderRadius={"full"}
+      borderRadius={"0"}
       className="btn"
       color={"p.500"}
       onClick={scrollToSection}
+      h={"80px"}
       //   color={navActive ? "p.500" : ""}
       //   borderBottom={navActive ? "2px solid var(--p500)" : ""}
     >

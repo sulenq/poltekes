@@ -65,8 +65,9 @@ td {
   font-family: "Source Sans 3", sans-serif;
 }
 th {
-  font-size: 9px !important;
-  border-bottom: none !important;
+  font-size: 14px !important;
+  text-transform: none !important;
+  border-bottom: 1px solid var(--divider3) !important;
 }
 
 button {
@@ -197,7 +198,7 @@ select {
     font-size: 16px;
   }
   th {
-    font-size: 11px !important;
+    font-size: 16px !important;
   }
   .chakra-alert__title {
     font-size: 16px;

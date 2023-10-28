@@ -7,9 +7,9 @@ export default function Container(props: any) {
   return (
     <VStack
       {...props}
-      w={"100%"}
+      w={props.w || "100%"}
       gap={0}
-      maxW={"1024px"}
+      maxW={"1280px"}
       mx={"auto"}
       align={"stretch"}
       px={["18px", null, 6]}

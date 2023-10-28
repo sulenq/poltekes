@@ -17,8 +17,8 @@ export default function Landing() {
         bg={"white"}
         zIndex={99}
       >
-        <Container h={"80px"} justify={"center"}>
-          <LandingNav active={"Beranda"} />
+        <Container justify={"center"}>
+          <LandingNav />
         </Container>
       </Box>
 

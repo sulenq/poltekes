@@ -1,36 +1,30 @@
-import { Box, HStack, Image, Text } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 import React from "react";
 import landingNav from "../const/landingNav";
 import useScreenWidth from "../utils/useGetScreenWidth";
 import LandingNavDrawer from "./LandingNavDrawer";
 import LandingNavItem from "./LandingNavItem";
 import SigninModal from "./SigninModal";
+import LandingHeader from "./LandingHeader";
 
-type Props = { active: string };
-
-export default function LandingNav({ active }: Props) {
+export default function LandingNav() {
   const sw = useScreenWidth();
 
   return (
     <HStack justify={"space-between"}>
-      <HStack>
-        <Image src="logo192.png" w={"48px"} />
+      <HStack gap={4}>
+        <LandingHeader />
 
-        <Box mr={6}>
-          <Text fontWeight={700} mb={"-3px"}>
-            POLTEKKES
-          </Text>
-          <Text fontWeight={500}>Kemenkes Semarang</Text>
-        </Box>
-
-        {sw >= 770 &&
-          landingNav.map((n, i) => <LandingNavItem key={i} nav={n} />)}
+        <HStack gap={0}>
+          {sw >= 770 &&
+            landingNav.map((n, i) => <LandingNavItem key={i} nav={n} />)}
+        </HStack>
       </HStack>
 
       <HStack>
         <SigninModal />
 
-        {sw < 770 && <LandingNavDrawer active={active} />}
+        {sw < 770 && <LandingNavDrawer />}
       </HStack>
     </HStack>
   );

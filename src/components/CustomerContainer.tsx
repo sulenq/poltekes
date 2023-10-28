@@ -1,7 +1,8 @@
-import { HStack, Icon, Text, VStack } from "@chakra-ui/react";
+import { Box, Text, VStack } from "@chakra-ui/react";
 import React from "react";
-import customerNav from "../const/customerNav";
-import { Link } from "react-router-dom";
+import CustomerNav from "./CustomerNav";
+import Container from "./Container";
+import Footer from "./Footer";
 
 type Props = {
   children: JSX.Element;
@@ -10,10 +11,43 @@ type Props = {
 
 export default function CustomerContainer({ children, active }: Props) {
   return (
-    <VStack gap={0} minH={"100vh"} align={"stretch"} justify={"space-between"}>
+    <VStack gap={0} minH={"100vh"} align={"stretch"}>
+      <Box
+        id="nav"
+        w={"100%"}
+        boxShadow={"0 0 5px 5px var(--divider)"}
+        position={"sticky"}
+        top={0}
+        bg={"white"}
+        zIndex={99}
+      >
+        <Container justify={"center"}>
+          <CustomerNav active={active} />
+        </Container>
+      </Box>
+
       {children}
 
-      <HStack
+      <VStack bg={"p.900"} w={"100%"} py={8}>
+        <Container>
+          <Footer />
+        </Container>
+      </VStack>
+
+      <VStack w={"100%"} bg={"p.900"}>
+        <Container py={2} borderTop={"1px solid var(--divider)"}>
+          <Text
+            textAlign={"center"}
+            color={"white"}
+            fontSize={[10, null, 12]}
+            opacity={0.5}
+          >
+            © 2023 by <span style={{ fontWeight: 600 }}>Distro Studio</span>
+          </Text>
+        </Container>
+      </VStack>
+
+      {/* <HStack
         position={"sticky"}
         bottom={0}
         w={"100%"}
@@ -36,7 +70,7 @@ export default function CustomerContainer({ children, active }: Props) {
             </Text>
           </VStack>
         ))}
-      </HStack>
+      </HStack> */}
     </VStack>
   );
 }

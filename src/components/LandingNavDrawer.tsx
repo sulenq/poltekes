@@ -18,9 +18,7 @@ import { iconSize } from "../const/sizes";
 import { X } from "@phosphor-icons/react";
 import LandingNavItem from "./LandingNavItem";
 
-type Props = { active: string };
-
-export default function LandingNavDrawer({ active }: Props) {
+export default function LandingNavDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (

@@ -151,7 +151,10 @@ export const globalTheme = extendTheme({
     Checkbox: {
       baseStyle: (props) => ({
         icon: {
-          color: "wt",
+          color: "white",
+        },
+        control: {
+          border: "2px solid var(--divider3) !important",
         },
       }),
     },
