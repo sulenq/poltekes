@@ -53,7 +53,15 @@ export default function LandingNavDrawer({ active }: Props) {
             onClick={onClose}
           />
 
-          <DrawerBody p={0} position={"relative"}>
+          <DrawerBody
+            as={VStack}
+            justify={"center"}
+            align={"stretch"}
+            p={0}
+            position={"relative"}
+            bg={"p.900"}
+            py={5}
+          >
             <Box
               bgImage={"/images/navDrawerBg.png"}
               bgSize={"cover"}
@@ -65,16 +73,16 @@ export default function LandingNavDrawer({ active }: Props) {
               opacity={0.1}
             />
 
-            <VStack minH={"100vh"} bg={"p.900"} py={5} justify={"center"}>
-              <VStack mb={8} gap={0}>
-                <Image src="logo192.png" w={"48px"} mb={2} />
+            <VStack mb={8} gap={0}>
+              <Image src="logo192.png" w={"48px"} mb={2} />
 
-                <Text fontWeight={700} lineHeight={1}>
-                  POLTEKKES
-                </Text>
-                <Text fontWeight={500}>Kemenkes Semarang</Text>
-              </VStack>
+              <Text fontWeight={700} lineHeight={1}>
+                POLTEKKES
+              </Text>
+              <Text fontWeight={500}>Kemenkes Semarang</Text>
+            </VStack>
 
+            <VStack>
               {landingNav.map((n, i) => (
                 <VStack key={i} w={"50%"} align={"stretch"} onClick={onClose}>
                   <LandingNavItem nav={n} />

@@ -1,10 +1,13 @@
-import React from "react";
-import { Box } from "@chakra-ui/react";
+import React, { useState } from "react";
+import FullPageLogo from "../components/FullPageLogo";
 
 type Props = { children: JSX.Element };
 
 export default function AuthJwt({ children }: Props) {
-  //TODO chek is JWT exist
+  const [page, setPage] = useState(<FullPageLogo />);
 
-  return <Box>{children}</Box>;
+  //TODO chek is JWT exist
+  // setPage(children);
+
+  return children;
 }
