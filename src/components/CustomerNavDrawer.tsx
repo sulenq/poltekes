@@ -62,7 +62,8 @@ export default function CustomerNavDrawer({ active }: Props) {
             align={"stretch"}
             p={0}
             position={"relative"}
-            bg={"p.900"}
+            bg={"var(--drawer)"}
+            backdropFilter={"blur(10px)"}
             py={5}
           >
             <Image
@@ -97,7 +98,9 @@ export default function CustomerNavDrawer({ active }: Props) {
                   <Text fontWeight={600} lineHeight={1} mb={1}>
                     Jolitos Kurniawan
                   </Text>
-                  <Text lineHeight={1}>Pelanggan</Text>
+                  <Text lineHeight={1} fontSize={[12, null, 14]}>
+                    jolitos@gmail.com
+                  </Text>
                 </Box>
               </HStack>
 
@@ -111,7 +114,7 @@ export default function CustomerNavDrawer({ active }: Props) {
                     as={Link}
                     to={n.link}
                     variant={"ghost"}
-                    bg={active === n.name ? "p.1000" : ""}
+                    bg={active === n.name ? "blackAlpha.200" : ""}
                     className="btn"
                     borderRadius={8}
                     color={"white"}
