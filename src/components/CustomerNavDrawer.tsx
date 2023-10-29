@@ -48,7 +48,6 @@ export default function CustomerNavDrawer({ active }: Props) {
             position={"absolute"}
             left={-5}
             top={"calc(50% - 20px)"}
-            // transform={"translate(0, -50%)"}
             zIndex={99}
             bg={"white"}
             _hover={{ bg: "white" }}
@@ -59,24 +58,22 @@ export default function CustomerNavDrawer({ active }: Props) {
 
           <DrawerBody
             as={VStack}
+            gap={0}
             align={"stretch"}
             p={0}
             position={"relative"}
             bg={"p.900"}
             py={5}
           >
-            <Box
-              bgImage={"/images/navDrawerBg.png"}
-              bgSize={"cover"}
-              bgPos={"center"}
+            <Image
+              src={"/images/navDrawerBg.png"}
               w={"100%"}
-              h={"100vh"}
               position={"absolute"}
-              top={0}
+              bottom={0}
               opacity={0.1}
             />
 
-            <VStack mb={8} gap={0}>
+            <VStack gap={0}>
               <Image src="/logo192.png" w={"48px"} mb={2} />
 
               <Text fontWeight={700} lineHeight={1}>
@@ -85,36 +82,49 @@ export default function CustomerNavDrawer({ active }: Props) {
               <Text fontWeight={500}>Kemenkes Semarang</Text>
             </VStack>
 
-            <VStack zIndex={2} borderRadius={16} p={6}>
-              <Avatar
-                size={"xl"}
-                name="Jolitos Kurniawan"
-                src="/images/user.jpg"
-                mb={6}
-              />
+            <VStack
+              zIndex={2}
+              gap={0}
+              borderRadius={16}
+              py={6}
+              px={8}
+              align={"stretch"}
+            >
+              <HStack p={2} mb={6} bg={"var(--divider)"} borderRadius={8}>
+                <Avatar name="Jolitos Kurniawan" src="/images/user.jpg" />
 
-              <VStack w={"100%"}>
+                <Box>
+                  <Text fontWeight={600} lineHeight={1} mb={1}>
+                    Jolitos Kurniawan
+                  </Text>
+                  <Text lineHeight={1}>Pelanggan</Text>
+                </Box>
+              </HStack>
+
+              <VStack w={"100%"} align={"stretch"}>
+                <Text fontWeight={500} opacity={0.5} ml={4}>
+                  Main
+                </Text>
                 {customerNav.map((n, i) => (
                   <Button
                     key={i}
                     as={Link}
                     to={n.link}
-                    w={"90%"}
                     variant={"ghost"}
-                    bg={active === n.name ? "var(--divider)" : ""}
+                    bg={active === n.name ? "p.1000" : ""}
                     className="btn"
-                    borderRadius={"full"}
+                    borderRadius={8}
                     color={"white"}
                   >
-                    <HStack w={"100%"} justify={"space-between"}>
-                      <Text>{n.name}</Text>
-
+                    <HStack w={"100%"}>
                       <Icon
                         as={n.icon}
                         fontSize={iconSize}
                         weight={active === n.name ? "duotone" : "regular"}
                         mb={"2px"}
                       />
+
+                      <Text fontWeight={500}>{n.name}</Text>
                     </HStack>
                   </Button>
                 ))}

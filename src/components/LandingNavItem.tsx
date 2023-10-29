@@ -32,7 +32,7 @@ export default function LandingNavItem({ nav }: Props) {
     return (
       <Button
         variant={"ghost"}
-        borderRadius={"full"}
+        borderRadius={8}
         className="btn"
         color={"white"}
         onClick={scrollToSection}

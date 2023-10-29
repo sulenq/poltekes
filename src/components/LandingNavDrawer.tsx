@@ -1,5 +1,4 @@
 import {
-  Box,
   Drawer,
   DrawerBody,
   DrawerContent,
@@ -53,25 +52,21 @@ export default function LandingNavDrawer() {
 
           <DrawerBody
             as={VStack}
-            justify={"center"}
             align={"stretch"}
             p={0}
             position={"relative"}
             bg={"p.900"}
             py={5}
           >
-            <Box
-              bgImage={"/images/navDrawerBg.png"}
-              bgSize={"cover"}
-              bgPos={"center"}
+            <Image
+              src={"/images/navDrawerBg.png"}
               w={"100%"}
-              h={"100vh"}
               position={"absolute"}
-              top={0}
+              bottom={0}
               opacity={0.1}
             />
 
-            <VStack mb={8} gap={0}>
+            <VStack gap={0} mb={8}>
               <Image src="/logo192.png" w={"48px"} mb={2} />
 
               <Text fontWeight={700} lineHeight={1}>
@@ -80,9 +75,9 @@ export default function LandingNavDrawer() {
               <Text fontWeight={500}>Kemenkes Semarang</Text>
             </VStack>
 
-            <VStack>
+            <VStack py={6} px={8}>
               {landingNav.map((n, i) => (
-                <VStack key={i} w={"70%"} align={"stretch"} onClick={onClose}>
+                <VStack key={i} w={"100%"} align={"stretch"} onClick={onClose}>
                   <LandingNavItem nav={n} />
                 </VStack>
               ))}

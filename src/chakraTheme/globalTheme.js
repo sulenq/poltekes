@@ -17,6 +17,7 @@ export const globalTheme = extendTheme({
       700: "#168e4b",
       800: "#0e7244",
       900: "#085f3f",
+      1000: "#07583b",
     },
     ap: {
       50: "#2dc6531b",
