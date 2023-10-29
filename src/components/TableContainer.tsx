@@ -8,11 +8,12 @@ export default function TableContainer({ children }: Props) {
     <Box
       overflow={"auto"}
       w={"100%"}
-      // maxW={"1024px"}
-      // mx={"auto"}
       maxH={"calc(80vh - 80px)"}
       border={"1px solid var(--divider3)"}
       borderRadius={4}
+      className="scrollX"
+      // maxW={"1024px"}
+      // mx={"auto"}
     >
       {children}
     </Box>

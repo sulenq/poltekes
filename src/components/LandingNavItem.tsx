@@ -1,13 +1,14 @@
 import { Button } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import { LandingNavItemType } from "../const/types";
+import useScreenWidth from "../utils/useGetScreenWidth";
 
 type Props = {
   nav: LandingNavItemType;
 };
 
 export default function LandingNavItem({ nav }: Props) {
-  //   const [navActive, setNavActive] = useState(false);
+  const sw = useScreenWidth();
   const [navRef, setNavRef] = useState<Element | null>(null);
   const [sectionRef, setSectionRef] = useState<Element | null>(null);
 
@@ -26,6 +27,22 @@ export default function LandingNavItem({ nav }: Props) {
     setNavRef(document.querySelector("#nav"));
     setSectionRef(document.querySelector(`#${nav.name}`));
   }, [nav.name]);
+
+  if (sw < 770) {
+    return (
+      <Button
+        variant={"ghost"}
+        borderRadius={"full"}
+        className="btn"
+        color={"p.500"}
+        onClick={scrollToSection}
+        //   color={navActive ? "p.500" : ""}
+        //   borderBottom={navActive ? "2px solid var(--p500)" : ""}
+      >
+        {nav.name}
+      </Button>
+    );
+  }
 
   return (
     <Button

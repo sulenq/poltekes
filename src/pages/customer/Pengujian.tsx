@@ -4,7 +4,6 @@ import {
   Badge,
   Box,
   Button,
-  Checkbox,
   Icon,
   IconButton,
   Table,
@@ -65,7 +64,7 @@ export default function Pengujian() {
               <Table>
                 <Thead>
                   <Tr>
-                    <Th></Th>
+                    <Th>No</Th>
                     <Th>No.Registrasi</Th>
                     <Th whiteSpace={"nowrap"}>Tanggal Order</Th>
                     <Th>Nama</Th>
@@ -79,13 +78,11 @@ export default function Pengujian() {
                 <Tbody>
                   {/* TODO show data */}
                   <Tr bg={"var(--divider)"}>
-                    <Td>
-                      <Checkbox colorScheme="ap" bg={"white"} />
-                    </Td>
+                    <Td isNumeric>1</Td>
                     <Td>001</Td>
                     <Td>22 Okt 2023</Td>
                     <Td>Anjay</Td>
-                    <Td>Jalan Banjarsari no.12</Td>
+                    <Td minW={"200px"}>Jalan Banjarsari no.12</Td>
                     <Td>
                       <Badge colorScheme="red">Belum Dibayar</Badge>
                     </Td>

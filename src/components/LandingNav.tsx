@@ -11,7 +11,7 @@ export default function LandingNav() {
   const sw = useScreenWidth();
 
   return (
-    <HStack justify={"space-between"}>
+    <HStack justify={"space-between"} h={["80px", null, null]}>
       <HStack gap={4}>
         <LandingHeader />
 

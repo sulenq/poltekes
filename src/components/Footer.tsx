@@ -18,7 +18,7 @@ export default function Footer() {
         <HStack gap={4} align={"flex-start"}>
           <Image src={"/logo192.png"} w={"100%"} maxW={"122px"} />
 
-          <Box mt={2}>
+          <Box mt={3}>
             <Text fontSize={20} fontWeight={700} mb={2} lineHeight={1}>
               Poltekkes Kemenkes Semarang
             </Text>
@@ -33,7 +33,7 @@ export default function Footer() {
           </Box>
         </HStack>
 
-        <Box mt={2}>
+        <Box mt={3}>
           <Text fontWeight={700} mb={2} lineHeight={1}>
             Kontak
           </Text>
