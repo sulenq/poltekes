@@ -9,7 +9,6 @@ import {
   IconButton,
   SimpleGrid,
   Tab,
-  TabIndicator,
   TabList,
   TabPanel,
   TabPanels,
