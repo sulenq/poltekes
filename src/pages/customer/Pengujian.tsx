@@ -19,6 +19,7 @@ import TableContainer from "../../components/TableContainer";
 import { DotsThreeVertical } from "@phosphor-icons/react";
 import { iconSize } from "../../const/sizes";
 import ContentContainer from "../../components/ContentContainer";
+import { Link } from "react-router-dom";
 
 export default function Pengujian() {
   // TODO show riwayat pengujian table data
@@ -36,7 +37,13 @@ export default function Pengujian() {
               Untuk Pendaftaran Sampel Pengujian Online, klik tombol dibawah ini
             </Text>
 
-            <Button colorScheme="ap" className="lg-clicky" mb={6}>
+            <Button
+              as={Link}
+              to={"/customer/pendaftaran-pengujian"}
+              colorScheme="ap"
+              className="lg-clicky"
+              mb={6}
+            >
               Pendaftaran Pengujian Online
             </Button>
 
@@ -71,7 +78,7 @@ export default function Pengujian() {
                     <Th>Alamat</Th>
                     <Th whiteSpace={"nowrap"}>Status Pembayaran</Th>
                     <Th whiteSpace={"nowrap"}>Status Pengujian</Th>
-                    <Th></Th>
+                    <Th isNumeric></Th>
                   </Tr>
                 </Thead>
 
@@ -89,7 +96,7 @@ export default function Pengujian() {
                     <Td>
                       <Badge colorScheme="blue">Sedang Diuji</Badge>
                     </Td>
-                    <Td>
+                    <Td isNumeric>
                       <IconButton
                         aria-label="more"
                         icon={

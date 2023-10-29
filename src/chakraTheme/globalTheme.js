@@ -19,8 +19,8 @@ export const globalTheme = extendTheme({
       900: "#085f3f",
     },
     ap: {
-      50: "#2dc653",
-      100: "#2dc653",
+      50: "#2dc6531b",
+      100: "#2dc6532b",
       200: "#2dc653",
       300: "#2dc653",
       400: "#2dc653",
@@ -129,7 +129,7 @@ export const globalTheme = extendTheme({
       },
       variants: {
         outline: {
-          border: "2px solid",
+          // border: "2px solid",
         },
       },
     },
