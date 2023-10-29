@@ -4,9 +4,11 @@ import {
   Box,
   Button,
   ButtonGroup,
+  Center,
   HStack,
   Icon,
   IconButton,
+  Image,
   SimpleGrid,
   Tab,
   TabList,
@@ -34,16 +36,18 @@ import {
 import { iconSize } from "../../const/sizes";
 import ContentContainer from "../../components/ContentContainer";
 import TableContainer from "../../components/TableContainer";
+import useScreenWidth from "../../utils/useGetScreenWidth";
 
 export default function PendaftaranPengujian() {
   // TODO show riwayat pengujian table data
+  const sw = useScreenWidth();
 
   return (
     <CustomerContainer active={"Pengujian"}>
       <ContentContainer>
         <Container>
           <Box>
-            <Text fontSize={[22, null, 24]} fontWeight={600} mt={12} mb={6}>
+            <Text fontSize={[22, null, 24]} fontWeight={600} mt={6} mb={6}>
               Pendaftaran Pengujian Online
             </Text>
 
@@ -135,51 +139,60 @@ export default function PendaftaranPengujian() {
             </Text>
 
             <Tabs isFitted variant="unstyled">
-              <TabList
-                borderRadius={8}
-                bg={"var(--divider)"}
-                //   borderBottom={"1px solid var(--divider3)"}
-              >
+              <TabList borderRadius={8} bg={"var(--divider)"}>
                 <Tab
                   borderRadius={8}
                   _selected={{ bg: "p.500", color: "white" }}
                 >
-                  <Icon as={Eyedropper} fontSize={iconSize} mr={2} />
-                  <Text fontWeight={500} fontSize={[12, null, 14]}>
-                    Sampel & Parameter
-                  </Text>
+                  <Icon
+                    as={Eyedropper}
+                    fontSize={iconSize}
+                    mr={[null, null, 2]}
+                  />
+                  {sw >= 770 && (
+                    <Text fontWeight={500} fontSize={[12, null, 14]}>
+                      Sampel & Parameter
+                    </Text>
+                  )}
                 </Tab>
+
                 <Tab
                   borderRadius={8}
                   _selected={{ bg: "p.500", color: "white" }}
                 >
-                  <Icon as={Images} fontSize={iconSize} mr={2} />
-                  <Text fontWeight={500} fontSize={[12, null, 14]}>
-                    Foto Sampel
-                  </Text>
+                  <Icon as={Images} fontSize={iconSize} mr={[null, null, 2]} />
+                  {sw >= 770 && (
+                    <Text fontWeight={500} fontSize={[12, null, 14]}>
+                      Foto Sampel
+                    </Text>
+                  )}
                 </Tab>
+
                 <Tab
                   borderRadius={8}
                   _selected={{ bg: "p.500", color: "white" }}
                 >
-                  <Icon as={Files} fontSize={iconSize} mr={2} />
-                  <Text fontWeight={500} fontSize={[12, null, 14]}>
-                    File Pendukung
-                  </Text>
+                  <Icon as={Files} fontSize={iconSize} mr={[null, null, 2]} />
+                  {sw > 770 && (
+                    <Text fontWeight={500} fontSize={[12, null, 14]}>
+                      File Pendukung
+                    </Text>
+                  )}
                 </Tab>
               </TabList>
-              {/* <TabIndicator
-                mt="-1.5px"
-                height="2px"
-                bg="p.500"
-                borderRadius="1px"
-              /> */}
 
               <TabPanels>
                 <TabPanel p={0}>
-                  <Text mt={4} mb={2}>
+                  {sw < 770 && (
+                    <Text fontSize={[16, null, 18]} fontWeight={600} mt={4}>
+                      Sampel & Parameter
+                    </Text>
+                  )}
+
+                  <Text my={2} mb={2}>
                     Silakan Buat Sampel Uji Anda!!
                   </Text>
+
                   <Button
                     leftIcon={
                       <Icon as={Plus} fontSize={iconSize} weight="bold" />
@@ -199,13 +212,15 @@ export default function PendaftaranPengujian() {
                   />
 
                   <Box mb={4}>
-                    <HStack justify={"space-between"} mb={4}>
+                    <SimpleGrid columns={[1, 1, 2, 2]} gap={2} mb={4}>
                       <HStack>
                         <Icon as={Eyedropper} fontSize={iconSize} />
                         <Text fontWeight={500}>001 - Anjay Sample</Text>
                       </HStack>
 
-                      <ButtonGroup>
+                      <ButtonGroup
+                        justifySelf={[null, null, "flex-end", "flex-end"]}
+                      >
                         <IconButton
                           aria-label="delete sample"
                           icon={<Icon as={Trash} fontSize={iconSize} />}
@@ -217,14 +232,14 @@ export default function PendaftaranPengujian() {
                           leftIcon={
                             <Icon as={Plus} fontSize={iconSize} weight="bold" />
                           }
+                          variant={"outline"}
                           colorScheme="ap"
                           className="lg-clicky"
-                          mb={4}
                         >
                           Masukkan Parameter
                         </Button>
                       </ButtonGroup>
-                    </HStack>
+                    </SimpleGrid>
 
                     <TableContainer>
                       <Table>
@@ -264,14 +279,34 @@ export default function PendaftaranPengujian() {
                       </Table>
                     </TableContainer>
                   </Box>
+
+                  <Center p={5}>
+                    <Image src="/svg/sample.svg" maxW={"480px"} />
+                  </Center>
                 </TabPanel>
 
-                <TabPanel>
-                  <p>2</p>
+                <TabPanel p={0}>
+                  {sw < 770 && (
+                    <Text fontSize={[16, null, 18]} fontWeight={600} mt={4}>
+                      Foto Sampel
+                    </Text>
+                  )}
+
+                  <Center p={5}>
+                    <Image src="/svg/sampleImage.svg" maxW={"480px"} />
+                  </Center>
                 </TabPanel>
 
-                <TabPanel>
-                  <p>3</p>
+                <TabPanel p={0}>
+                  {sw < 770 && (
+                    <Text fontSize={[16, null, 18]} fontWeight={600} mt={4}>
+                      File Pendukung
+                    </Text>
+                  )}
+
+                  <Center p={5}>
+                    <Image src="/svg/file.svg" maxW={"480px"} />
+                  </Center>
                 </TabPanel>
               </TabPanels>
             </Tabs>

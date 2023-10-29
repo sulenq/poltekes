@@ -34,7 +34,7 @@ export default function LandingNavItem({ nav }: Props) {
         variant={"ghost"}
         borderRadius={"full"}
         className="btn"
-        color={"p.500"}
+        color={"white"}
         onClick={scrollToSection}
         //   color={navActive ? "p.500" : ""}
         //   borderBottom={navActive ? "2px solid var(--p500)" : ""}
@@ -49,7 +49,7 @@ export default function LandingNavItem({ nav }: Props) {
       variant={"ghost"}
       borderRadius={"0"}
       className="btn"
-      color={"p.500"}
+      color={"black"}
       onClick={scrollToSection}
       h={"80px"}
       //   color={navActive ? "p.500" : ""}

@@ -29,7 +29,7 @@ export default function Pengujian() {
       <ContentContainer>
         <Container>
           <Box>
-            <Text fontSize={[22, null, 24]} fontWeight={600} mt={12} mb={6}>
+            <Text fontSize={[22, null, 24]} fontWeight={600} mt={6} mb={6}>
               Pendaftaran Pengujian Online
             </Text>
 

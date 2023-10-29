@@ -1,9 +1,12 @@
 import {
+  Avatar,
   Box,
+  Button,
   Drawer,
   DrawerBody,
   DrawerContent,
   DrawerOverlay,
+  HStack,
   Icon,
   IconButton,
   Image,
@@ -11,23 +14,26 @@ import {
   VStack,
   useDisclosure,
 } from "@chakra-ui/react";
+import { List, X } from "@phosphor-icons/react";
 import React from "react";
-import landingNav from "../const/landingNav";
-import { List } from "@phosphor-icons/react/dist/ssr";
 import { iconSize } from "../const/sizes";
-import { X } from "@phosphor-icons/react";
-import LandingNavItem from "./LandingNavItem";
+import customerNav from "../const/customerNav";
+import { Link } from "react-router-dom";
 
-export default function LandingNavDrawer() {
+type Props = {
+  active: string;
+};
+
+export default function CustomerNavDrawer({ active }: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
       <IconButton
-        size={"sm"}
-        aria-label="nav button"
-        icon={<Icon as={List} fontSize={iconSize} color={"p.500"} />}
-        className="btn-p-outline clicky"
+        aria-label="menu"
+        icon={<Icon as={List} fontSize={iconSize} />}
+        variant={"outline"}
+        colorScheme="ap"
         onClick={onOpen}
       />
 
@@ -53,7 +59,6 @@ export default function LandingNavDrawer() {
 
           <DrawerBody
             as={VStack}
-            justify={"center"}
             align={"stretch"}
             p={0}
             position={"relative"}
@@ -80,12 +85,40 @@ export default function LandingNavDrawer() {
               <Text fontWeight={500}>Kemenkes Semarang</Text>
             </VStack>
 
-            <VStack>
-              {landingNav.map((n, i) => (
-                <VStack key={i} w={"70%"} align={"stretch"} onClick={onClose}>
-                  <LandingNavItem nav={n} />
-                </VStack>
-              ))}
+            <VStack zIndex={2} borderRadius={16} p={6}>
+              <Avatar
+                size={"xl"}
+                name="Jolitos Kurniawan"
+                src="/images/user.jpg"
+                mb={6}
+              />
+
+              <VStack w={"100%"}>
+                {customerNav.map((n, i) => (
+                  <Button
+                    key={i}
+                    as={Link}
+                    to={n.link}
+                    w={"90%"}
+                    variant={"ghost"}
+                    bg={active === n.name ? "var(--divider)" : ""}
+                    className="btn"
+                    borderRadius={"full"}
+                    color={"white"}
+                  >
+                    <HStack w={"100%"} justify={"space-between"}>
+                      <Text>{n.name}</Text>
+
+                      <Icon
+                        as={n.icon}
+                        fontSize={iconSize}
+                        weight={active === n.name ? "duotone" : "regular"}
+                        mb={"2px"}
+                      />
+                    </HStack>
+                  </Button>
+                ))}
+              </VStack>
             </VStack>
           </DrawerBody>
         </DrawerContent>

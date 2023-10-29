@@ -5,6 +5,7 @@ import customerNav from "../const/customerNav";
 import { iconSize } from "../const/sizes";
 import { Link } from "react-router-dom";
 import LandingHeader from "./LandingHeader";
+import CustomerNavDrawer from "./CustomerNavDrawer";
 
 type Props = { active: string };
 
@@ -37,7 +38,7 @@ export default function CustomerNav({ active }: Props) {
                     mb={"2px"}
                   />
                 }
-                color={"p.500"}
+                color={active === n.name ? "p.500" : "black"}
               >
                 <Text>{n.name}</Text>
               </Button>
@@ -45,7 +46,11 @@ export default function CustomerNav({ active }: Props) {
         </HStack>
       </HStack>
 
-      <Avatar size="md" name="Jolitos Kurniawan" src="/images/user.jpg" />
+      {sw >= 770 && (
+        <Avatar size={"md"} name="Jolitos Kurniawan" src="/images/user.jpg" />
+      )}
+
+      {sw < 770 && <CustomerNavDrawer active={active} />}
     </HStack>
   );
 }
