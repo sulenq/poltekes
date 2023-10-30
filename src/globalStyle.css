@@ -43,7 +43,7 @@
 }
 
 a {
-  font-size: 14px;
+  font-size: 14px !important;
   text-decoration: none !important;
 }
 
@@ -186,7 +186,7 @@ select {
 
 @media screen and (min-width: 770px) {
   a {
-    font-size: 16px;
+    font-size: 16px !important;
   }
   p {
     font-size: 16px;
