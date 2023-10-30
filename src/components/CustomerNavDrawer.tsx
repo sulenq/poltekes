@@ -19,6 +19,7 @@ import React from "react";
 import { iconSize } from "../const/sizes";
 import customerNav from "../const/customerNav";
 import { Link } from "react-router-dom";
+import useBackOnClose from "../utils/useBackOnClose";
 
 type Props = {
   active: string;
@@ -26,6 +27,13 @@ type Props = {
 
 export default function CustomerNavDrawer({ active }: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  useBackOnClose(isOpen, onClose);
+
+  const handleOnClose = () => {
+    onClose();
+    window.history.back();
+  };
 
   return (
     <>
@@ -37,7 +45,7 @@ export default function CustomerNavDrawer({ active }: Props) {
         onClick={onOpen}
       />
 
-      <Drawer isOpen={isOpen} onClose={onClose}>
+      <Drawer isOpen={isOpen} onClose={handleOnClose}>
         <DrawerOverlay />
 
         <DrawerContent>
@@ -53,7 +61,7 @@ export default function CustomerNavDrawer({ active }: Props) {
             _hover={{ bg: "white" }}
             _active={{ bg: "white" }}
             className="clicky"
-            onClick={onClose}
+            onClick={handleOnClose}
           />
 
           <DrawerBody

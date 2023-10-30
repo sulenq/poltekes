@@ -3,7 +3,6 @@ import CustomerContainer from "../../components/CustomerContainer";
 import {
   Badge,
   Box,
-  Button,
   Icon,
   IconButton,
   Table,
@@ -19,7 +18,7 @@ import TableContainer from "../../components/TableContainer";
 import { DotsThreeVertical } from "@phosphor-icons/react";
 import { iconSize } from "../../const/sizes";
 import ContentContainer from "../../components/ContentContainer";
-import { Link } from "react-router-dom";
+import PendaftaranPengujianModal from "../../components/PendaftaranPengujianModal";
 
 export default function Pengujian() {
   // TODO show riwayat pengujian table data
@@ -37,15 +36,7 @@ export default function Pengujian() {
               Untuk Pendaftaran Sampel Pengujian Online, Klik dibawah ini!!!
             </Text>
 
-            <Button
-              as={Link}
-              to={"/customer/pendaftaran-pengujian"}
-              colorScheme="ap"
-              className="lg-clicky"
-              mb={6}
-            >
-              Pendaftaran Pengujian Online
-            </Button>
+            <PendaftaranPengujianModal />
 
             <Box p={[4, 5, 6]} bg={"p.100"} borderRadius={16} mb={8}>
               <Text lineHeight={"30px"}>

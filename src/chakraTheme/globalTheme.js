@@ -90,7 +90,12 @@ export const globalTheme = extendTheme({
           pt: "0px !important",
         },
         footer: {
-          px: "16px",
+          p: "24px",
+        },
+        closeButton: {
+          borderRadius: "full",
+          right: 3,
+          top: 3,
         },
       }),
     },
