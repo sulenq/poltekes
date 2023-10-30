@@ -134,7 +134,7 @@ export default function PendaftaranPengujian() {
             border={"1px solid var(--divider3)"}
             mb={8}
           >
-            <Text fontSize={[22, null, 24]} fontWeight={600} mb={6}>
+            <Text fontSize={[22, null, 24]} fontWeight={600} mb={[4, 5, 6]}>
               Berkas
             </Text>
 
@@ -240,7 +240,7 @@ export default function PendaftaranPengujian() {
                     </SimpleGrid>
 
                     <TableContainer>
-                      <Table>
+                      <Table size={["sm", null, "md"]}>
                         <Thead>
                           <Tr>
                             <Th>No</Th>
@@ -253,7 +253,9 @@ export default function PendaftaranPengujian() {
 
                         <Tbody>
                           <Tr>
-                            <Td>1</Td>
+                            <Td isNumeric w={"20px"}>
+                              1
+                            </Td>
                             <Td>Gatau</Td>
                             <Td>Kucing</Td>
                             <Td isNumeric>2.000.000</Td>
@@ -270,6 +272,8 @@ export default function PendaftaranPengujian() {
                                 variant={"ghost"}
                                 className="btn"
                                 borderRadius={"full"}
+                                size={["sm", null, "md"]}
+                                w={["32px", null, ""]}
                               />
                             </Td>
                           </Tr>

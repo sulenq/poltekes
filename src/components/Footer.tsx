@@ -5,6 +5,7 @@ import {
   Icon,
   Image,
   SimpleGrid,
+  Stack,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -15,7 +16,7 @@ export default function Footer() {
   return (
     <VStack>
       <SimpleGrid columns={[1, null, 2]} gap={6} color={"white"}>
-        <HStack gap={4} align={"flex-start"}>
+        <Stack flexDir={["column", null, "row"]} gap={4} align={"flex-start"}>
           <Image src={"/logo192.png"} w={"100%"} maxW={"122px"} />
 
           <Box mt={3}>
@@ -31,7 +32,7 @@ export default function Footer() {
               </Text>
             </HStack>
           </Box>
-        </HStack>
+        </Stack>
 
         <Box mt={3}>
           <Text fontWeight={700} mb={2} lineHeight={1}>
