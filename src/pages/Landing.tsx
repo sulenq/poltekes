@@ -22,7 +22,7 @@ export default function Landing() {
         </Container>
       </Box>
 
-      <Box id="Beranda" w={"100%"}>
+      <Box id="Poltekkes" w={"100%"}>
         <VStack w={"100%"} gap={0} bg={"var(--divider)"}>
           <Container>
             <HStack
