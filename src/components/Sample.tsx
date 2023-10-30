@@ -56,7 +56,7 @@ export default function Sample() {
         <Table size={["sm", null, "md"]}>
           <Thead>
             <Tr>
-              <Th>No</Th>
+              <Th isNumeric>No</Th>
               <Th>Metode</Th>
               <Th>Parameter</Th>
               <Th isNumeric>Harga</Th>
@@ -66,9 +66,7 @@ export default function Sample() {
 
           <Tbody>
             <Tr>
-              <Td isNumeric w={"20px"}>
-                1
-              </Td>
+              <Td isNumeric>1</Td>
               <Td>Gatau</Td>
               <Td>Kucing</Td>
               <Td isNumeric>2.000.000</Td>

@@ -62,7 +62,7 @@ export default function Pengujian() {
               <Table>
                 <Thead>
                   <Tr>
-                    <Th>No</Th>
+                    <Th isNumeric>No</Th>
                     <Th>No.Registrasi</Th>
                     <Th whiteSpace={"nowrap"}>Tanggal Order</Th>
                     <Th>Nama</Th>
@@ -75,6 +75,7 @@ export default function Pengujian() {
 
                 <Tbody>
                   {/* TODO show data */}
+
                   <Tr bg={"var(--divider)"}>
                     <Td isNumeric>1</Td>
                     <Td>001</Td>
