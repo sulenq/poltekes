@@ -1,8 +1,7 @@
-import { Button, HStack, Icon, Text } from "@chakra-ui/react";
+import { Button, HStack, Text } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import { LandingNavItemType } from "../const/types";
 import useScreenWidth from "../utils/useGetScreenWidth";
-import { iconSize } from "../const/sizes";
 
 type Props = {
   nav: LandingNavItemType;
@@ -44,7 +43,7 @@ export default function LandingNavItem({ nav }: Props) {
         <HStack w={"100%"} justify={"space-between"}>
           <Text textAlign={"left"}>{nav.name}</Text>
 
-          <Icon as={nav.icon} fontSize={iconSize} />
+          {/* <Icon as={nav.icon} fontSize={iconSize} /> */}
         </HStack>
       </Button>
     );

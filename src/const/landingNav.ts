@@ -2,7 +2,7 @@ import { HouseSimple, SealQuestion } from "@phosphor-icons/react";
 
 const landingNav = [
   {
-    name: "Beranda",
+    name: "Poltekkes",
     link: "#hero",
     icon: HouseSimple,
   },

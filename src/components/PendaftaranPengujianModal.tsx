@@ -65,7 +65,7 @@ export default function PendaftaranPengujianModal() {
               </FormControl>
 
               <Checkbox alignItems={"flex-start"} colorScheme="ap" gap={1}>
-                <Text mt={"-5px"} fontSize={[12, null, 14]}>
+                <Text mt={["-4px", null, "-6px"]} fontSize={[12, null, 14]}>
                   Saya dengan ini menyatakan setuju dengan{" "}
                   <ChakraLink color="p.500" href="#">
                     syarat dan ketentuan
