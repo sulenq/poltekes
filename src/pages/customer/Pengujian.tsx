@@ -34,7 +34,7 @@ export default function Pengujian() {
             </Text>
 
             <Text mb={4}>
-              Untuk Pendaftaran Sampel Pengujian Online, klik tombol dibawah ini
+              Untuk Pendaftaran Sampel Pengujian Online, Klik dibawah ini!!!
             </Text>
 
             <Button
@@ -47,7 +47,7 @@ export default function Pengujian() {
               Pendaftaran Pengujian Online
             </Button>
 
-            <Box p={6} bg={"p.100"} borderRadius={16} mb={8}>
+            <Box p={[4, 5, 6]} bg={"p.100"} borderRadius={16} mb={8}>
               <Text lineHeight={"30px"}>
                 Permohonan Penelitian dengan Status <b>Uji Kompetensi</b> Akan
                 Diproses Setelah Calon Peneliti Lulus Uji Kompetensi yang

@@ -1,4 +1,5 @@
 import {
+  Button,
   Drawer,
   DrawerBody,
   DrawerContent,
@@ -16,6 +17,7 @@ import { List } from "@phosphor-icons/react/dist/ssr";
 import { iconSize } from "../const/sizes";
 import { X } from "@phosphor-icons/react";
 import LandingNavItem from "./LandingNavItem";
+import SigninModal from "./SigninModal";
 
 export default function LandingNavDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -23,7 +25,6 @@ export default function LandingNavDrawer() {
   return (
     <>
       <IconButton
-        size={"sm"}
         aria-label="nav button"
         icon={<Icon as={List} fontSize={iconSize} color={"p.500"} />}
         className="btn-p-outline clicky"
@@ -75,12 +76,33 @@ export default function LandingNavDrawer() {
               <Text fontWeight={500}>Kemenkes Semarang</Text>
             </VStack>
 
-            <VStack py={6} px={8}>
-              {landingNav.map((n, i) => (
-                <VStack key={i} w={"100%"} align={"stretch"} onClick={onClose}>
-                  <LandingNavItem nav={n} />
-                </VStack>
-              ))}
+            <VStack
+              w={"100%"}
+              flex={1}
+              py={6}
+              px={10}
+              align={"stretch"}
+              justify={"space-between"}
+            >
+              <VStack align={"stretch"}>
+                {landingNav.map((n, i) => (
+                  <VStack key={i} align={"stretch"} onClick={onClose}>
+                    <LandingNavItem nav={n} />
+                  </VStack>
+                ))}
+              </VStack>
+
+              <VStack align={"stretch"}>
+                <SigninModal />
+
+                <Button
+                  colorScheme="ap"
+                  variant={"outline"}
+                  className="lg-clicky"
+                >
+                  Daftar
+                </Button>
+              </VStack>
             </VStack>
           </DrawerBody>
         </DrawerContent>

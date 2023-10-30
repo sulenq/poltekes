@@ -39,12 +39,7 @@ export default function SigninModal() {
 
   return (
     <>
-      <Button
-        colorScheme="ap"
-        className="clicky"
-        size={["sm", null, "md"]}
-        onClick={onOpen}
-      >
+      <Button colorScheme="ap" className="clicky" onClick={onOpen}>
         Masuk
       </Button>
 

@@ -54,7 +54,7 @@ export default function PendaftaranPengujian() {
             <SimpleGrid
               columns={[1, null, 2]}
               gap={6}
-              p={6}
+              p={[4, 5, 6]}
               bg={"p.100"}
               borderRadius={16}
               mb={8}
@@ -129,7 +129,7 @@ export default function PendaftaranPengujian() {
           </Box>
 
           <Box
-            p={6}
+            p={[4, 5, 6]}
             borderRadius={16}
             border={"1px solid var(--divider3)"}
             mb={8}
@@ -139,7 +139,7 @@ export default function PendaftaranPengujian() {
             </Text>
 
             <Tabs isFitted variant="unstyled">
-              <TabList borderRadius={8} bg={"var(--divider)"}>
+              <TabList borderRadius={8} bg={"var(--divider)"} mb={4}>
                 <Tab
                   borderRadius={8}
                   _selected={{ bg: "p.500", color: "white" }}
@@ -184,14 +184,12 @@ export default function PendaftaranPengujian() {
               <TabPanels>
                 <TabPanel p={0}>
                   {sw < 770 && (
-                    <Text fontSize={[16, null, 18]} fontWeight={600} mt={4}>
+                    <Text fontSize={[16, null, 18]} fontWeight={600} mb={2}>
                       Sampel & Parameter
                     </Text>
                   )}
 
-                  <Text my={2} mb={2}>
-                    Silakan Buat Sampel Uji Anda!!
-                  </Text>
+                  <Text mb={2}>Silakan Buat Sampel Uji Anda!!</Text>
 
                   <Button
                     leftIcon={
@@ -280,32 +278,84 @@ export default function PendaftaranPengujian() {
                     </TableContainer>
                   </Box>
 
-                  <Center p={5}>
+                  <Center p={5} flexDir={"column"}>
                     <Image src="/svg/sample.svg" maxW={"480px"} />
+                    <Text textAlign={"center"} fontWeight={500} maxW={"400px"}>
+                      Maaf, Saat Ini Anda Belum Memiliki Sampel Uji yang
+                      Tersedia
+                    </Text>
                   </Center>
                 </TabPanel>
 
                 <TabPanel p={0}>
                   {sw < 770 && (
-                    <Text fontSize={[16, null, 18]} fontWeight={600} mt={4}>
+                    <Text fontSize={[16, null, 18]} fontWeight={600} mb={2}>
                       Foto Sampel
                     </Text>
                   )}
 
-                  <Center p={5}>
+                  <Text mb={2}>Silakan Tambahkan Foto Sampel Uji Anda!!</Text>
+
+                  <Button
+                    leftIcon={
+                      <Icon as={Plus} fontSize={iconSize} weight="bold" />
+                    }
+                    colorScheme="ap"
+                    className="lg-clicky"
+                    mb={4}
+                  >
+                    Masukkan File Pendukung
+                  </Button>
+
+                  <Box
+                    w={"100%"}
+                    h={"1px"}
+                    borderBottom={"1px solid var(--divider3)"}
+                    mb={4}
+                  />
+
+                  <Center p={5} flexDir={"column"}>
                     <Image src="/svg/sampleImage.svg" maxW={"480px"} />
+                    <Text textAlign={"center"} fontWeight={500} maxW={"400px"}>
+                      Maaf, Saat Ini Anda Belum Memiliki Foto Sampel yang
+                      Tersedia
+                    </Text>
                   </Center>
                 </TabPanel>
 
                 <TabPanel p={0}>
                   {sw < 770 && (
-                    <Text fontSize={[16, null, 18]} fontWeight={600} mt={4}>
+                    <Text fontSize={[16, null, 18]} fontWeight={600} mb={2}>
                       File Pendukung
                     </Text>
                   )}
 
-                  <Center p={5}>
+                  <Text mb={2}>Silakan Tambahkan Foto Sampel Uji Anda!!</Text>
+
+                  <Button
+                    leftIcon={
+                      <Icon as={Plus} fontSize={iconSize} weight="bold" />
+                    }
+                    colorScheme="ap"
+                    className="lg-clicky"
+                    mb={4}
+                  >
+                    Masukkan Sampel
+                  </Button>
+
+                  <Box
+                    w={"100%"}
+                    h={"1px"}
+                    borderBottom={"1px solid var(--divider3)"}
+                    mb={4}
+                  />
+
+                  <Center p={5} flexDir={"column"}>
                     <Image src="/svg/file.svg" maxW={"480px"} />
+                    <Text textAlign={"center"} fontWeight={500} maxW={"400px"}>
+                      Maaf, Saat Ini Anda Belum Memiliki File Pendukung yang
+                      Tersedia
+                    </Text>
                   </Center>
                 </TabPanel>
               </TabPanels>

@@ -8,10 +8,12 @@ export default function LandingHeader() {
       <Image src="/logo192.png" w={"48px"} />
 
       <Box mr={6}>
-        <Text fontWeight={700} mb={"-3px"}>
+        <Text fontWeight={700} lineHeight={1.2}>
           POLTEKKES
         </Text>
-        <Text fontWeight={500}>Kemenkes Semarang</Text>
+        <Text fontWeight={500} lineHeight={1.2}>
+          Kemenkes Semarang
+        </Text>
       </Box>
     </HStack>
   );

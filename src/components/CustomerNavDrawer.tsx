@@ -62,7 +62,7 @@ export default function CustomerNavDrawer({ active }: Props) {
             align={"stretch"}
             p={0}
             position={"relative"}
-            bg={"var(--drawer)"}
+            bg={"p.900"}
             backdropFilter={"blur(10px)"}
             py={5}
           >
@@ -88,7 +88,7 @@ export default function CustomerNavDrawer({ active }: Props) {
               gap={0}
               borderRadius={16}
               py={6}
-              px={8}
+              px={10}
               align={"stretch"}
             >
               <HStack p={2} mb={6} bg={"var(--divider)"} borderRadius={8}>
