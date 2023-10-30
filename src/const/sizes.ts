@@ -1,3 +1,3 @@
-const iconSize = [15, null, 17];
+const iconSize = [16, null, 18];
 
 export { iconSize };

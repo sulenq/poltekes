@@ -18,9 +18,17 @@ import { iconSize } from "../const/sizes";
 import { X } from "@phosphor-icons/react";
 import LandingNavItem from "./LandingNavItem";
 import SigninModal from "./SigninModal";
+import useBackOnClose from "../utils/useBackOnClose";
 
 export default function LandingNavDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  useBackOnClose(isOpen, onClose);
+
+  const handleOnClose = () => {
+    onClose();
+    window.history.back();
+  };
 
   return (
     <>
@@ -31,7 +39,7 @@ export default function LandingNavDrawer() {
         onClick={onOpen}
       />
 
-      <Drawer isOpen={isOpen} onClose={onClose}>
+      <Drawer isOpen={isOpen} onClose={handleOnClose}>
         <DrawerOverlay />
 
         <DrawerContent>
@@ -48,7 +56,7 @@ export default function LandingNavDrawer() {
             _hover={{ bg: "white" }}
             _active={{ bg: "white" }}
             className="clicky"
-            onClick={onClose}
+            onClick={handleOnClose}
           />
 
           <DrawerBody
@@ -67,7 +75,7 @@ export default function LandingNavDrawer() {
               opacity={0.1}
             />
 
-            <VStack gap={0} mb={8}>
+            <VStack gap={0}>
               <Image src="/logo192.png" w={"48px"} mb={2} />
 
               <Text fontWeight={700} lineHeight={1}>
@@ -84,7 +92,15 @@ export default function LandingNavDrawer() {
               align={"stretch"}
               justify={"space-between"}
             >
-              <VStack align={"stretch"}>
+              <VStack w={"100%"} align={"stretch"}>
+                <Text
+                  fontWeight={500}
+                  opacity={0.5}
+                  ml={1}
+                  fontSize={[12, null, 14]}
+                >
+                  NAVIGASI
+                </Text>
                 {landingNav.map((n, i) => (
                   <VStack key={i} align={"stretch"} onClick={onClose}>
                     <LandingNavItem nav={n} />

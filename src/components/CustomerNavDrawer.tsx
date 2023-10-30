@@ -113,8 +113,13 @@ export default function CustomerNavDrawer({ active }: Props) {
               </HStack>
 
               <VStack w={"100%"} align={"stretch"}>
-                <Text fontWeight={500} opacity={0.5} ml={4}>
-                  Main
+                <Text
+                  fontWeight={500}
+                  opacity={0.5}
+                  ml={1}
+                  fontSize={[12, null, 14]}
+                >
+                  NAVIGASI
                 </Text>
                 {customerNav.map((n, i) => (
                   <Button

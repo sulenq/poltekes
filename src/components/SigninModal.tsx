@@ -92,7 +92,14 @@ export default function SigninModal() {
                 <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
               </FormControl>
 
-              <Button w={"100%"} colorScheme="ap" className="lg-clicky" mb={4}>
+              <Button
+                w={"100%"}
+                colorScheme="ap"
+                className="lg-clicky"
+                mb={4}
+                as={Link}
+                to={"/customer"}
+              >
                 Masuk
               </Button>
             </form>

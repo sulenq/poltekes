@@ -6,4 +6,5 @@ export type FaqItemType = {
 export type LandingNavItemType = {
   name: string;
   link: string;
+  icon: any;
 };
