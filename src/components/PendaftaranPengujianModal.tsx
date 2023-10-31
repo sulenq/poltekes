@@ -49,7 +49,7 @@ export default function PendaftaranPengujianModal() {
         <ModalContent>
           <ModalCloseButton />
 
-          <ModalHeader pr={"50px !important"} lineHeight={1.2}>
+          <ModalHeader lineHeight={1.2}>
             Form Pendaftaran Pengujian Online
           </ModalHeader>
 

@@ -1,4 +1,4 @@
-import { Button, HStack } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 import React from "react";
 import landingNav from "../const/landingNav";
 import useScreenWidth from "../utils/useGetScreenWidth";
@@ -6,6 +6,7 @@ import LandingNavDrawer from "./LandingNavDrawer";
 import LandingNavItem from "./LandingNavItem";
 import SigninModal from "./SigninModal";
 import LandingHeader from "./LandingHeader";
+import SignupModal from "./SignupModal";
 
 export default function LandingNav() {
   const sw = useScreenWidth();
@@ -22,16 +23,10 @@ export default function LandingNav() {
       </HStack>
 
       <HStack>
-        {sw > 500 && (
+        {sw > 520 && (
           <>
-            <Button
-              size={["sm", null, "md"]}
-              variant={"ghost"}
-              colorScheme="ap"
-              className="clicky"
-            >
-              Daftar
-            </Button>
+            <SignupModal />
+
             <SigninModal />
           </>
         )}

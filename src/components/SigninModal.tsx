@@ -8,6 +8,7 @@ import {
   Input,
   Modal,
   ModalBody,
+  ModalCloseButton,
   ModalContent,
   ModalHeader,
   ModalOverlay,
@@ -51,19 +52,16 @@ export default function SigninModal() {
         <ModalOverlay />
 
         <ModalContent ref={modalContentRef}>
+          <ModalCloseButton />
+
           <ModalHeader>
             <HStack justify={"space-between"} align={"flex-start"}>
               <HStack>
                 <Image src="/logo192.png" w={"100%"} maxW={"48px"} />
 
-                <Text fontSize={32} fontWeight={700}>
+                <Text fontSize={[30, null, 32]} fontWeight={700}>
                   Masuk
                 </Text>
-              </HStack>
-
-              <HStack>
-                <Text fontWeight={400}>Pegawai</Text>
-                <Switch colorScheme="p" />
               </HStack>
             </HStack>
           </ModalHeader>
@@ -91,6 +89,11 @@ export default function SigninModal() {
                 <PasswordInput formik={formik} />
                 <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
               </FormControl>
+
+              <HStack mb={4}>
+                <Text fontWeight={500}>Pegawai</Text>
+                <Switch colorScheme="p" />
+              </HStack>
 
               <Button
                 w={"100%"}

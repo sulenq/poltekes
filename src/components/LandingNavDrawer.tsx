@@ -1,5 +1,4 @@
 import {
-  Button,
   Drawer,
   DrawerBody,
   DrawerContent,
@@ -19,6 +18,7 @@ import { X } from "@phosphor-icons/react";
 import LandingNavItem from "./LandingNavItem";
 import SigninModal from "./SigninModal";
 import useBackOnClose from "../utils/useBackOnClose";
+import SignupModal from "./SignupModal";
 
 export default function LandingNavDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -111,13 +111,7 @@ export default function LandingNavDrawer() {
               <VStack align={"stretch"}>
                 <SigninModal />
 
-                <Button
-                  colorScheme="ap"
-                  variant={"outline"}
-                  className="lg-clicky"
-                >
-                  Daftar
-                </Button>
+                <SignupModal />
               </VStack>
             </VStack>
           </DrawerBody>

@@ -84,6 +84,7 @@ export const globalTheme = extendTheme({
         },
         header: {
           p: "24px",
+          pr: "70px !important",
         },
         body: {
           p: "24px",
@@ -94,8 +95,8 @@ export const globalTheme = extendTheme({
         },
         closeButton: {
           borderRadius: "full",
-          right: 3,
-          top: 3,
+          right: 4,
+          top: 4,
         },
       }),
     },
