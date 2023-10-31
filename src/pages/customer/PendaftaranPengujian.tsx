@@ -247,7 +247,7 @@ export default function PendaftaranPengujian() {
                   </Button>
 
                   <Text color={"red"} mb={4}>
-                    *Minimal 1 sampel
+                    *Minimal 1 foto sampel
                   </Text>
 
                   <Box

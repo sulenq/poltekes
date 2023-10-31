@@ -82,7 +82,7 @@ export default function PendaftaranPengujianModal() {
             </form>
           </ModalBody>
 
-          <ModalFooter pt={"0 !important"}>
+          <ModalFooter>
             <Button
               colorScheme="ap"
               className="clicky"
