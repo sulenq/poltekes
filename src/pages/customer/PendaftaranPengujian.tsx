@@ -297,7 +297,7 @@ export default function PendaftaranPengujian() {
           </Box>
 
           <Stack
-            flexDir={["column", null, "row"]}
+            flexDir={["column", "row", "row"]}
             align={["strech", null, "center"]}
             gap={4}
             mb={6}
@@ -311,7 +311,12 @@ export default function PendaftaranPengujian() {
               </Text>
             </Checkbox>
 
-            <Button colorScheme="ap" className="lg-clicky" h={"50px"}>
+            <Button
+              flexShrink={0}
+              colorScheme="ap"
+              className="lg-clicky"
+              h={"50px"}
+            >
               Simpan & Kirim
             </Button>
           </Stack>
