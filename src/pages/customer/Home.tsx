@@ -1,11 +1,19 @@
 import React from "react";
 import CustomerContainer from "../../components/CustomerContainer";
-import { VStack } from "@chakra-ui/react";
+import ContentContainer from "../../components/ContentContainer";
+import Container from "../../components/Container";
+import { HStack, Text } from "@chakra-ui/react";
 
 export default function Home() {
   return (
     <CustomerContainer active={"Beranda"}>
-      <VStack gap={0} flex={1} align={"flex-start"}></VStack>
+      <ContentContainer>
+        <Container>
+          <HStack className="breadcrumb" mt={6}>
+            <Text className="breadcrumbCurrent">Beranda</Text>
+          </HStack>
+        </Container>
+      </ContentContainer>
     </CustomerContainer>
   );
 }

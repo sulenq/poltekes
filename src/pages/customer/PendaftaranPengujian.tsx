@@ -4,10 +4,12 @@ import {
   Box,
   Button,
   Center,
+  Checkbox,
   HStack,
   Icon,
   Image,
   SimpleGrid,
+  Stack,
   Tab,
   TabList,
   TabPanel,
@@ -17,10 +19,17 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Container from "../../components/Container";
-import { Eyedropper, Files, Images, Plus } from "@phosphor-icons/react";
-import { iconSize } from "../../const/sizes";
+import {
+  CaretRight,
+  Eyedropper,
+  Files,
+  Images,
+  Plus,
+} from "@phosphor-icons/react";
+import { checkBoxTextMt, iconSize } from "../../const/sizes";
 import ContentContainer from "../../components/ContentContainer";
 import useScreenWidth from "../../utils/useGetScreenWidth";
+import { Link } from "react-router-dom";
 // import SampleList from "../../components/SampleList";
 
 export default function PendaftaranPengujian() {
@@ -32,6 +41,14 @@ export default function PendaftaranPengujian() {
       <ContentContainer>
         <Container>
           <Box>
+            <HStack className="breadcrumb" mt={6}>
+              <Link to="/customer">Beranda</Link>
+              <Icon as={CaretRight} opacity={0.3} />
+              <Link to="/customer/pengujian">Pengujian</Link>
+              <Icon as={CaretRight} opacity={0.3} />
+              <Text className="breadcrumbCurrent">Unggah Bekas</Text>
+            </HStack>
+
             <Text fontSize={[22, null, 24]} fontWeight={600} mt={6} mb={6}>
               Pendaftaran Pengujian Online
             </Text>
@@ -120,7 +137,7 @@ export default function PendaftaranPengujian() {
             mb={8}
           >
             <Text fontSize={[22, null, 24]} fontWeight={600} mb={[4, 5, 6]}>
-              Berkas
+              Unggah Berkas
             </Text>
 
             <Tabs isFitted variant="unstyled">
@@ -184,8 +201,12 @@ export default function PendaftaranPengujian() {
                     className="lg-clicky"
                     mb={4}
                   >
-                    Masukkan Sampel
+                    Tambah Sampel
                   </Button>
+
+                  <Text color={"red"} mb={4}>
+                    *Minimal 1 sampel
+                  </Text>
 
                   <Box
                     w={"100%"}
@@ -222,8 +243,12 @@ export default function PendaftaranPengujian() {
                     className="lg-clicky"
                     mb={4}
                   >
-                    Masukkan File Pendukung
+                    Tambah Foto Sampel
                   </Button>
+
+                  <Text color={"red"} mb={4}>
+                    *Minimal 1 sampel
+                  </Text>
 
                   <Box
                     w={"100%"}
@@ -258,7 +283,7 @@ export default function PendaftaranPengujian() {
                     className="lg-clicky"
                     mb={4}
                   >
-                    Masukkan Sampel
+                    Tambah File Pendukung
                   </Button>
 
                   <Box
@@ -279,6 +304,26 @@ export default function PendaftaranPengujian() {
               </TabPanels>
             </Tabs>
           </Box>
+
+          <Stack
+            flexDir={["column", null, "row"]}
+            align={'center'}
+            gap={4}
+            mb={6}
+            justify={"space-between"}
+          >
+            <Checkbox colorScheme="ap" alignItems={"flex-start"}>
+              <Text mt={checkBoxTextMt} fontSize={[12, null, 14]}>
+                Saya dengan ini menyatakan setuju dengan{" "}
+                <b>syarat dan ketentuan</b> yang berlaku di LPPT POLTEKKES
+                Kemenkes Semarang
+              </Text>
+            </Checkbox>
+
+            <Button colorScheme="ap" className="lg-clicky">
+              Simpan & Kirim
+            </Button>
+          </Stack>
         </Container>
       </ContentContainer>
     </CustomerContainer>

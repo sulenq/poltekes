@@ -47,13 +47,13 @@ export default function Sample() {
             colorScheme="ap"
             className="lg-clicky"
           >
-            Masukkan Parameter
+            Tambah Parameter
           </Button>
         </ButtonGroup>
       </SimpleGrid>
 
       <TableContainer>
-        <Table size={["sm", null, "md"]}>
+        <Table size={"sm"}>
           <Thead>
             <Tr>
               <Th isNumeric>No</Th>

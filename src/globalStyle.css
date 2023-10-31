@@ -17,7 +17,7 @@
   --p900: #085f3f;
   --drawer: #005234aa;
 
-  --p200a: #2dc6532b;
+  --p500a: #2dc6532b;
 
   --ba: #050505a6;
   --bt: #333333;
@@ -241,4 +241,17 @@ select {
 .scrollX::-webkit-scrollbar-track,
 .scrollY::-webkit-scrollbar-track {
   background-color: var(--divider2);
+}
+
+.breadcrumb {
+  width: fit-content;
+  gap: 8px;
+  background: var(--divider);
+  border-radius: 8px;
+  padding: 4px 16px;
+  height: 40px;
+}
+.breadcrumbCurrent {
+  font-weight: 600;
+  cursor: default;
 }

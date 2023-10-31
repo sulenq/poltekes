@@ -19,6 +19,7 @@ import {
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import useBackOnClose from "../utils/useBackOnClose";
+import { checkBoxTextMt } from "../const/sizes";
 
 export default function PendaftaranPengujianModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -65,9 +66,13 @@ export default function PendaftaranPengujianModal() {
               </FormControl>
 
               <Checkbox alignItems={"flex-start"} colorScheme="ap" gap={1}>
-                <Text mt={["-4px", null, "-6px"]} fontSize={[12, null, 14]}>
+                <Text mt={checkBoxTextMt} fontSize={[12, null, 14]}>
                   Saya dengan ini menyatakan setuju dengan{" "}
-                  <ChakraLink color="p.500" href="#">
+                  <ChakraLink
+                    color="p.500"
+                    href="#"
+                    fontSize={["12px !important", null, "14px !important"]}
+                  >
                     syarat dan ketentuan
                   </ChakraLink>{" "}
                   yang berlaku di LPPT POLTEKKES Kemenkes Semarang

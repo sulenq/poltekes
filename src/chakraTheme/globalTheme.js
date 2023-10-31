@@ -171,5 +171,15 @@ export const globalTheme = extendTheme({
         "--popper-arrow-bg": "#0097e8",
       },
     },
+
+    Table: {
+      sizes: {
+        sm: {
+          th: {
+            py: "8px",
+          },
+        },
+      },
+    },
   },
 });

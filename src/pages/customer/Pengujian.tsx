@@ -3,6 +3,7 @@ import CustomerContainer from "../../components/CustomerContainer";
 import {
   Badge,
   Box,
+  HStack,
   Icon,
   IconButton,
   Table,
@@ -15,10 +16,11 @@ import {
 } from "@chakra-ui/react";
 import Container from "../../components/Container";
 import TableContainer from "../../components/TableContainer";
-import { DotsThreeVertical } from "@phosphor-icons/react";
+import { CaretRight, DotsThreeVertical } from "@phosphor-icons/react";
 import { iconSize } from "../../const/sizes";
 import ContentContainer from "../../components/ContentContainer";
 import PendaftaranPengujianModal from "../../components/PendaftaranPengujianModal";
+import { Link } from "react-router-dom";
 
 export default function Pengujian() {
   // TODO show riwayat pengujian table data
@@ -28,6 +30,12 @@ export default function Pengujian() {
       <ContentContainer>
         <Container>
           <Box>
+            <HStack className="breadcrumb" mt={6}>
+              <Link to="/customer">Beranda</Link>
+              <Icon as={CaretRight} opacity={0.3} />
+              <Text className="breadcrumbCurrent">Pengujian</Text>
+            </HStack>
+
             <Text fontSize={[22, null, 24]} fontWeight={600} mt={6} mb={6}>
               Pendaftaran Pengujian Online
             </Text>
@@ -59,7 +67,7 @@ export default function Pengujian() {
 
           <Box mb={8}>
             <TableContainer>
-              <Table>
+              <Table size={"sm"}>
                 <Thead>
                   <Tr>
                     <Th isNumeric>No</Th>

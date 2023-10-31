@@ -1,3 +1,7 @@
 const iconSize = [16, null, 18];
 
-export { iconSize };
+const textSize = [14, null, 16];
+
+const checkBoxTextMt = ["-2px", null, "-2px"];
+
+export { iconSize, textSize, checkBoxTextMt };
