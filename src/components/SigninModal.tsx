@@ -10,10 +10,12 @@ import {
   ModalBody,
   ModalCloseButton,
   ModalContent,
+  ModalFooter,
   ModalHeader,
   ModalOverlay,
   Switch,
   Text,
+  VStack,
   useDisclosure,
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
@@ -94,7 +96,11 @@ export default function SigninModal() {
                 <Text fontWeight={500}>Pegawai</Text>
                 <Switch colorScheme="p" />
               </HStack>
+            </form>
+          </ModalBody>
 
+          <ModalFooter>
+            <VStack w={"100%"} gap={0}>
               <Button
                 w={"100%"}
                 colorScheme="ap"
@@ -105,15 +111,15 @@ export default function SigninModal() {
               >
                 Masuk
               </Button>
-            </form>
 
-            <HStack justify={"center"} gap={1}>
-              <Text>Belum Daftar?</Text>
-              <Text as={Link} to={"/daftar"} fontWeight={500} color={"p.500"}>
-                Daftar
-              </Text>
-            </HStack>
-          </ModalBody>
+              <HStack justify={"center"} gap={1}>
+                <Text>Belum Daftar?</Text>
+                <Text as={Link} to={"/daftar"} fontWeight={500} color={"p.500"}>
+                  Daftar
+                </Text>
+              </HStack>
+            </VStack>
+          </ModalFooter>
         </ModalContent>
       </Modal>
     </>
