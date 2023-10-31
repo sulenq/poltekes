@@ -92,7 +92,7 @@ export default function SigninModal() {
                 <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
               </FormControl>
 
-              <HStack mb={4}>
+              <HStack>
                 <Text fontWeight={500}>Pegawai</Text>
                 <Switch colorScheme="p" />
               </HStack>
