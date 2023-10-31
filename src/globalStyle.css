@@ -32,10 +32,10 @@
   --red: #ff352b;
 }
 
-*:focus-visible {
+/* *:focus-visible {
   transition: 200ms !important;
   box-shadow: 0 0 0 2px var(--p200) !important;
-}
+} */
 
 ::selection {
   background: var(--p500);
