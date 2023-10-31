@@ -50,6 +50,7 @@ export default function SigninModal() {
         isOpen={isOpen}
         onClose={onClose}
         initialFocusRef={modalContentRef}
+        size={"lg"}
       >
         <ModalOverlay />
 
@@ -87,7 +88,7 @@ export default function SigninModal() {
                 isInvalid={formik.errors.password ? true : false}
                 mb={5}
               >
-                <FormLabel>Password</FormLabel>
+                <FormLabel>Kata Sandi</FormLabel>
                 <PasswordInput formik={formik} />
                 <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
               </FormControl>

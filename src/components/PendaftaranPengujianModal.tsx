@@ -20,6 +20,7 @@ import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import useBackOnClose from "../utils/useBackOnClose";
 import { checkBoxTextMt } from "../const/sizes";
+import RequiredForm from "./RequiredForm";
 
 export default function PendaftaranPengujianModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -56,12 +57,18 @@ export default function PendaftaranPengujianModal() {
           <ModalBody>
             <form>
               <FormControl mb={4}>
-                <FormLabel>Nama Sertifikat Hasil Uji</FormLabel>
+                <FormLabel>
+                  Nama Sertifikat Hasil Uji
+                  <RequiredForm />
+                </FormLabel>
                 <Input ref={initialRef} placeholder="Masukan nama anda" />
               </FormControl>
 
               <FormControl mb={4}>
-                <FormLabel>Alamat Sertifikat Hasil Uji</FormLabel>
+                <FormLabel>
+                  Alamat Sertifikat Hasil Uji
+                  <RequiredForm />
+                </FormLabel>
                 <Textarea placeholder="Masukan alamat anda" />
               </FormControl>
 

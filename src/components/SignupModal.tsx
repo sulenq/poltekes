@@ -27,6 +27,7 @@ import React, { useRef } from "react";
 import PasswordInput from "./PasswordInput";
 import * as yup from "yup";
 import { checkBoxTextMt } from "../const/sizes";
+import RequiredForm from "./RequiredForm";
 
 export default function SignupModal() {
   const { isOpen, onClose, onOpen } = useDisclosure();
@@ -97,6 +98,7 @@ export default function SignupModal() {
         onClose={onClose}
         initialFocusRef={modalContentRef}
         scrollBehavior="inside"
+        size={"lg"}
       >
         <ModalOverlay />
 
@@ -121,7 +123,10 @@ export default function SignupModal() {
                 isInvalid={formik.errors.username ? true : false}
                 mb={4}
               >
-                <FormLabel>Username</FormLabel>
+                <FormLabel>
+                  Username
+                  <RequiredForm />
+                </FormLabel>
                 <Input
                   name="username"
                   placeholder="Masukkan username"
@@ -134,7 +139,10 @@ export default function SignupModal() {
                 isInvalid={formik.errors.kataSandi ? true : false}
                 mb={5}
               >
-                <FormLabel>Password</FormLabel>
+                <FormLabel>
+                  Kata Sandi
+                  <RequiredForm />
+                </FormLabel>
                 <PasswordInput formik={formik} name={"kataSandi"} />
                 <FormErrorMessage>{formik.errors.kataSandi}</FormErrorMessage>
               </FormControl>
@@ -143,7 +151,10 @@ export default function SignupModal() {
                 isInvalid={formik.errors.ulangKataSandi ? true : false}
                 mb={5}
               >
-                <FormLabel>Ulang Kata sandi</FormLabel>
+                <FormLabel>
+                  Ulang Kata sandi
+                  <RequiredForm />
+                </FormLabel>
                 <PasswordInput
                   formik={formik}
                   name={"ulangKataSandi"}
@@ -158,7 +169,10 @@ export default function SignupModal() {
                 isInvalid={formik.errors.kategori ? true : false}
                 mb={4}
               >
-                <FormLabel>Kategori</FormLabel>
+                <FormLabel>
+                  Kategori
+                  <RequiredForm />
+                </FormLabel>
                 <Wrap spacingX={4} spacingY={3}>
                   {kateogri.map((k, i) => (
                     <HStack
@@ -169,8 +183,8 @@ export default function SignupModal() {
                       }}
                     >
                       <Box
-                        w={"16px"}
-                        h={"16px"}
+                        w={"18px"}
+                        h={"18px"}
                         border={
                           formik.values.kategori === k
                             ? "4px solid var(--p500)"
@@ -189,7 +203,10 @@ export default function SignupModal() {
                 isInvalid={formik.errors.namaLengkap ? true : false}
                 mb={4}
               >
-                <FormLabel>Nama Lengkap</FormLabel>
+                <FormLabel>
+                  Nama Lengkap
+                  <RequiredForm />
+                </FormLabel>
                 <Input
                   name="namaLengkap"
                   placeholder="Masukkan nama lengkap"
@@ -202,7 +219,10 @@ export default function SignupModal() {
                 isInvalid={formik.errors.email ? true : false}
                 mb={4}
               >
-                <FormLabel>Email</FormLabel>
+                <FormLabel>
+                  Email
+                  <RequiredForm />
+                </FormLabel>
                 <Input
                   name="email"
                   placeholder="Masukkan email"
@@ -215,7 +235,10 @@ export default function SignupModal() {
                 isInvalid={formik.errors.telepon ? true : false}
                 mb={4}
               >
-                <FormLabel>Nomor ponsel</FormLabel>
+                <FormLabel>
+                  Nomor ponsel
+                  <RequiredForm />
+                </FormLabel>
                 <Input
                   name="telepon"
                   placeholder="Masukkan nomor ponsel"
@@ -241,7 +264,10 @@ export default function SignupModal() {
                 isInvalid={formik.errors.alamat ? true : false}
                 mb={4}
               >
-                <FormLabel>Alamat</FormLabel>
+                <FormLabel>
+                  Alamat
+                  <RequiredForm />
+                </FormLabel>
                 <Textarea
                   name="alamat"
                   placeholder="Masukan alamat tinggal"
