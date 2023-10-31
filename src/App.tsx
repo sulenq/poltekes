@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
 import "./globalStyle.css";
 import CustomerRoutes from "./routes/CustomerRoutes";
+import MissingPage from "./pages/MissingPage";
 
 export const App = () => (
   <ChakraProvider theme={globalTheme}>
@@ -13,6 +14,8 @@ export const App = () => (
         <Route path="/" element={<Landing />} />
 
         <Route path="/customer/*" element={<CustomerRoutes />} />
+
+        <Route path="*" element={<MissingPage />} />
       </Routes>
     </BrowserRouter>
   </ChakraProvider>

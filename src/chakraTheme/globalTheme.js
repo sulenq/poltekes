@@ -87,8 +87,8 @@ export const globalTheme = extendTheme({
           pr: "70px !important",
         },
         body: {
-          p: "24px",
-          pt: "0px !important",
+          px: "24px",
+          py: "0px !important",
         },
         footer: {
           p: "24px",

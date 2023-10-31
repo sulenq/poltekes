@@ -70,8 +70,9 @@ export default function PendaftaranPengujianModal() {
                   Saya dengan ini menyatakan setuju dengan{" "}
                   <ChakraLink
                     color="p.500"
-                    href="#"
+                    href="/syarat-dan-ketentuan"
                     fontSize={["12px !important", null, "14px !important"]}
+                    isExternal
                   >
                     syarat dan ketentuan
                   </ChakraLink>{" "}

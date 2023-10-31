@@ -24,7 +24,6 @@ import {
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import React, { useRef } from "react";
-import { Link } from "react-router-dom";
 import PasswordInput from "./PasswordInput";
 import * as yup from "yup";
 import { checkBoxTextMt } from "../const/sizes";
@@ -264,8 +263,9 @@ export default function SignupModal() {
                     Saya dengan ini menyatakan setuju dengan{" "}
                     <ChakraLink
                       color="p.500"
-                      href="#"
+                      href="/syarat-dan-ketentuan"
                       fontSize={["12px !important", null, "14px !important"]}
+                      isExternal
                     >
                       syarat dan ketentuan
                     </ChakraLink>{" "}
@@ -292,7 +292,12 @@ export default function SignupModal() {
 
               <HStack justify={"center"} gap={1}>
                 <Text>Sudah terdaftar?</Text>
-                <Text as={Link} to={"/signin"} fontWeight={500} color={"p.500"}>
+                <Text
+                  fontWeight={500}
+                  color={"p.500"}
+                  cursor={"pointer"}
+                  onClick={onClose}
+                >
                   Masuk
                 </Text>
               </HStack>
