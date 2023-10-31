@@ -30,10 +30,10 @@ import { checkBoxTextMt, iconSize } from "../../const/sizes";
 import ContentContainer from "../../components/ContentContainer";
 import useScreenWidth from "../../utils/useGetScreenWidth";
 import { Link } from "react-router-dom";
+import TambahSampelModal from "../../components/TambahSampelModal";
 // import SampleList from "../../components/SampleList";
 
 export default function PendaftaranPengujian() {
-  // TODO show riwayat pengujian table data
   const sw = useScreenWidth();
 
   return (
@@ -193,16 +193,7 @@ export default function PendaftaranPengujian() {
 
                   <Text mb={2}>Silakan Buat Sampel Uji Anda!!</Text>
 
-                  <Button
-                    leftIcon={
-                      <Icon as={Plus} fontSize={iconSize} weight="bold" />
-                    }
-                    colorScheme="ap"
-                    className="lg-clicky"
-                    mb={4}
-                  >
-                    Tambah Sampel
-                  </Button>
+                  <TambahSampelModal />
 
                   <Text color={"red"} mb={4}>
                     *Minimal 1 sampel
@@ -307,12 +298,12 @@ export default function PendaftaranPengujian() {
 
           <Stack
             flexDir={["column", null, "row"]}
-            align={'center'}
+            align={["strech", null, "center"]}
             gap={4}
             mb={6}
             justify={"space-between"}
           >
-            <Checkbox colorScheme="ap" alignItems={"flex-start"}>
+            <Checkbox colorScheme="ap" alignItems={"flex-start"} maxW={"600px"}>
               <Text mt={checkBoxTextMt} fontSize={[12, null, 14]}>
                 Saya dengan ini menyatakan setuju dengan{" "}
                 <b>syarat dan ketentuan</b> yang berlaku di LPPT POLTEKKES
@@ -320,7 +311,7 @@ export default function PendaftaranPengujian() {
               </Text>
             </Checkbox>
 
-            <Button colorScheme="ap" className="lg-clicky">
+            <Button colorScheme="ap" className="lg-clicky" h={"50px"}>
               Simpan & Kirim
             </Button>
           </Stack>
