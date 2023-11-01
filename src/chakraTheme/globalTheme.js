@@ -192,6 +192,7 @@ export const globalTheme = extendTheme({
         sm: {
           th: {
             py: "8px",
+            px: "12px",
           },
         },
       },

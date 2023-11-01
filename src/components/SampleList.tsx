@@ -20,6 +20,7 @@ import TableContainer from "./TableContainer";
 import { DotsThreeVertical, Eyedropper, Trash } from "@phosphor-icons/react";
 import { iconSize } from "../const/sizes";
 import TambahParameterModal from "./TambahParameterModal";
+import useFormatNumber from "../utils/useFormatNumber";
 
 export default function SampleList() {
   //TODO get data Sampel & Parameter
@@ -37,6 +38,7 @@ export default function SampleList() {
       harga: 3500000,
     },
   ];
+  const fn = useFormatNumber;
 
   if (data.length > 0) {
     return (
@@ -64,7 +66,9 @@ export default function SampleList() {
           <Table size={"sm"} variant={"striped"} colorScheme="ad">
             <Thead>
               <Tr>
-                <Th isNumeric>No</Th>
+                <Th isNumeric w={"20px"}>
+                  No
+                </Th>
                 <Th>Metode</Th>
                 <Th>Parameter</Th>
                 <Th isNumeric>Harga</Th>
@@ -78,7 +82,7 @@ export default function SampleList() {
                   <Td isNumeric>{i + 1}</Td>
                   <Td>{d.metode}</Td>
                   <Td>{d.parameter}</Td>
-                  <Td isNumeric>{d.harga}</Td>
+                  <Td isNumeric whiteSpace={"nowrap"}>{`Rp ${fn(d.harga)}`}</Td>
                   <Td isNumeric>
                     <IconButton
                       aria-label="more"
