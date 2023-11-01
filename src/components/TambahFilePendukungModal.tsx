@@ -1,4 +1,8 @@
 import {
+  Alert,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
   Box,
   Button,
   FormControl,
@@ -81,20 +85,29 @@ export default function TambahFilePendukungModal() {
           <ModalHeader>Masukkan File Pendukung</ModalHeader>
 
           <ModalBody>
-            <Box borderRadius={16} p={[4, 5, 6]} bg={"p.100"} mb={6}>
-              <Text
-                fontSize={[18, null, 20]}
-                fontWeight={600}
-                color={"red"}
-                mb={"10px"}
-              >
-                PERHATIAN!!
-              </Text>
-
-              <Text>
-                Format berkas pendukung berupa <b>PDF</b>, <b>maks. 1 MB</b>
-              </Text>
-            </Box>
+            <Alert
+              status="warning"
+              variant={"left-accent"}
+              mb={4}
+              alignItems={"flex-start"}
+              minW={"100% !important"}
+            >
+              <AlertIcon mt={"3px"} />
+              <Box>
+                <AlertTitle>
+                  <Text
+                    fontSize={[18, null, 20]}
+                    fontWeight={600}
+                    color={"orange.500"}
+                  >
+                    PERHATIAN!!
+                  </Text>
+                </AlertTitle>
+                <AlertDescription>
+                  Format berkas pendukung berupa <b>PDF</b>, <b>maks. 1 MB</b>
+                </AlertDescription>
+              </Box>
+            </Alert>
 
             <form id="filePendukungForm" onSubmit={formik.handleSubmit}>
               <FormControl

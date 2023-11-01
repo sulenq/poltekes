@@ -98,6 +98,7 @@ export const globalTheme = extendTheme({
           borderRadius: "full",
           right: 4,
           top: 4,
+          fontSize: "13px !important",
         },
       }),
     },

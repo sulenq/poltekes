@@ -1,4 +1,8 @@
 import {
+  Alert,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
   Box,
   Button,
   Checkbox,
@@ -86,36 +90,48 @@ export default function TambahSampelModal() {
           <ModalHeader>Data Sampel Pengujian</ModalHeader>
 
           <ModalBody>
-            <Box borderRadius={16} p={[4, 5, 6]} bg={"p.100"} mb={6}>
-              <Text
-                fontSize={[18, null, 20]}
-                fontWeight={600}
-                color={"red"}
-                mb={"10px"}
-              >
-                PERHATIAN!!
-              </Text>
+            <Alert
+              status="warning"
+              variant={"left-accent"}
+              mb={4}
+              alignItems={"flex-start"}
+              minW={"100% !important"}
+            >
+              <AlertIcon mt={"3px"} />
+              <Box>
+                <AlertTitle>
+                  <Text
+                    fontSize={[18, null, 20]}
+                    fontWeight={600}
+                    color={"orange.500"}
+                    mb={2}
+                  >
+                    PERHATIAN!!
+                  </Text>
+                </AlertTitle>
+                <AlertDescription>
+                  <UnorderedList>
+                    <ListItem mb={2}>
+                      <b>Kode Sampel</b> di isi kode unik untuk membedakan
+                      antara sampel yang satu dengan yang lain (Jika sampel
+                      lebih dari satu).
+                    </ListItem>
 
-              <UnorderedList>
-                <ListItem mb={2}>
-                  <b>Kode Sampel</b> di isi kode unik untuk membedakan antara
-                  sampel yang satu dengan yang lain (Jika sampel lebih dari
-                  satu).
-                </ListItem>
+                    <ListItem mb={2}>
+                      <b>Nama sampel</b> boleh menggunakan nama yang sama jika
+                      sampel lebih dari satu.
+                    </ListItem>
 
-                <ListItem mb={2}>
-                  <b>Nama sampel</b> boleh menggunakan nama yang sama jika
-                  sampel lebih dari satu.
-                </ListItem>
-
-                <ListItem mb={2}>
-                  <b>Sisa Dikembalikan</b> maksudnya apabila setelah pengujian
-                  ada sisa sampel, maka sisa tersebut akan dikembalikan ke
-                  customer, jika pilihan ini tidak di aktifkan maka sisa sampel
-                  akan dimusnahkan.
-                </ListItem>
-              </UnorderedList>
-            </Box>
+                    <ListItem mb={2}>
+                      <b>Sisa Dikembalikan</b> maksudnya apabila setelah
+                      pengujian ada sisa sampel, maka sisa tersebut akan
+                      dikembalikan ke customer, jika pilihan ini tidak di
+                      aktifkan maka sisa sampel akan dimusnahkan.
+                    </ListItem>
+                  </UnorderedList>
+                </AlertDescription>
+              </Box>
+            </Alert>
 
             <form id="dataSampelPengujianForm" onSubmit={formik.handleSubmit}>
               <FormControl
@@ -198,6 +214,7 @@ export default function TambahSampelModal() {
 
               <FormControl
                 isInvalid={formik.errors.catatanTambahan ? true : false}
+                mb={2}
               >
                 <FormLabel>Catatan Tambahan (Jika Ada)</FormLabel>
                 <Textarea

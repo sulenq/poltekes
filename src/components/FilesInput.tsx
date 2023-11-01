@@ -54,7 +54,7 @@ export default function FilesInput(props: any) {
             borderRadius={"8px 0 0 8px"}
             bg={"var(--divider3)"}
           >
-            <Text fontSize={[12, null, 14]}>Pilih Files</Text>
+            <Text fontSize={[12, null, 14]}>Pilih File</Text>
           </HStack>
 
           <Box px={4} py={2}>
