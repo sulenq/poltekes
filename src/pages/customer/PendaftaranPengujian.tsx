@@ -19,19 +19,14 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Container from "../../components/Container";
-import {
-  CaretRight,
-  Eyedropper,
-  Files,
-  Images,
-  Plus,
-} from "@phosphor-icons/react";
+import { CaretRight, Eyedropper, Files, Images } from "@phosphor-icons/react";
 import { checkBoxTextMt, iconSize } from "../../const/sizes";
 import ContentContainer from "../../components/ContentContainer";
 import useScreenWidth from "../../utils/useGetScreenWidth";
 import { Link } from "react-router-dom";
 import TambahSampelModal from "../../components/TambahSampelModal";
 import TambahFotoSampelModal from "../../components/TambahFotoSampelModal";
+import TambahFilePendukungModal from "../../components/TambahFilePendukungModal";
 // import SampleList from "../../components/SampleList";
 
 export default function PendaftaranPengujian() {
@@ -258,16 +253,7 @@ export default function PendaftaranPengujian() {
 
                   <Text mb={2}>Silakan Tambahkan Foto Sampel Uji Anda!!</Text>
 
-                  <Button
-                    leftIcon={
-                      <Icon as={Plus} fontSize={iconSize} weight="bold" />
-                    }
-                    colorScheme="ap"
-                    className="lg-clicky"
-                    mb={4}
-                  >
-                    Tambah File Pendukung
-                  </Button>
+                  <TambahFilePendukungModal />
 
                   <Box
                     w={"100%"}

@@ -38,7 +38,7 @@ export default function FilesInput(props: any) {
         boxShadow={formik.errors[name] ? "0 0 0px 1px var(--red)" : ""}
         borderRadius={8}
         cursor={"pointer"}
-        _focus={{ boxShadow: "0 0 0px 1px var(--p500)" }}
+        _focus={{ boxShadow: "0 0 0px 2px var(--p500)" }}
         onClick={() => {
           if (inputRef.current) {
             inputRef.current.click();
