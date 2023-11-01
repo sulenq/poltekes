@@ -73,7 +73,7 @@ export default function Pengujian() {
 
           <Box mb={8}>
             <TableContainer>
-              <Table size={"sm"}>
+              <Table size={"sm"} variant={"striped"} colorScheme="ad">
                 <Thead>
                   <Tr>
                     <Th isNumeric>No</Th>
