@@ -72,7 +72,7 @@ export default function TambahFilePendukungModal() {
         Tambah File Pendukung
       </Button>
 
-      <Modal isOpen={isOpen} onClose={onClose} initialFocusRef={undefined}>
+      <Modal isOpen={isOpen} onClose={onClose} size={"xl"}>
         <ModalOverlay />
 
         <ModalContent>

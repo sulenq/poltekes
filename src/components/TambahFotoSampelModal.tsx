@@ -72,7 +72,11 @@ export default function TambahFotoSampelModal() {
         Tambah Foto Sampel
       </Button>
 
-      <Modal isOpen={isOpen} onClose={onClose} initialFocusRef={undefined}>
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+        size={"xl"}
+      >
         <ModalOverlay />
 
         <ModalContent>
