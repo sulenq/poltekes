@@ -99,6 +99,7 @@ export default function TambahFilePendukungModal() {
               mb={4}
               alignItems={"flex-start"}
               minW={"100% !important"}
+              borderRadius={8}
             >
               <AlertIcon mt={"2px"} />
               <Box>
