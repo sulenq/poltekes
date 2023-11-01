@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import AuthJwt from "../middleware/AuthJwt";
 import Home from "../pages/customer/Home";
 import Pengujian from "../pages/customer/Pengujian";
-import PendaftaranPengujian from "../pages/customer/PendaftaranPengujian";
+import UnggahBerkas from "../pages/customer/UnggahBerkas";
 
 export default function CustomerRoutes() {
   return (
@@ -30,7 +30,7 @@ export default function CustomerRoutes() {
         path="/pendaftaran-pengujian"
         element={
           <AuthJwt>
-            <PendaftaranPengujian />
+            <UnggahBerkas />
           </AuthJwt>
         }
       />
