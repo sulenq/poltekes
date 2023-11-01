@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 export default function FilesInput(props: any) {
   const formik = props.formik;
   const name = props.name;
+  const accept = props.accept;
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   return (
@@ -13,7 +14,7 @@ export default function FilesInput(props: any) {
         display={"none"}
         name={name}
         type="file"
-        accept=".jpg, .jpeg, .png"
+        accept={accept || "*"}
         multiple
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
           const files: FileList | null = e.target.files;

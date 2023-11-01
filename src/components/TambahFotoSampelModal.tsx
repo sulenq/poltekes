@@ -105,7 +105,11 @@ export default function TambahFotoSampelModal() {
                   Unggah Foto Sampel
                   <RequiredForm />
                 </FormLabel>
-                <FilesInput formik={formik} name={"fotoSampel"} />
+                <FilesInput
+                  formik={formik}
+                  name={"fotoSampel"}
+                  accept={".jpg, .jpeg, .png"}
+                />
                 <FormErrorMessage>{formik.errors.fotoSampel}</FormErrorMessage>
               </FormControl>
 
