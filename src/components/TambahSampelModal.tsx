@@ -88,7 +88,7 @@ export default function TambahSampelModal() {
                 fontSize={[18, null, 20]}
                 fontWeight={600}
                 color={"red"}
-                mb={4}
+                mb={"10px"}
               >
                 PERHATIAN!!
               </Text>
@@ -195,7 +195,6 @@ export default function TambahSampelModal() {
 
               <FormControl
                 isInvalid={formik.errors.catatanTambahan ? true : false}
-                mb={4}
               >
                 <FormLabel>Catatan Tambahan (Jika Ada)</FormLabel>
                 <Textarea

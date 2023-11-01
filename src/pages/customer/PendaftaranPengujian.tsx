@@ -31,6 +31,7 @@ import ContentContainer from "../../components/ContentContainer";
 import useScreenWidth from "../../utils/useGetScreenWidth";
 import { Link } from "react-router-dom";
 import TambahSampelModal from "../../components/TambahSampelModal";
+import TambahFotoSampelModal from "../../components/TambahFotoSampelModal";
 // import SampleList from "../../components/SampleList";
 
 export default function PendaftaranPengujian() {
@@ -226,16 +227,7 @@ export default function PendaftaranPengujian() {
 
                   <Text mb={2}>Silakan Tambahkan Foto Sampel Uji Anda!!</Text>
 
-                  <Button
-                    leftIcon={
-                      <Icon as={Plus} fontSize={iconSize} weight="bold" />
-                    }
-                    colorScheme="ap"
-                    className="lg-clicky"
-                    mb={4}
-                  >
-                    Tambah Foto Sampel
-                  </Button>
+                  <TambahFotoSampelModal />
 
                   <Text color={"red"} mb={4}>
                     *Minimal 1 foto sampel
