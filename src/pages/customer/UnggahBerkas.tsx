@@ -53,7 +53,8 @@ export default function PendaftaranPengujian() {
             <SimpleGrid
               columns={[1, null, 2]}
               gap={6}
-              p={[4, 5, 6]}
+              px={[4, 5, 6]}
+              py={[3, 4, 4]}
               bg={"p.100"}
               borderRadius={16}
               mb={8}
@@ -128,7 +129,8 @@ export default function PendaftaranPengujian() {
           </Box>
 
           <Box
-            p={[4, 5, 6]}
+            px={[4, 5, 6]}
+            py={[3, 4, 4]}
             borderRadius={16}
             border={"1px solid var(--divider3)"}
             mb={8}

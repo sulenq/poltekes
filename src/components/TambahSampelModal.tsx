@@ -60,9 +60,16 @@ export default function TambahSampelModal() {
     }),
 
     onSubmit: (values, { resetForm }) => {
+      //TODO post sampel
+
       console.log(values);
     },
   });
+
+  const handleOnClose = () => {
+    onClose();
+    window.history.back();
+  };
 
   return (
     <>
@@ -72,13 +79,14 @@ export default function TambahSampelModal() {
         className="lg-clicky"
         mb={4}
         onClick={onOpen}
+        pl={"12px"}
       >
         Tambah Sampel
       </Button>
 
       <Modal
         isOpen={isOpen}
-        onClose={onClose}
+        onClose={handleOnClose}
         size={"xl"}
         scrollBehavior="inside"
       >
@@ -97,7 +105,7 @@ export default function TambahSampelModal() {
               alignItems={"flex-start"}
               minW={"100% !important"}
             >
-              <AlertIcon mt={"3px"} />
+              <AlertIcon mt={"2px"} />
               <Box>
                 <AlertTitle>
                   <Text

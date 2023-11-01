@@ -35,7 +35,7 @@ export default function CustomerNav({ active }: Props) {
                     as={n.icon}
                     fontSize={iconSize}
                     weight={active === n.name ? "duotone" : "regular"}
-                    mb={"2px"}
+                    mb={"1px"}
                   />
                 }
                 color={active === n.name ? "p.500" : "black"}

@@ -60,9 +60,16 @@ export default function TambahFotoSampelModal() {
     }),
 
     onSubmit: (values, { resetForm }) => {
+      //TODO post foto sampel
+
       console.log(values);
     },
   });
+
+  const handleOnClose = () => {
+    onClose();
+    window.history.back();
+  };
 
   return (
     <>
@@ -72,11 +79,12 @@ export default function TambahFotoSampelModal() {
         className="lg-clicky"
         mb={4}
         onClick={onOpen}
+        pl={"12px"}
       >
         Tambah Foto Sampel
       </Button>
 
-      <Modal isOpen={isOpen} onClose={onClose} size={"xl"}>
+      <Modal isOpen={isOpen} onClose={handleOnClose} size={"xl"}>
         <ModalOverlay />
 
         <ModalContent>
@@ -92,7 +100,7 @@ export default function TambahFotoSampelModal() {
               alignItems={"flex-start"}
               minW={"100% !important"}
             >
-              <AlertIcon mt={"3px"} />
+              <AlertIcon mt={"2px"} />
               <Box>
                 <AlertTitle>
                   <Text

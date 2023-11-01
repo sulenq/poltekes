@@ -1,23 +1,14 @@
 import { Select } from "@chakra-ui/react";
 import React from "react";
 
-export default function SelectBentukSampel(props: any) {
+export default function SelectMetodeUji(props: any) {
   const formik = props?.formik;
   const name = props?.name;
-  const data = [
-    "Padat",
-    "Cair",
-    "Gas",
-    "Lembek",
-    "Berasap",
-    "Berduri",
-    "Berdansa",
-  ];
+  const data = ["Metode A", "Metode B", "Metode C"];
 
   return (
     <Select
-      placeholder={props.placeholder || "Pilih bentuk sampel"}
-      _placeholder={{ color: "var(--divider)" }}
+      placeholder={props.placeholder || "Pilih metode uji"}
       onChange={(e) => {
         formik.setFieldValue(name, e.target.value);
       }}

@@ -4,7 +4,7 @@ import React from "react";
 export default function SelectJenisSampel(props: any) {
   const formik = props?.formik;
   const name = props?.name;
-  const jenisSampel = ["Sampel A", "Sampel B", "Sampel C"];
+  const data = ["Sampel A", "Sampel B", "Sampel C"];
 
   return (
     <Select
@@ -13,7 +13,7 @@ export default function SelectJenisSampel(props: any) {
         formik.setFieldValue(name, e.target.value);
       }}
     >
-      {jenisSampel.map((s, i) => (
+      {data.map((s, i) => (
         <option key={i} value={s}>
           {s}
         </option>

@@ -46,7 +46,13 @@ export default function Pengujian() {
 
             <PendaftaranPengujianModal />
 
-            <Box p={[4, 5, 6]} bg={"p.100"} borderRadius={16} mb={8}>
+            <Box
+              px={[4, 5, 6]}
+              py={[3, 4, 4]}
+              bg={"p.100"}
+              borderRadius={16}
+              mb={8}
+            >
               <Text lineHeight={"30px"}>
                 Permohonan Penelitian dengan Status <b>Uji Kompetensi</b> Akan
                 Diproses Setelah Calon Peneliti Lulus Uji Kompetensi yang
