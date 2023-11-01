@@ -30,6 +30,18 @@ export const globalTheme = extendTheme({
       800: "#2dc653",
       900: "#2dc653",
     },
+    ad: {
+      50: "#bfbfbf27",
+      100: "#bfbfbf27",
+      200: "#bfbfbf27",
+      300: "#bfbfbf27",
+      400: "#bfbfbf27",
+      500: "#bfbfbf27",
+      600: "#bfbfbf27",
+      700: "#bfbfbf27",
+      800: "#bfbfbf27",
+      900: "#bfbfbf27",
+    },
     bnw: {
       200: "white",
       300: "white",

@@ -27,6 +27,7 @@ import { Link } from "react-router-dom";
 import TambahSampelModal from "../../components/TambahSampelModal";
 import TambahFotoSampelModal from "../../components/TambahFotoSampelModal";
 import TambahFilePendukungModal from "../../components/TambahFilePendukungModal";
+import SampleList from "../../components/SampleList";
 // import SampleList from "../../components/SampleList";
 
 export default function PendaftaranPengujian() {
@@ -202,15 +203,7 @@ export default function PendaftaranPengujian() {
                     mb={4}
                   />
 
-                  {/* <SampleList /> */}
-
-                  <Center p={5} flexDir={"column"}>
-                    <Image src="/svg/sample.svg" maxW={"480px"} />
-                    <Text textAlign={"center"} fontWeight={500} maxW={"400px"}>
-                      Maaf, Saat Ini Anda Belum Memiliki Sampel Uji yang
-                      Tersedia
-                    </Text>
-                  </Center>
+                  <SampleList />
                 </TabPanel>
 
                 <TabPanel p={0}>
