@@ -66,7 +66,7 @@ export default function PendaftaranPengujianModal() {
       </Button>
 
       <Modal
-        isOpen={true}
+        isOpen={isOpen}
         onClose={handleOnClose}
         initialFocusRef={initialRef}
         size={"xl"}
