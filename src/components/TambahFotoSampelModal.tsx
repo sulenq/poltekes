@@ -23,9 +23,12 @@ import * as yup from "yup";
 import { useFormik } from "formik";
 import RequiredForm from "./RequiredForm";
 import FilesInput from "./FilesInput";
+import useBackOnClose from "../utils/useBackOnClose";
 
 export default function TambahFotoSampelModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  useBackOnClose(isOpen, onClose);
+
   const formik = useFormik({
     validateOnChange: false,
 
