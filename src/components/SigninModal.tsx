@@ -21,6 +21,7 @@ import {
 import { useFormik } from "formik";
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import * as yup from "yup";
 import PasswordInput from "./PasswordInput";
 
 export default function SigninModal() {
@@ -32,8 +33,13 @@ export default function SigninModal() {
 
     initialValues: {
       username: "",
-      password: "",
+      kataSandi: "",
     },
+
+    validationSchema: yup.object().shape({
+      username: yup.string().required("Username harus diisi"),
+      kataSandi: yup.string().required("Kata Sandi harus diisi"),
+    }),
 
     onSubmit: (values, { resetForm }) => {
       console.log(values);
@@ -85,12 +91,12 @@ export default function SigninModal() {
               </FormControl>
 
               <FormControl
-                isInvalid={formik.errors.password ? true : false}
+                isInvalid={formik.errors.kataSandi ? true : false}
                 mb={5}
               >
                 <FormLabel>Kata Sandi</FormLabel>
                 <PasswordInput formik={formik} />
-                <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
+                <FormErrorMessage>{formik.errors.kataSandi}</FormErrorMessage>
               </FormControl>
 
               <HStack>

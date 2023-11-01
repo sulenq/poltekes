@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CustomerContainer from "../../components/CustomerContainer";
 import {
   Box,
@@ -32,6 +32,7 @@ import SampleList from "../../components/SampleList";
 
 export default function PendaftaranPengujian() {
   const sw = useScreenWidth();
+  const [agreement, setAgreement] = useState(false);
 
   return (
     <CustomerContainer active={"Pengujian"}>
@@ -276,7 +277,15 @@ export default function PendaftaranPengujian() {
             mb={6}
             justify={"space-between"}
           >
-            <Checkbox colorScheme="ap" alignItems={"flex-start"} maxW={"600px"}>
+            <Checkbox
+              colorScheme="ap"
+              alignItems={"flex-start"}
+              maxW={"600px"}
+              isChecked={agreement}
+              onChange={() => {
+                setAgreement((ps) => !ps);
+              }}
+            >
               <Text mt={checkBoxTextMt} fontSize={[12, null, 14]}>
                 Saya dengan ini menyatakan setuju dengan{" "}
                 <b>syarat dan ketentuan</b> yang berlaku di LPPT POLTEKKES
@@ -289,6 +298,7 @@ export default function PendaftaranPengujian() {
               colorScheme="ap"
               className="lg-clicky"
               h={"50px"}
+              isDisabled={!agreement}
             >
               Simpan & Kirim
             </Button>
