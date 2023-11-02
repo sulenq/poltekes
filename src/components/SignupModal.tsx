@@ -78,6 +78,8 @@ export default function SignupModal() {
     }),
 
     onSubmit: (values, { resetForm }) => {
+      //TODO post signup
+      
       console.log(values);
     },
   });

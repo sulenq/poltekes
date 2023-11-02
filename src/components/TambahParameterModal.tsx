@@ -58,7 +58,7 @@ export default function TambahParameterModal() {
     <>
       <Button
         leftIcon={<Icon as={Plus} fontSize={iconSize} weight="bold" />}
-        variant={"outline"}
+        // variant={"outline"}
         colorScheme="ap"
         className="lg-clicky"
         pl={"12px"}
