@@ -133,12 +133,12 @@ export default function CustomerNavDrawer({ active }: Props) {
                     color={"white"}
                   >
                     <HStack w={"100%"}>
-                      <Icon
+                      {/* <Icon
                         as={n.icon}
                         fontSize={iconSize}
                         weight={active === n.name ? "duotone" : "regular"}
                         mb={"2px"}
-                      />
+                      /> */}
 
                       <Text fontWeight={500}>{n.name}</Text>
                     </HStack>

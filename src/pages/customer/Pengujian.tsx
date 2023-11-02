@@ -80,7 +80,6 @@ export default function Pengujian() {
                     <Th>No.Registrasi</Th>
                     <Th whiteSpace={"nowrap"}>Tanggal Order</Th>
                     <Th>Nama</Th>
-                    <Th>Alamat</Th>
                     <Th whiteSpace={"nowrap"}>Status Pembayaran</Th>
                     <Th whiteSpace={"nowrap"}>Status Pengujian</Th>
                     <Th isNumeric></Th>
@@ -95,7 +94,6 @@ export default function Pengujian() {
                     <Td>001</Td>
                     <Td>22 Okt 2023</Td>
                     <Td>Anjay</Td>
-                    <Td minW={"200px"}>Jalan Banjarsari no.12</Td>
                     <Td>
                       <Badge colorScheme="red">Belum Dibayar</Badge>
                     </Td>
