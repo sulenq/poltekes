@@ -80,7 +80,11 @@ export default function Pengujian() {
                     <Th>No.Registrasi</Th>
                     <Th whiteSpace={"nowrap"}>Tanggal Order</Th>
                     <Th>Nama</Th>
+                    <Th whiteSpace={"nowrap"} isNumeric>
+                      Tagihan
+                    </Th>
                     <Th whiteSpace={"nowrap"}>Status Pembayaran</Th>
+                    <Th whiteSpace={"nowrap"}>Status/Aksi</Th>
                     <Th isNumeric></Th>
                   </Tr>
                 </Thead>
@@ -93,9 +97,17 @@ export default function Pengujian() {
                     <Td>001</Td>
                     <Td>22 Okt 2023</Td>
                     <Td>Anjay</Td>
+                    <Td isNumeric whiteSpace={"nowrap"}>
+                      Rp xxx.xxx
+                    </Td>
                     <Td>
                       <Badge colorScheme="green" className="badge">
                         Sudah Dibayar
+                      </Badge>
+                    </Td>
+                    <Td>
+                      <Badge colorScheme="blue" className="badge">
+                        Pengujian - 12 Des 2023
                       </Badge>
                     </Td>
                     <Td isNumeric>

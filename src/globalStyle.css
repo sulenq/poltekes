@@ -266,5 +266,5 @@ select {
 .badge {
   border-radius: 8px !important;
   padding: 4px 8px !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
