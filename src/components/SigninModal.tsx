@@ -43,14 +43,19 @@ export default function SigninModal() {
 
     onSubmit: (values, { resetForm }) => {
       //TODO post signin
-      
+
       console.log(values);
     },
   });
 
   return (
     <>
-      <Button colorScheme="ap" className="clicky" onClick={onOpen}>
+      <Button
+        id={"signinButton"}
+        colorScheme="ap"
+        className="clicky"
+        onClick={onOpen}
+      >
         Masuk
       </Button>
 
@@ -123,7 +128,20 @@ export default function SigninModal() {
 
               <HStack justify={"center"} gap={1}>
                 <Text>Belum Daftar?</Text>
-                <Text as={Link} to={"/daftar"} fontWeight={500} color={"p.500"}>
+                <Text
+                  fontWeight={500}
+                  color={"p.500"}
+                  cursor={"pointer"}
+                  onClick={() => {
+                    onClose();
+                    const signupButton = document.querySelector(
+                      "#signupButton"
+                    ) as HTMLButtonElement;
+                    if (signupButton) {
+                      signupButton.click();
+                    }
+                  }}
+                >
                   Daftar
                 </Text>
               </HStack>

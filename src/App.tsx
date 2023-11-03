@@ -12,6 +12,7 @@ export const App = () => (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/:action" element={<Landing />} />
 
         <Route path="/customer/*" element={<CustomerRoutes />} />
 

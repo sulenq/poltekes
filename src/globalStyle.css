@@ -268,3 +268,15 @@ select {
   padding: 4px 8px !important;
   text-transform: none !important;
 }
+
+.accordionItem {
+  border-radius: 16px;
+  border: 1px solid var(--divider);
+  box-shadow: 1px 1px 2px 1px var(--divider);
+}
+.accordionButton {
+  padding: 24px;
+  border-radius: 16px;
+  justify-content: space-between;
+  align-items: flex-start;
+}

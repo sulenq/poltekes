@@ -79,7 +79,7 @@ export default function SignupModal() {
 
     onSubmit: (values, { resetForm }) => {
       //TODO post signup
-      
+
       console.log(values);
     },
   });
@@ -91,6 +91,7 @@ export default function SignupModal() {
         colorScheme="ap"
         className="clicky"
         onClick={onOpen}
+        id="signupButton"
       >
         Daftar
       </Button>
@@ -325,7 +326,15 @@ export default function SignupModal() {
                   fontWeight={500}
                   color={"p.500"}
                   cursor={"pointer"}
-                  onClick={onClose}
+                  onClick={() => {
+                    onClose();
+                    const signupButton = document.querySelector(
+                      "#signinButton"
+                    ) as HTMLButtonElement;
+                    if (signupButton) {
+                      signupButton.click();
+                    }
+                  }}
                 >
                   Masuk
                 </Text>

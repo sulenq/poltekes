@@ -19,12 +19,7 @@ export default function FaqItemComponent({ faq }: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <AccordionItem
-      borderRadius={16}
-      border={"1px solid var(--divider)"}
-      boxShadow={"1px 1px 2px 1px var(--divider)"}
-      mb={4}
-    >
+    <AccordionItem className="accordionItem" mb={4}>
       <AccordionButton
         p={6}
         borderRadius={16}
