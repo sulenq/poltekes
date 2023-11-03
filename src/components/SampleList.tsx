@@ -28,12 +28,12 @@ export default function SampleList() {
   // const data: any[] = [];
   const data = [
     {
-      metode: "Ngising",
+      metode: "Metode A",
       parameter: "Kucing",
       harga: 2000000,
     },
     {
-      metode: "Sodok Fantat",
+      metode: "Metode B",
       parameter: "Otter",
       harga: 3500000,
     },
