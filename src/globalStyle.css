@@ -263,9 +263,8 @@ select {
   cursor: default;
 }
 
-.redBadge {
-  color: red !important;
-  border: 1px solid red;
+.badge {
   border-radius: 8px !important;
   padding: 4px 8px !important;
+  text-transform: capitalize !important;
 }

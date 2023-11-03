@@ -94,8 +94,8 @@ export default function Pengujian() {
                     <Td>22 Okt 2023</Td>
                     <Td>Anjay</Td>
                     <Td>
-                      <Badge colorScheme="red" className="redBadge">
-                        Belum Dibayar
+                      <Badge colorScheme="green" className="badge">
+                        Sudah Dibayar
                       </Badge>
                     </Td>
                     <Td isNumeric>

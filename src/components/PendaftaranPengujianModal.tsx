@@ -123,6 +123,7 @@ export default function PendaftaranPengujianModal() {
                     href="/syarat-dan-ketentuan"
                     fontSize={["12px !important", null, "14px !important"]}
                     isExternal
+                    fontWeight={600}
                   >
                     syarat dan ketentuan
                   </ChakraLink>{" "}
