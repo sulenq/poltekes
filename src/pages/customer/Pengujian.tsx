@@ -1,29 +1,14 @@
 import React from "react";
 import CustomerContainer from "../../components/CustomerContainer";
-import {
-  Badge,
-  Box,
-  Button,
-  HStack,
-  Icon,
-  Table,
-  Tbody,
-  Td,
-  Text,
-  Th,
-  Thead,
-  Tr,
-} from "@chakra-ui/react";
+import { Box, HStack, Icon, Text } from "@chakra-ui/react";
 import Container from "../../components/Container";
-import TableContainer from "../../components/TableContainer";
 import { CaretRight } from "@phosphor-icons/react";
 import ContentContainer from "../../components/ContentContainer";
 import PendaftaranPengujianModal from "../../components/PendaftaranPengujianModal";
 import { Link } from "react-router-dom";
+import RiwayatPengujianList from "../../components/RiwayatPengujianList";
 
 export default function Pengujian() {
-  // TODO show riwayat pengujian table data
-
   return (
     <CustomerContainer active={"Pengujian"}>
       <ContentContainer>
@@ -71,80 +56,7 @@ export default function Pengujian() {
           </Box>
 
           <Box mb={8}>
-            <TableContainer>
-              <Table size={"sm"} variant={"striped"} colorScheme="ad">
-                <Thead>
-                  <Tr>
-                    <Th isNumeric>No</Th>
-                    <Th>No.Registrasi</Th>
-                    <Th whiteSpace={"nowrap"}>Tanggal Order</Th>
-                    <Th>Nama</Th>
-                    <Th whiteSpace={"nowrap"} isNumeric>
-                      Tagihan
-                    </Th>
-                    <Th whiteSpace={"nowrap"}>Status Pembayaran</Th>
-                    <Th whiteSpace={"nowrap"} textAlign={"center"}>
-                      Status/Aksi
-                    </Th>
-                    <Th isNumeric></Th>
-                  </Tr>
-                </Thead>
-
-                <Tbody>
-                  {/* TODO show data */}
-
-                  <Tr>
-                    <Td isNumeric>1</Td>
-                    <Td>001</Td>
-                    <Td>22 Okt 2023</Td>
-                    <Td>Anjay</Td>
-                    <Td isNumeric whiteSpace={"nowrap"}>
-                      Rp xxx.xxx.xxx
-                    </Td>
-                    <Td>
-                      <Badge colorScheme="green" className="badge">
-                        Sudah Dibayar
-                      </Badge>
-                    </Td>
-                    <Td>
-                      <Badge colorScheme="blue" className="badge">
-                        Pengujian - 12 Des 2023
-                      </Badge>
-                    </Td>
-                    <Td isNumeric>
-                      <Button variant={"outline"} colorScheme="ap" size={"sm"}>
-                        Detail
-                      </Button>
-                    </Td>
-                  </Tr>
-
-                  <Tr>
-                    <Td isNumeric>1</Td>
-                    <Td>001</Td>
-                    <Td>22 Okt 2023</Td>
-                    <Td>Anjay</Td>
-                    <Td isNumeric whiteSpace={"nowrap"}>
-                      Rp xxx.xxx.xxx
-                    </Td>
-                    <Td>
-                      <Badge colorScheme="green" className="badge">
-                        Sudah Dibayar
-                      </Badge>
-                    </Td>
-                    <Td>
-                      <Badge colorScheme="blue" className="badge">
-                        Pengujian - 12 Des 2023
-                      </Badge>
-                    </Td>
-                    <Td isNumeric>
-                      <Button variant={"outline"} colorScheme="ap" size={"sm"}>
-                        Detail
-                      </Button>
-                    </Td>
-                  </Tr>
-                </Tbody>
-              </Table>
-            </TableContainer>
+            <RiwayatPengujianList />
           </Box>
         </Container>
       </ContentContainer>

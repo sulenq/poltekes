@@ -191,8 +191,11 @@ export const globalTheme = extendTheme({
       sizes: {
         sm: {
           th: {
-            py: "8px",
+            py: "14px",
             px: "12px",
+          },
+          td: {
+            py: "16px",
           },
         },
       },
