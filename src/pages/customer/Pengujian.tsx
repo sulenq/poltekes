@@ -3,9 +3,9 @@ import CustomerContainer from "../../components/CustomerContainer";
 import {
   Badge,
   Box,
+  Button,
   HStack,
   Icon,
-  IconButton,
   Table,
   Tbody,
   Td,
@@ -16,8 +16,7 @@ import {
 } from "@chakra-ui/react";
 import Container from "../../components/Container";
 import TableContainer from "../../components/TableContainer";
-import { CaretRight, DotsThreeVertical } from "@phosphor-icons/react";
-import { iconSize } from "../../const/sizes";
+import { CaretRight } from "@phosphor-icons/react";
 import ContentContainer from "../../components/ContentContainer";
 import PendaftaranPengujianModal from "../../components/PendaftaranPengujianModal";
 import { Link } from "react-router-dom";
@@ -84,7 +83,9 @@ export default function Pengujian() {
                       Tagihan
                     </Th>
                     <Th whiteSpace={"nowrap"}>Status Pembayaran</Th>
-                    <Th whiteSpace={"nowrap"}>Status/Aksi</Th>
+                    <Th whiteSpace={"nowrap"} textAlign={"center"}>
+                      Status/Aksi
+                    </Th>
                     <Th isNumeric></Th>
                   </Tr>
                 </Thead>
@@ -92,13 +93,13 @@ export default function Pengujian() {
                 <Tbody>
                   {/* TODO show data */}
 
-                  <Tr bg={"var(--divider)"}>
+                  <Tr>
                     <Td isNumeric>1</Td>
                     <Td>001</Td>
                     <Td>22 Okt 2023</Td>
                     <Td>Anjay</Td>
                     <Td isNumeric whiteSpace={"nowrap"}>
-                      Rp xxx.xxx
+                      Rp xxx.xxx.xxx
                     </Td>
                     <Td>
                       <Badge colorScheme="green" className="badge">
@@ -111,19 +112,34 @@ export default function Pengujian() {
                       </Badge>
                     </Td>
                     <Td isNumeric>
-                      <IconButton
-                        aria-label="more"
-                        icon={
-                          <Icon
-                            as={DotsThreeVertical}
-                            fontSize={iconSize}
-                            weight="bold"
-                          />
-                        }
-                        variant={"ghost"}
-                        className="btn"
-                        borderRadius={"full"}
-                      />
+                      <Button variant={"outline"} colorScheme="ap" size={"sm"}>
+                        Detail
+                      </Button>
+                    </Td>
+                  </Tr>
+
+                  <Tr>
+                    <Td isNumeric>1</Td>
+                    <Td>001</Td>
+                    <Td>22 Okt 2023</Td>
+                    <Td>Anjay</Td>
+                    <Td isNumeric whiteSpace={"nowrap"}>
+                      Rp xxx.xxx.xxx
+                    </Td>
+                    <Td>
+                      <Badge colorScheme="green" className="badge">
+                        Sudah Dibayar
+                      </Badge>
+                    </Td>
+                    <Td>
+                      <Badge colorScheme="blue" className="badge">
+                        Pengujian - 12 Des 2023
+                      </Badge>
+                    </Td>
+                    <Td isNumeric>
+                      <Button variant={"outline"} colorScheme="ap" size={"sm"}>
+                        Detail
+                      </Button>
                     </Td>
                   </Tr>
                 </Tbody>
