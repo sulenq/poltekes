@@ -105,6 +105,7 @@ export default function PilihMetodeUji() {
             colorScheme="ap"
             leftIcon={<Icon as={Funnel} fontSize={iconSize} />}
             pl={"14px"}
+            className="lg-clicky"
           >
             Filter
           </Button>

@@ -251,8 +251,16 @@ export default function PendaftaranPengujian() {
           >
             <Text mt={checkBoxTextMt} fontSize={[12, null, 14]}>
               Saya dengan ini menyatakan setuju dengan{" "}
-              <b>syarat dan ketentuan</b> yang berlaku di LPPT POLTEKKES
-              Kemenkes Semarang
+              <ChakraLink
+                color="p.500"
+                href="/syarat-dan-ketentuan"
+                fontSize={["12px !important", null, "14px !important"]}
+                isExternal
+                fontWeight={600}
+              >
+                syarat dan ketentuan
+              </ChakraLink>{" "}
+              yang berlaku di LPPT POLTEKKES Kemenkes Semarang
             </Text>
           </Checkbox>
 
