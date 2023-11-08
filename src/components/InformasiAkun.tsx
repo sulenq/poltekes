@@ -13,52 +13,52 @@ export default function InformasiAkun() {
 
   return (
     <Box>
-      <HStack>
-        <Text w={"130px"} mb={2}>
-          Nama
-        </Text>
+      <HStack mb={2}>
+        <Text w={"130px"}>Nama</Text>
 
-        <Text mb={2}>: {data.nama}</Text>
+        <Text mx={1}>:</Text>
+
+        <Text>{data.nama}</Text>
+      </HStack>
+
+      <HStack mb={2}>
+        <Text w={"130px"}>Kategori</Text>
+
+        <Text mx={1}>:</Text>
+
+        <Text>{data.kategori}</Text>
+      </HStack>
+
+      <HStack mb={2}>
+        <Text w={"130px"}>Telepon</Text>
+
+        <Text mx={1}>:</Text>
+
+        <Text>{data.telepon}</Text>
+      </HStack>
+
+      <HStack mb={2}>
+        <Text w={"130px"}>Email</Text>
+
+        <Text mx={1}>:</Text>
+
+        <Text>{data.email}</Text>
+      </HStack>
+
+      <HStack mb={2}>
+        <Text w={"130px"}>Instansi</Text>
+
+        <Text mx={1}>:</Text>
+
+        <Text>{data.instansi}</Text>
       </HStack>
 
       <HStack>
-        <Text w={"130px"} mb={2}>
-          Kategori
-        </Text>
+        <Text w={"130px"}>Alamat Instansi</Text>
 
-        <Text mb={2}>: {data.kategori}</Text>
-      </HStack>
+        <Text mx={1}>:</Text>
 
-      <HStack>
-        <Text w={"130px"} mb={2}>
-          Telepon
-        </Text>
-
-        <Text mb={2}>: {data.telepon}</Text>
-      </HStack>
-
-      <HStack>
-        <Text w={"130px"} mb={2}>
-          Email
-        </Text>
-
-        <Text mb={2}>: {data.email}</Text>
-      </HStack>
-
-      <HStack>
-        <Text w={"130px"} mb={2}>
-          Instansi
-        </Text>
-
-        <Text mb={2}>: {data.instansi}</Text>
-      </HStack>
-
-      <HStack>
-        <Text w={"130px"} mb={2}>
-          Alamat Instansi
-        </Text>
-
-        <Text mb={2}>: {data.alamatInstansi}</Text>
+        <Text>{data.alamatInstansi}</Text>
       </HStack>
     </Box>
   );

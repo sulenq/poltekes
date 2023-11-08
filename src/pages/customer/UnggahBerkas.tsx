@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import CustomerContainer from "../../components/CustomerContainer";
 import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
   Box,
   Button,
   Center,
-  Checkbox,
   HStack,
   Icon,
   Image,
   SimpleGrid,
-  Stack,
   Tab,
   TabList,
   TabPanel,
@@ -19,19 +20,17 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Container from "../../components/Container";
-import { CaretRight, Eyedropper, Files, Images } from "@phosphor-icons/react";
-import { checkBoxTextMt, iconSize } from "../../const/sizes";
+import { CaretRight, Files, Images } from "@phosphor-icons/react";
+import { iconSize } from "../../const/sizes";
 import useScreenWidth from "../../utils/useGetScreenWidth";
 import { Link } from "react-router-dom";
-import TambahSampelModal from "../../components/TambahSampelModal";
 import TambahFotoSampelModal from "../../components/TambahFotoSampelModal";
 import TambahFilePendukungModal from "../../components/TambahFilePendukungModal";
-import SampleList from "../../components/SampleList";
-// import SampleList from "../../components/SampleList";
+import InformasiAkun from "../../components/InformasiAkun";
+import StepperPengujian from "../../components/StepperPengujian";
 
 export default function PendaftaranPengujian() {
   const sw = useScreenWidth();
-  const [agreement, setAgreement] = useState(false);
 
   return (
     <CustomerContainer active={"Pengujian"}>
@@ -53,7 +52,8 @@ export default function PendaftaranPengujian() {
             columns={[1, null, 2]}
             gap={6}
             px={[4, 5, 6]}
-            py={[3, 4, 4]}
+            pt={[5]}
+            pb={[6]}
             bg={"p.100"}
             borderRadius={16}
             mb={8}
@@ -63,7 +63,9 @@ export default function PendaftaranPengujian() {
                 Data Pelanggan
               </Text>
 
-              <HStack gap={4}>
+              <InformasiAkun />
+
+              {/* <HStack gap={4}>
                 <VStack align={"flex-start"}>
                   <Text>Kategori</Text>
                   <Text>Nama</Text>
@@ -93,7 +95,7 @@ export default function PendaftaranPengujian() {
                   <Text>Poltekkes Kemenkes Semarang</Text>
                   <Text>gatau bang</Text>
                 </VStack>
-              </HStack>
+              </HStack> */}
             </Box>
 
             <Box>
@@ -127,6 +129,10 @@ export default function PendaftaranPengujian() {
           </SimpleGrid>
         </Box>
 
+        <Box mb={6}>
+          <StepperPengujian index={2} />
+        </Box>
+
         <Box
           px={[4, 5, 6]}
           py={[3, 4, 4]}
@@ -140,22 +146,22 @@ export default function PendaftaranPengujian() {
 
           <Tabs isFitted variant="unstyled">
             <TabList borderRadius={8} bg={"var(--divider)"} mb={4}>
-              <Tab borderRadius={8} _selected={{ bg: "p.500", color: "white" }}>
+              {/* <Tab borderRadius={8} _selected={{ bg: "p.500", color: "white" }}>
                 <Icon
                   as={Eyedropper}
                   fontSize={iconSize}
                   mr={[null, null, 2]}
                 />
-                {sw >= 770 && (
+                {sw >= 768 && (
                   <Text fontWeight={500} fontSize={[12, null, 14]}>
                     Sampel & Parameter
                   </Text>
                 )}
-              </Tab>
+              </Tab> */}
 
               <Tab borderRadius={8} _selected={{ bg: "p.500", color: "white" }}>
                 <Icon as={Images} fontSize={iconSize} mr={[null, null, 2]} />
-                {sw >= 770 && (
+                {sw >= 768 && (
                   <Text fontWeight={500} fontSize={[12, null, 14]}>
                     Foto Sampel
                   </Text>
@@ -164,7 +170,7 @@ export default function PendaftaranPengujian() {
 
               <Tab borderRadius={8} _selected={{ bg: "p.500", color: "white" }}>
                 <Icon as={Files} fontSize={iconSize} mr={[null, null, 2]} />
-                {sw > 770 && (
+                {sw > 768 && (
                   <Text fontWeight={500} fontSize={[12, null, 14]}>
                     File Pendukung
                   </Text>
@@ -173,8 +179,8 @@ export default function PendaftaranPengujian() {
             </TabList>
 
             <TabPanels>
-              <TabPanel p={0}>
-                {sw < 770 && (
+              {/* <TabPanel p={0}>
+                {sw < 768 && (
                   <Text fontSize={[16, null, 18]} fontWeight={600} mb={2}>
                     Sampel & Parameter
                   </Text>
@@ -196,10 +202,10 @@ export default function PendaftaranPengujian() {
                 />
 
                 <SampleList />
-              </TabPanel>
+              </TabPanel> */}
 
               <TabPanel p={0}>
-                {sw < 770 && (
+                {sw < 768 && (
                   <Text fontSize={[16, null, 18]} fontWeight={600} mb={2}>
                     Foto Sampel
                   </Text>
@@ -229,15 +235,41 @@ export default function PendaftaranPengujian() {
               </TabPanel>
 
               <TabPanel p={0}>
-                {sw < 770 && (
+                {sw < 768 && (
                   <Text fontSize={[16, null, 18]} fontWeight={600} mb={2}>
                     File Pendukung
                   </Text>
                 )}
 
-                <Text mb={2}>Silakan Tambahkan Foto Sampel Uji Anda!!</Text>
+                <Alert
+                  flexDir={"column"}
+                  alignItems={"flex-start"}
+                  variant={"left-accent"}
+                  borderRadius={8}
+                  mb={4}
+                  minW={"100%"}
+                >
+                  <AlertTitle
+                    color={"blue.500"}
+                    fontSize={[18, null, 20]}
+                    mb={1}
+                  >
+                    Unduh Berkas Kontrak Anda Disini!!
+                  </AlertTitle>
+                  <AlertDescription mb={3}>
+                    Silahkan klik tombol dibawah ini untuk mengunduh berkas
+                    kontrak anda.
+                  </AlertDescription>
+                  <Button colorScheme="blue" className="lg-clicky">
+                    Unduh Berkas
+                  </Button>
+                </Alert>
 
                 <TambahFilePendukungModal />
+
+                <Text color={"red"} mb={4}>
+                  *Berkas Kontrak Wajib di Unggah
+                </Text>
 
                 <Box
                   w={"100%"}
@@ -258,7 +290,16 @@ export default function PendaftaranPengujian() {
           </Tabs>
         </Box>
 
-        <Stack
+        <HStack justify={"flex-end"} gap={2} mb={6}>
+          <Button variant={"ghost"} colorScheme="ap" className="lg-clicky">
+            Kembali
+          </Button>
+          <Button colorScheme="ap" className="lg-clicky">
+            Lanjutkan
+          </Button>
+        </HStack>
+
+        {/* <Stack
           flexDir={["column", "row", "row"]}
           align={["strech", null, "center"]}
           gap={4}
@@ -290,7 +331,7 @@ export default function PendaftaranPengujian() {
           >
             Simpan & Kirim
           </Button>
-        </Stack>
+        </Stack> */}
       </Container>
     </CustomerContainer>
   );

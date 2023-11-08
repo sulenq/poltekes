@@ -17,7 +17,7 @@ export default function LandingNav() {
         <LandingHeader />
 
         <HStack gap={0}>
-          {sw >= 770 &&
+          {sw >= 768 &&
             landingNav.map((n, i) => <LandingNavItem key={i} nav={n} />)}
         </HStack>
       </HStack>
@@ -31,7 +31,7 @@ export default function LandingNav() {
           </>
         )}
 
-        {sw < 770 && <LandingNavDrawer />}
+        {sw < 768 && <LandingNavDrawer />}
       </HStack>
     </HStack>
   );

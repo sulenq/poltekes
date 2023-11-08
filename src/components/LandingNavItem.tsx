@@ -28,7 +28,7 @@ export default function LandingNavItem({ nav }: Props) {
     setSectionRef(document.querySelector(`#${nav.name}`));
   }, [nav.name]);
 
-  if (sw < 770) {
+  if (sw < 768) {
     return (
       <Button
         variant={"ghost"}

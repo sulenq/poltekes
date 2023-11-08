@@ -17,7 +17,7 @@ export default function CustomerNav({ active }: Props) {
         <LandingHeader />
 
         <HStack gap={0}>
-          {sw >= 770 &&
+          {sw >= 768 &&
             customerNav.map((n, i) => (
               <Button
                 key={i}
@@ -45,11 +45,11 @@ export default function CustomerNav({ active }: Props) {
         </HStack>
       </HStack>
 
-      {sw >= 770 && (
+      {sw >= 768 && (
         <Avatar size={"md"} name="Jolitos Kurniawan" src="/images/user.jpg" />
       )}
 
-      {sw < 770 && <CustomerNavDrawer active={active} />}
+      {sw < 768 && <CustomerNavDrawer active={active} />}
     </HStack>
   );
 }

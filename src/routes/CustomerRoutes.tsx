@@ -4,7 +4,6 @@ import AuthJwt from "../middleware/AuthJwt";
 import Beranda from "../pages/customer/Beranda";
 import Pengujian from "../pages/customer/Pengujian";
 import UnggahBerkas from "../pages/customer/UnggahBerkas";
-import MissingPage from "../pages/MissingPage";
 
 export default function CustomerRoutes() {
   return (
