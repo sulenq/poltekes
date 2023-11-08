@@ -51,7 +51,7 @@ export default function TambahFilePendukungModal() {
         .test("fileSize", "Ukuran maksimal file adalah 1 MB", (value) =>
           value.every((file) => file.size <= 1000000)
         ),
-      keterangan: yup.string().required("Keterangan harus diisi"),
+      keterangan: yup.string(),
     }),
 
     onSubmit: (values, { resetForm }) => {
@@ -133,10 +133,7 @@ export default function TambahFilePendukungModal() {
               </FormControl>
 
               <FormControl isInvalid={formik.errors.keterangan ? true : false}>
-                <FormLabel>
-                  Keterangan
-                  <RequiredForm />
-                </FormLabel>
+                <FormLabel>Keterangan</FormLabel>
                 <Textarea
                   name="keterangan"
                   onChange={formik.handleChange}
