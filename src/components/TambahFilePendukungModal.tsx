@@ -45,13 +45,8 @@ export default function TambahFilePendukungModal() {
       filePendukung: yup
         .array()
         .required("File Pendukung harus diunggah minimal 1")
-        .test(
-          "fileType",
-          "Hanya file JPG dan PNG yang diperbolehkan",
-          (value) =>
-            value.every(
-              (file) => file.type === "image/jpeg" || file.type === "image/png"
-            )
+        .test("fileType", "Hanya file PDF yang diperbolehkan", (value) =>
+          value.every((file) => file.type === "application/pdf")
         )
         .test("fileSize", "Ukuran maksimal file adalah 1 MB", (value) =>
           value.every((file) => file.size <= 1000000)

@@ -20,7 +20,7 @@ export default function FilesInput(props: any) {
           const files: FileList | null = e.target.files;
           if (files) {
             const fileArray = Array.from(files);
-            formik.setFieldValue("fotoSampel", fileArray);
+            formik.setFieldValue(name, fileArray);
           }
           console.log(files);
         }}
