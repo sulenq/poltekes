@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import AuthJwt from "../middleware/AuthJwt";
+import RequireAuth from "../middleware/RequireAuth";
 import Beranda from "../pages/customer/Beranda";
 import Pengujian from "../pages/customer/Pengujian";
 import UnggahBerkas from "../pages/customer/UnggahBerkas";
@@ -13,36 +13,36 @@ export default function CustomerRoutes() {
       <Route
         path="/"
         element={
-          <AuthJwt>
+          <RequireAuth>
             <Beranda />
-          </AuthJwt>
+          </RequireAuth>
         }
       />
 
       <Route
         path="/pengujian"
         element={
-          <AuthJwt>
+          <RequireAuth>
             <Pengujian />
-          </AuthJwt>
+          </RequireAuth>
         }
       />
 
       <Route
         path="/pengujian/pendaftaran-pengujian/:noreg/pilih-metode-uji"
         element={
-          <AuthJwt>
+          <RequireAuth>
             <PilihMetodeUji />
-          </AuthJwt>
+          </RequireAuth>
         }
       />
 
       <Route
         path="/pengujian/pendaftaran-pengujian/:noreg/unggah-berkas"
         element={
-          <AuthJwt>
+          <RequireAuth>
             <UnggahBerkas />
-          </AuthJwt>
+          </RequireAuth>
         }
       />
 

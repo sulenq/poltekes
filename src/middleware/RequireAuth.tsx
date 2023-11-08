@@ -3,10 +3,10 @@
 
 type Props = { children: JSX.Element };
 
-export default function AuthJwt({ children }: Props) {
+export default function RequireAuth({ children }: Props) {
   // const [page, setPage] = useState(<FullPageLogo />);
 
-  //TODO chek is JWT exist
+  //TODO chek is Auth Token exist
   // setPage(children);
 
   return children;
