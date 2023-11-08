@@ -15,8 +15,8 @@ export default function Beranda() {
           <Container>
             <SimpleGrid
               columns={[1, null, 2]}
-              py={[6, null, 20]}
-              gap={[4, 5, 6]}
+              py={12}
+              gap={12}
             >
               <Box>
                 <Text fontSize={[18, null, 20]} fontWeight={600} mb={4}>

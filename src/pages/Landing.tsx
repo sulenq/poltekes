@@ -28,7 +28,7 @@ export default function Landing() {
             <HStack
               flexDir={["column", null, "row"]}
               gap={[6, null, 8]}
-              py={[6, null, 20]}
+              py={12}
               align={"stretch"}
             >
               <Image
