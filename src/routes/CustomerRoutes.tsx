@@ -5,6 +5,7 @@ import Beranda from "../pages/customer/Beranda";
 import Pengujian from "../pages/customer/Pengujian";
 import UnggahBerkas from "../pages/customer/UnggahBerkas";
 import MissingPage from "../pages/MissingPage";
+import PilihMetodeUji from "../pages/customer/PilihMetodeUji";
 
 export default function CustomerRoutes() {
   return (
@@ -28,7 +29,16 @@ export default function CustomerRoutes() {
       />
 
       <Route
-        path="/pendaftaran-pengujian"
+        path="/pengujian/pendaftaran-pengujian/:noreg/pilih-metode-uji"
+        element={
+          <AuthJwt>
+            <PilihMetodeUji />
+          </AuthJwt>
+        }
+      />
+
+      <Route
+        path="/pengujian/pendaftaran-pengujian/:noreg/unggah-berkas"
         element={
           <AuthJwt>
             <UnggahBerkas />

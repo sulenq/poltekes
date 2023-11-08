@@ -144,7 +144,7 @@ export const globalTheme = extendTheme({
 
     Button: {
       baseStyle: {
-        fontWeight: 600,
+        fontWeight: 500,
         borderRadius: "8px",
       },
       variants: {

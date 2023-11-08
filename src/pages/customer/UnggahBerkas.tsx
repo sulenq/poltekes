@@ -28,6 +28,7 @@ import TambahFotoSampelModal from "../../components/TambahFotoSampelModal";
 import TambahFilePendukungModal from "../../components/TambahFilePendukungModal";
 import InformasiAkun from "../../components/InformasiAkun";
 import StepperPengujian from "../../components/StepperPengujian";
+import DividerFullHorizontal from "../../components/DividerFullHorizontal";
 
 export default function PendaftaranPengujian() {
   const sw = useScreenWidth();
@@ -36,6 +37,7 @@ export default function PendaftaranPengujian() {
     <CustomerContainer active={"Pengujian"}>
       <Container>
         <Box>
+          {/* Bread Crumbs */}
           <HStack className="breadcrumb" mt={6}>
             <Link to="/customer">Beranda</Link>
             <Icon as={CaretRight} opacity={0.3} />
@@ -56,7 +58,6 @@ export default function PendaftaranPengujian() {
             pb={[6]}
             bg={"p.100"}
             borderRadius={16}
-            mb={8}
           >
             <Box>
               <Text fontSize={[18, null, 20]} fontWeight={600} mb={4}>
@@ -64,38 +65,6 @@ export default function PendaftaranPengujian() {
               </Text>
 
               <InformasiAkun />
-
-              {/* <HStack gap={4}>
-                <VStack align={"flex-start"}>
-                  <Text>Kategori</Text>
-                  <Text>Nama</Text>
-                  <Text>Alamat</Text>
-                  <Text>Telepon</Text>
-                  <Text>Email</Text>
-                  <Text>Instansi</Text>
-                  <Text>Alamat Instansi</Text>
-                </VStack>
-
-                <VStack align={"flex-start"}>
-                  <Text>:</Text>
-                  <Text>:</Text>
-                  <Text>:</Text>
-                  <Text>:</Text>
-                  <Text>:</Text>
-                  <Text>:</Text>
-                  <Text>:</Text>
-                </VStack>
-
-                <VStack align={"flex-start"}>
-                  <Text>Umum</Text>
-                  <Text>Jolitos Kurniawan</Text>
-                  <Text>Jalan Banjarsari no.12</Text>
-                  <Text>+62 81901222775</Text>
-                  <Text>jolitos@gmail.com</Text>
-                  <Text>Poltekkes Kemenkes Semarang</Text>
-                  <Text>gatau bang</Text>
-                </VStack>
-              </HStack> */}
             </Box>
 
             <Box>
@@ -129,7 +98,7 @@ export default function PendaftaranPengujian() {
           </SimpleGrid>
         </Box>
 
-        <Box mb={6}>
+        <Box my={8}>
           <StepperPengujian index={2} />
         </Box>
 
@@ -179,31 +148,6 @@ export default function PendaftaranPengujian() {
             </TabList>
 
             <TabPanels>
-              {/* <TabPanel p={0}>
-                {sw < 768 && (
-                  <Text fontSize={[16, null, 18]} fontWeight={600} mb={2}>
-                    Sampel & Parameter
-                  </Text>
-                )}
-
-                <Text mb={2}>Silakan Buat Sampel Uji Anda!!</Text>
-
-                <TambahSampelModal />
-
-                <Text color={"red"} mb={4}>
-                  *Minimal 1 sampel
-                </Text>
-
-                <Box
-                  w={"100%"}
-                  h={"1px"}
-                  borderBottom={"1px solid var(--divider3)"}
-                  mb={4}
-                />
-
-                <SampleList />
-              </TabPanel> */}
-
               <TabPanel p={0}>
                 {sw < 768 && (
                   <Text fontSize={[16, null, 18]} fontWeight={600} mb={2}>
@@ -219,12 +163,7 @@ export default function PendaftaranPengujian() {
                   *Minimal 1 foto sampel
                 </Text>
 
-                <Box
-                  w={"100%"}
-                  h={"1px"}
-                  borderBottom={"1px solid var(--divider3)"}
-                  mb={4}
-                />
+                <DividerFullHorizontal mb={4} />
 
                 <Center p={5} flexDir={"column"}>
                   <Image src="/svg/sampleImage.svg" maxW={"480px"} />
@@ -271,12 +210,7 @@ export default function PendaftaranPengujian() {
                   *Berkas Kontrak Wajib di Unggah
                 </Text>
 
-                <Box
-                  w={"100%"}
-                  h={"1px"}
-                  borderBottom={"1px solid var(--divider3)"}
-                  mb={4}
-                />
+                <DividerFullHorizontal mb={4} />
 
                 <Center p={5} flexDir={"column"}>
                   <Image src="/svg/file.svg" maxW={"480px"} />

@@ -134,13 +134,16 @@ export default function PendaftaranPengujianModal() {
           </ModalBody>
 
           <ModalFooter>
-            {/* TODO submit form and continue */}
+            {/* TODO submit form */}
+            {/* TODO get no reg from response then navigate to pilih metode uji*/}
 
             <Button
               colorScheme="ap"
               className="clicky"
               as={Link}
-              to={"/customer/pendaftaran-pengujian"}
+              to={
+                "/customer/pengujian/pendaftaran-pengujian/1/pilih-metode-uji"
+              }
               isDisabled={!formik.values.agreement}
             >
               Simpan & Lanjutkan
