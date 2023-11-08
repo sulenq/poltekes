@@ -1,4 +1,4 @@
-import { Box, Button, HStack, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Button, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
 import DividerFullHorizontal from "./DividerFullHorizontal";
 import useFormatNumber from "../utils/useFormatNumber";
