@@ -13,11 +13,7 @@ export default function Beranda() {
       <>
         <VStack w={"100%"} gap={0} bg={"var(--divider)"}>
           <Container>
-            <SimpleGrid
-              columns={[1, null, 2]}
-              py={12}
-              gap={12}
-            >
+            <SimpleGrid columns={[1, null, 2]} py={12} gap={12}>
               <Box>
                 <Text fontSize={[18, null, 20]} fontWeight={600} mb={4}>
                   Informasi Akun
@@ -48,18 +44,18 @@ export default function Beranda() {
                 gap={0}
                 key={i}
                 p={4}
-                borderRadius={8}
+                borderRadius={16}
                 bg={"p.500"}
                 as={Link}
                 to={menu.link}
                 className="lg-clicky"
                 transition={"200ms"}
               >
-                <Image src={menu.img} w={"80%"} mt={2} mb={4} />
+                <Image src={menu.img} w={"60%"} mt={2} mb={4} />
 
                 <Text
                   fontSize={[16, null, 18]}
-                  fontWeight={500}
+                  fontWeight={600}
                   color={"white"}
                 >
                   {menu.name}
