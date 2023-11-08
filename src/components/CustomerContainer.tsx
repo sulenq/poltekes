@@ -3,6 +3,7 @@ import React from "react";
 import CustomerNav from "./CustomerNav";
 import Container from "./Container";
 import Footer from "./Footer";
+import ContentContainer from "./ContentContainer";
 
 type Props = {
   children: JSX.Element;
@@ -26,7 +27,7 @@ export default function CustomerContainer({ children, active }: Props) {
         </Container>
       </Box>
 
-      {children}
+      <ContentContainer>{children}</ContentContainer>
 
       <VStack bg={"p.900"} w={"100%"} py={8}>
         <Container>

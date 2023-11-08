@@ -1,9 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import AuthJwt from "../middleware/AuthJwt";
-import Home from "../pages/customer/Home";
+import Beranda from "../pages/customer/Beranda";
 import Pengujian from "../pages/customer/Pengujian";
 import UnggahBerkas from "../pages/customer/UnggahBerkas";
+import MissingPage from "../pages/MissingPage";
 
 export default function CustomerRoutes() {
   return (
@@ -12,7 +13,7 @@ export default function CustomerRoutes() {
         path="/"
         element={
           <AuthJwt>
-            <Home />
+            <Beranda />
           </AuthJwt>
         }
       />
