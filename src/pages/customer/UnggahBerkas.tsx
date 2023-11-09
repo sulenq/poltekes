@@ -18,6 +18,7 @@ import {
   Tabs,
   Text,
   VStack,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import Container from "../../components/Container";
 import { CaretRight, Files, Images } from "@phosphor-icons/react";
@@ -32,6 +33,7 @@ import DividerFullHorizontal from "../../components/DividerFullHorizontal";
 
 export default function PendaftaranPengujian() {
   const sw = useScreenWidth();
+  const tabListColor = useColorModeValue("white", "black");
 
   return (
     <CustomerContainer active={"Pengujian"}>
@@ -115,7 +117,10 @@ export default function PendaftaranPengujian() {
 
           <Tabs isFitted variant="unstyled">
             <TabList borderRadius={8} bg={"var(--divider)"} mb={4}>
-              <Tab borderRadius={8} _selected={{ bg: "p.500", color: "black" }}>
+              <Tab
+                borderRadius={8}
+                _selected={{ bg: "p.500", color: tabListColor }}
+              >
                 <Icon as={Images} fontSize={iconSize} mr={[null, null, 2]} />
                 {sw >= 768 && (
                   <Text fontWeight={500} fontSize={[12, null, 14]}>
@@ -124,7 +129,10 @@ export default function PendaftaranPengujian() {
                 )}
               </Tab>
 
-              <Tab borderRadius={8} _selected={{ bg: "p.500", color: "black" }}>
+              <Tab
+                borderRadius={8}
+                _selected={{ bg: "p.500", color: tabListColor }}
+              >
                 <Icon as={Files} fontSize={iconSize} mr={[null, null, 2]} />
                 {sw > 768 && (
                   <Text fontWeight={500} fontSize={[12, null, 14]}>

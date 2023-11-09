@@ -115,11 +115,11 @@ export default function DetailPengujian() {
             </Button>
           </HStack>
 
-          <Box mb={4}>
+          <Box mb={6}>
             <DetailMetodeUji />
           </Box>
 
-          <HStack justify={"space-between"} mb={[4, 5, 6]}>
+          <HStack justify={"space-between"} mb={2}>
             <Text fontWeight={600}>Berkas Anda</Text>
 
             <Button
@@ -140,7 +140,7 @@ export default function DetailPengujian() {
             <DetailFilePendukung />
           </Box>
 
-          <Box mb={6}>
+          <Box mb={1}>
             <DetailSummary />
           </Box>
         </Box>
