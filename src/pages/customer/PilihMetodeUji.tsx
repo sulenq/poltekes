@@ -115,7 +115,7 @@ export default function PilihMetodeUji() {
           </Button>
         </HStack>
 
-        <Box mb={6}>
+        <Box mb={8}>
           <MetodeUjiList />
         </Box>
       </Container>
