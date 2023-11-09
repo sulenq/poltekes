@@ -149,7 +149,7 @@ export default function DetailPengujian() {
           flexDir={["column", "row", "row"]}
           align={["strech", null, "center"]}
           gap={4}
-          mb={6}
+          mb={8}
           justify={"space-between"}
         >
           <Checkbox

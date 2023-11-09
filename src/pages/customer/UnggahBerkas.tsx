@@ -219,7 +219,7 @@ export default function PendaftaranPengujian() {
           </Tabs>
         </Box>
 
-        <HStack justify={"flex-end"} gap={2} mb={6}>
+        <HStack justify={"flex-end"} gap={2} mb={8}>
           <Button variant={"ghost"} colorScheme="ap" className="lg-clicky">
             Kembali
           </Button>
