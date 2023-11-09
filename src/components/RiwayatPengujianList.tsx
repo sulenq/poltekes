@@ -27,9 +27,9 @@ export default function RiwayatPengujianList() {
         color: "red",
       },
       statusOrAksi: {
-        name: "Sedang Diverifikasi",
-        type: "status",
-        color: "blue",
+        name: "Bayar Tagihan",
+        type: "action",
+        color: "ap",
       },
     },
     {
@@ -89,7 +89,7 @@ export default function RiwayatPengujianList() {
         <Tbody>
           {data.map((d, i) => (
             <Tr key={i}>
-              <Td isNumeric>1</Td>
+              <Td isNumeric>{i + 1}</Td>
               <Td>{d.id.toString().padStart(3, "0")}</Td>
               <Td>{d.tanggalOrder}</Td>
               <Td whiteSpace={"nowrap"}>{d.nama}</Td>

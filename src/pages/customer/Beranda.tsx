@@ -51,7 +51,7 @@ export default function Beranda() {
                 className="lg-clicky"
                 transition={"200ms"}
               >
-                <Image src={menu.img} w={"60%"} mt={2} mb={4} />
+                <Image src={menu.img} w={"80%"} mt={2} mb={4} />
 
                 <Text
                   fontSize={[16, null, 18]}
