@@ -94,7 +94,7 @@ export default function RiwayatPengujianList() {
               <Td>{d.tanggalOrder}</Td>
               <Td whiteSpace={"nowrap"}>{d.nama}</Td>
               <Td isNumeric whiteSpace={"nowrap"}>
-                {d.tagihan !== null && `Rp ${fn(d.tagihan)}`}
+                {d.tagihan !== null ? `Rp ${fn(d.tagihan)}` : "-"}
               </Td>
               <Td textAlign={"center"}>
                 {d.statusPembayaran.name === "-" ? (
