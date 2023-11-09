@@ -5,6 +5,7 @@ import customerNav from "../const/customerNav";
 import { Link } from "react-router-dom";
 import LandingHeader from "./LandingHeader";
 import CustomerNavDrawer from "./CustomerNavDrawer";
+import { ColorModeSwitcher } from "../ColorModeSwitcher";
 
 type Props = { active: string };
 
@@ -25,19 +26,10 @@ export default function CustomerNav({ active }: Props) {
                 to={n.link}
                 variant={"ghost"}
                 h={"80px"}
-                // bg={active === n.name ? "var(--divider)" : ""}
                 borderBottom={active === n.name ? "2px solid var(--p500)" : ""}
                 className="btn"
                 borderRadius={"0"}
-                // leftIcon={
-                //   <Icon
-                //     as={n.icon}
-                //     fontSize={iconSize}
-                //     weight={active === n.name ? "duotone" : "regular"}
-                //     mb={"1px"}
-                //   />
-                // }
-                color={active === n.name ? "p.500" : "black"}
+                color={active === n.name ? "p.500" : "current"}
               >
                 <Text>{n.name}</Text>
               </Button>
@@ -46,7 +38,11 @@ export default function CustomerNav({ active }: Props) {
       </HStack>
 
       {sw >= 768 && (
-        <Avatar size={"md"} name="Jolitos Kurniawan" src="/images/user.jpg" />
+        <HStack gap={4}>
+          <ColorModeSwitcher />
+
+          <Avatar size={"md"} name="Jolitos Kurniawan" src="/images/user.jpg" />
+        </HStack>
       )}
 
       {sw < 768 && <CustomerNavDrawer active={active} />}

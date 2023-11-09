@@ -1,4 +1,4 @@
-import { Box, HStack, Icon, Text } from "@chakra-ui/react";
+import { Box, HStack, Icon, Text, useColorModeValue } from "@chakra-ui/react";
 import { CaretRight } from "@phosphor-icons/react";
 import React from "react";
 import { iconSize } from "../const/sizes";
@@ -32,6 +32,8 @@ export default function PengumumanList() {
     },
   ];
 
+  const bgList = useColorModeValue("white", "dark");
+
   return (
     <Box>
       {data.map((pengumuman, i) => (
@@ -41,7 +43,7 @@ export default function PengumumanList() {
           pl={4}
           pr={2}
           borderRadius={8}
-          bg={"white"}
+          bg={bgList}
           mb={2}
           as={Link}
           to={pengumuman.link}

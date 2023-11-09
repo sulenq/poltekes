@@ -19,6 +19,7 @@ import LandingNavItem from "./LandingNavItem";
 import SigninModal from "./SigninModal";
 import useBackOnClose from "../utils/useBackOnClose";
 import SignupModal from "./SignupModal";
+import { ColorModeSwitcher } from "../ColorModeSwitcher";
 
 export default function LandingNavDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -53,6 +54,7 @@ export default function LandingNavDrawer() {
             // transform={"translate(0, -50%)"}
             zIndex={99}
             bg={"white"}
+            color={"black"}
             _hover={{ bg: "white" }}
             _active={{ bg: "white" }}
             className="clicky"
@@ -75,7 +77,9 @@ export default function LandingNavDrawer() {
               opacity={0.1}
             />
 
-            <VStack gap={0}>
+            <VStack gap={0} position={"relative"}>
+              <ColorModeSwitcher position={"absolute"} left={0} top={-3} />
+
               <Image src="/logo192.png" w={"48px"} mb={2} />
 
               <Text fontWeight={700} lineHeight={1}>

@@ -1,4 +1,12 @@
-import { Box, HStack, Image, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  Image,
+  SimpleGrid,
+  Text,
+  VStack,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import React from "react";
 import Container from "../components/Container";
 import LandingNav from "../components/LandingNav";
@@ -6,6 +14,8 @@ import Faq from "../components/Faq";
 import Footer from "../components/Footer";
 
 export default function Landing() {
+  const navBg = useColorModeValue("white", "dark");
+
   return (
     <VStack gap={0} minH={"100vh"}>
       <Box
@@ -14,7 +24,7 @@ export default function Landing() {
         boxShadow={"0 0 5px 5px var(--divider)"}
         position={"sticky"}
         top={0}
-        bg={"white"}
+        bg={navBg}
         zIndex={99}
       >
         <Container justify={"center"}>

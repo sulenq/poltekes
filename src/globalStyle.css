@@ -17,7 +17,7 @@
   --p900: #085f3f;
   --drawer: #005234aa;
 
-  --p500a: #2dc6532b;
+  --p500a: #3bdf6442;
 
   --ba: #050505a6;
   --bt: #333333;
@@ -27,6 +27,8 @@
   --divider2: #bfbfbf40;
   --divider3: #bfbfbf60;
 
+  --dark: #1f2937;
+
   --blue: #1672fc;
   --orange: #ff8c00;
   --red: #e53e3e;
@@ -34,7 +36,7 @@
 
 *:focus-visible {
   transition: 200ms !important;
-  box-shadow: 0 0 0 2px var(--p200) !important;
+  /* box-shadow: 0 0 0 2px var(--p200) !important; */
 }
 
 ::selection {

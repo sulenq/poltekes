@@ -31,7 +31,7 @@ export default function Pengujian() {
           <Box
             px={[4, 5, 6]}
             py={[3, 4, 4]}
-            bg={"p.100"}
+            bg={"var(--p500a)"}
             borderRadius={16}
             mb={8}
           >

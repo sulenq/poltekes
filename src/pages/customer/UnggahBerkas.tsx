@@ -56,7 +56,7 @@ export default function PendaftaranPengujian() {
             px={[4, 5, 6]}
             pt={[5]}
             pb={[6]}
-            bg={"p.100"}
+            bg={"var(--p500a)"}
             borderRadius={16}
           >
             <Box>
@@ -115,20 +115,7 @@ export default function PendaftaranPengujian() {
 
           <Tabs isFitted variant="unstyled">
             <TabList borderRadius={8} bg={"var(--divider)"} mb={4}>
-              {/* <Tab borderRadius={8} _selected={{ bg: "p.500", color: "white" }}>
-                <Icon
-                  as={Eyedropper}
-                  fontSize={iconSize}
-                  mr={[null, null, 2]}
-                />
-                {sw >= 768 && (
-                  <Text fontWeight={500} fontSize={[12, null, 14]}>
-                    Sampel & Parameter
-                  </Text>
-                )}
-              </Tab> */}
-
-              <Tab borderRadius={8} _selected={{ bg: "p.500", color: "white" }}>
+              <Tab borderRadius={8} _selected={{ bg: "p.500", color: "black" }}>
                 <Icon as={Images} fontSize={iconSize} mr={[null, null, 2]} />
                 {sw >= 768 && (
                   <Text fontWeight={500} fontSize={[12, null, 14]}>
@@ -137,7 +124,7 @@ export default function PendaftaranPengujian() {
                 )}
               </Tab>
 
-              <Tab borderRadius={8} _selected={{ bg: "p.500", color: "white" }}>
+              <Tab borderRadius={8} _selected={{ bg: "p.500", color: "black" }}>
                 <Icon as={Files} fontSize={iconSize} mr={[null, null, 2]} />
                 {sw > 768 && (
                   <Text fontWeight={500} fontSize={[12, null, 14]}>
@@ -159,7 +146,7 @@ export default function PendaftaranPengujian() {
 
                 <TambahFotoSampelModal />
 
-                <Text color={"red"} mb={4}>
+                <Text color={"red.400"} mb={4}>
                   *Minimal 1 foto sampel
                 </Text>
 
@@ -206,7 +193,7 @@ export default function PendaftaranPengujian() {
 
                 <TambahFilePendukungModal />
 
-                <Text color={"red"} mb={4}>
+                <Text color={"red.400"} mb={4}>
                   *Berkas Kontrak Wajib di Unggah
                 </Text>
 
@@ -228,7 +215,14 @@ export default function PendaftaranPengujian() {
           <Button variant={"ghost"} colorScheme="ap" className="lg-clicky">
             Kembali
           </Button>
-          <Button colorScheme="ap" className="lg-clicky">
+
+          {/* TODO verify data, is exist can navigate to next step */}
+          <Button
+            colorScheme="ap"
+            className="lg-clicky"
+            as={Link}
+            to={"/customer/pengujian/pendaftaran-pengujian/1/detail-pengujian"}
+          >
             Lanjutkan
           </Button>
         </HStack>

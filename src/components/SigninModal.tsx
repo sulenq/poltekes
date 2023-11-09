@@ -54,6 +54,7 @@ export default function SigninModal() {
         id={"signinButton"}
         colorScheme="ap"
         className="clicky"
+        // color={"white"}
         onClick={onOpen}
       >
         Masuk

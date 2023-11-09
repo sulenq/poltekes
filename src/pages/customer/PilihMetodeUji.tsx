@@ -44,7 +44,7 @@ export default function PilihMetodeUji() {
             px={[4, 5, 6]}
             pt={[5]}
             pb={[6]}
-            bg={"p.100"}
+            bg={"var(--p500a)"}
             borderRadius={16}
           >
             <Box>

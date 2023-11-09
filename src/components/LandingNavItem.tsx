@@ -37,13 +37,9 @@ export default function LandingNavItem({ nav }: Props) {
         color={"white"}
         onClick={scrollToSection}
         justifyContent={"flex-start"}
-        //   color={navActive ? "p.500" : ""}
-        //   borderBottom={navActive ? "2px solid var(--p500)" : ""}
       >
         <HStack w={"100%"} justify={"space-between"}>
           <Text textAlign={"left"}>{nav.name}</Text>
-
-          {/* <Icon as={nav.icon} fontSize={iconSize} /> */}
         </HStack>
       </Button>
     );
@@ -54,11 +50,8 @@ export default function LandingNavItem({ nav }: Props) {
       variant={"ghost"}
       borderRadius={"0"}
       className="btn"
-      color={"black"}
       onClick={scrollToSection}
       h={"80px"}
-      //   color={navActive ? "p.500" : ""}
-      //   borderBottom={navActive ? "2px solid var(--p500)" : ""}
     >
       {nav.name}
     </Button>

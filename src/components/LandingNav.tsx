@@ -7,6 +7,7 @@ import LandingNavItem from "./LandingNavItem";
 import SigninModal from "./SigninModal";
 import LandingHeader from "./LandingHeader";
 import SignupModal from "./SignupModal";
+import { ColorModeSwitcher } from "../ColorModeSwitcher";
 
 export default function LandingNav() {
   const sw = useScreenWidth();
@@ -25,6 +26,8 @@ export default function LandingNav() {
       <HStack>
         {sw > 520 && (
           <>
+            <ColorModeSwitcher />
+
             <SignupModal />
 
             <SigninModal />

@@ -1,4 +1,4 @@
-import { Box, Text, VStack } from "@chakra-ui/react";
+import { Box, Text, VStack, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 import CustomerNav from "./CustomerNav";
 import Container from "./Container";
@@ -11,6 +11,8 @@ type Props = {
 };
 
 export default function CustomerContainer({ children, active }: Props) {
+  const navBg = useColorModeValue("white", "dark");
+
   return (
     <VStack gap={0} minH={"100vh"} align={"stretch"}>
       <Box
@@ -19,7 +21,7 @@ export default function CustomerContainer({ children, active }: Props) {
         boxShadow={"0 0 5px 5px var(--divider)"}
         position={"sticky"}
         top={0}
-        bg={"white"}
+        bg={navBg}
         zIndex={99}
       >
         <Container justify={"center"}>
