@@ -42,7 +42,7 @@ export default function RiwayatPengujianList() {
         color: "green",
       },
       statusOrAksi: {
-        name: "Pengujian - 12-12-2023",
+        name: "Tanggal Pengujian - 12/12/2023",
         type: "status",
         color: "blue",
       },
