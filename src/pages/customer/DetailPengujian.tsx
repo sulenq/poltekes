@@ -102,7 +102,7 @@ export default function DetailPengujian() {
           border={"1px solid var(--divider3)"}
           mb={8}
         >
-          <HStack justify={"space-between"} mb={[4, 5, 6]}>
+          <HStack justify={"space-between"} mb={4}>
             <Text fontWeight={600}>Metode Uji</Text>
 
             <Button

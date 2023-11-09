@@ -31,9 +31,9 @@ export default function StepperPengujian({ index }: Props) {
       maxW={"728px"}
       mx={"auto"}
       colorScheme="ap"
-      orientation={sw < 480 ? "vertical" : "horizontal"}
-      gap={[0, 4, 4]}
-      height={["160px", "fit-content", "fit-content"]}
+      orientation={sw < 580 ? "vertical" : "horizontal"}
+      gap={sw < 580 ? 0 : 4}
+      height={sw < 580 ? "160px" : "fit-content"}
     >
       {stepsPengujian.map((step, index) => (
         <Step key={index}>
