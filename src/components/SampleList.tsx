@@ -111,7 +111,7 @@ export default function SampleList() {
 
   return (
     <Center p={5} flexDir={"column"}>
-      <Image src="/svg/sample.svg" maxW={"480px"} />
+      <Image src="/vector/sample.webp" maxW={"480px"} />
       <Text textAlign={"center"} fontWeight={500} maxW={"400px"}>
         Maaf, Saat Ini Anda Belum Memiliki Sampel Uji yang Tersedia
       </Text>

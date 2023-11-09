@@ -14,7 +14,9 @@ export default function InformasiAkun() {
   return (
     <Box>
       <HStack mb={2}>
-        <Text w={"130px"}>Nama</Text>
+        <Text w={"130px"} flexShrink={0}>
+          Nama
+        </Text>
 
         <Text mx={1}>:</Text>
 
@@ -22,7 +24,9 @@ export default function InformasiAkun() {
       </HStack>
 
       <HStack mb={2}>
-        <Text w={"130px"}>Kategori</Text>
+        <Text w={"130px"} flexShrink={0}>
+          Kategori
+        </Text>
 
         <Text mx={1}>:</Text>
 
@@ -30,7 +34,9 @@ export default function InformasiAkun() {
       </HStack>
 
       <HStack mb={2}>
-        <Text w={"130px"}>Telepon</Text>
+        <Text w={"130px"} flexShrink={0}>
+          Telepon
+        </Text>
 
         <Text mx={1}>:</Text>
 
@@ -38,7 +44,9 @@ export default function InformasiAkun() {
       </HStack>
 
       <HStack mb={2}>
-        <Text w={"130px"}>Email</Text>
+        <Text w={"130px"} flexShrink={0}>
+          Email
+        </Text>
 
         <Text mx={1}>:</Text>
 
@@ -46,7 +54,9 @@ export default function InformasiAkun() {
       </HStack>
 
       <HStack mb={2}>
-        <Text w={"130px"}>Instansi</Text>
+        <Text w={"130px"} flexShrink={0}>
+          Instansi
+        </Text>
 
         <Text mx={1}>:</Text>
 
@@ -54,7 +64,9 @@ export default function InformasiAkun() {
       </HStack>
 
       <HStack>
-        <Text w={"130px"}>Alamat Instansi</Text>
+        <Text w={"130px"} flexShrink={0}>
+          Alamat Instansi
+        </Text>
 
         <Text mx={1}>:</Text>
 

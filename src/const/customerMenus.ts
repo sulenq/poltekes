@@ -1,6 +1,6 @@
 const customerMenus = [
   {
-    img: "/svg/sample.svg",
+    img: "/vector/sample.svg",
     name: "Pengujian",
     link: "/customer/pengujian",
   },

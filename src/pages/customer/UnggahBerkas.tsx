@@ -153,7 +153,7 @@ export default function PendaftaranPengujian() {
                 <DividerFullHorizontal mb={4} />
 
                 <Center p={5} flexDir={"column"}>
-                  <Image src="/svg/sampleImage.svg" maxW={"480px"} />
+                  <Image src="/vector/sampleImage.webp" maxW={"280px"} />
                   <Text textAlign={"center"} fontWeight={500} maxW={"400px"}>
                     Maaf, Saat Ini Anda Belum Memiliki Foto Sampel yang Tersedia
                   </Text>
@@ -200,7 +200,7 @@ export default function PendaftaranPengujian() {
                 <DividerFullHorizontal mb={4} />
 
                 <Center p={5} flexDir={"column"}>
-                  <Image src="/svg/file.svg" maxW={"480px"} />
+                  <Image src="/vector/file.webp" maxW={"280px"} />
                   <Text textAlign={"center"} fontWeight={500} maxW={"400px"}>
                     Maaf, Saat Ini Anda Belum Memiliki File Pendukung yang
                     Tersedia
