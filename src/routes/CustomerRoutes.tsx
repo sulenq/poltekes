@@ -6,6 +6,7 @@ import Pengujian from "../pages/customer/Pengujian";
 import UnggahBerkas from "../pages/customer/UnggahBerkas";
 import MissingPage from "../pages/MissingPage";
 import PilihMetodeUji from "../pages/customer/PilihMetodeUji";
+import DetailPengujian from "../pages/customer/DetailPengujian";
 
 export default function CustomerRoutes() {
   return (
@@ -42,6 +43,15 @@ export default function CustomerRoutes() {
         element={
           <RequireAuth>
             <UnggahBerkas />
+          </RequireAuth>
+        }
+      />
+
+      <Route
+        path="/pengujian/pendaftaran-pengujian/:noreg/detail-pengujian"
+        element={
+          <RequireAuth>
+            <DetailPengujian />
           </RequireAuth>
         }
       />

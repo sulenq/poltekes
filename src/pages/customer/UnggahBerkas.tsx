@@ -226,48 +226,6 @@ export default function PendaftaranPengujian() {
             Lanjutkan
           </Button>
         </HStack>
-
-        {/* <Stack
-          flexDir={["column", "row", "row"]}
-          align={["strech", null, "center"]}
-          gap={4}
-          mb={6}
-          justify={"space-between"}
-        >
-          <Checkbox
-            colorScheme="ap"
-            alignItems={"flex-start"}
-            maxW={"600px"}
-            isChecked={agreement}
-            onChange={() => {
-              setAgreement((ps) => !ps);
-            }}
-          >
-            <Text mt={checkBoxTextMt} fontSize={[12, null, 14]}>
-              Saya dengan ini menyatakan setuju dengan{" "}
-              <ChakraLink
-                color="p.500"
-                href="/syarat-dan-ketentuan"
-                fontSize={["12px !important", null, "14px !important"]}
-                isExternal
-                fontWeight={600}
-              >
-                syarat dan ketentuan
-              </ChakraLink>{" "}
-              yang berlaku di LPPT POLTEKKES Kemenkes Semarang
-            </Text>
-          </Checkbox>
-
-          <Button
-            flexShrink={0}
-            colorScheme="ap"
-            className="lg-clicky"
-            h={"50px"}
-            isDisabled={!agreement}
-          >
-            Simpan & Kirim
-          </Button>
-        </Stack> */}
       </Container>
     </CustomerContainer>
   );
