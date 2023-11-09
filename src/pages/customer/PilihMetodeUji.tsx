@@ -97,7 +97,11 @@ export default function PilihMetodeUji() {
             <InputLeftElement pointerEvents="none">
               <Icon as={MagnifyingGlass} fontSize={iconSize} />
             </InputLeftElement>
-            <Input placeholder="Cari metode uji" maxW={"352px"} />
+            <Input
+              placeholder="Cari metode uji"
+              maxW={"352px"}
+              className="filled"
+            />
           </InputGroup>
 
           <Button

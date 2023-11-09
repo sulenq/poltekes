@@ -23,7 +23,7 @@
   --bt: #333333;
   --wt: #eeeeee;
 
-  --divider: #bfbfbf27;
+  --divider: #bfbfbf15;
   --divider2: #bfbfbf40;
   --divider3: #bfbfbf60;
 
@@ -131,7 +131,7 @@ textarea.filled:focus-visible {
   /* border: 1px solid var(--p500) !important; */
 }
 input.filled {
-  border: none !important;
+  border: 1px solid var(--divider3) !important;
   background: var(--divider) !important;
 }
 input.filled:focus,
