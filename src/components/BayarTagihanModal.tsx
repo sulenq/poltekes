@@ -164,7 +164,7 @@ export default function BayarTagihanModal(props: any) {
               </Box>
             </Alert>
 
-            <Accordion mb={6} allowMultiple>
+            <Accordion mb={4} allowMultiple>
               <AccordionItem className="accordionItem">
                 <AccordionButton
                   p={6}
