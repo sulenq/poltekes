@@ -59,7 +59,7 @@ export default function FaqItemComponent({ faq }: Props) {
         </Center>
       </AccordionButton>
 
-      <AccordionPanel p={4}>
+      <AccordionPanel p={4} pt={3}>
         <Text lineHeight={"187.5%"}>{faq.answer}</Text>
       </AccordionPanel>
     </AccordionItem>

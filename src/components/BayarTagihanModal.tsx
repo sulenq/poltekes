@@ -204,7 +204,7 @@ export default function BayarTagihanModal(props: any) {
                   </Center>
                 </AccordionButton>
 
-                <AccordionPanel p={4}>
+                <AccordionPanel p={4} pt={2}>
                   <OrderedList>
                     <ListItem mb={2} mt={2}>
                       <b>Akses Akun</b> : Login ke akun perbankan Anda.
