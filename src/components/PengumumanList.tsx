@@ -47,6 +47,7 @@ export default function PengumumanList() {
           mb={2}
           as={Link}
           to={pengumuman.link}
+          justify={"space-between"}
         >
           <Text>{pengumuman.title}</Text>
 
