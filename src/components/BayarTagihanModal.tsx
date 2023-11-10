@@ -105,7 +105,7 @@ export default function BayarTagihanModal(props: any) {
       </Button>
 
       <Modal
-        isOpen={true}
+        isOpen={isOpen}
         onClose={handleOnClose}
         size={"xl"}
         scrollBehavior="inside"
@@ -264,6 +264,7 @@ export default function BayarTagihanModal(props: any) {
                   colorScheme="ap"
                   gap={1}
                   isChecked={formik.values.agreement}
+                  isInvalid={formik.errors.agreement ? true : false}
                   onChange={() => {
                     formik.setFieldValue("agreement", !formik.values.agreement);
                   }}

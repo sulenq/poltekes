@@ -284,6 +284,7 @@ export default function SignupModal() {
                   alignItems={"flex-start"}
                   colorScheme="ap"
                   gap={1}
+                  isInvalid={formik.errors.agreement ? true : false}
                   onChange={() => {
                     formik.setFieldValue("agreement", !formik.values.agreement);
                   }}

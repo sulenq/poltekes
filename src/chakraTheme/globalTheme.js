@@ -59,6 +59,7 @@ export const globalTheme = extendTheme({
     w: "white",
     wt: "#eeeeee",
     dark: "#1F2937",
+    error: "#E53E3E",
   },
 
   styles: {
@@ -175,7 +176,9 @@ export const globalTheme = extendTheme({
           color: "white",
         },
         control: {
-          border: "2px solid var(--divider3) !important",
+          border: props.isInvalid
+            ? "1.5px solid #E53E3E"
+            : "2px solid var(--divider3) !important",
         },
       }),
     },
