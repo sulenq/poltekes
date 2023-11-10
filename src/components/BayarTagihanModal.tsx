@@ -167,7 +167,7 @@ export default function BayarTagihanModal(props: any) {
             <Accordion mb={4} allowMultiple>
               <AccordionItem className="accordionItem">
                 <AccordionButton
-                  p={6}
+                  p={4}
                   borderRadius={16}
                   justifyContent={"space-between"}
                   alignItems={"center"}
@@ -204,7 +204,7 @@ export default function BayarTagihanModal(props: any) {
                   </Center>
                 </AccordionButton>
 
-                <AccordionPanel p={6}>
+                <AccordionPanel p={4}>
                   <OrderedList>
                     <ListItem mb={2} mt={2}>
                       <b>Akses Akun</b> : Login ke akun perbankan Anda.

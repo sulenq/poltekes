@@ -21,7 +21,7 @@ export default function FaqItemComponent({ faq }: Props) {
   return (
     <AccordionItem className="accordionItem" mb={4}>
       <AccordionButton
-        p={6}
+        p={4}
         borderRadius={16}
         justifyContent={"space-between"}
         alignItems={"center"}
@@ -59,7 +59,7 @@ export default function FaqItemComponent({ faq }: Props) {
         </Center>
       </AccordionButton>
 
-      <AccordionPanel p={6}>
+      <AccordionPanel p={4}>
         <Text lineHeight={"187.5%"}>{faq.answer}</Text>
       </AccordionPanel>
     </AccordionItem>
