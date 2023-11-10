@@ -63,8 +63,13 @@ export default function FilesInput(props: Props) {
             <Text fontSize={[12, null, 14]}>Pilih File</Text>
           </HStack>
 
-          <Box px={4} py={2}>
-            <Text noOfLines={1} fontSize={[12, null, 14]}>
+          <Box px={4} py={2} maxW={"260px"}>
+            <Text
+              noOfLines={1}
+              fontSize={[12, null, 14]}
+              whiteSpace={"normal"}
+              maxW={"260px"}
+            >
               {formik.values[name].length > 0
                 ? formik.values[name].map((file: File) => file.name).join(", ")
                 : "Pilih berkas yang ingin diunggah"}
