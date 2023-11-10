@@ -13,9 +13,15 @@ export default function Pengujian() {
       <Container>
         <Box>
           <HStack className="breadcrumb" mt={6}>
-            <Link to="/customer">Beranda</Link>
-            <Icon as={CaretRight} opacity={0.3} />
-            <Text className="breadcrumbCurrent">Pengujian</Text>
+            <Link className="breadcrumbItem" to="/customer">
+              Beranda
+            </Link>
+            <Icon
+              as={CaretRight}
+              opacity={0.3}
+              className="breadcrumbSeparator"
+            />
+            <Text className="breadcrumbItem breadcrumbCurrent">Pengujian</Text>
           </HStack>
 
           <Text fontSize={[22, null, 24]} fontWeight={600} mt={6} mb={6}>

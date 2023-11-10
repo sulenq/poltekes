@@ -41,11 +41,25 @@ export default function PendaftaranPengujian() {
         <Box>
           {/* Bread Crumbs */}
           <HStack className="breadcrumb" mt={6}>
-            <Link to="/customer">Beranda</Link>
-            <Icon as={CaretRight} opacity={0.3} />
-            <Link to="/customer/pengujian">Pengujian</Link>
-            <Icon as={CaretRight} opacity={0.3} />
-            <Text className="breadcrumbCurrent">Unggah Bekas</Text>
+            <Link to="/customer" className="breadcrumbItem">
+              Beranda
+            </Link>
+            <Icon
+              as={CaretRight}
+              opacity={0.3}
+              className="breadcrumbSeparator"
+            />
+            <Link to="/customer/pengujian" className="breadcrumbItem">
+              Pengujian
+            </Link>
+            <Icon
+              as={CaretRight}
+              opacity={0.3}
+              className="breadcrumbSeparator"
+            />
+            <Text className="breadcrumbCurrent breadcrumbItem">
+              Unggah Bekas
+            </Text>
           </HStack>
 
           <Text fontSize={[22, null, 24]} fontWeight={600} mt={6} mb={6}>
@@ -220,7 +234,14 @@ export default function PendaftaranPengujian() {
         </Box>
 
         <HStack justify={"flex-end"} gap={2} mb={8}>
-          <Button variant={"ghost"} colorScheme="ap" className="lg-clicky">
+          <Button
+            variant={"ghost"}
+            colorScheme="ap"
+            className="lg-clicky"
+            onClick={() => {
+              window.history.back();
+            }}
+          >
             Kembali
           </Button>
 

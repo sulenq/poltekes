@@ -23,9 +23,9 @@
   --bt: #333333;
   --wt: #eeeeee;
 
-  --divider: #bfbfbf15;
-  --divider2: #bfbfbf30;
-  --divider3: #bfbfbf45;
+  --divider: #bfbfbf20;
+  --divider2: #bfbfbf40;
+  --divider3: #bfbfbf50;
 
   --dark: #1f2937;
 
@@ -190,43 +190,6 @@ select {
   }
 }
 
-@media screen and (min-width: 768px) {
-  a {
-    font-size: 16px !important;
-  }
-  p {
-    font-size: 16px;
-  }
-  label {
-    font-size: 16px !important;
-  }
-  td {
-    font-size: 16px !important;
-  }
-  th {
-    font-size: 14px !important;
-  }
-  .chakra-alert__title {
-    font-size: 16px;
-  }
-  .chakra-alert__desc {
-    font-size: 16px;
-  }
-  .chakra-form__error-message {
-    font-size: 14px !important;
-  }
-
-  button {
-    font-size: 15px !important;
-  }
-  input {
-    font-size: 15px !important;
-  }
-  select {
-    font-size: 15px !important;
-  }
-}
-
 /* Custom */
 
 .scrollX::-webkit-scrollbar {
@@ -258,7 +221,11 @@ select {
   background: var(--divider);
   border-radius: 8px;
   padding: 4px 16px;
-  height: 40px;
+  height: 30px;
+}
+.breadcrumbItem,
+.breadcrumbSeparator {
+  font-size: 11px !important;
 }
 .breadcrumbCurrent {
   font-weight: 600;
@@ -281,4 +248,45 @@ select {
   border-radius: 16px;
   justify-content: space-between;
   align-items: flex-start;
+}
+
+@media screen and (min-width: 768px) {
+  a {
+    font-size: 16px !important;
+  }
+  p {
+    font-size: 16px;
+  }
+  label {
+    font-size: 16px !important;
+  }
+  td {
+    font-size: 16px !important;
+  }
+  th {
+    font-size: 14px !important;
+  }
+  .breadcrumbItem,
+  .breadcrumbSeparator {
+    font-size: 13px !important;
+  }
+  .chakra-alert__title {
+    font-size: 16px;
+  }
+  .chakra-alert__desc {
+    font-size: 16px;
+  }
+  .chakra-form__error-message {
+    font-size: 14px !important;
+  }
+
+  button {
+    font-size: 15px !important;
+  }
+  input {
+    font-size: 15px !important;
+  }
+  select {
+    font-size: 15px !important;
+  }
 }

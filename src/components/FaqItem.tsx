@@ -24,7 +24,7 @@ export default function FaqItemComponent({ faq }: Props) {
         p={6}
         borderRadius={16}
         justifyContent={"space-between"}
-        alignItems={"flex-start"}
+        alignItems={"center"}
         onClick={() => {
           if (isOpen) {
             onClose();
@@ -46,6 +46,7 @@ export default function FaqItemComponent({ faq }: Props) {
           bg={isOpen ? "p.500" : "var(--divider)"}
           borderRadius={"full"}
           p={2}
+          alignSelf={"flex-start"}
         >
           <Icon
             as={CaretDown}

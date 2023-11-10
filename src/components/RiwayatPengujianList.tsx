@@ -109,7 +109,7 @@ export default function RiwayatPengujianList() {
                 )}
               </Td>
               <Td textAlign={"center"}>
-                <StatusOrAksi data={d.statusOrAksi} />
+                <StatusOrAksi data={d.statusOrAksi} noreg={d.id} />
               </Td>
               <Td isNumeric>
                 <Button variant={"outline"} colorScheme="ap" size={"sm"}>

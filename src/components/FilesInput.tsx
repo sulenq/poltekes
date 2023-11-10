@@ -1,7 +1,13 @@
 import { Box, Button, HStack, Input, Text } from "@chakra-ui/react";
 import React, { useRef } from "react";
 
-export default function FilesInput(props: any) {
+type Props = {
+  formik: any;
+  name: string;
+  accept?: string;
+};
+
+export default function FilesInput(props: Props) {
   const formik = props.formik;
   const name = props.name;
   const accept = props.accept;

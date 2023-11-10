@@ -32,11 +32,25 @@ export default function DetailPengujian() {
         <Box>
           {/* Bread Crumbs */}
           <HStack className="breadcrumb" mt={6}>
-            <Link to="/customer">Beranda</Link>
-            <Icon as={CaretRight} opacity={0.3} />
-            <Link to="/customer/pengujian">Pengujian</Link>
-            <Icon as={CaretRight} opacity={0.3} />
-            <Text className="breadcrumbCurrent">Detail Pengujian</Text>
+            <Link to="/customer" className="breadcrumbItem">
+              Beranda
+            </Link>
+            <Icon
+              as={CaretRight}
+              opacity={0.3}
+              className="breadcrumbSeparator"
+            />
+            <Link to="/customer/pengujian" className="breadcrumbItem">
+              Pengujian
+            </Link>
+            <Icon
+              as={CaretRight}
+              opacity={0.3}
+              className="breadcrumbSeparator"
+            />
+            <Text className="breadcrumbCurrent breadcrumbItem">
+              Detail Pengujian
+            </Text>
           </HStack>
 
           <Text fontSize={[22, null, 24]} fontWeight={600} mt={6} mb={6}>
