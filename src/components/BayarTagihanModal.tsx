@@ -105,7 +105,7 @@ export default function BayarTagihanModal(props: any) {
       </Button>
 
       <Modal
-        isOpen={isOpen}
+        isOpen={true}
         onClose={handleOnClose}
         size={"xl"}
         scrollBehavior="inside"
@@ -245,37 +245,45 @@ export default function BayarTagihanModal(props: any) {
             </Accordion>
 
             <form id="buktiPembayaranForm" onSubmit={formik.handleSubmit}>
-              <FormControl mb={4}>
+              <FormControl
+                mb={4}
+                isInvalid={formik.errors.buktiPembayaran ? true : false}
+              >
                 <FormLabel>
                   Unggah Bukti Pembayaran <RequiredForm />
                 </FormLabel>
                 <FilesInput formik={formik} name="buktiPembayaran" />
-                <FormErrorMessage />
+                <FormErrorMessage>
+                  {formik.errors.buktiPembayaran}
+                </FormErrorMessage>
               </FormControl>
 
-              <Checkbox
-                alignItems={"flex-start"}
-                colorScheme="ap"
-                gap={1}
-                isChecked={formik.values.agreement}
-                onChange={() => {
-                  formik.setFieldValue("agreement", !formik.values.agreement);
-                }}
-              >
-                <Text mt={checkBoxTextMt} fontSize={[12, null, 14]}>
-                  Saya dengan ini menyatakan setuju dengan{" "}
-                  <ChakraLink
-                    color="p.500"
-                    href="/syarat-dan-ketentuan"
-                    fontSize={["12px !important", null, "14px !important"]}
-                    isExternal
-                    fontWeight={600}
-                  >
-                    syarat dan ketentuan
-                  </ChakraLink>{" "}
-                  yang berlaku di LPPT POLTEKKES Kemenkes Semarang
-                </Text>
-              </Checkbox>
+              <FormControl isInvalid={formik.errors.agreement ? true : false}>
+                <Checkbox
+                  alignItems={"flex-start"}
+                  colorScheme="ap"
+                  gap={1}
+                  isChecked={formik.values.agreement}
+                  onChange={() => {
+                    formik.setFieldValue("agreement", !formik.values.agreement);
+                  }}
+                >
+                  <Text mt={checkBoxTextMt} fontSize={[12, null, 14]}>
+                    Saya dengan ini menyatakan setuju dengan{" "}
+                    <ChakraLink
+                      color="p.500"
+                      href="/syarat-dan-ketentuan"
+                      fontSize={["12px !important", null, "14px !important"]}
+                      isExternal
+                      fontWeight={600}
+                    >
+                      syarat dan ketentuan
+                    </ChakraLink>{" "}
+                    yang berlaku di LPPT POLTEKKES Kemenkes Semarang
+                  </Text>
+                </Checkbox>
+                <FormErrorMessage>{formik.errors.agreement}</FormErrorMessage>
+              </FormControl>
             </form>
           </ModalBody>
 
