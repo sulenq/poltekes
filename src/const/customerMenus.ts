@@ -1,6 +1,6 @@
 const customerMenus = [
   {
-    img: "/vector/sample.svg",
+    img: "/vector/sampleHalf.webp",
     name: "Pengujian",
     link: "/customer/pengujian",
   },

@@ -1,13 +1,16 @@
 import React from "react";
 import CustomerContainer from "../../components/CustomerContainer";
 import Container from "../../components/Container";
-import { Box, Image, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import { Box, HStack, Image, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import InformasiAkun from "../../components/InformasiAkun";
 import PengumumanList from "../../components/PengumumanList";
 import customerMenus from "../../const/customerMenus";
 import { Link } from "react-router-dom";
+import useScreenWidth from "../../utils/useGetScreenWidth";
 
 export default function Beranda() {
+  const sw = useScreenWidth();
+
   return (
     <CustomerContainer active={"Beranda"}>
       <>
@@ -38,29 +41,33 @@ export default function Beranda() {
             Menu
           </Text>
 
-          <SimpleGrid columns={[2, 3, 4]} gap={[4, 5, 6]}>
+          <SimpleGrid columns={sw < 660 ? 1 : sw < 900 ? 2 : 3} gap={4}>
             {customerMenus.map((menu, i) => (
-              <VStack
+              <HStack
                 gap={0}
                 key={i}
                 p={4}
+                pl={0}
                 borderRadius={16}
                 bg={"p.500"}
                 as={Link}
                 to={menu.link}
                 className="lg-clicky"
                 transition={"200ms"}
+                position={"relative"}
               >
-                <Image src={menu.img} w={"80%"} mt={2} mb={4} />
+                <Image src={menu.img} h={"120px"} />
 
                 <Text
-                  fontSize={[16, null, 18]}
+                  fontSize={[20, null, 22]}
                   fontWeight={600}
                   color={"white"}
+                  w={"100%"}
+                  textAlign={"center"}
                 >
                   {menu.name}
                 </Text>
-              </VStack>
+              </HStack>
             ))}
           </SimpleGrid>
         </Container>

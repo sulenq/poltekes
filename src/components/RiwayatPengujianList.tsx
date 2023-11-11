@@ -11,7 +11,7 @@ import {
   Tr,
 } from "@chakra-ui/react";
 import useFormatNumber from "../utils/useFormatNumber";
-import StatusOrAksi from "./StatusOrAksi";
+import Aksi from "./Aksi";
 
 export default function RiwayatPengujianList() {
   // TODO show riwayat pengujian table data
@@ -22,45 +22,21 @@ export default function RiwayatPengujianList() {
       tanggalOrder: "12-11-2023",
       nama: "Jolitos Kurniawan",
       tagihan: 2000000,
-      statusPembayaran: {
-        name: "Belum Dibayar",
-        color: "red",
-      },
-      statusOrAksi: {
-        name: "Bayar Tagihan",
-        type: "action",
-        color: "ap",
-      },
+      status: "Tagihan Belum Dibayar",
     },
     {
       id: 2,
       tanggalOrder: "10-12-2023",
       nama: "Karlitos Bechkam",
       tagihan: 2400000,
-      statusPembayaran: {
-        name: "Sudah Dibayar",
-        color: "green",
-      },
-      statusOrAksi: {
-        name: "Tanggal Pengujian - 12/12/2023",
-        type: "status",
-        color: "blue",
-      },
+      status: "Tanggal Pengujian - 12/12/2023",
     },
     {
       id: 3,
       tanggalOrder: "12-12-2023",
       nama: "Naomi Sinaga",
       tagihan: null,
-      statusPembayaran: {
-        name: "-",
-        color: "-",
-      },
-      statusOrAksi: {
-        name: "Unggah Berkas",
-        type: "action",
-        color: "ap",
-      },
+      status: "Berkas Belum Lengkap",
     },
   ];
 
@@ -78,9 +54,11 @@ export default function RiwayatPengujianList() {
             <Th whiteSpace={"nowrap"} isNumeric>
               Tagihan
             </Th>
-            <Th whiteSpace={"nowrap"}>Status Pembayaran</Th>
             <Th whiteSpace={"nowrap"} textAlign={"center"}>
-              Status/Aksi
+              Status
+            </Th>
+            <Th whiteSpace={"nowrap"} textAlign={"center"}>
+              Aksi
             </Th>
             <Th isNumeric></Th>
           </Tr>
@@ -97,22 +75,15 @@ export default function RiwayatPengujianList() {
                 {d.tagihan !== null ? `Rp ${fn(d.tagihan)}` : "-"}
               </Td>
               <Td textAlign={"center"}>
-                {d.statusPembayaran.name === "-" ? (
-                  "-"
-                ) : (
-                  <Badge
-                    colorScheme={d.statusPembayaran.color}
-                    className="badge"
-                  >
-                    {d.statusPembayaran.name}
-                  </Badge>
-                )}
+                <Badge className="badge" colorScheme="orange">
+                  {d.status}
+                </Badge>
               </Td>
               <Td textAlign={"center"}>
-                <StatusOrAksi data={d.statusOrAksi} noreg={d.id} />
+                <Aksi status={d.status} noreg={d.id} />
               </Td>
               <Td isNumeric>
-                <Button variant={"outline"} colorScheme="ap" size={"sm"}>
+                <Button variant={"outline"} colorScheme="ap">
                   Detail
                 </Button>
               </Td>
