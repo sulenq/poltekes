@@ -40,6 +40,16 @@ export default function RiwayatPengujianList() {
     },
   ];
 
+  const badgeColor = (status: string) => {
+    switch (status) {
+      default:
+        return "blue";
+      case "Tagihan Belum Dibayar":
+      case "Berkas Belum Lengkap":
+        return "red";
+    }
+  };
+
   const fn = useFormatNumber;
 
   return (
@@ -75,7 +85,7 @@ export default function RiwayatPengujianList() {
                 {d.tagihan !== null ? `Rp ${fn(d.tagihan)}` : "-"}
               </Td>
               <Td textAlign={"center"}>
-                <Badge className="badge" colorScheme="orange">
+                <Badge className="badge" colorScheme={badgeColor(d.status)}>
                   {d.status}
                 </Badge>
               </Td>

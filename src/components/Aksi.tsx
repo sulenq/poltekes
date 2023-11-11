@@ -1,6 +1,7 @@
 import { Button, Text } from "@chakra-ui/react";
 import React from "react";
 import BayarTagihanModal from "./BayarTagihanModal";
+import { Link } from "react-router-dom";
 
 export default function Aksi(props: any) {
   const noreg = props.noreg;
@@ -13,7 +14,12 @@ export default function Aksi(props: any) {
       return <BayarTagihanModal noreg={noreg} />;
     case "Berkas Belum Lengkap":
       return (
-        <Button colorScheme="ap" className="lg-clicky">
+        <Button
+          colorScheme="ap"
+          className="lg-clicky"
+          as={Link}
+          to={"/customer/pengujian/pendaftaran-pengujian/1/unggah-berkas"}
+        >
           Unggah Berkas
         </Button>
       );
