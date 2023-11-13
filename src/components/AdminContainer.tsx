@@ -1,10 +1,19 @@
-import { Box, HStack, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Avatar,
+  Box,
+  HStack,
+  Icon,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import React from "react";
 import ContentContainer from "./ContentContainer";
 import AdminNav from "./AdminNav";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
 import useScreenWidth from "../utils/useGetScreenWidth";
 import Container from "./Container";
+import { CaretDown } from "@phosphor-icons/react";
+import { iconSize } from "../const/sizes";
 
 type Props = {
   children: JSX.Element;
@@ -33,7 +42,22 @@ export default function AdminContainer({ children, active }: Props) {
                   {active}
                 </Text>
 
-                <ColorModeSwitcher fontSize={20} />
+                <HStack>
+                  <ColorModeSwitcher fontSize={20} className="btn-solid" />
+
+                  <HStack
+                    bg={"var(--divider)"}
+                    borderRadius={8}
+                    p={2}
+                    cursor={"pointer"}
+                  >
+                    <Icon as={CaretDown} fontSize={iconSize} />
+
+                    <Text>Admin</Text>
+
+                    <Avatar name="Jolitos Kurniawan" size={"xs"} />
+                  </HStack>
+                </HStack>
               </HStack>
             </Container>
 
