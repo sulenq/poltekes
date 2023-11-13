@@ -3,7 +3,6 @@ import React from "react";
 import ContentContainer from "./ContentContainer";
 import AdminNav from "./AdminNav";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
-import { iconSize } from "../const/sizes";
 
 type Props = {
   children: JSX.Element;
@@ -25,7 +24,7 @@ export default function AdminContainer({ children, active }: Props) {
                 Dashborads
               </Text>
 
-              <ColorModeSwitcher fontSize={iconSize} />
+              <ColorModeSwitcher fontSize={20} />
             </HStack>
             {children}
           </>
