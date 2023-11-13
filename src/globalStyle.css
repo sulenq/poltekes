@@ -172,29 +172,10 @@ select {
   font-size: 12px !important;
 }
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in-fade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.2;
-  }
-}
-
-/* Custom */
-
 .scrollX::-webkit-scrollbar {
   height: 10px;
 }
+
 .scrollY::-webkit-scrollbar {
   width: 10px;
 }
@@ -223,10 +204,12 @@ select {
   padding: 4px 16px;
   height: 30px;
 }
+
 .breadcrumbItem,
 .breadcrumbSeparator {
   font-size: 11px !important;
 }
+
 .breadcrumbCurrent {
   font-weight: 600;
   cursor: default;
@@ -243,12 +226,55 @@ select {
   border: 1px solid var(--divider);
   box-shadow: 1px 1px 2px 1px var(--divider);
 }
+
 .accordionButton {
   padding: 24px;
   border-radius: 16px;
   justify-content: space-between;
   align-items: flex-start;
 }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+/* Custom */
+.adminNavItem {
+  padding: 16px 28px;
+  cursor: pointer;
+  position: relative;
+}
+.adminNavItem:hover {
+  background: var(--p500a);
+}
+.active {
+  background: var(--p500a);
+}
+.active:before {
+  content: "";
+  width: 4px;
+  height: 100%;
+  background: var(--p500);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Media Querries */
 
 @media screen and (min-width: 768px) {
   a {
