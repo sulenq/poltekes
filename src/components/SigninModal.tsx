@@ -17,16 +17,18 @@ import {
   Text,
   VStack,
   useDisclosure,
+  Link as ChakraLink,
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import React, { useRef } from "react";
-import { Link } from "react-router-dom";
 import * as yup from "yup";
 import PasswordInput from "./PasswordInput";
+import { useNavigate } from "react-router-dom";
 
 export default function SigninModal() {
   const { isOpen, onClose, onOpen } = useDisclosure();
   const modalContentRef = useRef(null);
+  const navigate = useNavigate();
 
   const formik = useFormik({
     validateOnChange: false,
@@ -34,6 +36,7 @@ export default function SigninModal() {
     initialValues: {
       username: "",
       kataSandi: "",
+      isAdmin: false,
     },
 
     validationSchema: yup.object().shape({
@@ -45,6 +48,11 @@ export default function SigninModal() {
       //TODO post signin
 
       console.log(values);
+      if (values.isAdmin) {
+        navigate("/admin");
+      } else {
+        navigate("/customer");
+      }
     },
   });
 
@@ -54,7 +62,6 @@ export default function SigninModal() {
         id={"signinButton"}
         colorScheme="ap"
         className="clicky"
-        // color={"white"}
         onClick={onOpen}
       >
         Masuk
@@ -100,16 +107,33 @@ export default function SigninModal() {
 
               <FormControl
                 isInvalid={formik.errors.kataSandi ? true : false}
-                mb={5}
+                mb={2}
               >
                 <FormLabel>Kata Sandi</FormLabel>
-                <PasswordInput formik={formik} />
+                <PasswordInput formik={formik} name={"kataSandi"} />
                 <FormErrorMessage>{formik.errors.kataSandi}</FormErrorMessage>
               </FormControl>
 
+              <Text mb={4}>
+                Lupa kata sandi?{" "}
+                <ChakraLink
+                  href={"/reset-password"}
+                  isExternal
+                  color={"p.500"}
+                  fontWeight={600}
+                >
+                  Reset
+                </ChakraLink>
+              </Text>
+
               <HStack>
                 <Text fontWeight={500}>Pegawai</Text>
-                <Switch colorScheme="p" />
+                <Switch
+                  colorScheme="p"
+                  onChange={(e) => {
+                    formik.setFieldValue("isAdmin", e.target.checked);
+                  }}
+                />
               </HStack>
             </form>
           </ModalBody>
@@ -121,8 +145,8 @@ export default function SigninModal() {
                 colorScheme="ap"
                 className="lg-clicky"
                 mb={4}
-                as={Link}
-                to={"/customer"}
+                type="submit"
+                form="signinForm"
               >
                 Masuk
               </Button>
