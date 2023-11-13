@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Checkbox,
   FormControl,
@@ -18,7 +17,6 @@ import {
   Text,
   Textarea,
   VStack,
-  Wrap,
   useDisclosure,
   Link as ChakraLink,
 } from "@chakra-ui/react";
@@ -32,15 +30,6 @@ import RequiredForm from "./RequiredForm";
 export default function SignupModal() {
   const { isOpen, onClose, onOpen } = useDisclosure();
   const modalContentRef = useRef(null);
-
-  //? Dummy
-  const kateogri = [
-    "Dosen",
-    "Mahasiswa",
-    "Instansi Pemerintah",
-    "Perusahaan",
-    "Umum",
-  ];
 
   const formik = useFormik({
     validateOnChange: false,
