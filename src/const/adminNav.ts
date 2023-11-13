@@ -1,4 +1,4 @@
-import { Layout, Package, Receipt } from "@phosphor-icons/react";
+import { Layout, Package, Receipt, UsersThree } from "@phosphor-icons/react";
 
 const adminNav = [
   {
@@ -17,7 +17,22 @@ const adminNav = [
     name: "Produk",
     icon: Package,
     nested: true,
-    nav: [
+    subNav: [
+      {
+        name: "Kategori Produk",
+        link: "/admin/kategori-produk",
+      },
+      {
+        name: "Produk",
+        link: "/admin/produk",
+      },
+    ],
+  },
+  {
+    name: "Pengguna",
+    icon: UsersThree,
+    nested: true,
+    subNav: [
       {
         name: "Kategori Produk",
         link: "/admin/kategori-produk",

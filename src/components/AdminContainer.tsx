@@ -4,6 +4,7 @@ import ContentContainer from "./ContentContainer";
 import AdminNav from "./AdminNav";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
 import useScreenWidth from "../utils/useGetScreenWidth";
+import Container from "./Container";
 
 type Props = {
   children: JSX.Element;
@@ -18,16 +19,24 @@ export default function AdminContainer({ children, active }: Props) {
     <HStack gap={0} minH={"100vh"} align={"stretch"}>
       <AdminNav active={active} />
 
-      <Box bg={contentBg} flex={1} pb={sw < 770 ? "60px" : ""}>
+      <Box
+        bg={contentBg}
+        flex={1}
+        ml={sw < 770 ? "" : "80px"}
+        pb={sw < 770 ? "60px" : ""}
+      >
         <ContentContainer>
           <>
-            <HStack p={6} justify={"space-between"} w={"100%"}>
-              <Text fontSize={[22, null, 24]} fontWeight={600}>
-                Dashborads
-              </Text>
+            <Container>
+              <HStack p={4} justify={"space-between"} w={"100%"}>
+                <Text fontSize={[22, null, 24]} fontWeight={600}>
+                  Dashborads
+                </Text>
 
-              <ColorModeSwitcher fontSize={20} />
-            </HStack>
+                <ColorModeSwitcher fontSize={20} />
+              </HStack>
+            </Container>
+
             {children}
           </>
         </ContentContainer>

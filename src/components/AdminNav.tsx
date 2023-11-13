@@ -1,4 +1,8 @@
 import {
+  Accordion,
+  AccordionButton,
+  AccordionItem,
+  AccordionPanel,
   Box,
   HStack,
   Icon,
@@ -11,6 +15,8 @@ import React, { useState } from "react";
 import useScreenWidth from "../utils/useGetScreenWidth";
 import adminNav from "../const/adminNav";
 import { Link } from "react-router-dom";
+import { CaretDown } from "@phosphor-icons/react";
+import { iconSize } from "../const/sizes";
 
 type Props = {
   active: string;
@@ -70,9 +76,9 @@ export default function AdminNav({ active }: Props) {
       transition={"200ms"}
       onMouseEnter={handleOnOpen}
       onMouseLeave={handleOnClose}
-      // position={"absolute"}
-      // left={0}
-      // top={0}
+      position={"absolute"}
+      left={0}
+      top={0}
       minH={"100vh"}
     >
       <VStack gap={0} h={"152px"} py={6} px={1}>
@@ -86,20 +92,77 @@ export default function AdminNav({ active }: Props) {
       </VStack>
 
       <Box>
-        {adminNav.map((n, i) => (
-          <HStack
-            as={Link}
-            to={n.link}
-            key={i}
-            gap={6}
-            className={
-              active === n.name ? "active adminNavItem" : "adminNavItem"
-            }
-          >
-            <Icon as={n.icon} fontSize={24} weight="fill" />
-            {isOpen && <Text animation={"fade-in 500ms"}> {n.name}</Text>}
-          </HStack>
-        ))}
+        {adminNav.map((n, i) => {
+          if (n.nested) {
+            return (
+              <Accordion key={i} allowMultiple>
+                <AccordionItem border={"none"}>
+                  <AccordionButton p={0}>
+                    <HStack
+                      w={"100%"}
+                      className={
+                        active.includes(n.name)
+                          ? "active adminNavItem"
+                          : "adminNavItem"
+                      }
+                    >
+                      <HStack w={"100%"} gap={6}>
+                        <Icon as={n.icon} fontSize={24} weight="fill" />
+                        {isOpen && (
+                          <Text animation={"fade-in 500ms"}> {n.name}</Text>
+                        )}
+                      </HStack>
+
+                      {isOpen && (
+                        <Icon
+                          as={CaretDown}
+                          fontSize={iconSize}
+                          animation={"fade-in 500ms"}
+                        />
+                      )}
+                    </HStack>
+                  </AccordionButton>
+
+                  <AccordionPanel p={0} bg={"#b4b4b410"}>
+                    <Box>
+                      {n.subNav?.map((sn, i) => (
+                        <Link to={sn.link} key={i}>
+                          <Box
+                            className={
+                              active.includes(n.name)
+                                ? "active adminNavItem"
+                                : "adminNavItem"
+                            }
+                            pl={"76px !important"}
+                          >
+                            <Text>{sn.name}</Text>
+                          </Box>
+                        </Link>
+                      ))}
+                    </Box>
+                  </AccordionPanel>
+                </AccordionItem>
+              </Accordion>
+            );
+          } else {
+            return (
+              <HStack
+                key={i}
+                as={Link}
+                to={n.link}
+                gap={6}
+                className={
+                  active.includes(n.name)
+                    ? "active adminNavItem"
+                    : "adminNavItem"
+                }
+              >
+                <Icon as={n.icon} fontSize={24} weight="fill" />
+                {isOpen && <Text animation={"fade-in 500ms"}> {n.name}</Text>}
+              </HStack>
+            );
+          }
+        })}
       </Box>
     </Box>
   );
