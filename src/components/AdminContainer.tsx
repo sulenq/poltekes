@@ -21,7 +21,7 @@ export default function AdminContainer({ children, active }: Props) {
       <Box bg={contentBg} flex={1} pb={sw < 770 ? "60px" : ""}>
         <ContentContainer>
           <>
-            <HStack px={6} py={4} justify={"space-between"} w={"100%"}>
+            <HStack p={6} justify={"space-between"} w={"100%"}>
               <Text fontSize={[22, null, 24]} fontWeight={600}>
                 Dashborads
               </Text>
