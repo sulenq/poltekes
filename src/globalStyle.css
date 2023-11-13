@@ -257,6 +257,7 @@ select {
   padding: 16px 28px;
   cursor: pointer;
   position: relative;
+  transition: 200ms;
 }
 .adminNavItemMobile {
   padding: 8px 16px;
@@ -264,7 +265,7 @@ select {
   position: relative;
 }
 .adminNavItem:hover {
-  background: var(--p500a);
+  background: var(--divider);
 }
 .active,
 .active-mobile {

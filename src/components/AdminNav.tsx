@@ -7,9 +7,10 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { Layout } from "@phosphor-icons/react";
 import React, { useState } from "react";
 import useScreenWidth from "../utils/useGetScreenWidth";
+import adminNav from "../const/adminNav";
+import { Link } from "react-router-dom";
 
 type Props = {
   active: string;
@@ -39,21 +40,24 @@ export default function AdminNav({ active }: Props) {
         bottom={0}
         left={0}
       >
-        <VStack
-          h={"100%"}
-          gap={0}
-          justify={"flex-end"}
-          className={
-            active === "Dashboards"
-              ? "active-mobile adminNavItemMobile"
-              : "adminNavItemMobile"
-          }
-        >
-          <Icon as={Layout} fontSize={24} weight="fill" />
-          <Text animation={"fade-in 500ms"} fontSize={10}>
-            Dashboards
-          </Text>
-        </VStack>
+        {adminNav.map((n, i) => (
+          <VStack
+            key={i}
+            h={"100%"}
+            gap={0}
+            justify={"flex-end"}
+            className={
+              active === n.name
+                ? "active-mobile adminNavItemMobile"
+                : "adminNavItemMobile"
+            }
+          >
+            <Icon as={n.icon} fontSize={24} weight="fill" />
+            <Text animation={"fade-in 500ms"} fontSize={10}>
+              {n.name}
+            </Text>
+          </VStack>
+        ))}
       </HStack>
     );
   }
@@ -82,15 +86,20 @@ export default function AdminNav({ active }: Props) {
       </VStack>
 
       <Box>
-        <HStack
-          gap={6}
-          className={
-            active === "Dashboards" ? "active adminNavItem" : "adminNavItem"
-          }
-        >
-          <Icon as={Layout} fontSize={24} weight="fill" />
-          {isOpen && <Text animation={"fade-in 500ms"}>Dashboards</Text>}
-        </HStack>
+        {adminNav.map((n, i) => (
+          <HStack
+            as={Link}
+            to={n.link}
+            key={i}
+            gap={6}
+            className={
+              active === n.name ? "active adminNavItem" : "adminNavItem"
+            }
+          >
+            <Icon as={n.icon} fontSize={24} weight="fill" />
+            {isOpen && <Text animation={"fade-in 500ms"}> {n.name}</Text>}
+          </HStack>
+        ))}
       </Box>
     </Box>
   );
