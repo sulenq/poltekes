@@ -75,11 +75,11 @@ export default function AdminNav({ active }: Props) {
       // top={0}
       minH={"100vh"}
     >
-      <VStack gap={0} h={"152px"} p={6}>
+      <VStack gap={0} h={"152px"} py={6} px={1}>
         <Image src="/logo192.png" w={"48px"} mb={2} />
 
         {isOpen && (
-          <Text textAlign={"center"} animation={"fade-in 500ms"}>
+          <Text px={5} textAlign={"center"} animation={"fade-in 500ms"}>
             <b>Laboratorium Poltekkes Kemenkes </b>Semarang
           </Text>
         )}
