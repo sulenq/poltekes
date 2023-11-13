@@ -136,24 +136,26 @@ export default function AdminNav({ active }: Props) {
                       </HStack>
                     </AccordionButton>
 
-                    <AccordionPanel p={0} bg={"#b4b4b410"}>
-                      <Box>
-                        {n.subNav?.map((sn, i) => (
-                          <Link to={sn.link} key={i}>
-                            <Box
-                              className={
-                                active.includes(n.name)
-                                  ? "active adminNavItem"
-                                  : "adminNavItem"
-                              }
-                              pl={"76px !important"}
-                            >
-                              <Text>{sn.name}</Text>
-                            </Box>
-                          </Link>
-                        ))}
-                      </Box>
-                    </AccordionPanel>
+                    {isOpen && (
+                      <AccordionPanel p={0} bg={"#b4b4b410"}>
+                        <Box>
+                          {n.subNav?.map((sn, i) => (
+                            <Link to={sn.link} key={i}>
+                              <Box
+                                className={
+                                  active.includes(n.name)
+                                    ? "active adminNavItem"
+                                    : "adminNavItem"
+                                }
+                                pl={"76px !important"}
+                              >
+                                <Text>{sn.name}</Text>
+                              </Box>
+                            </Link>
+                          ))}
+                        </Box>
+                      </AccordionPanel>
+                    )}
                   </AccordionItem>
                 </Accordion>
               );
