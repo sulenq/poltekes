@@ -9,6 +9,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import {
+  ArrowDown,
   ArrowUp,
   Package,
   Receipt,
@@ -26,17 +27,17 @@ export default function DashboardsSummary() {
       rate: 31.2,
     },
     totalProduk: {
-      total: 16,
+      total: 7,
       pertumbuhan: false,
       rate: 5.5,
     },
     totalPengujian: {
-      total: 16,
+      total: 43,
       pertumbuhan: true,
       rate: 22.6,
     },
     totalTransaksi: {
-      total: 16,
+      total: 43,
       pertumbuhan: true,
       rate: 12.5,
     },
@@ -47,7 +48,7 @@ export default function DashboardsSummary() {
     <SimpleGrid columns={[1, 2, 2, 4]} gap={4} w={"100%"}>
       <Box borderRadius={16} p={6} bg={bg}>
         <HStack mb={4} gap={3}>
-          <Center borderRadius={8} p={2} bg={"var(--divider)"}>
+          <Center borderRadius={8} p={2} bg={"var(--divider2)"}>
             <Icon as={UsersThree} weight="fill" fontSize={[22, null, 24]} />
           </Center>
 
@@ -66,7 +67,10 @@ export default function DashboardsSummary() {
             fontWeight={400}
           >
             <HStack>
-              <Icon as={ArrowUp} fontSize={iconSize} />
+              <Icon
+                as={data.totalCustomer.pertumbuhan ? ArrowUp : ArrowDown}
+                fontSize={iconSize}
+              />
               <Text>{data.totalCustomer.rate}%</Text>
             </HStack>
           </Badge>
@@ -75,7 +79,7 @@ export default function DashboardsSummary() {
 
       <Box borderRadius={16} p={6} bg={bg}>
         <HStack mb={4} gap={3}>
-          <Center borderRadius={8} p={2} bg={"var(--divider)"}>
+          <Center borderRadius={8} p={2} bg={"var(--divider2)"}>
             <Icon as={Package} weight="fill" fontSize={[22, null, 24]} />
           </Center>
 
@@ -94,7 +98,10 @@ export default function DashboardsSummary() {
             fontWeight={400}
           >
             <HStack>
-              <Icon as={ArrowUp} fontSize={iconSize} />
+              <Icon
+                as={data.totalProduk.pertumbuhan ? ArrowUp : ArrowDown}
+                fontSize={iconSize}
+              />
               <Text>{data.totalProduk.rate}%</Text>
             </HStack>
           </Badge>
@@ -103,7 +110,7 @@ export default function DashboardsSummary() {
 
       <Box borderRadius={16} p={6} bg={bg}>
         <HStack mb={4} gap={3}>
-          <Center borderRadius={8} p={2} bg={"var(--divider)"}>
+          <Center borderRadius={8} p={2} bg={"var(--divider2)"}>
             <Icon as={TestTube} weight="fill" fontSize={[22, null, 24]} />
           </Center>
 
@@ -122,7 +129,10 @@ export default function DashboardsSummary() {
             fontWeight={400}
           >
             <HStack>
-              <Icon as={ArrowUp} fontSize={iconSize} />
+              <Icon
+                as={data.totalPengujian.pertumbuhan ? ArrowUp : ArrowDown}
+                fontSize={iconSize}
+              />
               <Text>{data.totalPengujian.rate}%</Text>
             </HStack>
           </Badge>
@@ -131,7 +141,7 @@ export default function DashboardsSummary() {
 
       <Box borderRadius={16} p={6} bg={bg}>
         <HStack mb={4} gap={3}>
-          <Center borderRadius={8} p={2} bg={"var(--divider)"}>
+          <Center borderRadius={8} p={2} bg={"var(--divider2)"}>
             <Icon as={Receipt} weight="fill" fontSize={[22, null, 24]} />
           </Center>
 
@@ -150,7 +160,10 @@ export default function DashboardsSummary() {
             fontWeight={400}
           >
             <HStack>
-              <Icon as={ArrowUp} fontSize={iconSize} />
+              <Icon
+                as={data.totalTransaksi.pertumbuhan ? ArrowUp : ArrowDown}
+                fontSize={iconSize}
+              />
               <Text>{data.totalTransaksi.rate}%</Text>
             </HStack>
           </Badge>

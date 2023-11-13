@@ -21,7 +21,7 @@ type Props = {
 };
 
 export default function AdminContainer({ children, active }: Props) {
-  const contentBg = useColorModeValue("var(--divider2)", "#111827");
+  const contentBg = useColorModeValue("var(--divider)", "#111827");
   const sw = useScreenWidth();
 
   return (

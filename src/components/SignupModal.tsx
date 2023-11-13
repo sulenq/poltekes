@@ -49,7 +49,6 @@ export default function SignupModal() {
       username: "",
       kataSandi: "",
       ulangKataSandi: "",
-      kategori: "",
       namaLengkap: "",
       email: "",
       telepon: "",
@@ -166,40 +165,6 @@ export default function SignupModal() {
                 <FormErrorMessage>
                   {formik.errors.ulangKataSandi}
                 </FormErrorMessage>
-              </FormControl>
-
-              <FormControl
-                isInvalid={formik.errors.kategori ? true : false}
-                mb={4}
-              >
-                <FormLabel>
-                  Kategori
-                  <RequiredForm />
-                </FormLabel>
-                <Wrap spacingX={4} spacingY={3}>
-                  {kateogri.map((k, i) => (
-                    <HStack
-                      key={i}
-                      cursor={"pointer"}
-                      onClick={() => {
-                        formik.setFieldValue("kategori", k);
-                      }}
-                    >
-                      <Box
-                        w={"18px"}
-                        h={"18px"}
-                        border={
-                          formik.values.kategori === k
-                            ? "4px solid var(--p500)"
-                            : "2px solid var(--divider3)"
-                        }
-                        borderRadius={"full"}
-                      />
-                      <Text>{k}</Text>
-                    </HStack>
-                  ))}
-                </Wrap>
-                <FormErrorMessage>{formik.errors.kategori}</FormErrorMessage>
               </FormControl>
 
               <FormControl
@@ -330,7 +295,7 @@ export default function SignupModal() {
                   onClick={() => {
                     onClose();
                     const signupButton = document.querySelector(
-                      "#signinButton"
+                      "#signinButton",
                     ) as HTMLButtonElement;
                     if (signupButton) {
                       signupButton.click();

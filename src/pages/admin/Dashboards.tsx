@@ -13,8 +13,6 @@ export default function Dashboards() {
         </Box>
 
         <DashboardsSummary />
-
-        
       </>
     </AdminContainer>
   );
