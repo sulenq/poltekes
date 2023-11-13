@@ -258,11 +258,26 @@ select {
   cursor: pointer;
   position: relative;
 }
+.adminNavItemMobile {
+  padding: 8px 16px;
+  cursor: pointer;
+  position: relative;
+}
 .adminNavItem:hover {
   background: var(--p500a);
 }
-.active {
+.active,
+.active-mobile {
   background: var(--p500a);
+}
+.active-mobile::before {
+  content: "";
+  height: 4px;
+  width: 100%;
+  background: var(--p500);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .active:before {
   content: "";

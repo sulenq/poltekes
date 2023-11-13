@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { Layout } from "@phosphor-icons/react";
 import React, { useState } from "react";
+import useScreenWidth from "../utils/useGetScreenWidth";
 
 type Props = {
   active: string;
@@ -17,6 +18,7 @@ type Props = {
 export default function AdminNav({ active }: Props) {
   const navBg = useColorModeValue("white", "dark");
   const [isOpen, setIsOpen] = useState(false);
+  const sw = useScreenWidth();
 
   const handleOnOpen = () => {
     setIsOpen(true);
@@ -25,6 +27,36 @@ export default function AdminNav({ active }: Props) {
   const handleOnClose = () => {
     setIsOpen(false);
   };
+
+  if (sw < 770) {
+    return (
+      <HStack
+        h={"60px"}
+        bg={navBg}
+        position={"fixed"}
+        w={"100%"}
+        justify={"center"}
+        bottom={0}
+        left={0}
+      >
+        <VStack
+          h={"100%"}
+          gap={0}
+          justify={"flex-end"}
+          className={
+            active === "Dashboards"
+              ? "active-mobile adminNavItemMobile"
+              : "adminNavItemMobile"
+          }
+        >
+          <Icon as={Layout} fontSize={24} weight="fill" />
+          <Text animation={"fade-in 500ms"} fontSize={10}>
+            Dashboards
+          </Text>
+        </VStack>
+      </HStack>
+    );
+  }
 
   return (
     <Box
@@ -56,7 +88,7 @@ export default function AdminNav({ active }: Props) {
             active === "Dashboards" ? "active adminNavItem" : "adminNavItem"
           }
         >
-          <Icon as={Layout} fontSize={24} />
+          <Icon as={Layout} fontSize={24} weight="fill" />
           {isOpen && <Text animation={"fade-in 500ms"}>Dashboards</Text>}
         </HStack>
       </Box>
