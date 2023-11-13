@@ -22,7 +22,7 @@ export default function AdminDashboardPeriodicFilter() {
       >
         {periode}
       </MenuButton>
-      <MenuList minW={"140px"}>
+      <MenuList minW={"140px"} border={"1px solid var(--p500)"}>
         <MenuItem>This Week</MenuItem>
         <MenuItem>This Month</MenuItem>
         <MenuItem>This Year</MenuItem>
