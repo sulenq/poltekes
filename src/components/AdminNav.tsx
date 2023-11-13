@@ -75,7 +75,7 @@ export default function AdminNav({ active }: Props) {
           position={"fixed"}
           height={"100vh"}
           width={"100vw"}
-          bg={"var(--divider3)"}
+          bg={"#5b5b5b50"}
           backdropFilter={"blur(5px)"}
           zIndex={2}
         />
@@ -137,7 +137,11 @@ export default function AdminNav({ active }: Props) {
                     </AccordionButton>
 
                     {isOpen && (
-                      <AccordionPanel p={0} bg={"#b4b4b410"}>
+                      <AccordionPanel
+                        p={0}
+                        bg={"#b4b4b410"}
+                        animation={"fade-in 500ms"}
+                      >
                         <Box>
                           {n.subNav?.map((sn, i) => (
                             <Link to={sn.link} key={i}>
@@ -149,7 +153,7 @@ export default function AdminNav({ active }: Props) {
                                 }
                                 pl={"76px !important"}
                               >
-                                <Text>{sn.name}</Text>
+                                <Text whiteSpace={"nowrap"}>{sn.name}</Text>
                               </Box>
                             </Link>
                           ))}
