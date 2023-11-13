@@ -4,6 +4,7 @@ import {
   HStack,
   Icon,
   Text,
+  VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
@@ -11,7 +12,6 @@ import ContentContainer from "./ContentContainer";
 import AdminNav from "./AdminNav";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
 import useScreenWidth from "../utils/useGetScreenWidth";
-import Container from "./Container";
 import { CaretDown } from "@phosphor-icons/react";
 import { iconSize } from "../const/sizes";
 
@@ -35,34 +35,32 @@ export default function AdminContainer({ children, active }: Props) {
         pb={sw < 770 ? "60px" : ""}
       >
         <ContentContainer>
-          <>
-            <Container>
-              <HStack py={[4, 5, 6]} justify={"space-between"} w={"100%"}>
-                <Text fontSize={[22, null, 24]} fontWeight={600}>
-                  {active}
-                </Text>
+          <VStack px={[4, 5, 6]} w={"100%"} gap={0}>
+            <HStack py={[3, 4, 5]} justify={"space-between"} w={"100%"}>
+              <Text fontSize={[22, null, 24]} fontWeight={600}>
+                {active}
+              </Text>
 
-                <HStack>
-                  <ColorModeSwitcher fontSize={20} className="btn-solid" />
+              <HStack>
+                <ColorModeSwitcher fontSize={20} className="btn-solid" />
 
-                  <HStack
-                    bg={"var(--divider)"}
-                    borderRadius={8}
-                    p={2}
-                    cursor={"pointer"}
-                  >
-                    <Icon as={CaretDown} fontSize={iconSize} />
+                <HStack
+                  bg={"var(--divider)"}
+                  borderRadius={8}
+                  p={2}
+                  cursor={"pointer"}
+                >
+                  <Icon as={CaretDown} fontSize={iconSize} />
 
-                    <Text>Admin</Text>
+                  <Text>Admin</Text>
 
-                    <Avatar name="Jolitos Kurniawan" size={"xs"} />
-                  </HStack>
+                  <Avatar name="Jolitos Kurniawan" size={"xs"} />
                 </HStack>
               </HStack>
-            </Container>
+            </HStack>
 
             {children}
-          </>
+          </VStack>
         </ContentContainer>
       </Box>
     </HStack>

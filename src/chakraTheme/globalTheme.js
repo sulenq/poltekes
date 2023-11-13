@@ -129,15 +129,15 @@ export const globalTheme = extendTheme({
           my: 1,
         },
         list: {
-          bg: props.colorMode === "dark" ? "#000000cc" : "#ffffffcc",
-          backdropFilter: "blur(10px)",
+          bg: props.colorMode === "dark" ? "dark" : "white",
           border: "1px solid var(--divider)",
           p: 0,
           overflow: "hidden",
+          boxShadow:'none'
         },
         item: {
           bg: "transparent",
-          _hover: { bg: "var(--divider2)" },
+          _hover: { bg: "var(--divider)" },
           py: 3,
           px: 4,
         },
