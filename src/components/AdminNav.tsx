@@ -69,101 +69,115 @@ export default function AdminNav({ active }: Props) {
   }
 
   return (
-    <Box
-      w={"80px"}
-      bg={navBg}
-      _hover={{ w: "312px" }}
-      transition={"200ms"}
-      onMouseEnter={handleOnOpen}
-      onMouseLeave={handleOnClose}
-      position={"absolute"}
-      left={0}
-      top={0}
-      minH={"100vh"}
-    >
-      <VStack gap={0} h={"152px"} py={6} px={1}>
-        <Image src="/logo192.png" w={"48px"} mb={2} />
+    <>
+      {isOpen && (
+        <Box
+          position={"fixed"}
+          height={"100vh"}
+          width={"100vw"}
+          bg={"var(--divider3)"}
+          backdropFilter={"blur(5px)"}
+          zIndex={2}
+        />
+      )}
 
-        {isOpen && (
-          <Text px={5} textAlign={"center"} animation={"fade-in 500ms"}>
-            <b>Laboratorium Poltekkes Kemenkes </b>Semarang
-          </Text>
-        )}
-      </VStack>
+      <Box
+        w={"80px"}
+        bg={navBg}
+        _hover={{ w: "312px" }}
+        transition={"200ms"}
+        onMouseEnter={handleOnOpen}
+        onMouseLeave={handleOnClose}
+        position={"absolute"}
+        left={0}
+        top={0}
+        minH={"100vh"}
+        zIndex={2}
+      >
+        <VStack gap={0} h={"152px"} py={6} px={1}>
+          <Image src="/logo192.png" w={"48px"} mb={2} />
 
-      <Box>
-        {adminNav.map((n, i) => {
-          if (n.nested) {
-            return (
-              <Accordion key={i} allowMultiple>
-                <AccordionItem border={"none"}>
-                  <AccordionButton p={0}>
-                    <HStack
-                      w={"100%"}
-                      className={
-                        active.includes(n.name)
-                          ? "active adminNavItem"
-                          : "adminNavItem"
-                      }
-                    >
-                      <HStack w={"100%"} gap={6}>
-                        <Icon as={n.icon} fontSize={24} weight="fill" />
+          {isOpen && (
+            <Text px={5} textAlign={"center"} animation={"fade-in 500ms"}>
+              <b>Laboratorium Poltekkes Kemenkes </b>Semarang
+            </Text>
+          )}
+        </VStack>
+
+        <Box>
+          {adminNav.map((n, i) => {
+            if (n.nested) {
+              return (
+                <Accordion key={i} allowMultiple>
+                  <AccordionItem border={"none"}>
+                    <AccordionButton p={0}>
+                      <HStack
+                        w={"100%"}
+                        className={
+                          active.includes(n.name)
+                            ? "active adminNavItem"
+                            : "adminNavItem"
+                        }
+                      >
+                        <HStack w={"100%"} gap={6}>
+                          <Icon as={n.icon} fontSize={24} weight="fill" />
+                          {isOpen && (
+                            <Text animation={"fade-in 500ms"}> {n.name}</Text>
+                          )}
+                        </HStack>
+
                         {isOpen && (
-                          <Text animation={"fade-in 500ms"}> {n.name}</Text>
+                          <Icon
+                            as={CaretDown}
+                            fontSize={iconSize}
+                            animation={"fade-in 500ms"}
+                          />
                         )}
                       </HStack>
+                    </AccordionButton>
 
-                      {isOpen && (
-                        <Icon
-                          as={CaretDown}
-                          fontSize={iconSize}
-                          animation={"fade-in 500ms"}
-                        />
-                      )}
-                    </HStack>
-                  </AccordionButton>
-
-                  <AccordionPanel p={0} bg={"#b4b4b410"}>
-                    <Box>
-                      {n.subNav?.map((sn, i) => (
-                        <Link to={sn.link} key={i}>
-                          <Box
-                            className={
-                              active.includes(n.name)
-                                ? "active adminNavItem"
-                                : "adminNavItem"
-                            }
-                            pl={"76px !important"}
-                          >
-                            <Text>{sn.name}</Text>
-                          </Box>
-                        </Link>
-                      ))}
-                    </Box>
-                  </AccordionPanel>
-                </AccordionItem>
-              </Accordion>
-            );
-          } else {
-            return (
-              <HStack
-                key={i}
-                as={Link}
-                to={n.link}
-                gap={6}
-                className={
-                  active.includes(n.name)
-                    ? "active adminNavItem"
-                    : "adminNavItem"
-                }
-              >
-                <Icon as={n.icon} fontSize={24} weight="fill" />
-                {isOpen && <Text animation={"fade-in 500ms"}> {n.name}</Text>}
-              </HStack>
-            );
-          }
-        })}
+                    <AccordionPanel p={0} bg={"#b4b4b410"}>
+                      <Box>
+                        {n.subNav?.map((sn, i) => (
+                          <Link to={sn.link} key={i}>
+                            <Box
+                              className={
+                                active.includes(n.name)
+                                  ? "active adminNavItem"
+                                  : "adminNavItem"
+                              }
+                              pl={"76px !important"}
+                            >
+                              <Text>{sn.name}</Text>
+                            </Box>
+                          </Link>
+                        ))}
+                      </Box>
+                    </AccordionPanel>
+                  </AccordionItem>
+                </Accordion>
+              );
+            } else {
+              return (
+                <HStack
+                  key={i}
+                  as={Link}
+                  to={n.link}
+                  gap={6}
+                  className={
+                    active.includes(n.name)
+                      ? "active adminNavItem"
+                      : "adminNavItem"
+                  }
+                >
+                  <Icon as={n.icon} fontSize={24} weight="fill" />
+                  {isOpen && <Text animation={"fade-in 500ms"}> {n.name}</Text>}
+                </HStack>
+              );
+            }
+          })}
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 }
