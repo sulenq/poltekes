@@ -7,7 +7,7 @@ import AdminDashboardsAnalisaTransaksi from "../../components/AdminDashboardAnal
 
 export default function Dashboards() {
   return (
-    <AdminContainer active={"Dashboards"}>
+    <AdminContainer active={["Dashboards"]}>
       <>
         <Box alignSelf={"flex-end"} mb={[4, 5, 6]}>
           <AdminDashboardPeriodicFilter />

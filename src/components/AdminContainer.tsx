@@ -16,7 +16,7 @@ import { iconSize } from "../const/sizes";
 
 type Props = {
   children: JSX.Element;
-  active: string;
+  active: string[];
 };
 
 export default function AdminContainer({ children, active }: Props) {

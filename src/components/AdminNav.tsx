@@ -19,7 +19,7 @@ import { CaretDown } from "@phosphor-icons/react";
 import { iconSize } from "../const/sizes";
 
 type Props = {
-  active: string;
+  active: string[];
 };
 
 export default function AdminNav({ active }: Props) {
@@ -53,7 +53,7 @@ export default function AdminNav({ active }: Props) {
             gap={0}
             justify={"flex-end"}
             className={
-              active === n.name
+              active.includes(n.name)
                 ? "active-mobile adminNavItemMobile"
                 : "adminNavItemMobile"
             }
@@ -147,7 +147,7 @@ export default function AdminNav({ active }: Props) {
                             <Link to={sn.link} key={i}>
                               <Box
                                 className={
-                                  active.includes(n.name)
+                                  active.includes(sn.name)
                                     ? "active adminNavItem"
                                     : "adminNavItem"
                                 }

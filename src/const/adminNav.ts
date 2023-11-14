@@ -34,12 +34,8 @@ const adminNav = [
     nested: true,
     subNav: [
       {
-        name: "Kategori Produk",
-        link: "/admin/kategori-produk",
-      },
-      {
-        name: "Produk",
-        link: "/admin/produk",
+        name: "Customer",
+        link: "/admin/pengguna-customer",
       },
     ],
   },
