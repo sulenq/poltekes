@@ -26,7 +26,7 @@ export default function Dashboards() {
         </Box>
 
         <Box
-          mb={4}
+          mb={6}
           overflow={"auto"}
         >
           <AdminDashboardsTransaksiTerbaru />

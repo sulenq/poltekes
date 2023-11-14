@@ -4,6 +4,7 @@ import React from "react";
 export default function AdminAksiPengujian(props: any) {
   //   const noreg = props.noreg;
   const status = props.status;
+  // TODO buat komponen yang sesuai
 
   switch (status) {
     default:
@@ -38,7 +39,7 @@ export default function AdminAksiPengujian(props: any) {
           Input Tanggal Pengujian
         </Button>
       );
-    case "Pengujian Selesai":
+    case "Dalam Pengujian":
       return (
         <Button
           w={"100%"}
