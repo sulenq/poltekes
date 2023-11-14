@@ -23,7 +23,9 @@ ChartJS.register(
 
 export default function AdminDashboardsAnalisaTransaksi() {
   const bg = useColorModeValue("white", "dark");
+
   const labels = getArrayOfDaysThisMonth();
+  const xLabel = "Tanggal (Harian)";
   const data = {
     labels: labels,
     datasets: [
@@ -35,6 +37,7 @@ export default function AdminDashboardsAnalisaTransaksi() {
         ],
         fill: true,
         backgroundColor: "#20aa50",
+        borderColor: "#20aa50",
       },
     ],
   };
@@ -42,6 +45,22 @@ export default function AdminDashboardsAnalisaTransaksi() {
     plugins: {
       legend: {
         display: false,
+      },
+    },
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: xLabel,
+        },
+        grid: {
+          color: "#b4b4b450",
+        },
+      },
+      y: {
+        grid: {
+          color: "#b4b4b450",
+        },
       },
     },
   };
@@ -74,7 +93,7 @@ export default function AdminDashboardsAnalisaTransaksi() {
         <HStack>
           <Icon as={Circle} weight={"fill"} color={"p.600"} />
 
-          <Text>banyaknya pengujian</Text>
+          <Text fontSize={[10, null, 12]}>banyaknya pengujian</Text>
         </HStack>
       </HStack>
 

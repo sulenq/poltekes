@@ -11,7 +11,7 @@ import {
   Tr,
 } from "@chakra-ui/react";
 import useFormatNumber from "../utils/useFormatNumber";
-import Aksi from "./Aksi";
+import CustomerAksiPengujian from "./CustomerAksiPengujian";
 
 export default function RiwayatPengujianList() {
   // TODO show riwayat pengujian table data
@@ -90,7 +90,7 @@ export default function RiwayatPengujianList() {
                 </Badge>
               </Td>
               <Td textAlign={"center"}>
-                <Aksi status={d.status} noreg={d.id} />
+                <CustomerAksiPengujian status={d.status} noreg={d.id} />
               </Td>
               <Td isNumeric>
                 <Button variant={"outline"} colorScheme="ap">

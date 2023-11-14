@@ -3,7 +3,7 @@ import React from "react";
 import BayarTagihanModal from "./BayarTagihanModal";
 import { Link } from "react-router-dom";
 
-export default function Aksi(props: any) {
+export default function CustomerAksiPengujian(props: any) {
   const noreg = props.noreg;
   const status = props.status;
 

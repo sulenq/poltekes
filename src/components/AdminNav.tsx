@@ -88,7 +88,7 @@ export default function AdminNav({ active }: Props) {
         transition={"200ms"}
         onMouseEnter={handleOnOpen}
         onMouseLeave={handleOnClose}
-        position={"absolute"}
+        position={"fixed"}
         left={0}
         top={0}
         minH={"100vh"}
