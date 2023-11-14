@@ -28,11 +28,11 @@ export default function AdminContainer({ children, active }: Props) {
       gap={0}
       minH={"100vh"}
       align={"stretch"}
+      bg={contentBg}
     >
       <AdminNav active={active} />
 
       <Box
-        bg={contentBg}
         flex={1}
         pl={sw < 770 ? "" : "80px"}
         pb={sw < 770 ? "60px" : ""}

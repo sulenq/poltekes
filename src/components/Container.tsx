@@ -9,7 +9,7 @@ export default function Container(props: any) {
       {...props}
       w={props.w || "100%"}
       gap={0}
-      maxW={"1280px"}
+      maxW={props.maxW || "1280px"}
       mx={"auto"}
       align={"stretch"}
       px={["18px", null, 6]}

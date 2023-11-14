@@ -99,7 +99,7 @@ export default function AdminDashboardsTransaksiTerbaru() {
                     {d.status}
                   </Badge>
                 </Td>
-                <Td>
+                <Td isNumeric>
                   <Button
                     colorScheme="ap"
                     variant={"outline"}
