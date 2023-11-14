@@ -104,7 +104,9 @@ export default function AdminDashboardsAnalisaTransaksi() {
         </HStack>
       </SimpleGrid>
 
-      <Bar data={data} options={options} />
+      <Box>
+        <Bar data={data} options={options} />
+      </Box>
     </Box>
   );
 }
