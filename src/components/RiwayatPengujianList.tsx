@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import useFormatNumber from "../utils/useFormatNumber";
 import CustomerAksiPengujian from "./CustomerAksiPengujian";
+import useStatusBadgeColor from "../utils/useStatusBadgeColor";
 
 export default function RiwayatPengujianList() {
   // TODO show riwayat pengujian table data
@@ -21,34 +22,33 @@ export default function RiwayatPengujianList() {
       id: 1,
       tanggalOrder: "12-11-2023",
       nama: "Jolitos Kurniawan",
-      tagihan: 2000000,
-      status: "Tagihan Belum Dibayar",
-    },
-    {
-      id: 2,
-      tanggalOrder: "10-12-2023",
-      nama: "Karlitos Bechkam",
-      tagihan: 2400000,
-      status: "Tanggal Pengujian - 12/12/2023",
-    },
-    {
-      id: 3,
-      tanggalOrder: "12-12-2023",
-      nama: "Naomi Sinaga",
       tagihan: null,
       status: "Berkas Belum Lengkap",
     },
+    {
+      id: 2,
+      tanggalOrder: "12-11-2023",
+      nama: "Jolitos Kurniawan",
+      tagihan: null,
+      status: "Verifikasi Berkas",
+    },
+    {
+      id: 3,
+      tanggalOrder: "10-12-2023",
+      nama: "Karlitos Bechkam",
+      tagihan: 2400000,
+      status: "Tagihan Belum Dibayar",
+    },
+    {
+      id: 4,
+      tanggalOrder: "12-12-2023",
+      nama: "Naomi Sinaga",
+      tagihan: 2000000,
+      status: "Verifikasi Pembayaran",
+    },
   ];
 
-  const badgeColor = (status: string) => {
-    switch (status) {
-      default:
-        return "blue";
-      case "Tagihan Belum Dibayar":
-      case "Berkas Belum Lengkap":
-        return "red";
-    }
-  };
+  const statusBadgeColor = useStatusBadgeColor;
 
   const fn = useFormatNumber;
 
@@ -104,7 +104,7 @@ export default function RiwayatPengujianList() {
                 <Badge
                   w={"100%"}
                   className="badge"
-                  colorScheme={badgeColor(d.status)}
+                  colorScheme={statusBadgeColor(d.status)}
                 >
                   {d.status}
                 </Badge>

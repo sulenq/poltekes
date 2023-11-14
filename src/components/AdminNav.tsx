@@ -58,8 +58,15 @@ export default function AdminNav({ active }: Props) {
                 : "adminNavItemMobile"
             }
           >
-            <Icon as={n.icon} fontSize={24} weight="fill" />
-            <Text animation={"fade-in 500ms"} fontSize={10}>
+            <Icon
+              as={n.icon}
+              fontSize={24}
+              weight="fill"
+            />
+            <Text
+              animation={"fade-in 500ms"}
+              fontSize={10}
+            >
               {n.name}
             </Text>
           </VStack>
@@ -94,11 +101,26 @@ export default function AdminNav({ active }: Props) {
         minH={"100vh"}
         zIndex={2}
       >
-        <VStack gap={0} h={"152px"} py={6} px={1}>
-          <Image src="/logo192.png" w={"48px"} mb={2} />
+        <VStack
+          gap={0}
+          h={"152px"}
+          py={6}
+          px={1}
+          as={Link}
+          to={"/"}
+        >
+          <Image
+            src="/logo192.png"
+            w={"48px"}
+            mb={2}
+          />
 
           {isOpen && (
-            <Text px={5} textAlign={"center"} animation={"fade-in 500ms"}>
+            <Text
+              px={5}
+              textAlign={"center"}
+              animation={"fade-in 500ms"}
+            >
               <b>Laboratorium Poltekkes Kemenkes </b>Semarang
             </Text>
           )}
@@ -108,7 +130,10 @@ export default function AdminNav({ active }: Props) {
           {adminNav.map((n, i) => {
             if (n.nested) {
               return (
-                <Accordion key={i} allowMultiple>
+                <Accordion
+                  key={i}
+                  allowMultiple
+                >
                   <AccordionItem border={"none"}>
                     <AccordionButton p={0}>
                       <HStack
@@ -119,8 +144,15 @@ export default function AdminNav({ active }: Props) {
                             : "adminNavItem"
                         }
                       >
-                        <HStack w={"100%"} gap={6}>
-                          <Icon as={n.icon} fontSize={24} weight="fill" />
+                        <HStack
+                          w={"100%"}
+                          gap={6}
+                        >
+                          <Icon
+                            as={n.icon}
+                            fontSize={24}
+                            weight="fill"
+                          />
                           {isOpen && (
                             <Text animation={"fade-in 500ms"}> {n.name}</Text>
                           )}
@@ -144,7 +176,10 @@ export default function AdminNav({ active }: Props) {
                       >
                         <Box>
                           {n.subNav?.map((sn, i) => (
-                            <Link to={sn.link} key={i}>
+                            <Link
+                              to={sn.link}
+                              key={i}
+                            >
                               <Box
                                 className={
                                   active.includes(sn.name)
@@ -176,7 +211,11 @@ export default function AdminNav({ active }: Props) {
                       : "adminNavItem"
                   }
                 >
-                  <Icon as={n.icon} fontSize={24} weight="fill" />
+                  <Icon
+                    as={n.icon}
+                    fontSize={24}
+                    weight="fill"
+                  />
                   {isOpen && <Text animation={"fade-in 500ms"}> {n.name}</Text>}
                 </HStack>
               );

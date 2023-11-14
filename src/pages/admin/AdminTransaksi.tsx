@@ -24,6 +24,7 @@ import {
 import { CaretDown, MagnifyingGlass } from "@phosphor-icons/react";
 import { iconSize } from "../../const/sizes";
 import AdminAksiPengujian from "../../components/AdminAksiPengujian";
+import useStatusBadgeColor from "../../utils/useStatusBadgeColor";
 
 export default function AdminTransaksi() {
   const bg = useColorModeValue("white", "dark");
@@ -88,23 +89,7 @@ export default function AdminTransaksi() {
     },
   ];
 
-  const badgeColor = (status: string) => {
-    switch (status) {
-      default:
-        return "blue";
-      case "Verifikasi Berkas":
-      case "Verifikasi Pembayaran":
-        return "orange";
-      case "Berkas Diverifikasi":
-      case "Pembayaran Diverifikasi":
-      case "Pengujian Selesai":
-        return "green";
-      case "Berkas Ditolak":
-      case "Berkas Belum Lengkap":
-      case "Tagihan Belum Dibayar":
-        return "red";
-    }
-  };
+  const statusBadgeColor = useStatusBadgeColor;
 
   return (
     <AdminContainer active={["Transaksi"]}>
@@ -197,7 +182,7 @@ export default function AdminTransaksi() {
                       <Badge
                         w={"100%"}
                         className="badge"
-                        colorScheme={badgeColor(d.status)}
+                        colorScheme={statusBadgeColor(d.status)}
                       >
                         {d.status}
                       </Badge>
