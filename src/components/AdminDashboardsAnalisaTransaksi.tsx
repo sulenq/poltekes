@@ -1,4 +1,11 @@
-import { Box, HStack, Icon, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  Icon,
+  SimpleGrid,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import React from "react";
 import {
   Chart as ChartJS,
@@ -84,18 +91,18 @@ export default function AdminDashboardsAnalisaTransaksi() {
   }
 
   return (
-    <Box borderRadius={16} p={6} bg={bg} overflow={"auto"}>
-      <HStack mb={4} justify={"space-between"}>
+    <Box borderRadius={16} p={[4, 6, 6]} bg={bg} overflow={"auto"}>
+      <SimpleGrid mb={4} columns={[1, 2, 2]} gap={[0, 2, 2]}>
         <Text fontSize={[18, null, 20]} fontWeight={600}>
           Analisa Transaksi
         </Text>
 
-        <HStack>
+        <HStack justifySelf={["flex-start", "flex-end", "flex-end"]}>
           <Icon as={Circle} weight={"fill"} color={"p.600"} />
 
           <Text fontSize={[10, null, 12]}>banyaknya pengujian</Text>
         </HStack>
-      </HStack>
+      </SimpleGrid>
 
       <Bar data={data} options={options} />
     </Box>

@@ -30,9 +30,10 @@ export default function AdminContainer({ children, active }: Props) {
       <Box
         bg={contentBg}
         flex={1}
-        ml={sw < 770 ? "" : "80px"}
+        pl={sw < 770 ? "" : "80px"}
         pb={sw < 770 ? "60px" : ""}
-        maxW={sw < 770 ? "calc(100vw - 14px)" : "calc(100vw - 95px)"}
+        w={"100%"}
+        // maxW={sw < 770 ? "100vw" : "calc(100vw - 95px)"}
       >
         <VStack px={[4, 5, 6]} maxW={"100%"} gap={0} align={"stretch"}>
           <HStack py={[3, 4, 5]} justify={"space-between"}>

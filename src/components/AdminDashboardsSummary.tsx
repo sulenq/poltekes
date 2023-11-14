@@ -48,7 +48,7 @@ export default function DashboardsSummary() {
 
   return (
     <SimpleGrid columns={[1, 2, 2, 4]} gap={4} w={"100%"}>
-      <Box borderRadius={16} p={6} bg={bg}>
+      <Box borderRadius={16} p={[4, 6, 6]} bg={bg}>
         <HStack mb={4} gap={3} justify={"space-between"}>
           <Center borderRadius={8} p={2} bg={"var(--divider2)"}>
             <Icon as={UsersThree} weight="fill" fontSize={[22, null, 24]} />
@@ -79,7 +79,7 @@ export default function DashboardsSummary() {
         </Text>
       </Box>
 
-      <Box borderRadius={16} p={6} bg={bg}>
+      <Box borderRadius={16} p={[4, 6, 6]} bg={bg}>
         <HStack mb={4} gap={3} justify={"space-between"}>
           <Center borderRadius={8} p={2} bg={"var(--divider2)"}>
             <Icon as={Package} weight="fill" fontSize={[22, null, 24]} />
@@ -110,7 +110,7 @@ export default function DashboardsSummary() {
         </Text>
       </Box>
 
-      <Box borderRadius={16} p={6} bg={bg}>
+      <Box borderRadius={16} p={[4, 6, 6]} bg={bg}>
         <HStack mb={4} gap={3} justify={"space-between"}>
           <Center borderRadius={8} p={2} bg={"var(--divider2)"}>
             <Icon as={TestTube} weight="fill" fontSize={[22, null, 24]} />
@@ -141,7 +141,7 @@ export default function DashboardsSummary() {
         </Text>
       </Box>
 
-      <Box borderRadius={16} p={6} bg={bg}>
+      <Box borderRadius={16} p={[4, 6, 6]} bg={bg}>
         <HStack mb={4} gap={3} justify={"space-between"}>
           <Center borderRadius={8} p={2} bg={"var(--divider2)"}>
             <Icon as={Receipt} weight="fill" fontSize={[22, null, 24]} />

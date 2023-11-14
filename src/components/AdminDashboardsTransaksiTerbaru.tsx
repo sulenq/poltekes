@@ -42,7 +42,7 @@ export default function AdminDashboardsTransaksiTerbaru() {
   ];
 
   return (
-    <Box p={6} borderRadius={16} bg={bg} overflow={"auto"}>
+    <Box p={[4, 6, 6]} borderRadius={16} bg={bg} overflow={"auto"}>
       <Text fontSize={[18, null, 20]} fontWeight={600} mb={4}>
         Transaksi Terbaru
       </Text>
