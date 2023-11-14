@@ -2,8 +2,9 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import RequireAuth from "../middleware/RequireAuth";
 import MissingPage from "../pages/MissingPage";
-import Dashboards from "../pages/admin/Dashboards";
+import AdminDashboards from "../pages/admin/AdminDashboards";
 import AdminProduk from "../pages/admin/AdminProduk";
+import AdminTransaksi from "../pages/admin/AdminTransaksi";
 
 export default function AdminRoutes() {
   return (
@@ -12,7 +13,16 @@ export default function AdminRoutes() {
         path="/"
         element={
           <RequireAuth>
-            <Dashboards />
+            <AdminDashboards />
+          </RequireAuth>
+        }
+      />
+
+      <Route
+        path="/transaksi"
+        element={
+          <RequireAuth>
+            <AdminTransaksi />
           </RequireAuth>
         }
       />
@@ -26,7 +36,10 @@ export default function AdminRoutes() {
         }
       />
 
-      <Route path="*" element={<MissingPage />} />
+      <Route
+        path="*"
+        element={<MissingPage />}
+      />
     </Routes>
   );
 }
