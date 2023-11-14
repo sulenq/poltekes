@@ -190,7 +190,10 @@ export default function AdminTransaksi() {
                     <Td textAlign={"center"}>
                       <AdminAksiPengujian status={d.status} />
                     </Td>
-                    <Td isNumeric>
+                    <Td
+                      isNumeric
+                      w={"40px"}
+                    >
                       <Button
                         colorScheme="ap"
                         variant={"outline"}
