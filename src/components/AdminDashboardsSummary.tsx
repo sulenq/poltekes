@@ -18,6 +18,7 @@ import {
 } from "@phosphor-icons/react";
 import React from "react";
 import { iconSize } from "../const/sizes";
+import useFormatNumber from "../utils/useFormatNumber";
 
 export default function DashboardsSummary() {
   const data = {
@@ -26,8 +27,8 @@ export default function DashboardsSummary() {
       pertumbuhan: true,
       rate: 31.2,
     },
-    totalProduk: {
-      total: 7,
+    totalPemasukan: {
+      total: 23400000,
       pertumbuhan: false,
       rate: 5.5,
     },
@@ -43,22 +44,15 @@ export default function DashboardsSummary() {
     },
   };
   const bg = useColorModeValue("white", "dark");
+  const fn = useFormatNumber;
 
   return (
     <SimpleGrid columns={[1, 2, 2, 4]} gap={4} w={"100%"}>
       <Box borderRadius={16} p={6} bg={bg}>
-        <HStack mb={4} gap={3}>
+        <HStack mb={4} gap={3} justify={"space-between"}>
           <Center borderRadius={8} p={2} bg={"var(--divider2)"}>
             <Icon as={UsersThree} weight="fill" fontSize={[22, null, 24]} />
           </Center>
-
-          <Text fontWeight={500}>Total Customer</Text>
-        </HStack>
-
-        <HStack justify={"space-between"}>
-          <Text fontSize={[22, null, 24]} fontWeight={700}>
-            {data.totalCustomer.total}
-          </Text>
 
           <Badge
             p={2}
@@ -75,52 +69,52 @@ export default function DashboardsSummary() {
             </HStack>
           </Badge>
         </HStack>
+
+        <Text fontWeight={500} mb={4}>
+          Total Customer
+        </Text>
+
+        <Text fontSize={[22, null, 24]} fontWeight={700}>
+          {data.totalCustomer.total}
+        </Text>
       </Box>
 
       <Box borderRadius={16} p={6} bg={bg}>
-        <HStack mb={4} gap={3}>
+        <HStack mb={4} gap={3} justify={"space-between"}>
           <Center borderRadius={8} p={2} bg={"var(--divider2)"}>
             <Icon as={Package} weight="fill" fontSize={[22, null, 24]} />
           </Center>
 
-          <Text fontWeight={500}>Total Produk</Text>
-        </HStack>
-
-        <HStack justify={"space-between"}>
-          <Text fontSize={[22, null, 24]} fontWeight={700}>
-            {data.totalProduk.total}
-          </Text>
-
           <Badge
             p={2}
             borderRadius={8}
-            colorScheme={data.totalProduk.pertumbuhan ? "ap" : "red"}
+            colorScheme={data.totalPemasukan.pertumbuhan ? "ap" : "red"}
             fontWeight={400}
           >
             <HStack>
               <Icon
-                as={data.totalProduk.pertumbuhan ? ArrowUp : ArrowDown}
+                as={data.totalPemasukan.pertumbuhan ? ArrowUp : ArrowDown}
                 fontSize={iconSize}
               />
-              <Text>{data.totalProduk.rate}%</Text>
+              <Text>{data.totalPemasukan.rate}%</Text>
             </HStack>
           </Badge>
         </HStack>
+
+        <Text fontWeight={500} mb={4}>
+          Total Pemasukan
+        </Text>
+
+        <Text fontSize={[22, null, 24]} fontWeight={700}>
+          Rp {fn(data.totalPemasukan.total)}
+        </Text>
       </Box>
 
       <Box borderRadius={16} p={6} bg={bg}>
-        <HStack mb={4} gap={3}>
+        <HStack mb={4} gap={3} justify={"space-between"}>
           <Center borderRadius={8} p={2} bg={"var(--divider2)"}>
             <Icon as={TestTube} weight="fill" fontSize={[22, null, 24]} />
           </Center>
-
-          <Text fontWeight={500}>Total Pengujian</Text>
-        </HStack>
-
-        <HStack justify={"space-between"}>
-          <Text fontSize={[22, null, 24]} fontWeight={700}>
-            {data.totalPengujian.total}
-          </Text>
 
           <Badge
             p={2}
@@ -137,21 +131,21 @@ export default function DashboardsSummary() {
             </HStack>
           </Badge>
         </HStack>
+
+        <Text fontWeight={500} mb={4}>
+          Total Pengujian
+        </Text>
+
+        <Text fontSize={[22, null, 24]} fontWeight={700}>
+          {data.totalPengujian.total}
+        </Text>
       </Box>
 
       <Box borderRadius={16} p={6} bg={bg}>
-        <HStack mb={4} gap={3}>
+        <HStack mb={4} gap={3} justify={"space-between"}>
           <Center borderRadius={8} p={2} bg={"var(--divider2)"}>
             <Icon as={Receipt} weight="fill" fontSize={[22, null, 24]} />
           </Center>
-
-          <Text fontWeight={500}>Total Transaksi</Text>
-        </HStack>
-
-        <HStack justify={"space-between"}>
-          <Text fontSize={[22, null, 24]} fontWeight={700}>
-            {data.totalTransaksi.total}
-          </Text>
 
           <Badge
             p={2}
@@ -168,6 +162,14 @@ export default function DashboardsSummary() {
             </HStack>
           </Badge>
         </HStack>
+
+        <Text fontWeight={500} mb={4}>
+          Total Transaksi
+        </Text>
+
+        <Text fontSize={[22, null, 24]} fontWeight={700}>
+          {data.totalTransaksi.total}
+        </Text>
       </Box>
     </SimpleGrid>
   );

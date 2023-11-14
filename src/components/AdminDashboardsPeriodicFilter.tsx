@@ -10,7 +10,7 @@ import { CaretDown } from "@phosphor-icons/react";
 import React from "react";
 import { iconSize } from "../const/sizes";
 
-export default function AdminDashboardPeriodicFilter() {
+export default function AdminDashboardsPeriodicFilter() {
   const periode = "This Month";
 
   return (

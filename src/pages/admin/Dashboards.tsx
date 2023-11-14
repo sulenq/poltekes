@@ -1,8 +1,9 @@
 import React from "react";
 import AdminContainer from "../../components/AdminContainer";
-import AdminDashboardPeriodicFilter from "../../components/AdminDashboardPeriodicFilter";
+import AdminDashboardPeriodicFilter from "../../components/AdminDashboardsPeriodicFilter";
 import { Box } from "@chakra-ui/react";
-import DashboardsSummary from "../../components/DashboardsSummary";
+import DashboardsSummary from "../../components/AdminDashboardsSummary";
+import AdminDashboardsAnalisaTransaksi from "../../components/AdminDashboardAnalisaTransaksi";
 
 export default function Dashboards() {
   return (
@@ -12,7 +13,13 @@ export default function Dashboards() {
           <AdminDashboardPeriodicFilter />
         </Box>
 
-        <DashboardsSummary />
+        <Box mb={4}>
+          <DashboardsSummary />
+        </Box>
+
+        <Box mb={4}>
+          <AdminDashboardsAnalisaTransaksi />
+        </Box>
       </>
     </AdminContainer>
   );
