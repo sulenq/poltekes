@@ -10,14 +10,42 @@ export default function AdminAksiPengujian(props: any) {
       return <Text>-</Text>;
     case "Verifikasi Berkas":
       return (
-        <Button colorScheme="ap" className="lg-clicky">
+        <Button
+          w={"100%"}
+          colorScheme="ap"
+          className="lg-clicky"
+        >
           Verifikasi Berkas
         </Button>
       );
     case "Verifikasi Pembayaran":
       return (
-        <Button colorScheme="ap" className="lg-clicky">
+        <Button
+          w={"100%"}
+          colorScheme="ap"
+          className="lg-clicky"
+        >
           Verifikasi Pembayaran
+        </Button>
+      );
+    case "Pembayaran Diverifikasi":
+      return (
+        <Button
+          w={"100%"}
+          colorScheme="ap"
+          className="lg-clicky"
+        >
+          Input Tanggal Pengujian
+        </Button>
+      );
+    case "Pengujian Selesai":
+      return (
+        <Button
+          w={"100%"}
+          colorScheme="ap"
+          className="lg-clicky"
+        >
+          Unggah Hasil Pengujian
         </Button>
       );
   }

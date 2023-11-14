@@ -12,7 +12,6 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
-import AdminAksiPengujian from "./AdminAksiPengujian";
 
 export default function AdminDashboardsTransaksiTerbaru() {
   const bg = useColorModeValue("white", "dark");
@@ -42,8 +41,17 @@ export default function AdminDashboardsTransaksiTerbaru() {
   ];
 
   return (
-    <Box p={[4, 6, 6]} borderRadius={16} bg={bg} overflow={"auto"}>
-      <Text fontSize={[18, null, 20]} fontWeight={600} mb={4}>
+    <Box
+      p={[4, 6, 6]}
+      borderRadius={16}
+      bg={bg}
+      overflow={"auto"}
+    >
+      <Text
+        fontSize={[18, null, 20]}
+        fontWeight={600}
+        mb={4}
+      >
         Transaksi Terbaru
       </Text>
 
@@ -51,11 +59,18 @@ export default function AdminDashboardsTransaksiTerbaru() {
         borderRadius={8}
         border={"1px solid var(--divider3)"}
         overflow={"auto"}
+        className="scrollX"
       >
-        <Table variant={"striped"} colorScheme="ad">
+        <Table
+          variant={"striped"}
+          colorScheme="ad"
+        >
           <Thead>
             <Tr>
-              <Th w={"20px"} isNumeric>
+              <Th
+                w={"20px"}
+                isNumeric
+              >
                 No
               </Th>
               <Th>No. Registrasi</Th>
@@ -63,7 +78,6 @@ export default function AdminDashboardsTransaksiTerbaru() {
               <Th>Nama</Th>
               <Th>Produk</Th>
               <Th textAlign={"center"}>Status</Th>
-              <Th textAlign={"center"}>Aksi</Th>
               <Th></Th>
             </Tr>
           </Thead>
@@ -77,12 +91,13 @@ export default function AdminDashboardsTransaksiTerbaru() {
                 <Td>{d.nama}</Td>
                 <Td>{d.produk}</Td>
                 <Td textAlign={"center"}>
-                  <Badge className="badge" colorScheme="orange">
+                  <Badge
+                    w={"100%"}
+                    className="badge"
+                    colorScheme="orange"
+                  >
                     {d.status}
                   </Badge>
-                </Td>
-                <Td textAlign={"center"}>
-                  <AdminAksiPengujian status={d.status} />
                 </Td>
                 <Td>
                   <Button

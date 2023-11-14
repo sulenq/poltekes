@@ -54,20 +54,33 @@ export default function RiwayatPengujianList() {
 
   return (
     <TableContainer>
-      <Table size={"sm"} variant={"striped"} colorScheme="ad">
+      <Table
+        size={"sm"}
+        variant={"striped"}
+        colorScheme="ad"
+      >
         <Thead>
           <Tr>
             <Th isNumeric>No</Th>
             <Th>No.Registrasi</Th>
             <Th whiteSpace={"nowrap"}>Tanggal Order</Th>
             <Th>Nama</Th>
-            <Th whiteSpace={"nowrap"} isNumeric>
+            <Th
+              whiteSpace={"nowrap"}
+              isNumeric
+            >
               Tagihan
             </Th>
-            <Th whiteSpace={"nowrap"} textAlign={"center"}>
+            <Th
+              whiteSpace={"nowrap"}
+              textAlign={"center"}
+            >
               Status
             </Th>
-            <Th whiteSpace={"nowrap"} textAlign={"center"}>
+            <Th
+              whiteSpace={"nowrap"}
+              textAlign={"center"}
+            >
               Aksi
             </Th>
             <Th isNumeric></Th>
@@ -81,19 +94,32 @@ export default function RiwayatPengujianList() {
               <Td>{d.id.toString().padStart(3, "0")}</Td>
               <Td>{d.tanggalOrder}</Td>
               <Td whiteSpace={"nowrap"}>{d.nama}</Td>
-              <Td isNumeric whiteSpace={"nowrap"}>
+              <Td
+                isNumeric
+                whiteSpace={"nowrap"}
+              >
                 {d.tagihan !== null ? `Rp ${fn(d.tagihan)}` : "-"}
               </Td>
               <Td textAlign={"center"}>
-                <Badge className="badge" colorScheme={badgeColor(d.status)}>
+                <Badge
+                  w={"100%"}
+                  className="badge"
+                  colorScheme={badgeColor(d.status)}
+                >
                   {d.status}
                 </Badge>
               </Td>
               <Td textAlign={"center"}>
-                <CustomerAksiPengujian status={d.status} noreg={d.id} />
+                <CustomerAksiPengujian
+                  status={d.status}
+                  noreg={d.id}
+                />
               </Td>
               <Td isNumeric>
-                <Button variant={"outline"} colorScheme="ap">
+                <Button
+                  variant={"outline"}
+                  colorScheme="ap"
+                >
                   Detail
                 </Button>
               </Td>
