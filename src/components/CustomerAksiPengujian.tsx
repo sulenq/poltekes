@@ -23,5 +23,14 @@ export default function CustomerAksiPengujian(props: any) {
           Unggah Berkas
         </Button>
       );
+    case "Pengujian Selesai":
+      return (
+        <Button
+          colorScheme="ap"
+          className="lg-clicky"
+        >
+          Unduh Hasil Pengujian
+        </Button>
+      );
   }
 }

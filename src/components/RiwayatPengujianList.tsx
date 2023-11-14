@@ -46,6 +46,34 @@ export default function RiwayatPengujianList() {
       tagihan: 2000000,
       status: "Verifikasi Pembayaran",
     },
+    {
+      id: 5,
+      tanggalOrder: "12-12-2023",
+      nama: "Naomi Sinaga",
+      tagihan: 2000000,
+      status: "Pembayaran Diverifikasi",
+    },
+    {
+      id: 6,
+      tanggalOrder: "12-12-2023",
+      nama: "Naomi Sinaga",
+      tagihan: 2000000,
+      status: "Tanggal Pengujian - 12/12/2023",
+    },
+    {
+      id: 7,
+      tanggalOrder: "12-12-2023",
+      nama: "Naomi Sinaga",
+      tagihan: 2000000,
+      status: "Dalam Pengujian",
+    },
+    {
+      id: 8,
+      tanggalOrder: "12-12-2023",
+      nama: "Naomi Sinaga",
+      tagihan: 2000000,
+      status: "Pengujian Selesai",
+    },
   ];
 
   const statusBadgeColor = useStatusBadgeColor;
