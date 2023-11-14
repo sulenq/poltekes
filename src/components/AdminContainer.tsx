@@ -24,7 +24,11 @@ export default function AdminContainer({ children, active }: Props) {
   const sw = useScreenWidth();
 
   return (
-    <HStack gap={0} minH={"100vh"} align={"stretch"}>
+    <HStack
+      gap={0}
+      minH={"100vh"}
+      align={"stretch"}
+    >
       <AdminNav active={active} />
 
       <Box
@@ -35,14 +39,28 @@ export default function AdminContainer({ children, active }: Props) {
         w={"100%"}
         // maxW={sw < 770 ? "100vw" : "calc(100vw - 95px)"}
       >
-        <VStack px={[4, 5, 6]} maxW={"100%"} gap={0} align={"stretch"}>
-          <HStack py={[3, 4, 5]} justify={"space-between"}>
-            <Text fontSize={[22, null, 24]} fontWeight={600}>
+        <VStack
+          px={[4, 5, 6]}
+          maxW={"100%"}
+          gap={0}
+          align={"stretch"}
+        >
+          <HStack
+            py={[3, 4, 5]}
+            justify={"space-between"}
+          >
+            <Text
+              fontSize={[22, null, 24]}
+              fontWeight={600}
+            >
               {active}
             </Text>
 
             <HStack>
-              <ColorModeSwitcher fontSize={20} className="btn-solid" />
+              <ColorModeSwitcher
+                fontSize={20}
+                className="btn-solid"
+              />
 
               <HStack
                 bg={"var(--divider)"}
@@ -50,11 +68,17 @@ export default function AdminContainer({ children, active }: Props) {
                 p={2}
                 cursor={"pointer"}
               >
-                <Icon as={CaretDown} fontSize={iconSize} />
+                <Icon
+                  as={CaretDown}
+                  fontSize={iconSize}
+                />
 
                 <Text>Admin</Text>
 
-                <Avatar name="Jolitos Kurniawan" size={"xs"} />
+                <Avatar
+                  name="Jolitos Kurniawan"
+                  size={"xs"}
+                />
               </HStack>
             </HStack>
           </HStack>

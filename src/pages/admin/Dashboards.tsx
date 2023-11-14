@@ -10,7 +10,10 @@ export default function Dashboards() {
   return (
     <AdminContainer active={["Dashboards"]}>
       <>
-        <Box alignSelf={"flex-end"} mb={[4, 5, 6]}>
+        <Box
+          alignSelf={"flex-end"}
+          mb={[4, 5, 6]}
+        >
           <AdminDashboardPeriodicFilter />
         </Box>
 
@@ -22,7 +25,10 @@ export default function Dashboards() {
           <AdminDashboardsAnalisaTransaksi />
         </Box>
 
-        <Box mb={4} overflow={"auto"}>
+        <Box
+          mb={4}
+          overflow={"auto"}
+        >
           <AdminDashboardsTransaksiTerbaru />
         </Box>
       </>

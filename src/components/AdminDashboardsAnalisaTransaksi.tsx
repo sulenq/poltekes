@@ -91,21 +91,40 @@ export default function AdminDashboardsAnalisaTransaksi() {
   }
 
   return (
-    <Box borderRadius={16} p={[4, 6, 6]} bg={bg} overflow={"auto"}>
-      <SimpleGrid mb={4} columns={[1, 2, 2]} gap={[0, 2, 2]}>
-        <Text fontSize={[18, null, 20]} fontWeight={600}>
+    <Box
+      borderRadius={16}
+      p={[4, 6, 6]}
+      bg={bg}
+      overflow={"auto"}
+    >
+      <SimpleGrid
+        mb={4}
+        columns={[1, 2, 2]}
+        gap={[0, 2, 2]}
+      >
+        <Text
+          fontSize={[18, null, 20]}
+          fontWeight={600}
+        >
           Analisa Transaksi
         </Text>
 
         <HStack justifySelf={["flex-start", "flex-end", "flex-end"]}>
-          <Icon as={Circle} weight={"fill"} color={"p.600"} />
+          <Icon
+            as={Circle}
+            weight={"fill"}
+            color={"p.600"}
+          />
 
           <Text fontSize={[10, null, 12]}>banyaknya pengujian</Text>
         </HStack>
       </SimpleGrid>
 
       <Box>
-        <Bar data={data} options={options} />
+        <Bar
+          data={data}
+          options={options}
+        />
       </Box>
     </Box>
   );
