@@ -147,6 +147,7 @@ export default function RiwayatPengujianList() {
                 <Button
                   variant={"outline"}
                   colorScheme="ap"
+                  className="lg-clicky"
                 >
                   Detail
                 </Button>
