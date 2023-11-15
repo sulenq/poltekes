@@ -116,7 +116,7 @@ export default function AdminDashboardsAnalisaTransaksi() {
             color={"p.600"}
           />
 
-          <Text fontSize={[10, null, 12]}>banyaknya pengujian</Text>
+          <Text fontSize={[10, null, 12]}>banyaknya transaksi</Text>
         </HStack>
       </SimpleGrid>
 

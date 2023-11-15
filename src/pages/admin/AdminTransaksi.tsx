@@ -34,6 +34,7 @@ import { iconSize } from "../../const/sizes";
 import AdminAksiPengujian from "../../components/AdminAksiPengujian";
 import useStatusBadgeColor from "../../utils/useStatusBadgeColor";
 import useScrollToTop from "../../utils/useScrollToTop";
+import DetailTransaksi from "../../components/DetailTransaksi";
 
 export default function AdminTransaksi() {
   useScrollToTop();
@@ -204,13 +205,7 @@ export default function AdminTransaksi() {
                       isNumeric
                       w={"40px"}
                     >
-                      <Button
-                        colorScheme="ap"
-                        variant={"outline"}
-                        className="lg-clicky"
-                      >
-                        Detail
-                      </Button>
+                      <DetailTransaksi id={d.id} />
                     </Td>
                   </Tr>
                 ))}

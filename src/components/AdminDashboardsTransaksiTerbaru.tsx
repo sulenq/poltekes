@@ -1,7 +1,6 @@
 import {
   Badge,
   Box,
-  Button,
   Table,
   Tbody,
   Td,
@@ -12,6 +11,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
+import DetailTransaksi from "./DetailTransaksi";
 
 export default function AdminDashboardsTransaksiTerbaru() {
   const bg = useColorModeValue("white", "dark");
@@ -103,13 +103,7 @@ export default function AdminDashboardsTransaksiTerbaru() {
                   isNumeric
                   w={"40px"}
                 >
-                  <Button
-                    colorScheme="ap"
-                    variant={"outline"}
-                    className="lg-clicky"
-                  >
-                    Detail
-                  </Button>
+                  <DetailTransaksi id={d.id} />
                 </Td>
               </Tr>
             ))}

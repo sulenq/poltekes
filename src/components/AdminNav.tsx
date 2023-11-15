@@ -118,7 +118,8 @@ export default function AdminNav({ active }: Props) {
             <Text
               px={5}
               textAlign={"center"}
-              animation={"fade-in 500ms"}
+              noOfLines={2}
+              // animation={"fade-in 500ms"}
             >
               <b>Laboratorium Poltekkes Kemenkes </b>Semarang
             </Text>
@@ -153,7 +154,12 @@ export default function AdminNav({ active }: Props) {
                             weight="fill"
                           />
                           {isOpen && (
-                            <Text animation={"fade-in 500ms"}> {n.name}</Text>
+                            <Text
+                            // animation={"fade-in 500ms"}
+                            >
+                              {" "}
+                              {n.name}
+                            </Text>
                           )}
                         </HStack>
 
@@ -161,7 +167,7 @@ export default function AdminNav({ active }: Props) {
                           <Icon
                             as={CaretDown}
                             fontSize={iconSize}
-                            animation={"fade-in 500ms"}
+                            // animation={"fade-in 500ms"}
                           />
                         )}
                       </HStack>
@@ -170,8 +176,8 @@ export default function AdminNav({ active }: Props) {
                     {isOpen && (
                       <AccordionPanel
                         p={0}
-                        bg={"#00000020"}
-                        animation={"fade-in 500ms"}
+                        bg={"var(--divider)"}
+                        // animation={"fade-in 500ms"}
                       >
                         <Box>
                           {n.subNav?.map((sn, i) => (
@@ -215,7 +221,14 @@ export default function AdminNav({ active }: Props) {
                     fontSize={24}
                     weight="fill"
                   />
-                  {isOpen && <Text animation={"fade-in 500ms"}> {n.name}</Text>}
+                  {isOpen && (
+                    <Text
+                    // animation={"fade-in 500ms"}
+                    >
+                      {" "}
+                      {n.name}
+                    </Text>
+                  )}
                 </HStack>
               );
             }
