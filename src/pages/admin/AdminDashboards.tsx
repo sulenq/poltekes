@@ -14,7 +14,7 @@ export default function Dashboards() {
       <>
         <Box
           alignSelf={"flex-end"}
-          mb={[4, 5, 6]}
+          mb={4}
         >
           <AdminDashboardPeriodicFilter />
         </Box>

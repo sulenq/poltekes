@@ -11,12 +11,13 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 import useScreenWidth from "../utils/useGetScreenWidth";
 import adminNav from "../const/adminNav";
 import { Link } from "react-router-dom";
 import { CaretDown } from "@phosphor-icons/react";
 import { iconSize } from "../const/sizes";
+import useSideNav from "../globalState/useSideNav";
 
 type Props = {
   active: string[];
@@ -24,7 +25,7 @@ type Props = {
 
 export default function AdminNav({ active }: Props) {
   const navBg = useColorModeValue("white", "dark");
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, setIsOpen } = useSideNav();
   const sw = useScreenWidth();
 
   const handleOnOpen = () => {
@@ -88,9 +89,8 @@ export default function AdminNav({ active }: Props) {
       )}
 
       <Box
-        w={"80px"}
+        w={isOpen ? "312px" : "80px"}
         bg={navBg}
-        _hover={{ w: "312px" }}
         transition={"200ms"}
         onMouseEnter={handleOnOpen}
         onMouseLeave={handleOnClose}
@@ -170,7 +170,7 @@ export default function AdminNav({ active }: Props) {
                     {isOpen && (
                       <AccordionPanel
                         p={0}
-                        bg={"#b4b4b410"}
+                        bg={"#00000020"}
                         animation={"fade-in 500ms"}
                       >
                         <Box>

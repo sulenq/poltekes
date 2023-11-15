@@ -42,7 +42,6 @@ export default function AdminDashboardsAnalisaTransaksi() {
           5, 6, 7, 5, 7, 8, 2, 3, 2, 1, 2, 6, 2, 6, 5, 7, 1, 2, 3, 2, 1, 2, 6,
           2, 4, 2, 7, 5, 11, 4,
         ],
-        fill: true,
         backgroundColor: "#20aa50",
         borderColor: "#20aa50",
       },
