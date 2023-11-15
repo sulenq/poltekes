@@ -79,11 +79,21 @@ export default function SigninModal() {
           <ModalCloseButton />
 
           <ModalHeader>
-            <HStack justify={"space-between"} align={"flex-start"}>
+            <HStack
+              justify={"space-between"}
+              align={"flex-start"}
+            >
               <HStack>
-                <Image src="/logo192.png" w={"100%"} maxW={"48px"} />
+                <Image
+                  src="/logo192.png"
+                  w={"100%"}
+                  maxW={"48px"}
+                />
 
-                <Text fontSize={[30, null, 32]} fontWeight={700}>
+                <Text
+                  fontSize={[30, null, 32]}
+                  fontWeight={700}
+                >
                   Masuk
                 </Text>
               </HStack>
@@ -91,7 +101,10 @@ export default function SigninModal() {
           </ModalHeader>
 
           <ModalBody>
-            <form id="signinForm" onSubmit={formik.handleSubmit}>
+            <form
+              id="signinForm"
+              onSubmit={formik.handleSubmit}
+            >
               <FormControl
                 isInvalid={formik.errors.username ? true : false}
                 mb={4}
@@ -110,7 +123,10 @@ export default function SigninModal() {
                 mb={2}
               >
                 <FormLabel>Kata Sandi</FormLabel>
-                <PasswordInput formik={formik} name={"kataSandi"} />
+                <PasswordInput
+                  formik={formik}
+                  name={"kataSandi"}
+                />
                 <FormErrorMessage>{formik.errors.kataSandi}</FormErrorMessage>
               </FormControl>
 
@@ -129,7 +145,7 @@ export default function SigninModal() {
               <HStack>
                 <Text fontWeight={500}>Pegawai</Text>
                 <Switch
-                  colorScheme="p"
+                  colorScheme="ap"
                   onChange={(e) => {
                     formik.setFieldValue("isAdmin", e.target.checked);
                   }}
@@ -139,7 +155,10 @@ export default function SigninModal() {
           </ModalBody>
 
           <ModalFooter>
-            <VStack w={"100%"} gap={0}>
+            <VStack
+              w={"100%"}
+              gap={0}
+            >
               <Button
                 w={"100%"}
                 colorScheme="ap"
@@ -151,7 +170,10 @@ export default function SigninModal() {
                 Masuk
               </Button>
 
-              <HStack justify={"center"} gap={1}>
+              <HStack
+                justify={"center"}
+                gap={1}
+              >
                 <Text>Belum Daftar?</Text>
                 <Text
                   fontWeight={500}
@@ -160,7 +182,7 @@ export default function SigninModal() {
                   onClick={() => {
                     onClose();
                     const signupButton = document.querySelector(
-                      "#signupButton"
+                      "#signupButton",
                     ) as HTMLButtonElement;
                     if (signupButton) {
                       signupButton.click();

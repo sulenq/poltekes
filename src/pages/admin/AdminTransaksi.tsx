@@ -4,8 +4,10 @@ import {
   Badge,
   Box,
   Button,
+  Center,
   HStack,
   Icon,
+  IconButton,
   Input,
   InputGroup,
   InputLeftElement,
@@ -16,17 +18,25 @@ import {
   Table,
   Tbody,
   Td,
+  Text,
   Th,
   Thead,
   Tr,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { CaretDown, MagnifyingGlass } from "@phosphor-icons/react";
+import {
+  CaretDown,
+  CaretLeft,
+  CaretRight,
+  MagnifyingGlass,
+} from "@phosphor-icons/react";
 import { iconSize } from "../../const/sizes";
 import AdminAksiPengujian from "../../components/AdminAksiPengujian";
 import useStatusBadgeColor from "../../utils/useStatusBadgeColor";
+import useScrollToTop from "../../utils/useScrollToTop";
 
 export default function AdminTransaksi() {
+  useScrollToTop();
   const bg = useColorModeValue("white", "dark");
   //   TODO get data
   const data = [
@@ -207,6 +217,48 @@ export default function AdminTransaksi() {
               </Tbody>
             </Table>
           </Box>
+
+          <HStack
+            justify={"center"}
+            mt={4}
+          >
+            <IconButton
+              aria-label="prev"
+              icon={
+                <Icon
+                  as={CaretLeft}
+                  fontSize={iconSize}
+                />
+              }
+              variant={"ghost"}
+              className="btn"
+              size={"sm"}
+            />
+
+            <HStack mx={2}>
+              <Center
+                bg={"p.500"}
+                w={"32px"}
+                h={"32px"}
+                borderRadius={8}
+              >
+                <Text color={"white"}>1</Text>
+              </Center>
+            </HStack>
+
+            <IconButton
+              aria-label="prev"
+              icon={
+                <Icon
+                  as={CaretRight}
+                  fontSize={iconSize}
+                />
+              }
+              variant={"ghost"}
+              className="btn"
+              size={"sm"}
+            />
+          </HStack>
         </Box>
       </Box>
     </AdminContainer>

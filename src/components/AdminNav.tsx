@@ -45,12 +45,16 @@ export default function AdminNav({ active }: Props) {
         justify={"center"}
         bottom={0}
         left={0}
+        zIndex={99}
+        borderTop={"1px solid var(--divider2)"}
       >
         {adminNav.map((n, i) => (
           <VStack
+            as={Link}
+            to={n.link}
             key={i}
             h={"100%"}
-            gap={0}
+            gap={"2px"}
             justify={"flex-end"}
             className={
               active.includes(n.name)
@@ -63,12 +67,7 @@ export default function AdminNav({ active }: Props) {
               fontSize={24}
               weight="fill"
             />
-            <Text
-              animation={"fade-in 500ms"}
-              fontSize={10}
-            >
-              {n.name}
-            </Text>
+            <Text fontSize={10}>{n.name}</Text>
           </VStack>
         ))}
       </HStack>

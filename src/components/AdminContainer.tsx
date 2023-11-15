@@ -46,7 +46,7 @@ export default function AdminContainer({ children, active }: Props) {
           align={"stretch"}
         >
           <HStack
-            py={[3, 4, 5]}
+            py={4}
             justify={"space-between"}
           >
             <Text

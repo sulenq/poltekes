@@ -5,8 +5,10 @@ import { Box } from "@chakra-ui/react";
 import DashboardsSummary from "../../components/AdminDashboardsSummary";
 import AdminDashboardsAnalisaTransaksi from "../../components/AdminDashboardsAnalisaTransaksi";
 import AdminDashboardsTransaksiTerbaru from "../../components/AdminDashboardsTransaksiTerbaru";
+import useScrollToTop from "../../utils/useScrollToTop";
 
 export default function Dashboards() {
+  useScrollToTop();
   return (
     <AdminContainer active={["Dashboards"]}>
       <>
