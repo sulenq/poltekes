@@ -35,6 +35,7 @@ import AdminAksiPengujian from "../../components/AdminAksiPengujian";
 import useStatusBadgeColor from "../../utils/useStatusBadgeColor";
 import useScrollToTop from "../../utils/useScrollToTop";
 import DetailTransaksi from "../../components/DetailTransaksi";
+import useScreenWidth from "../../utils/useGetScreenWidth";
 
 export default function AdminTransaksi() {
   useScrollToTop();
@@ -98,9 +99,24 @@ export default function AdminTransaksi() {
       produk: "Pengujian X",
       status: "Pengujian Selesai",
     },
+    {
+      id: 9,
+      tanggalOrder: "12-12-2023",
+      nama: "Panjul Simonsely",
+      produk: "Pengujian X",
+      status: "Pengujian Selesai",
+    },
+    {
+      id: 10,
+      tanggalOrder: "12-12-2023",
+      nama: "Panjul Simonsely",
+      produk: "Pengujian X",
+      status: "Pengujian Selesai",
+    },
   ];
 
   const statusBadgeColor = useStatusBadgeColor;
+  const sw = useScreenWidth();
 
   return (
     <AdminContainer active={["Transaksi"]}>
@@ -156,7 +172,8 @@ export default function AdminTransaksi() {
           borderRadius={8}
           border={"1px solid var(--divider3)"}
           overflow={"auto"}
-          className="scrollX"
+          maxH={sw < 770 ? "calc(100vh - 300px)" : "calc(100vh - 252px)"}
+          className="scrollX scrollY"
         >
           <Table
             variant={"striped"}
