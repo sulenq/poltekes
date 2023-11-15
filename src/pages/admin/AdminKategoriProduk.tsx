@@ -1,7 +1,6 @@
 import React from "react";
 import AdminContainer from "../../components/AdminContainer";
 import {
-  Badge,
   Box,
   Button,
   Center,
@@ -24,6 +23,7 @@ import {
   Tr,
   useColorModeValue,
 } from "@chakra-ui/react";
+import useScrollToTop from "../../utils/useScrollToTop";
 import {
   CaretDown,
   CaretLeft,
@@ -31,79 +31,38 @@ import {
   MagnifyingGlass,
 } from "@phosphor-icons/react";
 import { iconSize } from "../../const/sizes";
-import AdminAksiPengujian from "../../components/AdminAksiPengujian";
-import useStatusBadgeColor from "../../utils/useStatusBadgeColor";
-import useScrollToTop from "../../utils/useScrollToTop";
-import DetailTransaksi from "../../components/DetailTransaksi";
+import TambahKategoriModal from "../../components/TambahKategoriModal";
+import DeleteKategoriModal from "../../components/DeleteKategoriModal";
 
-export default function AdminTransaksi() {
+export default function AdminKategoriProduk() {
   useScrollToTop();
   const bg = useColorModeValue("white", "dark");
   //   TODO get data
   const data = [
     {
       id: 1,
-      tanggalOrder: "12-12-2023",
-      nama: "Panjul Simonsely",
-      produk: "Pengujian X",
-      status: "Berkas Belum Lengkap",
+      namaKategori: "Radiologi",
     },
     {
       id: 2,
-      tanggalOrder: "12-12-2023",
-      nama: "Jolitos Kurniawan",
-      produk: "Pengujian A",
-      status: "Verifikasi Berkas",
+      namaKategori: "X-Ray",
     },
     {
       id: 3,
-      tanggalOrder: "12-12-2023",
-      nama: "Panjul Simonsely",
-      produk: "Pengujian X",
-      status: "Tagihan Belum Dibayar",
+      namaKategori: "Pesawat",
     },
     {
       id: 4,
-      tanggalOrder: "12-12-2023",
-      nama: "Panjul Simonsely",
-      produk: "Pengujian X",
-      status: "Verifikasi Pembayaran",
+      namaKategori: "Tesla",
     },
-
     {
       id: 5,
-      tanggalOrder: "12-12-2023",
-      nama: "Panjul Simonsely",
-      produk: "Pengujian X",
-      status: "Pembayaran Diverifikasi",
-    },
-    {
-      id: 6,
-      tanggalOrder: "12-12-2023",
-      nama: "Panjul Simonsely",
-      produk: "Pengujian X",
-      status: "Tanggal Pengujian - 12/12/2023",
-    },
-    {
-      id: 7,
-      tanggalOrder: "12-12-2023",
-      nama: "Panjul Simonsely",
-      produk: "Pengujian X",
-      status: "Dalam Pengujian",
-    },
-    {
-      id: 8,
-      tanggalOrder: "12-12-2023",
-      nama: "Panjul Simonsely",
-      produk: "Pengujian X",
-      status: "Pengujian Selesai",
+      namaKategori: "Kucing",
     },
   ];
 
-  const statusBadgeColor = useStatusBadgeColor;
-
   return (
-    <AdminContainer active={["Transaksi"]}>
+    <AdminContainer active={["Produk", "Kategori Produk"]}>
       <Box
         p={[4, 5, 6]}
         bg={bg}
@@ -150,6 +109,8 @@ export default function AdminTransaksi() {
               <MenuItem>La Apa</MenuItem>
             </MenuList>
           </Menu>
+
+          <TambahKategoriModal />
         </HStack>
 
         <Box
@@ -170,13 +131,8 @@ export default function AdminTransaksi() {
                 >
                   No
                 </Th>
-                <Th>No. Registrasi</Th>
-                <Th whiteSpace={"nowrap"}>Tanggal Order</Th>
-                <Th>Nama</Th>
-                <Th>Produk</Th>
-                <Th textAlign={"center"}>Status</Th>
+                <Th>Nama Kategori</Th>
                 <Th textAlign={"center"}>Aksi</Th>
-                <Th></Th>
               </Tr>
             </Thead>
 
@@ -184,27 +140,12 @@ export default function AdminTransaksi() {
               {data.map((d, i) => (
                 <Tr key={i}>
                   <Td isNumeric>{i + 1}</Td>
-                  <Td>{d.id.toString().padStart(3, "0")}</Td>
-                  <Td>{d.tanggalOrder}</Td>
-                  <Td>{d.nama}</Td>
-                  <Td>{d.produk}</Td>
-                  <Td textAlign={"center"}>
-                    <Badge
-                      w={"100%"}
-                      className="badge"
-                      colorScheme={statusBadgeColor(d.status)}
-                    >
-                      {d.status}
-                    </Badge>
-                  </Td>
-                  <Td textAlign={"center"}>
-                    <AdminAksiPengujian status={d.status} />
-                  </Td>
+                  <Td>{d.namaKategori}</Td>
                   <Td
                     isNumeric
                     w={"40px"}
                   >
-                    <DetailTransaksi id={d.id} />
+                    <DeleteKategoriModal id={d.id} />
                   </Td>
                 </Tr>
               ))}

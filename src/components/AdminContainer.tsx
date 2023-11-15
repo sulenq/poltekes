@@ -41,7 +41,7 @@ export default function AdminContainer({ children, active }: Props) {
       >
         <VStack
           px={[4, 5, 6]}
-          maxW={"100%"}
+          w={"100%"}
           gap={0}
           align={"stretch"}
         >
@@ -53,7 +53,7 @@ export default function AdminContainer({ children, active }: Props) {
               fontSize={[22, null, 24]}
               fontWeight={600}
             >
-              {active}
+              {active[active.length - 1]}
             </Text>
 
             <HStack>

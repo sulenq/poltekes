@@ -5,6 +5,7 @@ import MissingPage from "../pages/MissingPage";
 import AdminDashboards from "../pages/admin/AdminDashboards";
 import AdminProduk from "../pages/admin/AdminProduk";
 import AdminTransaksi from "../pages/admin/AdminTransaksi";
+import AdminKategoriProduk from "../pages/admin/AdminKategoriProduk";
 
 export default function AdminRoutes() {
   return (
@@ -23,6 +24,15 @@ export default function AdminRoutes() {
         element={
           <RequireAuth>
             <AdminTransaksi />
+          </RequireAuth>
+        }
+      />
+
+      <Route
+        path="/kategori-produk"
+        element={
+          <RequireAuth>
+            <AdminKategoriProduk />
           </RequireAuth>
         }
       />

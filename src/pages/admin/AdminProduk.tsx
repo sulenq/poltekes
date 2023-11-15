@@ -4,7 +4,7 @@ import { VStack } from "@chakra-ui/react";
 
 export default function AdminProduk() {
   return (
-    <AdminContainer active={["Produk"]}>
+    <AdminContainer active={["Produk", "Kelola Produk"]}>
       <VStack></VStack>
     </AdminContainer>
   );

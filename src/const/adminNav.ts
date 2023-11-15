@@ -23,7 +23,7 @@ const adminNav = [
         link: "/admin/kategori-produk",
       },
       {
-        name: "Produk",
+        name: "Kelola Produk",
         link: "/admin/produk",
       },
     ],
