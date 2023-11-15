@@ -85,6 +85,9 @@ export default function AdminNav({ active }: Props) {
           bg={"#5b5b5b50"}
           backdropFilter={"blur(5px)"}
           zIndex={2}
+          onClick={() => {
+            setIsOpen(false);
+          }}
         />
       )}
 
