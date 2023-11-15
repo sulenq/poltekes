@@ -71,14 +71,14 @@ export default function DetailTransaksi({ id }: Props) {
       >
         <ModalOverlay />
 
-        <ModalContent>
+        <ModalContent maxW={"800px"}>
           <ModalCloseButton />
 
           <ModalHeader>Detail Transaksi</ModalHeader>
 
           <ModalBody>
             <SimpleGrid
-              columns={[2, null, 2, 4]}
+              columns={2}
               gap={4}
               mb={6}
             >
@@ -89,17 +89,17 @@ export default function DetailTransaksi({ id }: Props) {
 
               <Box>
                 <Text>Produk</Text>
-                <Text fontWeight={500}>{id.toString().padStart(3, "0")}</Text>
+                <Text fontWeight={500}>{data.produk}</Text>
               </Box>
 
               <Box>
                 <Text>Nama Sertifikat</Text>
-                <Text fontWeight={500}>{id.toString().padStart(3, "0")}</Text>
+                <Text fontWeight={500}>{data.namaSertifikat}</Text>
               </Box>
 
               <Box>
                 <Text>Nama Lengkap</Text>
-                <Text fontWeight={500}>{id.toString().padStart(3, "0")}</Text>
+                <Text fontWeight={500}>{data.namaLengkap}</Text>
               </Box>
             </SimpleGrid>
 
