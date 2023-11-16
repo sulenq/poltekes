@@ -28,6 +28,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import {
+  ArrowDown,
+  ArrowUp,
   CaretDown,
   CaretLeft,
   CaretRight,
@@ -126,19 +128,50 @@ export default function AdminProduk() {
             </MenuButton>
 
             <MenuList
-              minW={"140px"}
-              // border={"1px solid var(--p500)"}
+            // minW={"140px"}
             >
               <MenuGroup title="Nama Produk">
-                <MenuItem>A-Z</MenuItem>
-                <MenuItem>Z-A</MenuItem>
+                <MenuItem>
+                  <HStack className="sortItem">
+                    <Text>A-Z</Text>
+                    <Icon
+                      as={ArrowUp}
+                      fontSize={iconSize}
+                    />
+                  </HStack>
+                </MenuItem>
+                <MenuItem>
+                  <HStack className="sortItem">
+                    <Text>Z-A</Text>
+                    <Icon
+                      as={ArrowDown}
+                      fontSize={iconSize}
+                    />
+                  </HStack>
+                </MenuItem>
               </MenuGroup>
 
               <MenuDivider />
 
               <MenuGroup title="Kategori">
-                <MenuItem>A-Z</MenuItem>
-                <MenuItem>Z-A</MenuItem>
+                <MenuItem>
+                  <HStack className="sortItem">
+                    <Text>A-Z</Text>
+                    <Icon
+                      as={ArrowUp}
+                      fontSize={iconSize}
+                    />
+                  </HStack>
+                </MenuItem>
+                <MenuItem>
+                  <HStack className="sortItem">
+                    <Text>Z-A</Text>
+                    <Icon
+                      as={ArrowDown}
+                      fontSize={iconSize}
+                    />
+                  </HStack>
+                </MenuItem>
               </MenuGroup>
             </MenuList>
           </Menu>

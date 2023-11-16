@@ -286,6 +286,11 @@ select {
   top: 0;
   left: 0;
 }
+.sortItem {
+  width: 100%;
+  justify-content: space-between;
+  gap: 16px !important;
+}
 
 /* Media Querries */
 

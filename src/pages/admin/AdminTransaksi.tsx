@@ -25,6 +25,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import {
+  ArrowDown,
+  ArrowUp,
   CaretDown,
   CaretLeft,
   CaretRight,
@@ -40,6 +42,7 @@ import useScreenWidth from "../../utils/useGetScreenWidth";
 export default function AdminTransaksi() {
   useScrollToTop();
   const bg = useColorModeValue("white", "dark");
+
   //   TODO get data
   const data = [
     {
@@ -148,8 +151,24 @@ export default function AdminTransaksi() {
               minW={"140px"}
               // border={"1px solid var(--p500)"}
             >
-              <MenuItem>Tanggal Order Terbaru</MenuItem>
-              <MenuItem>Tanggal Order Terlama</MenuItem>
+              <MenuItem>
+                <HStack className="sortItem" >
+                  <Text>Tanggal Order Terdahulu</Text>
+                  <Icon
+                    as={ArrowUp}
+                    fontSize={iconSize}
+                  />
+                </HStack>
+              </MenuItem>
+              <MenuItem>
+                <HStack className="sortItem">
+                  <Text>Tanggal Order Terbaru</Text>
+                  <Icon
+                    as={ArrowDown}
+                    fontSize={iconSize}
+                  />
+                </HStack>
+              </MenuItem>
             </MenuList>
           </Menu>
         </HStack>
