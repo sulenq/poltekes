@@ -35,18 +35,34 @@ export default function LandingNavDrawer() {
     <>
       <IconButton
         aria-label="nav button"
-        icon={<Icon as={List} fontSize={iconSize} color={"p.500"} />}
-        className="btn-p-outline clicky"
+        icon={
+          <Icon
+            as={List}
+            fontSize={iconSize}
+            color={"p.500"}
+          />
+        }
+        className="lg-clicky"
+        variant={"outline"}
+        colorScheme="ap"
         onClick={onOpen}
       />
 
-      <Drawer isOpen={isOpen} onClose={handleOnClose}>
+      <Drawer
+        isOpen={isOpen}
+        onClose={handleOnClose}
+      >
         <DrawerOverlay />
 
         <DrawerContent>
           <IconButton
             aria-label="close nav drawer"
-            icon={<Icon as={X} fontSize={iconSize} />}
+            icon={
+              <Icon
+                as={X}
+                fontSize={iconSize}
+              />
+            }
             borderRadius={"full"}
             position={"absolute"}
             left={-5}
@@ -77,12 +93,26 @@ export default function LandingNavDrawer() {
               opacity={0.1}
             />
 
-            <VStack gap={0} position={"relative"}>
-              <ColorModeSwitcher position={"absolute"} left={0} top={-3} />
+            <VStack
+              gap={0}
+              position={"relative"}
+            >
+              <ColorModeSwitcher
+                position={"absolute"}
+                left={0}
+                top={-3}
+              />
 
-              <Image src="/logo192.png" w={"48px"} mb={2} />
+              <Image
+                src="/logo192.png"
+                w={"48px"}
+                mb={2}
+              />
 
-              <Text fontWeight={700} lineHeight={1}>
+              <Text
+                fontWeight={700}
+                lineHeight={1}
+              >
                 POLTEKKES
               </Text>
               <Text fontWeight={500}>Kemenkes Semarang</Text>
@@ -96,7 +126,10 @@ export default function LandingNavDrawer() {
               align={"stretch"}
               justify={"space-between"}
             >
-              <VStack w={"100%"} align={"stretch"}>
+              <VStack
+                w={"100%"}
+                align={"stretch"}
+              >
                 <Text
                   fontWeight={500}
                   opacity={0.5}
@@ -106,7 +139,11 @@ export default function LandingNavDrawer() {
                   NAVIGASI
                 </Text>
                 {landingNav.map((n, i) => (
-                  <VStack key={i} align={"stretch"} onClick={onClose}>
+                  <VStack
+                    key={i}
+                    align={"stretch"}
+                    onClick={onClose}
+                  >
                     <LandingNavItem nav={n} />
                   </VStack>
                 ))}
