@@ -42,6 +42,18 @@ export const globalTheme = extendTheme({
       800: "#bfbfbf15",
       900: "#bfbfbf15",
     },
+    ared: {
+      50: "#E53E3E1b",
+      100: "#E53E3E2b",
+      200: "#E53E3E",
+      300: "#E53E3E",
+      400: "#E53E3E",
+      500: "#E53E3E",
+      600: "#E53E3E",
+      700: "#E53E3E",
+      800: "#E53E3E",
+      900: "#E53E3E",
+    },
     bnw: {
       200: "white",
       300: "white",
@@ -125,9 +137,6 @@ export const globalTheme = extendTheme({
 
     Menu: {
       baseStyle: (props) => ({
-        button: {
-          bg: "red",
-        },
         groupTitle: {
           opacity: 0.5,
           cursor: "default",
@@ -192,7 +201,7 @@ export const globalTheme = extendTheme({
 
     Tooltip: {
       baseStyle: {
-        bg: "p.500",
+        bg: "p.700",
         color: "w",
         "--popper-arrow-bg": "#0097e8",
       },

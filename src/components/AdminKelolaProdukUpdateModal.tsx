@@ -62,7 +62,7 @@ export default function AdminKelolaProdukUpdateModal({ id }: Props) {
     }),
 
     onSubmit: (values) => {
-      // TODO update
+      // TODO update produk
       console.log(values);
     },
   });

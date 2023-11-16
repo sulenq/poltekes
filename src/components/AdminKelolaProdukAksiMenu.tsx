@@ -3,12 +3,13 @@ import { DotsThreeVertical } from "@phosphor-icons/react";
 import React from "react";
 import { iconSize } from "../const/sizes";
 import AdminKelolaProdukUpdateModal from "./AdminKelolaProdukUpdateModal";
+import DeleteProdukModal from "./DeleteProdukModal";
 
 type Props = {
   id: string;
 };
 
-export default function AdminKelolaProdukAksiModal({ id }: Props) {
+export default function AdminKelolaProdukAksiMenu({ id }: Props) {
   return (
     <Menu>
       <MenuButton
@@ -28,6 +29,8 @@ export default function AdminKelolaProdukAksiModal({ id }: Props) {
 
       <MenuList minW={"140px"}>
         <AdminKelolaProdukUpdateModal id={id} />
+
+        <DeleteProdukModal id={id} />
       </MenuList>
     </Menu>
   );

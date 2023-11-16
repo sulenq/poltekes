@@ -22,6 +22,7 @@ import {
   Text,
   Th,
   Thead,
+  Tooltip,
   Tr,
   VStack,
   useColorModeValue,
@@ -34,7 +35,7 @@ import {
 } from "@phosphor-icons/react";
 import { iconSize } from "../../const/sizes";
 import useFormatNumber from "../../utils/useFormatNumber";
-import AdminKelolaProdukAksiModal from "../../components/AdminKelolaProdukAksiModal";
+import AdminKelolaProdukAksiMenu from "../../components/AdminKelolaProdukAksiMenu";
 
 export default function AdminProduk() {
   const bg = useColorModeValue("white", "dark");
@@ -182,16 +183,21 @@ export default function AdminProduk() {
                     Rp {fn(d.harga)}
                   </Td>
                   <Td>
-                    <Text
-                      w={"400px"}
-                      noOfLines={2}
-                      fontSize={[12, null, 14]}
+                    <Tooltip
+                      label={d.deskripsi}
+                      placement="bottom-start"
                     >
-                      {d.deskripsi}
-                    </Text>
+                      <Text
+                        w={"400px"}
+                        noOfLines={2}
+                        fontSize={[12, null, 14]}
+                      >
+                        {d.deskripsi}
+                      </Text>
+                    </Tooltip>
                   </Td>
                   <Td>
-                    <AdminKelolaProdukAksiModal id={d.id} />
+                    <AdminKelolaProdukAksiMenu id={d.id} />
                   </Td>
                 </Tr>
               ))}

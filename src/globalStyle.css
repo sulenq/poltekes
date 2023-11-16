@@ -69,14 +69,6 @@ button {
   font-size: 14px !important;
 }
 
-.btn-p-outline {
-  background: transparent !important;
-  border: 1px solid var(--p500);
-  color: var(--p500) !important;
-}
-.btn-p-outline:hover:not(:disabled) {
-  background: var(--p200a) !important;
-}
 .btn-solid {
   background: var(--divider) !important;
 }
@@ -89,6 +81,9 @@ button {
 }
 .btn:hover:not(:disabled) {
   background: var(--divider) !important;
+}
+.btn {
+  background: transparent !important;
 }
 .btn:active:not(:disabled),
 .btn-solid:active:not(:disabled) {
