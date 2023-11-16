@@ -9,23 +9,53 @@ import {
 import { CaretDown } from "@phosphor-icons/react";
 import React from "react";
 import { iconSize } from "../const/sizes";
+import useAdminDashboardsPeriodicFilter from "../globalState/useAdminDashboardsPeriodicFilter";
 
 export default function AdminDashboardsPeriodicFilter() {
-  const periode = "This Month";
+  const { periode, setPeriode } = useAdminDashboardsPeriodicFilter();
 
   return (
     <Menu>
       <MenuButton
         as={Button}
         colorScheme="ap"
-        rightIcon={<Icon as={CaretDown} fontSize={iconSize} />}
+        w={"140px"}
+        rightIcon={
+          <Icon
+            as={CaretDown}
+            fontSize={iconSize}
+          />
+        }
       >
         {periode}
       </MenuButton>
-      <MenuList minW={"140px"} border={"1px solid var(--p500)"}>
-        <MenuItem>This Week</MenuItem>
-        <MenuItem>This Month</MenuItem>
-        <MenuItem>This Year</MenuItem>
+      <MenuList
+        minW={"140px"}
+        border={"1px solid var(--p500)"}
+      >
+        <MenuItem
+          onClick={() => {
+            setPeriode("Minggu Ini");
+          }}
+        >
+          Minggu Ini
+        </MenuItem>
+
+        <MenuItem
+          onClick={() => {
+            setPeriode("Bulan Ini");
+          }}
+        >
+          Bulan Ini
+        </MenuItem>
+
+        <MenuItem
+          onClick={() => {
+            setPeriode("Tahun Ini");
+          }}
+        >
+          Tahun Ini
+        </MenuItem>
       </MenuList>
     </Menu>
   );
