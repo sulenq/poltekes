@@ -99,20 +99,6 @@ export default function AdminTransaksi() {
       produk: "Pengujian X",
       status: "Pengujian Selesai",
     },
-    {
-      id: 9,
-      tanggalOrder: "12-12-2023",
-      nama: "Panjul Simonsely",
-      produk: "Pengujian X",
-      status: "Pengujian Selesai",
-    },
-    {
-      id: 10,
-      tanggalOrder: "12-12-2023",
-      nama: "Panjul Simonsely",
-      produk: "Pengujian X",
-      status: "Pengujian Selesai",
-    },
   ];
 
   const statusBadgeColor = useStatusBadgeColor;
