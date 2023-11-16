@@ -232,7 +232,7 @@ export default function DetailTransaksi({ id }: Props) {
               </Button>
 
               <SimpleGrid
-                columns={2}
+                columns={[1, 2]}
                 gap={4}
               >
                 <VStack
