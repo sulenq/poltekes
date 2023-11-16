@@ -30,17 +30,17 @@ ChartJS.register(
   Legend,
 );
 
-export default function AdminDashboardsAnalisaTransaksi() {
+export default function AdminDashboardsAnalisaPemasukan() {
   const bg = useColorModeValue("white", "dark");
 
-  const data = [12, 10, 8, 11];
+  const data = [8.2, 10.6, 5.9, 11];
   const labels = Array.from({ length: data.length }, (_, index) => index + 1);
   const xLabel = "Minggu ke-";
   const chartData = {
     labels: labels,
     datasets: [
       {
-        label: "Transaksi",
+        label: "Pemasukan",
         data: data,
         backgroundColor: "#ffffff",
         borderColor: "#2dc653",
@@ -48,7 +48,7 @@ export default function AdminDashboardsAnalisaTransaksi() {
     ],
   };
   const options = {
-    responsive: true,
+    // responsive: true,
     plugins: {
       legend: {
         display: false,
@@ -89,7 +89,7 @@ export default function AdminDashboardsAnalisaTransaksi() {
           fontWeight={600}
           lineHeight={1.3}
         >
-          Analisa Transaksi
+          Analisa Pemasukan
         </Text>
 
         <HStack justifySelf={["flex-start", "flex-end", "flex-end"]}>
@@ -99,7 +99,7 @@ export default function AdminDashboardsAnalisaTransaksi() {
             color={"p.600"}
           />
 
-          <Text fontSize={[10, null, 12]}>total transaksi</Text>
+          <Text fontSize={[10, null, 12]}>total pemasukan (juta)</Text>
         </HStack>
       </SimpleGrid>
 

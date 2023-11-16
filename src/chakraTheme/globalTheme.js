@@ -125,15 +125,18 @@ export const globalTheme = extendTheme({
 
     Menu: {
       baseStyle: (props) => ({
+        button:{
+          bg:'red'
+        },
         divider: {
           my: 1,
         },
         list: {
           bg: props.colorMode === "dark" ? "dark" : "white",
-          border: "1px solid var(--divider)",
+          border: "1px solid var(--divider3)",
           p: 0,
           overflow: "hidden",
-          boxShadow:'none'
+          boxShadow:'none',
         },
         item: {
           bg: "transparent",
