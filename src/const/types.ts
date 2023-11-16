@@ -8,3 +8,5 @@ export type LandingNavItemType = {
   link: string;
   icon: any;
 };
+
+export type DashboardsPeriode = "Minggu Ini" | "Bulan Ini" | "Tahun Ini";

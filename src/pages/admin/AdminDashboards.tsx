@@ -26,7 +26,7 @@ export default function Dashboards() {
 
         <SimpleGrid
           mb={4}
-          columns={[1, null, 2]}
+          columns={[1, 1, 1, 2]}
           gap={4}
         >
           <AdminDashboardsAnalisaTransaksi />

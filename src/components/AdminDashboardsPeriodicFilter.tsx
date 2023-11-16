@@ -31,7 +31,7 @@ export default function AdminDashboardsPeriodicFilter() {
       </MenuButton>
       <MenuList
         minW={"140px"}
-        border={"1px solid var(--p500)"}
+        // border={"1px solid var(--p500)"}
       >
         <MenuItem
           onClick={() => {

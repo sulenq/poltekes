@@ -160,10 +160,10 @@ export default function AdminTransaksi() {
 
             <MenuList
               minW={"140px"}
-              border={"1px solid var(--p500)"}
+              // border={"1px solid var(--p500)"}
             >
-              <MenuItem>Apa Hayo</MenuItem>
-              <MenuItem>La Apa</MenuItem>
+              <MenuItem>Tanggal Order Terbaru</MenuItem>
+              <MenuItem>Tanggal Order Terlama</MenuItem>
             </MenuList>
           </Menu>
         </HStack>

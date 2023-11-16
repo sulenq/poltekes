@@ -19,6 +19,8 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { Circle } from "@phosphor-icons/react";
+import useAdminDashboardsPeriodicFilter from "../globalState/useAdminDashboardsPeriodicFilter";
+import { DashboardsPeriode } from "../const/types";
 
 ChartJS.register(
   CategoryScale,
@@ -32,10 +34,44 @@ ChartJS.register(
 
 export default function AdminDashboardsAnalisaTransaksi() {
   const bg = useColorModeValue("white", "dark");
+  const { periode } = useAdminDashboardsPeriodicFilter();
+  const getLabel = (periode: DashboardsPeriode) => {
+    switch (periode) {
+      case "Minggu Ini":
+        return ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"];
+      case "Bulan Ini":
+        return [1, 2, 3, 4];
+      case "Tahun Ini":
+        return [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "Mei",
+          "Jun",
+          "Jul",
+          "Agu",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Des",
+        ];
+    }
+  };
+  const getXLabel = (periode: DashboardsPeriode) => {
+    switch (periode) {
+      case "Minggu Ini":
+        return "Hari";
+      case "Bulan Ini":
+        return "Minggu ke-";
+      case "Tahun Ini":
+        return "Bulan";
+    }
+  };
 
   const data = [12, 10, 8, 11];
-  const labels = Array.from({ length: data.length }, (_, index) => index + 1);
-  const xLabel = "Minggu ke-";
+  const labels = getLabel(periode);
+  const xLabel = getXLabel(periode);
   const chartData = {
     labels: labels,
     datasets: [
@@ -105,6 +141,7 @@ export default function AdminDashboardsAnalisaTransaksi() {
 
       <Box>
         <Line
+          //@ts-ignore
           data={chartData}
           options={options}
         />

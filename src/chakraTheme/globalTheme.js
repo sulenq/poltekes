@@ -125,8 +125,12 @@ export const globalTheme = extendTheme({
 
     Menu: {
       baseStyle: (props) => ({
-        button:{
-          bg:'red'
+        button: {
+          bg: "red",
+        },
+        groupTitle: {
+          opacity: 0.5,
+          cursor: "default",
         },
         divider: {
           my: 1,
@@ -136,7 +140,7 @@ export const globalTheme = extendTheme({
           border: "1px solid var(--divider3)",
           p: 0,
           overflow: "hidden",
-          boxShadow:'none',
+          boxShadow: "none",
         },
         item: {
           bg: "transparent",

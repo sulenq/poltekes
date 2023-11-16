@@ -1,7 +1,8 @@
 import { create } from "zustand";
+import { DashboardsPeriode } from "../const/types";
 
 type State = {
-  periode: "Minggu Ini" | "Bulan Ini" | "Tahun Ini";
+  periode: DashboardsPeriode;
 };
 
 type Actions = {

@@ -12,6 +12,7 @@ import {
   InputLeftElement,
   Menu,
   MenuButton,
+  MenuGroup,
   MenuItem,
   MenuList,
   Table,
@@ -108,10 +109,12 @@ export default function AdminKategoriProduk() {
 
             <MenuList
               minW={"140px"}
-              border={"1px solid var(--p500)"}
+              // border={"1px solid var(--p500)"}
             >
-              <MenuItem>Apa Hayo</MenuItem>
-              <MenuItem>La Apa</MenuItem>
+              <MenuGroup title="Nama Kategori">
+                <MenuItem>A-Z</MenuItem>
+                <MenuItem>Z-A</MenuItem>
+              </MenuGroup>
             </MenuList>
           </Menu>
 

@@ -12,6 +12,8 @@ import {
   InputLeftElement,
   Menu,
   MenuButton,
+  MenuDivider,
+  MenuGroup,
   MenuItem,
   MenuList,
   Table,
@@ -124,10 +126,19 @@ export default function AdminProduk() {
 
             <MenuList
               minW={"140px"}
-              border={"1px solid var(--p500)"}
+              // border={"1px solid var(--p500)"}
             >
-              <MenuItem>Apa Hayo</MenuItem>
-              <MenuItem>La Apa</MenuItem>
+              <MenuGroup title="Nama Produk">
+                <MenuItem>A-Z</MenuItem>
+                <MenuItem>Z-A</MenuItem>
+              </MenuGroup>
+
+              <MenuDivider />
+
+              <MenuGroup title="Kategori">
+                <MenuItem>A-Z</MenuItem>
+                <MenuItem>Z-A</MenuItem>
+              </MenuGroup>
             </MenuList>
           </Menu>
         </HStack>
