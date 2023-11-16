@@ -24,7 +24,6 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import useScrollToTop from "../../utils/useScrollToTop";
 import {
   CaretDown,
   CaretLeft,
@@ -32,39 +31,56 @@ import {
   MagnifyingGlass,
 } from "@phosphor-icons/react";
 import { iconSize } from "../../const/sizes";
-import TambahKategoriModal from "../../components/TambahKategoriModal";
-import DeleteKategoriModal from "../../components/DeleteKategoriModal";
+import useFormatNumber from "../../utils/useFormatNumber";
+import AdminKelolaProdukAksiModal from "../../components/AdminKelolaProdukAksiModal";
 
-export default function AdminKategoriProduk() {
-  useScrollToTop();
+export default function AdminProduk() {
   const bg = useColorModeValue("white", "dark");
 
-  //   TODO get data
+  // TODO get data
   const data = [
     {
-      id: 1,
-      namaKategori: "Radiologi",
+      id: "1",
+      kode: "9094012863",
+      namaProduk: "Pengujian X",
+      kategori: "Radiologi",
+      harga: 1800000,
+      deskripsi:
+        "Pengujian untuk mengetahui bahwa di tubuh anda ada khodamnya atau tidak",
     },
     {
-      id: 2,
-      namaKategori: "X-Ray",
+      id: "2",
+      kode: "3987687623",
+      namaProduk: "Pengujian Y",
+      kategori: "Radiologi",
+      harga: 2800000,
+      deskripsi:
+        "Pengujian untuk mengetahui bahwa di tubuh anda ada khodamnya atau tidak",
     },
     {
-      id: 3,
-      namaKategori: "Pesawat",
+      id: "3",
+      kode: "12309172837",
+      namaProduk: "Pengujian A",
+      kategori: "Radiologi",
+      harga: 1800000,
+      deskripsi:
+        "Pengujian untuk mengetahui bahwa di tubuh anda ada khodamnya atau tidak",
     },
     {
-      id: 4,
-      namaKategori: "Tesla",
-    },
-    {
-      id: 5,
-      namaKategori: "Kucing",
+      id: "4",
+      kode: "3986182653",
+      namaProduk: "Pengujian B",
+      kategori: "Radiologi",
+      harga: 800000,
+      deskripsi:
+        "Pengujian untuk mengetahui bahwa di tubuh anda ada khodamnya atau tidak",
     },
   ];
 
+  const fn = useFormatNumber;
+
   return (
-    <AdminContainer active={["Produk", "Kategori Produk"]}>
+    <AdminContainer active={["Produk", "Kelola Produk"]}>
       <VStack
         w={"100%"}
         align={"stretch"}
@@ -114,8 +130,6 @@ export default function AdminKategoriProduk() {
               <MenuItem>La Apa</MenuItem>
             </MenuList>
           </Menu>
-
-          <TambahKategoriModal />
         </HStack>
 
         <Box
@@ -130,27 +144,43 @@ export default function AdminKategoriProduk() {
           >
             <Thead>
               <Tr>
+                <Th>Kode</Th>
+                <Th whiteSpace={"nowrap"}>Nama Produk</Th>
+                <Th>Kategori</Th>
+                <Th isNumeric>Harga</Th>
+                <Th>Deskripsi</Th>
                 <Th
                   w={"20px"}
-                  isNumeric
+                  textAlign={"center"}
                 >
-                  No
+                  Aksi
                 </Th>
-                <Th>Nama Kategori</Th>
-                <Th textAlign={"center"}>Aksi</Th>
               </Tr>
             </Thead>
 
             <Tbody>
               {data.map((d, i) => (
                 <Tr key={i}>
-                  <Td isNumeric>{i + 1}</Td>
-                  <Td>{d.namaKategori}</Td>
+                  <Td>{d.kode}</Td>
+                  <Td>{d.namaProduk}</Td>
+                  <Td>{d.kategori}</Td>
                   <Td
+                    whiteSpace={"nowrap"}
                     isNumeric
-                    w={"40px"}
                   >
-                    <DeleteKategoriModal id={d.id} />
+                    Rp {fn(d.harga)}
+                  </Td>
+                  <Td>
+                    <Text
+                      w={"400px"}
+                      noOfLines={2}
+                      fontSize={[12, null, 14]}
+                    >
+                      {d.deskripsi}
+                    </Text>
+                  </Td>
+                  <Td>
+                    <AdminKelolaProdukAksiModal id={d.id} />
                   </Td>
                 </Tr>
               ))}

@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import RequireAuth from "../middleware/RequireAuth";
 import MissingPage from "../pages/MissingPage";
 import AdminDashboards from "../pages/admin/AdminDashboards";
-import AdminProduk from "../pages/admin/AdminProduk";
+import AdminKelolaProduk from "../pages/admin/AdminKelolaProduk";
 import AdminTransaksi from "../pages/admin/AdminTransaksi";
 import AdminKategoriProduk from "../pages/admin/AdminKategoriProduk";
 
@@ -41,7 +41,7 @@ export default function AdminRoutes() {
         path="/produk"
         element={
           <RequireAuth>
-            <AdminProduk />
+            <AdminKelolaProduk />
           </RequireAuth>
         }
       />
