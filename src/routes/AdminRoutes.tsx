@@ -6,6 +6,7 @@ import AdminDashboards from "../pages/admin/AdminDashboards";
 import AdminKelolaProduk from "../pages/admin/AdminKelolaProduk";
 import AdminTransaksi from "../pages/admin/AdminTransaksi";
 import AdminKategoriProduk from "../pages/admin/AdminKategoriProduk";
+import AdminCustomer from "../pages/admin/AdminCustomer";
 
 export default function AdminRoutes() {
   return (
@@ -42,6 +43,15 @@ export default function AdminRoutes() {
         element={
           <RequireAuth>
             <AdminKelolaProduk />
+          </RequireAuth>
+        }
+      />
+
+      <Route
+        path="/pengguna-customer"
+        element={
+          <RequireAuth>
+            <AdminCustomer />
           </RequireAuth>
         }
       />
