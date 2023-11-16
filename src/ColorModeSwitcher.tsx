@@ -12,7 +12,7 @@ import { iconSize } from "./const/sizes";
 type ColorModeSwitcherProps = Omit<IconButtonProps, "aria-label">;
 
 export const ColorModeSwitcher: React.FC<ColorModeSwitcherProps> = (
-  props: any
+  props: any,
 ) => {
   const { toggleColorMode } = useColorMode();
   const text = useColorModeValue("dark", "light");

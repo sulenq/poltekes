@@ -1,8 +1,13 @@
 import {
   Avatar,
   Box,
+  Button,
   HStack,
   Icon,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   Text,
   VStack,
   useColorModeValue,
@@ -11,7 +16,7 @@ import React from "react";
 import AdminNav from "./AdminNav";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
 import useScreenWidth from "../utils/useGetScreenWidth";
-import { CaretDown } from "@phosphor-icons/react";
+import { CaretDown, SignOut } from "@phosphor-icons/react";
 import { iconSize } from "../const/sizes";
 
 type Props = {
@@ -22,6 +27,15 @@ type Props = {
 export default function AdminContainer({ children, active }: Props) {
   const contentBg = useColorModeValue("var(--divider)", "#111827");
   const sw = useScreenWidth();
+
+  const buttonBg = useColorModeValue("red.500", "red.200");
+  const buttonBgHover = useColorModeValue("red.600", "red.300");
+  const buttonBgActive = useColorModeValue("red.700", "red.400");
+  const buttonColor = useColorModeValue("white", "black");
+
+  const handleSignout = () => {
+    //TODO singout
+  };
 
   return (
     <HStack
@@ -62,24 +76,49 @@ export default function AdminContainer({ children, active }: Props) {
                 className="btn-solid"
               />
 
-              <HStack
-                bg={"var(--divider)"}
-                borderRadius={8}
-                p={2}
-                cursor={"pointer"}
-              >
-                <Icon
-                  as={CaretDown}
-                  fontSize={iconSize}
-                />
+              <Menu>
+                <MenuButton
+                  as={Button}
+                  px={0}
+                  className="btn-solid"
+                >
+                  <HStack
+                    borderRadius={8}
+                    p={2}
+                    cursor={"pointer"}
+                  >
+                    <Icon
+                      as={CaretDown}
+                      fontSize={iconSize}
+                    />
 
-                <Text>Admin</Text>
+                    <Text>Admin</Text>
 
-                <Avatar
-                  name="Jolitos Kurniawan"
-                  size={"xs"}
-                />
-              </HStack>
+                    <Avatar
+                      name="Jolitos Kurniawan"
+                      size={"xs"}
+                    />
+                  </HStack>
+                </MenuButton>
+
+                <MenuList minW={"126px"}>
+                  <MenuItem
+                    bg={buttonBg}
+                    color={buttonColor}
+                    _hover={{ bg: buttonBgHover }}
+                    _active={{ bg: buttonBgActive }}
+                    onClick={handleSignout}
+                  >
+                    <HStack>
+                      <Icon
+                        as={SignOut}
+                        fontSize={iconSize}
+                      />
+                      <Text>Keluar</Text>
+                    </HStack>
+                  </MenuItem>
+                </MenuList>
+              </Menu>
             </HStack>
           </HStack>
 

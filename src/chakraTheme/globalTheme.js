@@ -150,6 +150,7 @@ export const globalTheme = extendTheme({
           p: 0,
           overflow: "hidden",
           boxShadow: "none",
+          borderRadius: "8px",
         },
         item: {
           bg: "transparent",
