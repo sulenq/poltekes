@@ -142,7 +142,7 @@ export const globalTheme = extendTheme({
           cursor: "default",
         },
         divider: {
-          my: 1,
+          my: 0,
         },
         list: {
           bg: props.colorMode === "dark" ? "dark" : "white",
