@@ -1,5 +1,5 @@
 const useCompareValues = (key: string, order: "asc" | "desc") => {
-  return (a: any, b: any): number => {
+  return (a: any, b: any) => {
     const valueA = key === "harga" ? a[key] : a[key].toLowerCase();
     const valueB = key === "harga" ? b[key] : b[key].toLowerCase();
 

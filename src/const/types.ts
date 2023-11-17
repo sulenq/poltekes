@@ -11,6 +11,6 @@ export type LandingNavItemType = {
 
 export type DashboardsPeriode = "Minggu Ini" | "Bulan Ini" | "Tahun Ini";
 
-export type SortKelolaProduk = "asc" | "desc";
+export type SortOrder = "asc" | "desc";
 
-export type SortType = "namaProduk" | "kategori" | "harga";
+export type SortByKelolaProduk = "namaProduk" | "kategori" | "harga";

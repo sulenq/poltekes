@@ -40,14 +40,13 @@ export default function SortKelolaProduk() {
       // minW={"140px"}
       >
         <MenuGroup title="Nama Produk">
-          <MenuItem>
-            <HStack
-              className="sortItem"
-              onClick={() => {
-                setSortBy("namaProduk");
-                setSortOrder("asc");
-              }}
-            >
+          <MenuItem
+            onClick={() => {
+              setSortBy("namaProduk");
+              setSortOrder("asc");
+            }}
+          >
+            <HStack className="sortItem">
               <Text>A-Z</Text>
               <Icon
                 as={ArrowUp}
@@ -55,14 +54,13 @@ export default function SortKelolaProduk() {
               />
             </HStack>
           </MenuItem>
-          <MenuItem>
-            <HStack
-              className="sortItem"
-              onClick={() => {
-                setSortBy("namaProduk");
-                setSortOrder("desc");
-              }}
-            >
+          <MenuItem
+            onClick={() => {
+              setSortBy("namaProduk");
+              setSortOrder("desc");
+            }}
+          >
+            <HStack className="sortItem">
               <Text>Z-A</Text>
               <Icon
                 as={ArrowDown}
@@ -75,14 +73,13 @@ export default function SortKelolaProduk() {
         <MenuDivider />
 
         <MenuGroup title="Kategori">
-          <MenuItem>
-            <HStack
-              className="sortItem"
-              onClick={() => {
-                setSortBy("kategori");
-                setSortOrder("asc");
-              }}
-            >
+          <MenuItem
+            onClick={() => {
+              setSortBy("kategori");
+              setSortOrder("asc");
+            }}
+          >
+            <HStack className="sortItem">
               <Text>A-Z</Text>
               <Icon
                 as={ArrowUp}
@@ -90,14 +87,13 @@ export default function SortKelolaProduk() {
               />
             </HStack>
           </MenuItem>
-          <MenuItem>
-            <HStack
-              className="sortItem"
-              onClick={() => {
-                setSortBy("kategori");
-                setSortOrder("desc");
-              }}
-            >
+          <MenuItem
+            onClick={() => {
+              setSortBy("kategori");
+              setSortOrder("desc");
+            }}
+          >
+            <HStack className="sortItem">
               <Text>Z-A</Text>
               <Icon
                 as={ArrowDown}
@@ -110,14 +106,13 @@ export default function SortKelolaProduk() {
         <MenuDivider />
 
         <MenuGroup title="Harga">
-          <MenuItem>
-            <HStack
-              className="sortItem"
-              onClick={() => {
-                setSortBy("harga");
-                setSortOrder("asc");
-              }}
-            >
+          <MenuItem
+            onClick={() => {
+              setSortBy("harga");
+              setSortOrder("asc");
+            }}
+          >
+            <HStack className="sortItem">
               <Text>Rendah-Tinggi</Text>
               <Icon
                 as={ArrowUp}
@@ -125,14 +120,13 @@ export default function SortKelolaProduk() {
               />
             </HStack>
           </MenuItem>
-          <MenuItem>
-            <HStack
-              className="sortItem"
-              onClick={() => {
-                setSortBy("harga");
-                setSortOrder("desc");
-              }}
-            >
+          <MenuItem
+            onClick={() => {
+              setSortBy("harga");
+              setSortOrder("desc");
+            }}
+          >
+            <HStack className="sortItem">
               <Text>Tinggi-Rendah</Text>
               <Icon
                 as={ArrowDown}

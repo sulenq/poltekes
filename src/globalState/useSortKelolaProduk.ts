@@ -1,9 +1,9 @@
 import { create } from "zustand";
-import { SortKelolaProduk, SortType } from "../const/types";
+import { SortOrder, SortByKelolaProduk } from "../const/types";
 
 type State = {
-  sortBy: SortType;
-  sortOrder: SortKelolaProduk;
+  sortBy: SortByKelolaProduk;
+  sortOrder: SortOrder;
 };
 
 type Actions = {

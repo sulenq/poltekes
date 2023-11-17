@@ -3,7 +3,6 @@ import AdminContainer from "../../components/AdminContainer";
 import {
   Badge,
   Box,
-  Button,
   Center,
   HStack,
   Icon,
@@ -11,10 +10,6 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
   Table,
   Tbody,
   Td,
@@ -24,20 +19,14 @@ import {
   Tr,
   useColorModeValue,
 } from "@chakra-ui/react";
-import {
-  ArrowDown,
-  ArrowUp,
-  CaretDown,
-  CaretLeft,
-  CaretRight,
-  MagnifyingGlass,
-} from "@phosphor-icons/react";
+import { CaretLeft, CaretRight, MagnifyingGlass } from "@phosphor-icons/react";
 import { iconSize } from "../../const/sizes";
 import AdminAksiPengujian from "../../components/AdminAksiPengujian";
 import useStatusBadgeColor from "../../utils/useStatusBadgeColor";
 import useScrollToTop from "../../utils/useScrollToTop";
 import DetailTransaksi from "../../components/DetailTransaksi";
 import useScreenWidth from "../../utils/useGetScreenWidth";
+import SortTransaksi from "../../components/SortTransaksi";
 
 export default function AdminTransaksi() {
   useScrollToTop();
@@ -130,47 +119,7 @@ export default function AdminTransaksi() {
             />
           </InputGroup>
 
-          <Menu>
-            <MenuButton
-              as={Button}
-              flexShrink={0}
-              variant={"outline"}
-              colorScheme="ap"
-              pr={"12px"}
-              rightIcon={
-                <Icon
-                  as={CaretDown}
-                  fontSize={iconSize}
-                />
-              }
-            >
-              Urutkan
-            </MenuButton>
-
-            <MenuList
-              minW={"140px"}
-              // border={"1px solid var(--p500)"}
-            >
-              <MenuItem>
-                <HStack className="sortItem" >
-                  <Text>Tanggal Order Terdahulu</Text>
-                  <Icon
-                    as={ArrowUp}
-                    fontSize={iconSize}
-                  />
-                </HStack>
-              </MenuItem>
-              <MenuItem>
-                <HStack className="sortItem">
-                  <Text>Tanggal Order Terbaru</Text>
-                  <Icon
-                    as={ArrowDown}
-                    fontSize={iconSize}
-                  />
-                </HStack>
-              </MenuItem>
-            </MenuList>
-          </Menu>
+          <SortTransaksi />
         </HStack>
 
         <Box
