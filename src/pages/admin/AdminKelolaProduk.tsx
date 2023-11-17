@@ -1,8 +1,6 @@
 import React from "react";
 import AdminContainer from "../../components/AdminContainer";
 import {
-  Box,
-  Button,
   Center,
   HStack,
   Icon,
@@ -10,79 +8,17 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  Menu,
-  MenuButton,
-  MenuDivider,
-  MenuGroup,
-  MenuItem,
-  MenuList,
-  Table,
-  Tbody,
-  Td,
   Text,
-  Th,
-  Thead,
-  Tooltip,
-  Tr,
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import {
-  ArrowDown,
-  ArrowUp,
-  CaretDown,
-  CaretLeft,
-  CaretRight,
-  MagnifyingGlass,
-} from "@phosphor-icons/react";
+import { CaretLeft, CaretRight, MagnifyingGlass } from "@phosphor-icons/react";
 import { iconSize } from "../../const/sizes";
-import useFormatNumber from "../../utils/useFormatNumber";
-import AdminKelolaProdukAksiMenu from "../../components/AdminKelolaProdukAksiMenu";
+import SortKelolaProduk from "../../components/SortKelolaProduk";
+import KelolaProdukTable from "../../components/KelolaProdukTable";
 
 export default function AdminProduk() {
   const bg = useColorModeValue("white", "dark");
-
-  // TODO get data
-  const data = [
-    {
-      id: "1",
-      kode: "9094012863",
-      namaProduk: "Pengujian X",
-      kategori: "Radiologi",
-      harga: 1800000,
-      deskripsi:
-        "Pengujian untuk mengetahui bahwa di tubuh anda ada khodamnya atau tidak",
-    },
-    {
-      id: "2",
-      kode: "3987687623",
-      namaProduk: "Pengujian Y",
-      kategori: "Radiologi",
-      harga: 2800000,
-      deskripsi:
-        "Pengujian untuk mengetahui bahwa di tubuh anda ada khodamnya atau tidak",
-    },
-    {
-      id: "3",
-      kode: "12309172837",
-      namaProduk: "Pengujian A",
-      kategori: "Radiologi",
-      harga: 1800000,
-      deskripsi:
-        "Pengujian untuk mengetahui bahwa di tubuh anda ada khodamnya atau tidak",
-    },
-    {
-      id: "4",
-      kode: "3986182653",
-      namaProduk: "Pengujian B",
-      kategori: "Radiologi",
-      harga: 800000,
-      deskripsi:
-        "Pengujian untuk mengetahui bahwa di tubuh anda ada khodamnya atau tidak",
-    },
-  ];
-
-  const fn = useFormatNumber;
 
   return (
     <AdminContainer active={["Produk", "Kelola Produk"]}>
@@ -110,133 +46,10 @@ export default function AdminProduk() {
             />
           </InputGroup>
 
-          <Menu>
-            <MenuButton
-              as={Button}
-              flexShrink={0}
-              variant={"outline"}
-              colorScheme="ap"
-              pr={"12px"}
-              rightIcon={
-                <Icon
-                  as={CaretDown}
-                  fontSize={iconSize}
-                />
-              }
-            >
-              Urutkan
-            </MenuButton>
-
-            <MenuList
-            // minW={"140px"}
-            >
-              <MenuGroup title="Nama Produk">
-                <MenuItem>
-                  <HStack className="sortItem">
-                    <Text>A-Z</Text>
-                    <Icon
-                      as={ArrowUp}
-                      fontSize={iconSize}
-                    />
-                  </HStack>
-                </MenuItem>
-                <MenuItem>
-                  <HStack className="sortItem">
-                    <Text>Z-A</Text>
-                    <Icon
-                      as={ArrowDown}
-                      fontSize={iconSize}
-                    />
-                  </HStack>
-                </MenuItem>
-              </MenuGroup>
-
-              <MenuDivider />
-
-              <MenuGroup title="Kategori">
-                <MenuItem>
-                  <HStack className="sortItem">
-                    <Text>A-Z</Text>
-                    <Icon
-                      as={ArrowUp}
-                      fontSize={iconSize}
-                    />
-                  </HStack>
-                </MenuItem>
-                <MenuItem>
-                  <HStack className="sortItem">
-                    <Text>Z-A</Text>
-                    <Icon
-                      as={ArrowDown}
-                      fontSize={iconSize}
-                    />
-                  </HStack>
-                </MenuItem>
-              </MenuGroup>
-            </MenuList>
-          </Menu>
+          <SortKelolaProduk />
         </HStack>
 
-        <Box
-          borderRadius={8}
-          border={"1px solid var(--divider3)"}
-          overflow={"auto"}
-          className="scrollX"
-        >
-          <Table
-            variant={"striped"}
-            colorScheme="ad"
-          >
-            <Thead>
-              <Tr>
-                <Th>Kode</Th>
-                <Th whiteSpace={"nowrap"}>Nama Produk</Th>
-                <Th>Kategori</Th>
-                <Th isNumeric>Harga</Th>
-                <Th>Deskripsi</Th>
-                <Th
-                  w={"20px"}
-                  textAlign={"center"}
-                >
-                  Aksi
-                </Th>
-              </Tr>
-            </Thead>
-
-            <Tbody>
-              {data.map((d, i) => (
-                <Tr key={i}>
-                  <Td>{d.kode}</Td>
-                  <Td>{d.namaProduk}</Td>
-                  <Td>{d.kategori}</Td>
-                  <Td
-                    whiteSpace={"nowrap"}
-                    isNumeric
-                  >
-                    Rp {fn(d.harga)}
-                  </Td>
-                  <Td>
-                    <Tooltip
-                      label={d.deskripsi}
-                      placement="bottom-start"
-                    >
-                      <Text
-                        w={"400px"}
-                        noOfLines={2}
-                        fontSize={[12, null, 14]}
-                      >
-                        {d.deskripsi}
-                      </Text>
-                    </Tooltip>
-                  </Td>
-                  <Td>
-                    <AdminKelolaProdukAksiMenu id={d.id} />
-                  </Td>
-                </Tr>
-              ))}
-            </Tbody>
-          </Table>
-        </Box>
+        <KelolaProdukTable />
 
         <HStack
           justify={"center"}

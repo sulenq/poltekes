@@ -152,10 +152,7 @@ export default function AdminKelolaProdukUpdateModal({ id }: Props) {
                 <FormErrorMessage>{formik.errors.harga}</FormErrorMessage>
               </FormControl>
 
-              <FormControl
-                mb={4}
-                isInvalid={formik.errors.deskripsi ? true : false}
-              >
+              <FormControl isInvalid={formik.errors.deskripsi ? true : false}>
                 <FormLabel>
                   Deskripsi <RequiredForm />
                 </FormLabel>
