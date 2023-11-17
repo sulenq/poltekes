@@ -4,6 +4,7 @@ import {
   Icon,
   Menu,
   MenuButton,
+  MenuGroup,
   MenuItem,
   MenuList,
   Text,
@@ -11,8 +12,11 @@ import {
 import { ArrowDown, ArrowUp, CaretDown } from "@phosphor-icons/react";
 import React from "react";
 import { iconSize } from "../const/sizes";
+import useSortTransaksi from "../globalState/useSortTransaksi";
 
 export default function SortTransaksi() {
+  const { setSortOrder } = useSortTransaksi();
+
   return (
     <Menu>
       <MenuButton
@@ -32,27 +36,37 @@ export default function SortTransaksi() {
       </MenuButton>
 
       <MenuList
-        minW={"140px"}
-        // border={"1px solid var(--p500)"}
+      // minW={"140px"}
       >
-        <MenuItem>
-          <HStack className="sortItem">
-            <Text>Tanggal Order Terdahulu</Text>
-            <Icon
-              as={ArrowUp}
-              fontSize={iconSize}
-            />
-          </HStack>
-        </MenuItem>
-        <MenuItem>
-          <HStack className="sortItem">
-            <Text>Tanggal Order Terbaru</Text>
-            <Icon
-              as={ArrowDown}
-              fontSize={iconSize}
-            />
-          </HStack>
-        </MenuItem>
+        <MenuGroup title="Tanggal Order">
+          <MenuItem
+            onClick={() => {
+              setSortOrder("asc");
+            }}
+          >
+            <HStack className="sortItem">
+              <Text>Terdahulu-Terbaru</Text>
+              <Icon
+                as={ArrowUp}
+                fontSize={iconSize}
+              />
+            </HStack>
+          </MenuItem>
+
+          <MenuItem
+            onClick={() => {
+              setSortOrder("desc");
+            }}
+          >
+            <HStack className="sortItem">
+              <Text>Terbaru-Terdahulu</Text>
+              <Icon
+                as={ArrowDown}
+                fontSize={iconSize}
+              />
+            </HStack>
+          </MenuItem>
+        </MenuGroup>
       </MenuList>
     </Menu>
   );
