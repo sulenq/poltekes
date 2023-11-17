@@ -12,6 +12,7 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import { Plus } from "@phosphor-icons/react";
@@ -57,11 +58,12 @@ export default function TambahKategoriModal() {
           />
         }
         pl={3}
+        pr={[1, 4]}
         colorScheme="ap"
         className="lg-clicky"
         onClick={onOpen}
       >
-        Tambah Kategori
+        <Text display={["none", "block"]}>Tambah Kategori</Text>
       </Button>
 
       <Modal
