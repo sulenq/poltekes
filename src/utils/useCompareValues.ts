@@ -4,9 +4,24 @@ const useCompareValues = (key: string, order: "asc" | "desc") => {
     const valueB = key === "harga" ? b[key] : b[key].toLowerCase();
 
     if (typeof valueA === "string" && typeof valueB === "string") {
-      return order === "asc"
-        ? valueA.localeCompare(valueB)
-        : valueB.localeCompare(valueA);
+      const dateA = new Date(valueA);
+      const dateB = new Date(valueB);
+
+      if (
+        dateA instanceof Date &&
+        !isNaN(dateA.getTime()) &&
+        dateB instanceof Date &&
+        !isNaN(dateB.getTime())
+      ) {
+        console.log("titit");
+        return order === "asc"
+          ? dateA.getTime() - dateB.getTime()
+          : dateB.getTime() - dateA.getTime();
+      } else {
+        return order === "asc"
+          ? valueA.localeCompare(valueB)
+          : valueB.localeCompare(valueA);
+      }
     }
 
     return order === "asc" ? valueA - valueB : valueB - valueA;
