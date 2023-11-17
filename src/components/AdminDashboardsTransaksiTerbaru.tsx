@@ -73,7 +73,7 @@ export default function AdminDashboardsTransaksiTerbaru() {
               >
                 No
               </Th>
-              <Th>No. Registrasi</Th>
+              <Th>No.Registrasi</Th>
               <Th whiteSpace={"nowrap"}>Tanggal Order</Th>
               <Th>Nama</Th>
               <Th>Produk</Th>
@@ -87,7 +87,7 @@ export default function AdminDashboardsTransaksiTerbaru() {
               <Tr key={i}>
                 <Td isNumeric>{i + 1}</Td>
                 <Td>{d.id.toString().padStart(3, "0")}</Td>
-                <Td>{d.tanggalOrder}</Td>
+                <Td whiteSpace={"nowrap"}>{d.tanggalOrder}</Td>
                 <Td>{d.nama}</Td>
                 <Td>{d.produk}</Td>
                 <Td textAlign={"center"}>

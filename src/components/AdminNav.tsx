@@ -106,6 +106,7 @@ export default function AdminNav({ active }: Props) {
                       key={i}
                       as={Link}
                       to={sn.link}
+                      color={active.includes(sn.name) ? "p.500" : ""}
                     >
                       {sn.name}
                     </MenuItem>
@@ -154,6 +155,9 @@ export default function AdminNav({ active }: Props) {
           px={1}
           as={Link}
           to={"/"}
+          onClick={() => {
+            setIsOpen(false);
+          }}
         >
           <Image
             src="/logo192.png"

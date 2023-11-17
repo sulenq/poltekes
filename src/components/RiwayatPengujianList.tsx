@@ -83,7 +83,6 @@ export default function RiwayatPengujianList() {
   return (
     <TableContainer>
       <Table
-        size={"sm"}
         variant={"striped"}
         colorScheme="ad"
       >

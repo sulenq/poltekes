@@ -64,7 +64,7 @@ export default function DeleteKategoriModal({ id }: Props) {
             <Button
               type="submit"
               form="tambahKategoriForm"
-              colorScheme="ap"
+              colorScheme="red"
               variant={"outline"}
               className="lg-clicky"
               onClick={handleOnClose}
@@ -75,7 +75,7 @@ export default function DeleteKategoriModal({ id }: Props) {
             <Button
               type="submit"
               form="tambahKategoriForm"
-              colorScheme="ap"
+              colorScheme="red"
               className="lg-clicky"
             >
               Yakin

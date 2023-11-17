@@ -115,7 +115,7 @@ export default function TabelTransaksi() {
             >
               No
             </Th>
-            <Th>No. Registrasi</Th>
+            <Th>No.Registrasi</Th>
             <Th whiteSpace={"nowrap"}>Tanggal Order</Th>
             <Th>Nama</Th>
             <Th>Produk</Th>

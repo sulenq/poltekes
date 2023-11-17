@@ -211,13 +211,14 @@ export const globalTheme = extendTheme({
 
     Table: {
       sizes: {
-        sm: {
+        md: {
           th: {
-            py: "14px",
+            py: "16px",
             px: "12px",
           },
           td: {
             py: "16px",
+            px: "12px",
           },
         },
       },

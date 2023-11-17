@@ -79,7 +79,7 @@ export default function KelolaProdukTable() {
       >
         <Thead>
           <Tr>
-            <Th>Kode</Th>
+            <Th>ID</Th>
             <Th whiteSpace={"nowrap"}>Nama Produk</Th>
             <Th>Kategori</Th>
             <Th isNumeric>Harga</Th>
