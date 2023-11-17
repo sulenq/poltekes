@@ -1,8 +1,6 @@
 import React from "react";
 import AdminContainer from "../../components/AdminContainer";
 import {
-  Box,
-  Button,
   Center,
   HStack,
   Icon,
@@ -10,61 +8,20 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  Menu,
-  MenuButton,
-  MenuGroup,
-  MenuItem,
-  MenuList,
-  Table,
-  Tbody,
-  Td,
   Text,
-  Th,
-  Thead,
-  Tr,
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
 import useScrollToTop from "../../utils/useScrollToTop";
-import {
-  ArrowDown,
-  ArrowUp,
-  CaretDown,
-  CaretLeft,
-  CaretRight,
-  MagnifyingGlass,
-} from "@phosphor-icons/react";
+import { CaretLeft, CaretRight, MagnifyingGlass } from "@phosphor-icons/react";
 import { iconSize } from "../../const/sizes";
 import TambahKategoriModal from "../../components/TambahKategoriModal";
-import DeleteKategoriModal from "../../components/DeleteKategoriModal";
+import TabelKategoriProduk from "../../components/TabelKategoriProduk";
+import SortKategoriProduk from "../../components/SortKategoriProduk";
 
 export default function AdminKategoriProduk() {
   useScrollToTop();
   const bg = useColorModeValue("white", "dark");
-
-  //   TODO get data
-  const data = [
-    {
-      id: 1,
-      namaKategori: "Radiologi",
-    },
-    {
-      id: 2,
-      namaKategori: "X-Ray",
-    },
-    {
-      id: 3,
-      namaKategori: "Pesawat",
-    },
-    {
-      id: 4,
-      namaKategori: "Tesla",
-    },
-    {
-      id: 5,
-      namaKategori: "Kucing",
-    },
-  ];
 
   return (
     <AdminContainer active={["Produk", "Kategori Produk"]}>
@@ -92,91 +49,12 @@ export default function AdminKategoriProduk() {
             />
           </InputGroup>
 
-          <Menu>
-            <MenuButton
-              as={Button}
-              flexShrink={0}
-              variant={"outline"}
-              colorScheme="ap"
-              pr={"12px"}
-              rightIcon={
-                <Icon
-                  as={CaretDown}
-                  fontSize={iconSize}
-                />
-              }
-            >
-              Urutkan
-            </MenuButton>
-
-            <MenuList
-            // minW={"140px"}
-            >
-              <MenuGroup title="Nama Kategori">
-                <MenuItem>
-                  <HStack className="sortItem">
-                    <Text>A-Z</Text>
-                    <Icon
-                      as={ArrowUp}
-                      fontSize={iconSize}
-                    />
-                  </HStack>
-                </MenuItem>
-                <MenuItem>
-                  <HStack className="sortItem">
-                    <Text>Z-A</Text>
-                    <Icon
-                      as={ArrowDown}
-                      fontSize={iconSize}
-                    />
-                  </HStack>
-                </MenuItem>
-              </MenuGroup>
-            </MenuList>
-          </Menu>
+          <SortKategoriProduk />
 
           <TambahKategoriModal />
         </HStack>
 
-        <Box
-          borderRadius={8}
-          border={"1px solid var(--divider3)"}
-          overflow={"auto"}
-          className="scrollX"
-        >
-          <Table
-            variant={"striped"}
-            colorScheme="ad"
-          >
-            <Thead>
-              <Tr>
-                <Th
-                  w={"20px"}
-                  isNumeric
-                >
-                  No
-                </Th>
-                <Th>Nama Kategori</Th>
-                <Th textAlign={"center"}>Aksi</Th>
-              </Tr>
-            </Thead>
-
-            <Tbody>
-              {data.map((d, i) => (
-                <Tr key={i}>
-                  <Td isNumeric>{i + 1}</Td>
-                  <Td>{d.namaKategori}</Td>
-                  <Td
-                    isNumeric
-                    w={"40px"}
-                  >
-                    <DeleteKategoriModal id={d.id} />
-                  </Td>
-                </Tr>
-              ))}
-            </Tbody>
-          </Table>
-        </Box>
+        <TabelKategoriProduk />
 
         <HStack
           justify={"center"}
