@@ -7,6 +7,11 @@ import {
   HStack,
   Icon,
   Image,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  SimpleGrid,
   Text,
   VStack,
   useColorModeValue,
@@ -38,40 +43,79 @@ export default function AdminNav({ active }: Props) {
 
   if (sw < 770) {
     return (
-      <HStack
+      <SimpleGrid
+        columns={4}
         h={"60px"}
         bg={navBg}
         position={"fixed"}
         w={"100%"}
-        justify={"center"}
         bottom={0}
+        px={4}
         left={0}
         zIndex={99}
         borderTop={"1px solid var(--divider2)"}
       >
-        {adminNav.map((n, i) => (
-          <VStack
-            as={Link}
-            to={n.link}
-            key={i}
-            h={"100%"}
-            gap={"2px"}
-            justify={"flex-end"}
-            className={
-              active.includes(n.name)
-                ? "active-mobile adminNavItemMobile"
-                : "adminNavItemMobile"
-            }
-          >
-            <Icon
-              as={n.icon}
-              fontSize={24}
-              weight="fill"
-            />
-            <Text fontSize={10}>{n.name}</Text>
-          </VStack>
-        ))}
-      </HStack>
+        {adminNav.map((n, i) => {
+          if (!n.nested) {
+            return (
+              <VStack
+                as={Link}
+                to={n.link}
+                key={i}
+                h={"100%"}
+                gap={"2px"}
+                justify={"flex-end"}
+                className={
+                  active.includes(n.name)
+                    ? "active-mobile adminNavItemMobile"
+                    : "adminNavItemMobile"
+                }
+              >
+                <Icon
+                  as={n.icon}
+                  fontSize={24}
+                  weight="fill"
+                />
+                <Text fontSize={10}>{n.name}</Text>
+              </VStack>
+            );
+          } else {
+            return (
+              <Menu>
+                <MenuButton
+                  as={VStack}
+                  className={
+                    active.includes(n.name)
+                      ? "active-mobile adminNavItemMobile"
+                      : "adminNavItemMobile"
+                  }
+                >
+                  <VStack>
+                    <Icon
+                      as={n.icon}
+                      fontSize={24}
+                      weight="fill"
+                    />
+                    <Text fontSize={10}>{n.name}</Text>
+                  </VStack>
+                </MenuButton>
+
+                <MenuList>
+                  {n.subNav?.map((sn, i) => (
+                    <MenuItem
+                      key={i}
+                      as={Link}
+                      to={sn.link}
+                    >
+                      {sn.name}
+                    </MenuItem>
+                  ))}
+                </MenuList>
+              </Menu>
+            );
+          }
+        })}
+      </SimpleGrid>
     );
   }
 

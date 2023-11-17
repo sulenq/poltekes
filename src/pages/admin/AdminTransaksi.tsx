@@ -28,7 +28,7 @@ export default function AdminTransaksi() {
         p={[4, 5, 6]}
         bg={bg}
         borderRadius={16}
-        mb={6}
+        // mb={6}
       >
         <HStack mb={4}>
           <InputGroup>

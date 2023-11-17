@@ -24,7 +24,7 @@ const adminNav = [
       },
       {
         name: "Kelola Produk",
-        link: "/admin/produk",
+        link: "/admin/kelola-produk",
       },
     ],
   },

@@ -39,7 +39,7 @@ export default function AdminRoutes() {
       />
 
       <Route
-        path="/produk"
+        path="/kelola-produk"
         element={
           <RequireAuth>
             <AdminKelolaProduk />

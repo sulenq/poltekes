@@ -54,7 +54,7 @@ export default function AdminContainer({ children, active }: Props) {
         // maxW={sw < 770 ? "100vw" : "calc(100vw - 95px)"}
       >
         <VStack
-          px={[4, 5, 6]}
+          px={[4, null, 6]}
           w={"100%"}
           gap={0}
           align={"stretch"}
