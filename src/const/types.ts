@@ -14,3 +14,5 @@ export type DashboardsPeriode = "Minggu Ini" | "Bulan Ini" | "Tahun Ini";
 export type SortOrder = "asc" | "desc";
 
 export type SortByKelolaProduk = "namaProduk" | "kategori" | "harga";
+
+export type SortByCustomer = "namaLengkap" | "instansi";
