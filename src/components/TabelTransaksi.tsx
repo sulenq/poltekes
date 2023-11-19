@@ -12,7 +12,7 @@ import {
 import React, { useEffect, useState } from "react";
 import useScreenWidth from "../utils/useGetScreenWidth";
 import AdminAksiPengujian from "./AdminAksiPengujian";
-import DetailTransaksi from "./DetailTransaksi";
+import DetailTransaksi from "./DetailTransaksiModal";
 import useStatusBadgeColor from "../utils/useStatusBadgeColor";
 import useSortTransaksi from "../globalState/useSortTransaksi";
 import useCompareValues from "../utils/useCompareValues";
@@ -103,16 +103,10 @@ export default function TabelTransaksi() {
       maxH={sw < 770 ? "calc(100vh - 290px)" : "calc(100vh - 245px)"}
       className="scrollX scrollY"
     >
-      <Table
-        variant={"striped"}
-        colorScheme="ad"
-      >
+      <Table variant={"striped"} colorScheme="ad">
         <Thead>
           <Tr>
-            <Th
-              w={"20px"}
-              isNumeric
-            >
+            <Th w={"20px"} isNumeric>
               No
             </Th>
             <Th>No.Registrasi</Th>
@@ -160,10 +154,7 @@ export default function TabelTransaksi() {
                 <Td textAlign={"center"}>
                   <AdminAksiPengujian status={d.status} />
                 </Td>
-                <Td
-                  isNumeric
-                  w={"40px"}
-                >
+                <Td isNumeric w={"40px"}>
                   <DetailTransaksi id={d.id} />
                 </Td>
               </Tr>

@@ -77,11 +77,7 @@ export default function DetailTransaksi({ id }: Props) {
           <ModalHeader>Detail Transaksi</ModalHeader>
 
           <ModalBody>
-            <SimpleGrid
-              columns={2}
-              gap={4}
-              mb={6}
-            >
+            <SimpleGrid columns={2} gap={4} mb={6}>
               <Box>
                 <Text>No. Registrasi</Text>
                 <Text fontWeight={500}>{id.toString().padStart(3, "0")}</Text>
@@ -106,23 +102,13 @@ export default function DetailTransaksi({ id }: Props) {
             <Box mb={6}>
               <Text mb={2}>Foto Sampel</Text>
 
-              <Button
-                colorScheme="ap"
-                className="lg-clicky"
-                mb={3}
-              >
+              <Button colorScheme="ap" className="lg-clicky" mb={3}>
                 Unduh
               </Button>
 
-              <SimpleGrid
-                columns={[2, 3]}
-                gap={4}
-              >
+              <SimpleGrid columns={[2, 3]} gap={4}>
                 {data.fotoSampel.map((d, i) => (
-                  <Image
-                    key={i}
-                    src={d}
-                  />
+                  <Image key={i} src={d} />
                 ))}
               </SimpleGrid>
             </Box>
@@ -130,18 +116,11 @@ export default function DetailTransaksi({ id }: Props) {
             <Box mb={6}>
               <Text mb={2}>File Pendukung</Text>
 
-              <Button
-                colorScheme="ap"
-                className="lg-clicky"
-                mb={3}
-              >
+              <Button colorScheme="ap" className="lg-clicky" mb={3}>
                 Unduh
               </Button>
 
-              <SimpleGrid
-                columns={[2, 3]}
-                gap={4}
-              >
+              <SimpleGrid columns={[2, 3]} gap={4}>
                 {data.filePendukung.map((d, i) => (
                   <VStack
                     key={i}
@@ -157,10 +136,7 @@ export default function DetailTransaksi({ id }: Props) {
                       weight="light"
                       mb={2}
                     />
-                    <Text
-                      fontWeight={500}
-                      textAlign={"center"}
-                    >
+                    <Text fontWeight={500} textAlign={"center"}>
                       {d.nama}
                     </Text>
                     <Text
@@ -178,18 +154,11 @@ export default function DetailTransaksi({ id }: Props) {
             <Box mb={6}>
               <Text mb={2}>File Kontrak</Text>
 
-              <Button
-                colorScheme="ap"
-                className="lg-clicky"
-                mb={3}
-              >
+              <Button colorScheme="ap" className="lg-clicky" mb={3}>
                 Unduh
               </Button>
 
-              <SimpleGrid
-                columns={[2, 3]}
-                gap={4}
-              >
+              <SimpleGrid columns={[2, 3]} gap={4}>
                 <VStack
                   gap={0}
                   borderRadius={8}
@@ -203,10 +172,7 @@ export default function DetailTransaksi({ id }: Props) {
                     weight="light"
                     mb={2}
                   />
-                  <Text
-                    fontWeight={500}
-                    textAlign={"center"}
-                  >
+                  <Text fontWeight={500} textAlign={"center"}>
                     {data.fileKontrak.nama}
                   </Text>
                   <Text
@@ -220,21 +186,14 @@ export default function DetailTransaksi({ id }: Props) {
               </SimpleGrid>
             </Box>
 
-            <Box mb={6}>
+            <Box>
               <Text mb={2}>Bukti Pembayaran</Text>
 
-              <Button
-                colorScheme="ap"
-                className="lg-clicky"
-                mb={3}
-              >
+              <Button colorScheme="ap" className="lg-clicky" mb={3}>
                 Unduh
               </Button>
 
-              <SimpleGrid
-                columns={[1, 2]}
-                gap={4}
-              >
+              <SimpleGrid columns={[1, 2]} gap={4}>
                 <VStack
                   gap={0}
                   borderRadius={8}

@@ -11,7 +11,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
-import DetailTransaksi from "./DetailTransaksi";
+import DetailTransaksi from "./DetailTransaksiModal";
 
 export default function AdminDashboardsTransaksiTerbaru() {
   const bg = useColorModeValue("white", "dark");
@@ -41,17 +41,8 @@ export default function AdminDashboardsTransaksiTerbaru() {
   ];
 
   return (
-    <Box
-      p={[4, 6, 6]}
-      borderRadius={16}
-      bg={bg}
-      overflow={"auto"}
-    >
-      <Text
-        fontSize={[18, null, 20]}
-        fontWeight={600}
-        mb={4}
-      >
+    <Box p={[4, 6, 6]} borderRadius={16} bg={bg} overflow={"auto"}>
+      <Text fontSize={[18, null, 20]} fontWeight={600} mb={4}>
         Transaksi Terbaru
       </Text>
 
@@ -61,16 +52,10 @@ export default function AdminDashboardsTransaksiTerbaru() {
         overflow={"auto"}
         className="scrollX"
       >
-        <Table
-          variant={"striped"}
-          colorScheme="ad"
-        >
+        <Table variant={"striped"} colorScheme="ad">
           <Thead>
             <Tr>
-              <Th
-                w={"20px"}
-                isNumeric
-              >
+              <Th w={"20px"} isNumeric>
                 No
               </Th>
               <Th>No.Registrasi</Th>
@@ -91,18 +76,11 @@ export default function AdminDashboardsTransaksiTerbaru() {
                 <Td>{d.nama}</Td>
                 <Td>{d.produk}</Td>
                 <Td textAlign={"center"}>
-                  <Badge
-                    w={"100%"}
-                    className="badge"
-                    colorScheme="orange"
-                  >
+                  <Badge w={"100%"} className="badge" colorScheme="orange">
                     {d.status}
                   </Badge>
                 </Td>
-                <Td
-                  isNumeric
-                  w={"40px"}
-                >
+                <Td isNumeric w={"40px"}>
                   <DetailTransaksi id={d.id} />
                 </Td>
               </Tr>
