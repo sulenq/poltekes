@@ -59,12 +59,12 @@ export default function AdminNav({ active }: Props) {
           if (!n.nested) {
             return (
               <VStack
+                key={i}
                 as={Link}
                 to={n.link}
-                key={i}
                 h={"100%"}
-                gap={"2px"}
-                justify={"flex-end"}
+                gap={1}
+                justify={"center"}
                 className={
                   active.includes(n.name)
                     ? "active-mobile adminNavItemMobile"
@@ -81,16 +81,20 @@ export default function AdminNav({ active }: Props) {
             );
           } else {
             return (
-              <Menu>
+              <Menu key={i}>
                 <MenuButton
                   as={VStack}
+                  justify={"center"}
                   className={
                     active.includes(n.name)
                       ? "active-mobile adminNavItemMobile"
                       : "adminNavItemMobile"
                   }
                 >
-                  <VStack>
+                  <VStack
+                    justify={"center"}
+                    gap={1}
+                  >
                     <Icon
                       as={n.icon}
                       fontSize={24}

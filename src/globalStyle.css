@@ -266,9 +266,9 @@ select {
 }
 .active,
 .active-mobile {
-  background: var(--p500a);
+  color: var(--p500);
 }
-.active-mobile::before {
+/* .active-mobile::before {
   content: "";
   height: 4px;
   width: 100%;
@@ -276,7 +276,7 @@ select {
   position: absolute;
   top: 0;
   left: 0;
-}
+} */
 .active:before {
   content: "";
   width: 4px;

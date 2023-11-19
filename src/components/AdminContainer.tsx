@@ -64,7 +64,7 @@ export default function AdminContainer({ children, active }: Props) {
             justify={"space-between"}
           >
             <Text
-              fontSize={[22, null, 24]}
+              fontSize={[20, null, 24]}
               fontWeight={600}
             >
               {active[active.length - 1]}
