@@ -24,6 +24,7 @@ import React, { useRef } from "react";
 import * as yup from "yup";
 import PasswordInput from "./PasswordInput";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function SigninModal() {
   const { isOpen, onClose, onOpen } = useDisclosure();
@@ -35,19 +36,42 @@ export default function SigninModal() {
 
     initialValues: {
       username: "",
-      kataSandi: "",
+      password: "",
       isAdmin: false,
     },
 
     validationSchema: yup.object().shape({
       username: yup.string().required("Username harus diisi"),
-      kataSandi: yup.string().required("Kata Sandi harus diisi"),
+      password: yup.string().required("Kata Sandi harus diisi"),
     }),
 
     onSubmit: (values, { resetForm }) => {
       //TODO post signin
+      const data = {
+        username: values.username,
+        password: values.password,
+      };
+
+      const options = {
+        method: "post",
+        url: "http://development.avanafish.com/api/login",
+        data: data,
+      };
+
+      async function signin() {
+        try {
+          const response = await axios.request(options);
+          console.log(response);
+        } catch (error) {
+          console.log(error);
+          alert("Something wrong, try refreshing the page  or comeback later");
+        }
+      }
+
+      signin();
 
       console.log(values);
+
       if (values.isAdmin) {
         navigate("/admin");
       } else {
@@ -79,21 +103,11 @@ export default function SigninModal() {
           <ModalCloseButton />
 
           <ModalHeader>
-            <HStack
-              justify={"space-between"}
-              align={"flex-start"}
-            >
+            <HStack justify={"space-between"} align={"flex-start"}>
               <HStack>
-                <Image
-                  src="/logo192.png"
-                  w={"100%"}
-                  maxW={"48px"}
-                />
+                <Image src="/logo192.png" w={"100%"} maxW={"48px"} />
 
-                <Text
-                  fontSize={[30, null, 32]}
-                  fontWeight={700}
-                >
+                <Text fontSize={[30, null, 32]} fontWeight={700}>
                   Masuk
                 </Text>
               </HStack>
@@ -101,10 +115,7 @@ export default function SigninModal() {
           </ModalHeader>
 
           <ModalBody>
-            <form
-              id="signinForm"
-              onSubmit={formik.handleSubmit}
-            >
+            <form id="signinForm" onSubmit={formik.handleSubmit}>
               <FormControl
                 isInvalid={formik.errors.username ? true : false}
                 mb={4}
@@ -119,15 +130,12 @@ export default function SigninModal() {
               </FormControl>
 
               <FormControl
-                isInvalid={formik.errors.kataSandi ? true : false}
+                isInvalid={formik.errors.password ? true : false}
                 mb={2}
               >
                 <FormLabel>Kata Sandi</FormLabel>
-                <PasswordInput
-                  formik={formik}
-                  name={"kataSandi"}
-                />
-                <FormErrorMessage>{formik.errors.kataSandi}</FormErrorMessage>
+                <PasswordInput formik={formik} name={"password"} />
+                <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
               </FormControl>
 
               <Text mb={4}>
@@ -155,25 +163,19 @@ export default function SigninModal() {
           </ModalBody>
 
           <ModalFooter>
-            <VStack
-              w={"100%"}
-              gap={0}
-            >
+            <VStack w={"100%"} gap={0}>
               <Button
+                type="submit"
+                form="signinForm"
                 w={"100%"}
                 colorScheme="ap"
                 className="lg-clicky"
                 mb={4}
-                type="submit"
-                form="signinForm"
               >
                 Masuk
               </Button>
 
-              <HStack
-                justify={"center"}
-                gap={1}
-              >
+              <HStack justify={"center"} gap={1}>
                 <Text>Belum Daftar?</Text>
                 <Text
                   fontWeight={500}
@@ -182,7 +184,7 @@ export default function SigninModal() {
                   onClick={() => {
                     onClose();
                     const signupButton = document.querySelector(
-                      "#signupButton",
+                      "#signupButton"
                     ) as HTMLButtonElement;
                     if (signupButton) {
                       signupButton.click();
