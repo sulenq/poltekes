@@ -14,22 +14,21 @@ import useSortKelolaProduk from "../globalState/useSortKelolaProduk";
 import useCompareValues from "../utils/useCompareValues";
 import useFormatNumber from "../utils/useFormatNumber";
 import AdminKelolaProdukAksiMenu from "./AdminKelolaProdukAksiMenu";
+import useScreenWidth from "../utils/useGetScreenWidth";
 
 export default function KelolaProdukTable() {
   // TODO get data
   const [initialData] = useState([
     {
       id: "1",
-      kode: "9094012863",
       namaProduk: "Pengujian X",
       kategori: "Radiologi",
-      harga: 1800000,
+      harga: 2200000,
       deskripsi:
         "Pengujian untuk mengetahui bahwa di tubuh anda ada khodamnya atau tidak",
     },
     {
       id: "2",
-      kode: "3987687623",
       namaProduk: "Pengujian Y",
       kategori: "Biologi",
       harga: 2800000,
@@ -38,19 +37,49 @@ export default function KelolaProdukTable() {
     },
     {
       id: "3",
-      kode: "12309172837",
       namaProduk: "Pengujian A",
       kategori: "Sosiologi",
-      harga: 1800000,
+      harga: 1000000,
       deskripsi:
         "Pengujian untuk mengetahui bahwa di tubuh anda ada khodamnya atau tidak",
     },
     {
       id: "4",
-      kode: "3986182653",
       namaProduk: "Pengujian B",
       kategori: "Geologi",
       harga: 800000,
+      deskripsi:
+        "Pengujian untuk mengetahui bahwa di tubuh anda ada khodamnya atau tidak",
+    },
+    {
+      id: "5",
+      namaProduk: "Pengujian C",
+      kategori: "Geologi",
+      harga: 800000,
+      deskripsi:
+        "Pengujian untuk mengetahui bahwa di tubuh anda ada khodamnya atau tidak",
+    },
+    {
+      id: "6",
+      namaProduk: "Pengujian D",
+      kategori: "Geologi",
+      harga: 400000,
+      deskripsi:
+        "Pengujian untuk mengetahui bahwa di tubuh anda ada khodamnya atau tidak",
+    },
+    {
+      id: "7",
+      namaProduk: "Pengujian F",
+      kategori: "Geologi",
+      harga: 800000,
+      deskripsi:
+        "Pengujian untuk mengetahui bahwa di tubuh anda ada khodamnya atau tidak",
+    },
+    {
+      id: "8",
+      namaProduk: "Pengujian E",
+      kategori: "Geologi",
+      harga: 670000,
       deskripsi:
         "Pengujian untuk mengetahui bahwa di tubuh anda ada khodamnya atau tidak",
     },
@@ -65,6 +94,7 @@ export default function KelolaProdukTable() {
   }, [sortBy, sortOrder, compareValues, initialData]);
 
   const fn = useFormatNumber;
+  const sw = useScreenWidth();
 
   return (
     <Box
@@ -72,11 +102,9 @@ export default function KelolaProdukTable() {
       border={"1px solid var(--divider3)"}
       overflow={"auto"}
       className="scrollX"
+      maxH={sw < 770 ? "calc(100vh - 290px)" : "calc(100vh - 245px)"}
     >
-      <Table
-        variant={"striped"}
-        colorScheme="ad"
-      >
+      <Table variant={"striped"} colorScheme="ad">
         <Thead>
           <Tr>
             <Th>ID</Th>
@@ -84,10 +112,7 @@ export default function KelolaProdukTable() {
             <Th>Kategori</Th>
             <Th isNumeric>Harga</Th>
             <Th>Deskripsi</Th>
-            <Th
-              w={"20px"}
-              textAlign={"center"}
-            >
+            <Th w={"20px"} textAlign={"center"}>
               Aksi
             </Th>
           </Tr>
@@ -96,25 +121,15 @@ export default function KelolaProdukTable() {
         <Tbody>
           {data.map((d, i) => (
             <Tr key={i}>
-              <Td>{d.kode}</Td>
+              <Td>{d.id}</Td>
               <Td>{d.namaProduk}</Td>
               <Td>{d.kategori}</Td>
-              <Td
-                whiteSpace={"nowrap"}
-                isNumeric
-              >
+              <Td whiteSpace={"nowrap"} isNumeric>
                 Rp {fn(d.harga)}
               </Td>
               <Td>
-                <Tooltip
-                  label={d.deskripsi}
-                  placement="bottom-start"
-                >
-                  <Text
-                    w={"300px"}
-                    noOfLines={2}
-                    fontSize={[12, null, 14]}
-                  >
+                <Tooltip label={d.deskripsi} placement="bottom-start">
+                  <Text w={"300px"} noOfLines={2} fontSize={[12, null, 14]}>
                     {d.deskripsi}
                   </Text>
                 </Tooltip>
