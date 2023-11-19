@@ -264,19 +264,12 @@ select {
 .adminNavItem:hover {
   background: var(--divider);
 }
-.active,
 .active-mobile {
   color: var(--p500);
 }
-/* .active-mobile::before {
-  content: "";
-  height: 4px;
-  width: 100%;
-  background: var(--p500);
-  position: absolute;
-  top: 0;
-  left: 0;
-} */
+.active{
+  background: var(--p500a);
+}
 .active:before {
   content: "";
   width: 4px;
