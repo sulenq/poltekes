@@ -6,7 +6,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -29,7 +29,7 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend,
+  Legend
 );
 
 export default function AdminDashboardsAnalisaTransaksi() {
@@ -69,7 +69,8 @@ export default function AdminDashboardsAnalisaTransaksi() {
     }
   };
 
-  const data = [12, 10, 8, 11];
+  // TODO get data
+  const [data] = useState([8, 2, 5, 4]);
   const labels = getLabel(periode);
   const xLabel = getXLabel(periode);
   const chartData = {
@@ -109,31 +110,14 @@ export default function AdminDashboardsAnalisaTransaksi() {
   };
 
   return (
-    <Box
-      borderRadius={16}
-      p={[4, 6, 6]}
-      bg={bg}
-      overflow={"auto"}
-    >
-      <SimpleGrid
-        mb={4}
-        columns={[1, 2, 2]}
-        gap={[0, 2, 2]}
-      >
-        <Text
-          fontSize={[18, null, 20]}
-          fontWeight={600}
-          lineHeight={1.3}
-        >
+    <Box borderRadius={16} p={[4, 6, 6]} bg={bg} overflow={"auto"}>
+      <SimpleGrid mb={4} columns={[1, 2, 2]} gap={[0, 2, 2]}>
+        <Text fontSize={[18, null, 20]} fontWeight={600} lineHeight={1.3}>
           Analisa Transaksi
         </Text>
 
         <HStack justifySelf={["flex-start", "flex-end", "flex-end"]}>
-          <Icon
-            as={Circle}
-            weight={"fill"}
-            color={"p.600"}
-          />
+          <Icon as={Circle} weight={"fill"} color={"p.600"} />
 
           <Text fontSize={[10, null, 12]}>total transaksi</Text>
         </HStack>
