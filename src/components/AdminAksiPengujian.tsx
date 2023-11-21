@@ -13,7 +13,7 @@ export default function AdminAksiPengujian(props: any) {
     case "Verifikasi Berkas":
       return <VerifikasiBerkasModal noreg={noreg} />;
     case "Tagihan Belum Dibayar":
-      return (
+      return (      
         <Button w={"100%"} colorScheme={"ap"}>
           Input Kontrak & Tagihan
         </Button>

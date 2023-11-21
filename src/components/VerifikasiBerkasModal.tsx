@@ -34,8 +34,6 @@ export default function VerifikasiBerkasModal({ noreg }: Props) {
   const tolakColor = useColorModeValue("red.500", "red.200");
 
   const formik = useFormik({
-    validateOnChange: false,
-
     initialValues: {
       verifikasi: "",
       keterangan: "",
