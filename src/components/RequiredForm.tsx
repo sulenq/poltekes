@@ -1,5 +1,8 @@
+import { useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 
 export default function RequiredForm() {
-  return <span style={{ color: "red", marginLeft: 2 }}>*</span>;
+  const color = useColorModeValue("#E53E3E", "#FC8181");
+
+  return <span style={{ color: color, marginLeft: 2 }}>*</span>;
 }

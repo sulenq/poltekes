@@ -141,6 +141,7 @@ select {
   font-size: 14px !important;
 }
 
+
 .chakra-alert {
   width: 80vw !important;
   max-width: 500px !important;
@@ -156,7 +157,10 @@ select {
   margin-top: 4px;
   max-width: 450px !important;
 }
-
+.alert {
+  width: 100% !important;
+  border-radius: 8px;
+}
 .css-o807cm[data-active],
 .css-1veby0y[data-active],
 .css-1nz3jkt[data-active] {

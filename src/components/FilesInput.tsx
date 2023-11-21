@@ -1,4 +1,4 @@
-import { Box, Button, HStack, Input, Text } from "@chakra-ui/react";
+import { Box, Button, HStack, Input, Text, Tooltip } from "@chakra-ui/react";
 import React, { useRef } from "react";
 
 type Props = {
@@ -64,16 +64,28 @@ export default function FilesInput(props: Props) {
           </HStack>
 
           <Box px={4} py={2} maxW={"260px"}>
-            <Text
-              noOfLines={1}
-              fontSize={[12, null, 14]}
-              whiteSpace={"normal"}
-              maxW={"260px"}
+            <Tooltip
+              label={
+                formik.values[name].length > 0
+                  ? formik.values[name]
+                      .map((file: File) => file.name)
+                      .join(", ")
+                  : ""
+              }
             >
-              {formik.values[name].length > 0
-                ? formik.values[name].map((file: File) => file.name).join(", ")
-                : "Pilih berkas yang ingin diunggah"}
-            </Text>
+              <Text
+                noOfLines={1}
+                fontSize={[12, null, 14]}
+                whiteSpace={"normal"}
+                maxW={"260px"}
+              >
+                {formik.values[name].length > 0
+                  ? formik.values[name]
+                      .map((file: File) => file.name)
+                      .join(", ")
+                  : "Pilih berkas yang ingin diunggah"}
+              </Text>
+            </Tooltip>
           </Box>
         </HStack>
       </Button>

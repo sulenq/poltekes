@@ -206,6 +206,8 @@ export const globalTheme = extendTheme({
         color: "w",
         "--popper-arrow-bg": "#0097e8",
         borderRadius: 8,
+        px:4,
+        py:2
       },
     },
 
