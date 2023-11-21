@@ -3,7 +3,7 @@ import React from "react";
 import VerifikasiBerkasModal from "../components/VerifikasiBerkasModal";
 
 export default function AdminAksiPengujian(props: any) {
-  //   const noreg = props.noreg;
+  const noreg = props.noreg;
   const status = props.status;
   // TODO buat komponen yang sesuai
 
@@ -11,7 +11,7 @@ export default function AdminAksiPengujian(props: any) {
     default:
       return <Text>-</Text>;
     case "Verifikasi Berkas":
-      return <VerifikasiBerkasModal />;
+      return <VerifikasiBerkasModal noreg={noreg} />;
     case "Tagihan Belum Dibayar":
       return (
         <Button w={"100%"} colorScheme={"ap"}>

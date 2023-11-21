@@ -13,7 +13,6 @@ const useCompareValues = (key: string, order: "asc" | "desc") => {
         dateB instanceof Date &&
         !isNaN(dateB.getTime())
       ) {
-        console.log("titit");
         return order === "asc"
           ? dateA.getTime() - dateB.getTime()
           : dateB.getTime() - dateA.getTime();

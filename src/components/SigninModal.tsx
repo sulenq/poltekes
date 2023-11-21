@@ -47,6 +47,8 @@ export default function SigninModal() {
 
     onSubmit: (values, { resetForm }) => {
       //TODO post signin
+      console.log(values);
+
       const data = {
         username: values.username,
         password: values.password,
@@ -61,22 +63,18 @@ export default function SigninModal() {
       async function signin() {
         try {
           const response = await axios.request(options);
-          console.log(response);
+          console.log(response.data);
+          if (values.isAdmin) {
+            navigate("/admin");
+          } else {
+            navigate("/customer");
+          }
         } catch (error) {
           console.log(error);
           alert("Something wrong, try refreshing the page  or comeback later");
         }
       }
-
       signin();
-
-      console.log(values);
-
-      if (values.isAdmin) {
-        navigate("/admin");
-      } else {
-        navigate("/customer");
-      }
     },
   });
 

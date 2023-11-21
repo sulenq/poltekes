@@ -154,7 +154,7 @@ export default function TabelTransaksi() {
                   </Badge>
                 </Td>
                 <Td textAlign={"center"}>
-                  <AdminAksiPengujian status={d.status} />
+                  <AdminAksiPengujian status={d.status} noreg={d.id} />
                 </Td>
                 <Td isNumeric w={"40px"}>
                   <DetailTransaksi id={d.id} />
