@@ -2,6 +2,7 @@ import { Button, Text } from "@chakra-ui/react";
 import React from "react";
 import VerifikasiBerkasModal from "../components/VerifikasiBerkasModal";
 import InputKontrakTagihanModal from "./InputKontrakTagihanModal";
+import VerifikasiPembayaranModal from "./VerifikasiPembayaranModal";
 
 export default function AdminAksiPengujian(props: any) {
   const noreg = props.noreg;
@@ -16,11 +17,7 @@ export default function AdminAksiPengujian(props: any) {
     case "Tagihan Belum Dibayar":
       return <InputKontrakTagihanModal noreg={noreg} />;
     case "Verifikasi Pembayaran":
-      return (
-        <Button w={"100%"} colorScheme="ap" className="lg-clicky">
-          Verifikasi Pembayaran
-        </Button>
-      );
+      return <VerifikasiPembayaranModal noreg={noreg} />;
     case "Pembayaran Diverifikasi":
       return (
         <Button w={"100%"} colorScheme="ap" className="lg-clicky">

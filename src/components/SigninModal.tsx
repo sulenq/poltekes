@@ -20,7 +20,7 @@ import {
   Link as ChakraLink,
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import * as yup from "yup";
 import PasswordInput from "./PasswordInput";
 import { useNavigate } from "react-router-dom";
@@ -30,6 +30,7 @@ export default function SigninModal() {
   const { isOpen, onClose, onOpen } = useDisclosure();
   const modalContentRef = useRef(null);
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const formik = useFormik({
     validateOnChange: false,
@@ -61,6 +62,8 @@ export default function SigninModal() {
       };
 
       async function signin() {
+        setLoading(true);
+
         try {
           const response = await axios.request(options);
           console.log(response.data);
@@ -72,6 +75,8 @@ export default function SigninModal() {
         } catch (error) {
           console.log(error);
           alert("Something wrong, try refreshing the page  or comeback later");
+        } finally {
+          setLoading(false);
         }
       }
       signin();
@@ -169,6 +174,7 @@ export default function SigninModal() {
                 colorScheme="ap"
                 className="lg-clicky"
                 mb={4}
+                isLoading={loading}
               >
                 Masuk
               </Button>
