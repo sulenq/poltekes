@@ -2,7 +2,8 @@ import {
   Button,
   FormControl,
   FormErrorMessage,
-  Image,
+  FormLabel,
+  Input,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -10,16 +11,9 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Radio,
-  RadioGroup,
-  SimpleGrid,
-  Text,
-  Textarea,
-  VStack,
-  useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 import useBackOnClose from "../utils/useBackOnClose";
 import * as yup from "yup";
 import { useFormik } from "formik";
@@ -36,19 +30,13 @@ export default function InputTanggalPengujianModal({ noreg }: Props) {
     window.history.back();
   };
 
-  //   TODO get bukti pembayaran
-  const [data] = useState(["/images/buktiPembayaranExample.png"]);
-
-  const tolakColor = useColorModeValue("red.500", "red.200");
-
   const formik = useFormik({
     initialValues: {
-      verifikasi: "",
-      keterangan: "",
+      tanggalPengujian: "",
     },
 
     validationSchema: yup.object().shape({
-      verifikasi: yup.string().required("Pilih aksi untuk verifikasi berkas"),
+      tanggalPengujian: yup.string().required("Tanggal Pengujian harus diisi"),
     }),
 
     onSubmit: (values, { resetForm }) => {
@@ -73,55 +61,27 @@ export default function InputTanggalPengujianModal({ noreg }: Props) {
         <ModalContent>
           <ModalCloseButton />
 
-          <ModalHeader>Verifikasi Pembayaran</ModalHeader>
+          <ModalHeader>Masukkan Tanggal Pengujian</ModalHeader>
 
           <ModalBody>
-            <SimpleGrid mb={4}>
-              <Image src={"/images/buktiPembayaranExample.png"} />
-            </SimpleGrid>
-
             <form id="verifikasiBerkasForm" onSubmit={formik.handleSubmit}>
-              <FormControl isInvalid={formik.errors.verifikasi ? true : false}>
-                <RadioGroup
-                  name="verifikasi"
-                  onChange={(value) => {
-                    formik.setFieldValue("verifikasi", value);
+              <FormControl
+                isInvalid={formik.errors.tanggalPengujian ? true : false}
+              >
+                <FormLabel>Tanggal Pengujian</FormLabel>
+                <Input
+                  type="date"
+                  name="tangalPengujian"
+                  onChange={(e) => {
+                    formik.setFieldValue(
+                      "tanggalPengujian",
+                      new Date(e.target.value)
+                    );
                   }}
-                  value={formik.values.verifikasi}
-                  mb={4}
-                >
-                  <VStack align={"flex-start"} gap={4}>
-                    <Radio
-                      size={"lg"}
-                      colorScheme="ap"
-                      value={"Pembayaran Diverifikasi"}
-                      color={"p.500"}
-                    >
-                      <Text color={"p.500"}>Verifikasi</Text>
-                    </Radio>
-
-                    <Radio
-                      size={"lg"}
-                      colorScheme="ap"
-                      value={"Verifikasi Ditolak"}
-                    >
-                      <Text color={tolakColor}>Tolak</Text>
-                    </Radio>
-                  </VStack>
-                </RadioGroup>
-
-                <Textarea
-                  name="keterangan"
-                  onChange={formik.handleChange}
-                  placeholder="Masukkan keterangan (opsional)"
-                  isDisabled={
-                    formik.values.verifikasi === "Verifikasi Ditolak"
-                      ? false
-                      : true
-                  }
                 />
-
-                <FormErrorMessage>{formik.errors.verifikasi}</FormErrorMessage>
+                <FormErrorMessage>
+                  {formik.errors.tanggalPengujian}
+                </FormErrorMessage>
               </FormControl>
             </form>
           </ModalBody>
@@ -133,7 +93,7 @@ export default function InputTanggalPengujianModal({ noreg }: Props) {
               className="lg-clicky"
               colorScheme="ap"
             >
-              Simpan
+              Simpan & Kirim
             </Button>
           </ModalFooter>
         </ModalContent>
