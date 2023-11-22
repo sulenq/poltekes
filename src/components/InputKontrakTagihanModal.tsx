@@ -39,6 +39,10 @@ type Props = {
 export default function InputKontrakTagihanModal({ noreg }: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   useBackOnClose(isOpen, onClose);
+  const handleOnClose = () => {
+    onClose();
+    window.history.back();
+  };
 
   const formik = useFormik({
     validateOnChange: false,
@@ -92,7 +96,7 @@ export default function InputKontrakTagihanModal({ noreg }: Props) {
         Input Kontrak & Tagihan
       </Button>
 
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={handleOnClose}>
         <ModalOverlay />
 
         <ModalContent>

@@ -3,6 +3,7 @@ import React from "react";
 import VerifikasiBerkasModal from "../components/VerifikasiBerkasModal";
 import InputKontrakTagihanModal from "./InputKontrakTagihanModal";
 import VerifikasiPembayaranModal from "./VerifikasiPembayaranModal";
+import UnggahHasilPengujian from "./UnggahHasilPengujian";
 
 export default function AdminAksiPengujian(props: any) {
   const noreg = props.noreg;
@@ -25,10 +26,6 @@ export default function AdminAksiPengujian(props: any) {
         </Button>
       );
     case "Dalam Pengujian":
-      return (
-        <Button w={"100%"} colorScheme="ap" className="lg-clicky">
-          Unggah Hasil Pengujian
-        </Button>
-      );
+      return <UnggahHasilPengujian noreg={noreg} />;
   }
 }

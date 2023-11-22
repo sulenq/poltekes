@@ -30,6 +30,10 @@ type Props = {
 export default function VerifikasiBerkasModal({ noreg }: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   useBackOnClose(isOpen, onClose);
+  const handleOnClose = () => {
+    onClose();
+    window.history.back();
+  };
 
   const tolakColor = useColorModeValue("red.500", "red.200");
 
@@ -59,7 +63,7 @@ export default function VerifikasiBerkasModal({ noreg }: Props) {
         Verifikasi Berkas
       </Button>
 
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={handleOnClose}>
         <ModalOverlay />
 
         <ModalContent>
