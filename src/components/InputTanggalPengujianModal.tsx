@@ -2,6 +2,7 @@ import {
   Button,
   FormControl,
   FormErrorMessage,
+  Image,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -11,28 +12,32 @@ import {
   ModalOverlay,
   Radio,
   RadioGroup,
+  SimpleGrid,
   Text,
   Textarea,
   VStack,
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
-import { useFormik } from "formik";
-import React from "react";
-import * as yup from "yup";
+import React, { useState } from "react";
 import useBackOnClose from "../utils/useBackOnClose";
+import * as yup from "yup";
+import { useFormik } from "formik";
 
 type Props = {
   noreg: number;
 };
 
-export default function VerifikasiBerkasModal({ noreg }: Props) {
+export default function InputTanggalPengujianModal({ noreg }: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   useBackOnClose(isOpen, onClose);
   const handleOnClose = () => {
     onClose();
     window.history.back();
   };
+
+  //   TODO get bukti pembayaran
+  const [data] = useState(["/images/buktiPembayaranExample.png"]);
 
   const tolakColor = useColorModeValue("red.500", "red.200");
 
@@ -47,7 +52,6 @@ export default function VerifikasiBerkasModal({ noreg }: Props) {
     }),
 
     onSubmit: (values, { resetForm }) => {
-      // TODO post berkas
       console.log(values);
     },
   });
@@ -60,7 +64,7 @@ export default function VerifikasiBerkasModal({ noreg }: Props) {
         className="lg-clicky"
         onClick={onOpen}
       >
-        Verifikasi Berkas
+        Input Tanggal Pengujian
       </Button>
 
       <Modal isOpen={isOpen} onClose={handleOnClose}>
@@ -69,9 +73,13 @@ export default function VerifikasiBerkasModal({ noreg }: Props) {
         <ModalContent>
           <ModalCloseButton />
 
-          <ModalHeader>Verifikasi Berkas</ModalHeader>
+          <ModalHeader>Verifikasi Pembayaran</ModalHeader>
 
           <ModalBody>
+            <SimpleGrid mb={4}>
+              <Image src={"/images/buktiPembayaranExample.png"} />
+            </SimpleGrid>
+
             <form id="verifikasiBerkasForm" onSubmit={formik.handleSubmit}>
               <FormControl isInvalid={formik.errors.verifikasi ? true : false}>
                 <RadioGroup
@@ -86,7 +94,7 @@ export default function VerifikasiBerkasModal({ noreg }: Props) {
                     <Radio
                       size={"lg"}
                       colorScheme="ap"
-                      value={"Berkas Diverifikasi"}
+                      value={"Pembayaran Diverifikasi"}
                       color={"p.500"}
                     >
                       <Text color={"p.500"}>Verifikasi</Text>

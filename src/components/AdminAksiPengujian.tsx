@@ -4,6 +4,7 @@ import VerifikasiBerkasModal from "../components/VerifikasiBerkasModal";
 import InputKontrakTagihanModal from "./InputKontrakTagihanModal";
 import VerifikasiPembayaranModal from "./VerifikasiPembayaranModal";
 import UnggahHasilPengujian from "./UnggahHasilPengujian";
+import InputTanggalPengujianModal from "./InputTanggalPengujianModal";
 
 export default function AdminAksiPengujian(props: any) {
   const noreg = props.noreg;
@@ -20,11 +21,7 @@ export default function AdminAksiPengujian(props: any) {
     case "Verifikasi Pembayaran":
       return <VerifikasiPembayaranModal noreg={noreg} />;
     case "Pembayaran Diverifikasi":
-      return (
-        <Button w={"100%"} colorScheme="ap" className="lg-clicky">
-          Input Tanggal Pengujian
-        </Button>
-      );
+      return <InputTanggalPengujianModal noreg={noreg} />;
     case "Dalam Pengujian":
       return <UnggahHasilPengujian noreg={noreg} />;
   }
