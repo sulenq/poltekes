@@ -12,7 +12,7 @@ import {
 import React, { useEffect, useState } from "react";
 import useScreenWidth from "../utils/useGetScreenWidth";
 import AdminAksiPengujian from "./AdminAksiPengujian";
-import DetailTransaksi from "./DetailTransaksiModal";
+import DetailTransaksiAdminModal from "./DetailTransaksiAdminModal";
 import useStatusBadgeColor from "../utils/useStatusBadgeColor";
 import useSortTransaksi from "../globalState/useSortTransaksi";
 import useCompareValues from "../utils/useCompareValues";
@@ -157,7 +157,7 @@ export default function TabelTransaksi() {
                   <AdminAksiPengujian status={d.status} noreg={d.id} />
                 </Td>
                 <Td isNumeric w={"40px"}>
-                  <DetailTransaksi id={d.id} />
+                  <DetailTransaksiAdminModal id={d.id} />
                 </Td>
               </Tr>
             );

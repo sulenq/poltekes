@@ -11,7 +11,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
-import DetailTransaksi from "./DetailTransaksiModal";
+import DetailTransaksiAdminModal from "./DetailTransaksiAdminModal";
 
 export default function AdminDashboardsTransaksiTerbaru() {
   const bg = useColorModeValue("white", "dark");
@@ -81,7 +81,7 @@ export default function AdminDashboardsTransaksiTerbaru() {
                   </Badge>
                 </Td>
                 <Td isNumeric w={"40px"}>
-                  <DetailTransaksi id={d.id} />
+                  <DetailTransaksiAdminModal id={d.id} />
                 </Td>
               </Tr>
             ))}
