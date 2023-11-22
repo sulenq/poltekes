@@ -100,7 +100,12 @@ export default function BayarTagihanModal(props: any) {
 
   return (
     <>
-      <Button colorScheme={"ap"} className="lg-clicky" onClick={onOpen}>
+      <Button
+        w={"100%"}
+        colorScheme={"ap"}
+        className="lg-clicky"
+        onClick={onOpen}
+      >
         Bayar Tagihan
       </Button>
 

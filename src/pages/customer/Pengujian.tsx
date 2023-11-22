@@ -5,7 +5,7 @@ import Container from "../../components/Container";
 import { CaretRight } from "@phosphor-icons/react";
 import PendaftaranPengujianModal from "../../components/PendaftaranPengujianModal";
 import { Link } from "react-router-dom";
-import RiwayatPengujianList from "../../components/RiwayatPengujianList";
+import TabelRiwayatPengujian from "../../components/TabelRiwayatPengujian";
 
 export default function Pengujian() {
   return (
@@ -60,7 +60,7 @@ export default function Pengujian() {
         </Box>
 
         <Box mb={8}>
-          <RiwayatPengujianList />
+          <TabelRiwayatPengujian />
         </Box>
       </Container>
     </CustomerContainer>

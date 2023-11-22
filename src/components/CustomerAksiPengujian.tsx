@@ -10,11 +10,10 @@ export default function CustomerAksiPengujian(props: any) {
   switch (status) {
     default:
       return <Text>-</Text>;
-    case "Tagihan Belum Dibayar":
-      return <BayarTagihanModal noreg={noreg} />;
     case "Berkas Belum Lengkap":
       return (
         <Button
+          w={"100%"}
           colorScheme="ap"
           className="lg-clicky"
           as={Link}
@@ -23,12 +22,11 @@ export default function CustomerAksiPengujian(props: any) {
           Unggah Berkas
         </Button>
       );
+    case "Tagihan Belum Dibayar":
+      return <BayarTagihanModal noreg={noreg} />;
     case "Pengujian Selesai":
       return (
-        <Button
-          colorScheme="ap"
-          className="lg-clicky"
-        >
+        <Button w={"100%"} colorScheme="ap" className="lg-clicky">
           Unduh Hasil Pengujian
         </Button>
       );
