@@ -2,6 +2,7 @@ import { Box, HStack, Text } from "@chakra-ui/react";
 import React from "react";
 
 export default function InformasiAkun() {
+  // TODO get user data
   const data = {
     nama: "Jolitos Kurniawan",
     kategori: "Umum",
@@ -13,7 +14,7 @@ export default function InformasiAkun() {
 
   return (
     <Box>
-      <HStack mb={2}>
+      <HStack mb={2} align={"flex-start"}>
         <Text w={"130px"} flexShrink={0}>
           Nama
         </Text>
@@ -23,7 +24,7 @@ export default function InformasiAkun() {
         <Text>{data.nama}</Text>
       </HStack>
 
-      <HStack mb={2}>
+      <HStack mb={2} align={"flex-start"}>
         <Text w={"130px"} flexShrink={0}>
           Kategori
         </Text>
@@ -33,7 +34,7 @@ export default function InformasiAkun() {
         <Text>{data.kategori}</Text>
       </HStack>
 
-      <HStack mb={2}>
+      <HStack mb={2} align={"flex-start"}>
         <Text w={"130px"} flexShrink={0}>
           Telepon
         </Text>
@@ -43,7 +44,7 @@ export default function InformasiAkun() {
         <Text>{data.telepon}</Text>
       </HStack>
 
-      <HStack mb={2}>
+      <HStack mb={2} align={"flex-start"}>
         <Text w={"130px"} flexShrink={0}>
           Email
         </Text>
@@ -53,7 +54,7 @@ export default function InformasiAkun() {
         <Text>{data.email}</Text>
       </HStack>
 
-      <HStack mb={2}>
+      <HStack mb={2} align={"flex-start"}>
         <Text w={"130px"} flexShrink={0}>
           Instansi
         </Text>

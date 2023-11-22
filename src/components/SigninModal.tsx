@@ -47,7 +47,6 @@ export default function SigninModal() {
     }),
 
     onSubmit: (values, { resetForm }) => {
-      //TODO post signin
       console.log(values);
 
       const data = {
@@ -57,7 +56,8 @@ export default function SigninModal() {
 
       const options = {
         method: "post",
-        url: "http://development.avanafish.com/api/login",
+        // baseUrl: process.env(REACT_APP_BASE_URL),
+        url: "https://development.avanafish.com/api/login",
         data: data,
       };
 
@@ -67,6 +67,7 @@ export default function SigninModal() {
         try {
           const response = await axios.request(options);
           console.log(response.data);
+
           if (values.isAdmin) {
             navigate("/admin");
           } else {
