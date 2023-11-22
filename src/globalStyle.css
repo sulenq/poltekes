@@ -255,6 +255,15 @@ select {
   }
 }
 
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 /* Custom */
 .adminNavItem {
   padding: 16px 28px;

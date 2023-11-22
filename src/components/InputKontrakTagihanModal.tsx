@@ -8,7 +8,6 @@ import {
   FormErrorMessage,
   FormHelperText,
   FormLabel,
-  Icon,
   Input,
   InputGroup,
   InputLeftElement,

@@ -16,7 +16,7 @@ export default function Beranda() {
       <>
         <VStack w={"100%"} gap={0} bg={"var(--divider)"}>
           <Container>
-            <SimpleGrid columns={[1, null, 2]} py={12} gap={12}>
+            <SimpleGrid columns={[1, null, 1, 2]} py={12} gap={12}>
               <Box>
                 <Text fontSize={[18, null, 20]} fontWeight={600} mb={4}>
                   Informasi Akun

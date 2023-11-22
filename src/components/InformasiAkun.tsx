@@ -1,16 +1,17 @@
 import { Box, HStack, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { getCookie } from "typescript-cookie";
+import { userData } from "../const/types";
 
 export default function InformasiAkun() {
-  // TODO get user data
-  const data = {
-    nama: "Jolitos Kurniawan",
-    kategori: "Umum",
-    telepon: "08586182762",
-    email: "jolitos@gmail.com",
-    instansi: "Poltekkes Kemenkes Semarang",
-    alamatInstansi: "Jalan Banjarsari 12",
-  };
+  const [data, setData] = useState<userData | null>(null);
+
+  useEffect(() => {
+    const userDataCookie = getCookie("userData");
+    if (userDataCookie) {
+      setData(JSON.parse(userDataCookie));
+    }
+  }, []);
 
   return (
     <Box>
@@ -21,7 +22,7 @@ export default function InformasiAkun() {
 
         <Text mx={1}>:</Text>
 
-        <Text>{data.nama}</Text>
+        <Text>{data?.name}</Text>
       </HStack>
 
       <HStack mb={2} align={"flex-start"}>
@@ -31,7 +32,7 @@ export default function InformasiAkun() {
 
         <Text mx={1}>:</Text>
 
-        <Text>{data.kategori}</Text>
+        <Text>{data?.jenis}</Text>
       </HStack>
 
       <HStack mb={2} align={"flex-start"}>
@@ -41,7 +42,7 @@ export default function InformasiAkun() {
 
         <Text mx={1}>:</Text>
 
-        <Text>{data.telepon}</Text>
+        <Text>{data?.hp}</Text>
       </HStack>
 
       <HStack mb={2} align={"flex-start"}>
@@ -51,7 +52,7 @@ export default function InformasiAkun() {
 
         <Text mx={1}>:</Text>
 
-        <Text>{data.email}</Text>
+        <Text>{data?.email}</Text>
       </HStack>
 
       <HStack mb={2} align={"flex-start"}>
@@ -61,7 +62,7 @@ export default function InformasiAkun() {
 
         <Text mx={1}>:</Text>
 
-        <Text>{data.instansi}</Text>
+        <Text>{data?.institusi}</Text>
       </HStack>
 
       <HStack>
@@ -71,7 +72,7 @@ export default function InformasiAkun() {
 
         <Text mx={1}>:</Text>
 
-        <Text>{data.alamatInstansi}</Text>
+        <Text>{data?.alamat_institusi}</Text>
       </HStack>
     </Box>
   );
