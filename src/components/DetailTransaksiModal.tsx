@@ -23,7 +23,7 @@ type Props = {
   id: number;
 };
 
-export default function DetailTransaksiAdminModal({ id }: Props) {
+export default function DetailTransaksiModal({ id }: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   useBackOnClose(isOpen, onClose);
 

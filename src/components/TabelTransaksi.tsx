@@ -12,7 +12,7 @@ import {
 import React, { useEffect, useState } from "react";
 import useScreenWidth from "../utils/useGetScreenWidth";
 import AdminAksiPengujian from "./AdminAksiPengujian";
-import DetailTransaksiAdminModal from "./DetailTransaksiAdminModal";
+import DetailTransaksiAdminModal from "./DetailTransaksiModal";
 import useStatusBadgeColor from "../utils/useStatusBadgeColor";
 import useSortTransaksi from "../globalState/useSortTransaksi";
 import useCompareValues from "../utils/useCompareValues";

@@ -13,6 +13,7 @@ import {
 import useFormatNumber from "../utils/useFormatNumber";
 import CustomerAksiPengujian from "./CustomerAksiPengujian";
 import useStatusBadgeColor from "../utils/useStatusBadgeColor";
+import DetailTransaksiModal from "./DetailTransaksiModal";
 
 export default function TabelRiwayatPengujian() {
   // TODO show riwayat pengujian table data
@@ -125,13 +126,7 @@ export default function TabelRiwayatPengujian() {
                 <CustomerAksiPengujian status={d.status} noreg={d.id} />
               </Td>
               <Td isNumeric>
-                <Button
-                  variant={"outline"}
-                  colorScheme="ap"
-                  className="lg-clicky"
-                >
-                  Detail
-                </Button>
+                <DetailTransaksiModal id={d.id} />
               </Td>
             </Tr>
           ))}

@@ -11,7 +11,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
-import DetailTransaksiAdminModal from "./DetailTransaksiAdminModal";
+import DetailTransaksiAdminModal from "./DetailTransaksiModal";
 
 export default function AdminDashboardsTransaksiTerbaru() {
   const bg = useColorModeValue("white", "dark");
