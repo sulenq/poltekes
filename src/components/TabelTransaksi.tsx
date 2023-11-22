@@ -102,8 +102,8 @@ export default function TabelTransaksi() {
       borderRadius={8}
       border={"1px solid var(--divider3)"}
       overflow={"auto"}
-      maxH={sw < 770 ? "calc(100vh - 290px)" : "calc(100vh - 245px)"}
       className="scrollX scrollY"
+      maxH={sw < 770 ? "calc(100vh - 290px)" : "calc(100vh - 245px)"}
     >
       <Table variant={"striped"} colorScheme="ad">
         <Thead>

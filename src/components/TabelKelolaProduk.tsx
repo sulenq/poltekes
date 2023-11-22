@@ -101,7 +101,7 @@ export default function KelolaProdukTable() {
       borderRadius={8}
       border={"1px solid var(--divider3)"}
       overflow={"auto"}
-      className="scrollX"
+      className="scrollX scrollY"
       maxH={sw < 770 ? "calc(100vh - 290px)" : "calc(100vh - 245px)"}
     >
       <Table variant={"striped"} colorScheme="ad">

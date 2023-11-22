@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import DeleteKategoriModal from "./DeleteKategoriModal";
 import useCompareValues from "../utils/useCompareValues";
 import useSortKategoriProduk from "../globalState/useSortKategoriProduk";
+import useScreenWidth from "../utils/useGetScreenWidth";
 
 export default function TabelKategoriProduk() {
   //   TODO get data
@@ -35,24 +36,20 @@ export default function TabelKategoriProduk() {
     const sorted = [...initialData].sort(compareValues(sortBy, sortOrder));
     setData(sorted);
   }, [sortBy, sortOrder, compareValues, initialData]);
+  const sw = useScreenWidth();
 
   return (
     <Box
       borderRadius={8}
       border={"1px solid var(--divider3)"}
       overflow={"auto"}
-      className="scrollX"
+      className="scrollX scrollY"
+      maxH={sw < 770 ? "calc(100vh - 290px)" : "calc(100vh - 245px)"}
     >
-      <Table
-        variant={"striped"}
-        colorScheme="ad"
-      >
+      <Table variant={"striped"} colorScheme="ad">
         <Thead>
           <Tr>
-            <Th
-              w={"20px"}
-              isNumeric
-            >
+            <Th w={"20px"} isNumeric>
               No
             </Th>
             <Th>Nama Kategori</Th>
@@ -65,10 +62,7 @@ export default function TabelKategoriProduk() {
             <Tr key={i}>
               <Td isNumeric>{i + 1}</Td>
               <Td>{d.namaKategori}</Td>
-              <Td
-                isNumeric
-                w={"40px"}
-              >
+              <Td isNumeric w={"40px"}>
                 <DeleteKategoriModal id={d.id} />
               </Td>
             </Tr>

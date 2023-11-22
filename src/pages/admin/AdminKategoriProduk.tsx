@@ -1,6 +1,7 @@
 import React from "react";
 import AdminContainer from "../../components/AdminContainer";
 import {
+  Box,
   Center,
   HStack,
   Icon,
@@ -25,28 +26,14 @@ export default function AdminKategoriProduk() {
 
   return (
     <AdminContainer active={["Produk", "Kategori Produk"]}>
-      <VStack
-        w={"100%"}
-        align={"stretch"}
-        gap={0}
-        p={[4, 5, 6]}
-        bg={bg}
-        borderRadius={16}
-        mb={6}
-      >
+      <Box p={[4, 5, 6]} bg={bg} borderRadius={16}>
         <HStack mb={4}>
           <InputGroup>
             <InputLeftElement>
-              <Icon
-                as={MagnifyingGlass}
-                fontSize={iconSize}
-              />
+              <Icon as={MagnifyingGlass} fontSize={iconSize} />
             </InputLeftElement>
 
-            <Input
-              placeholder={"Search"}
-              maxW={"300px"}
-            />
+            <Input placeholder={"Search"} maxW={"300px"} />
           </InputGroup>
 
           <SortKategoriProduk />
@@ -56,48 +43,30 @@ export default function AdminKategoriProduk() {
 
         <TabelKategoriProduk />
 
-        <HStack
-          justify={"center"}
-          mt={4}
-        >
+        <HStack justify={"center"} mt={4}>
           <IconButton
             aria-label="prev"
-            icon={
-              <Icon
-                as={CaretLeft}
-                fontSize={iconSize}
-              />
-            }
+            icon={<Icon as={CaretLeft} fontSize={iconSize} />}
             variant={"ghost"}
             className="btn"
             size={"sm"}
           />
 
           <HStack mx={2}>
-            <Center
-              bg={"p.500"}
-              w={"32px"}
-              h={"32px"}
-              borderRadius={8}
-            >
+            <Center bg={"p.500"} w={"32px"} h={"32px"} borderRadius={8}>
               <Text color={"white"}>1</Text>
             </Center>
           </HStack>
 
           <IconButton
             aria-label="prev"
-            icon={
-              <Icon
-                as={CaretRight}
-                fontSize={iconSize}
-              />
-            }
+            icon={<Icon as={CaretRight} fontSize={iconSize} />}
             variant={"ghost"}
             className="btn"
             size={"sm"}
           />
         </HStack>
-      </VStack>
+      </Box>
     </AdminContainer>
   );
 }

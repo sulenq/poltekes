@@ -38,12 +38,7 @@ export default function AdminContainer({ children, active }: Props) {
   };
 
   return (
-    <HStack
-      gap={0}
-      minH={"100vh"}
-      align={"stretch"}
-      bg={contentBg}
-    >
+    <HStack gap={0} minH={"100vh"} align={"stretch"} bg={contentBg}>
       <AdminNav active={active} />
 
       <Box
@@ -53,51 +48,23 @@ export default function AdminContainer({ children, active }: Props) {
         w={"100%"}
         // maxW={sw < 770 ? "100vw" : "calc(100vw - 95px)"}
       >
-        <VStack
-          px={[4, null, 6]}
-          w={"100%"}
-          gap={0}
-          align={"stretch"}
-        >
-          <HStack
-            py={4}
-            justify={"space-between"}
-          >
-            <Text
-              fontSize={[20, null, 24]}
-              fontWeight={600}
-            >
+        <VStack px={[4, null, 6]} w={"100%"} gap={0} align={"stretch"}>
+          <HStack py={4} justify={"space-between"}>
+            <Text fontSize={[20, null, 24]} fontWeight={600} noOfLines={1}>
               {active[active.length - 1]}
             </Text>
 
             <HStack>
-              <ColorModeSwitcher
-                fontSize={20}
-                className="btn-solid"
-              />
+              <ColorModeSwitcher fontSize={20} className="btn-solid" />
 
               <Menu>
-                <MenuButton
-                  as={Button}
-                  px={0}
-                  className="btn-solid"
-                >
-                  <HStack
-                    borderRadius={8}
-                    p={2}
-                    cursor={"pointer"}
-                  >
-                    <Icon
-                      as={CaretDown}
-                      fontSize={iconSize}
-                    />
+                <MenuButton as={Button} px={0} className="btn-solid">
+                  <HStack borderRadius={8} p={2} cursor={"pointer"}>
+                    <Icon as={CaretDown} fontSize={iconSize} />
 
                     <Text>Admin</Text>
 
-                    <Avatar
-                      name="Jolitos Kurniawan"
-                      size={"xs"}
-                    />
+                    <Avatar name="Jolitos Kurniawan" size={"xs"} />
                   </HStack>
                 </MenuButton>
 
@@ -110,10 +77,7 @@ export default function AdminContainer({ children, active }: Props) {
                     onClick={handleSignout}
                   >
                     <HStack>
-                      <Icon
-                        as={SignOut}
-                        fontSize={iconSize}
-                      />
+                      <Icon as={SignOut} fontSize={iconSize} />
                       <Text>Keluar</Text>
                     </HStack>
                   </MenuItem>
