@@ -69,7 +69,7 @@ export default function VerifikasiPembayaranModal({ noreg }: Props) {
         Verifikasi Pembayaran
       </Button>
 
-      <Modal isOpen={isOpen} onClose={handleOnClose}>
+      <Modal isOpen={isOpen} onClose={handleOnClose} size={"xl"}>
         <ModalOverlay />
 
         <ModalContent>
