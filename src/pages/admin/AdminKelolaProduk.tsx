@@ -15,7 +15,8 @@ import {
 import { CaretLeft, CaretRight, MagnifyingGlass } from "@phosphor-icons/react";
 import { iconSize } from "../../const/sizes";
 import SortKelolaProduk from "../../components/SortKelolaProduk";
-import KelolaProdukTable from "../../components/TabelKelolaProduk";
+import TabelKelolaProduk from "../../components/TabelKelolaProduk";
+import TambahProdukModal from "../../components/TambahProdukModal";
 
 export default function AdminProduk() {
   const bg = useColorModeValue("white", "dark");
@@ -33,9 +34,11 @@ export default function AdminProduk() {
           </InputGroup>
 
           <SortKelolaProduk />
+
+          <TambahProdukModal />
         </HStack>
 
-        <KelolaProdukTable />
+        <TabelKelolaProduk />
 
         <HStack justify={"center"} mt={4}>
           <IconButton

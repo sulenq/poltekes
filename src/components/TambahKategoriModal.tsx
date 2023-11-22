@@ -51,12 +51,7 @@ export default function TambahKategoriModal() {
     <>
       <Button
         flexShrink={0}
-        leftIcon={
-          <Icon
-            as={Plus}
-            fontSize={iconSize}
-          />
-        }
+        leftIcon={<Icon as={Plus} fontSize={iconSize} />}
         pl={3}
         pr={[1, 4]}
         colorScheme="ap"
@@ -66,10 +61,7 @@ export default function TambahKategoriModal() {
         <Text display={["none", "block"]}>Tambah Kategori</Text>
       </Button>
 
-      <Modal
-        isOpen={isOpen}
-        onClose={handleOnClose}
-      >
+      <Modal isOpen={isOpen} onClose={handleOnClose}>
         <ModalOverlay />
 
         <ModalContent>
@@ -78,10 +70,7 @@ export default function TambahKategoriModal() {
           <ModalHeader>Tambah Kategori</ModalHeader>
 
           <ModalBody>
-            <form
-              id="tambahKategoriForm"
-              onSubmit={formik.handleSubmit}
-            >
+            <form id="tambahKategoriForm" onSubmit={formik.handleSubmit}>
               <FormControl
                 isInvalid={formik.errors.namaKategori ? true : false}
               >

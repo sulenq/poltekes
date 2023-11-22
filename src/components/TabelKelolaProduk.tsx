@@ -16,7 +16,7 @@ import useFormatNumber from "../utils/useFormatNumber";
 import AdminKelolaProdukAksiMenu from "./AdminKelolaProdukAksiMenu";
 import useScreenWidth from "../utils/useGetScreenWidth";
 
-export default function KelolaProdukTable() {
+export default function TabelKelolaProduk() {
   // TODO get data
   const [initialData] = useState([
     {
