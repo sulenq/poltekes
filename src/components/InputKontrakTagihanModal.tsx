@@ -95,7 +95,7 @@ export default function InputKontrakTagihanModal({ noreg }: Props) {
         Input Kontrak & Tagihan
       </Button>
 
-      <Modal isOpen={isOpen} onClose={handleOnClose}>
+      <Modal isOpen={isOpen} onClose={handleOnClose} size={"xl"}>
         <ModalOverlay />
 
         <ModalContent>
@@ -127,7 +127,8 @@ export default function InputKontrakTagihanModal({ noreg }: Props) {
                 isInvalid={formik.errors.fileKontrak ? true : false}
               >
                 <FormLabel>
-                  Unggah File Kontrak<RequiredForm />
+                  Unggah File Kontrak
+                  <RequiredForm />
                 </FormLabel>
                 <FilesInput name="fileKontrak" formik={formik} />
                 <FormErrorMessage>{formik.errors.fileKontrak}</FormErrorMessage>

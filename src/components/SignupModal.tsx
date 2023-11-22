@@ -284,7 +284,7 @@ export default function SignupModal() {
                   onClick={() => {
                     onClose();
                     const signupButton = document.querySelector(
-                      "#signinButton",
+                      "#signinButton"
                     ) as HTMLButtonElement;
                     if (signupButton) {
                       signupButton.click();

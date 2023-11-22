@@ -68,7 +68,7 @@ export default function UnggahHasilPengujian({ noreg }: Props) {
         Unggah Hasil Pengujian
       </Button>
 
-      <Modal isOpen={isOpen} onClose={handleOnClose}>
+      <Modal isOpen={isOpen} onClose={handleOnClose} size={'xl'}>
         <ModalOverlay />
 
         <ModalContent>

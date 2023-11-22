@@ -27,8 +27,8 @@ import { iconSize } from "../const/sizes";
 import * as yup from "yup";
 import { useFormik } from "formik";
 import RequiredForm from "./RequiredForm";
-import FilesInput from "./FilesInput";
 import useBackOnClose from "../utils/useBackOnClose";
+import FileInput from "./FileInput";
 
 export default function TambahFotoSampelModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -124,7 +124,8 @@ export default function TambahFotoSampelModal() {
             <form id="fotoSampelForm" onSubmit={formik.handleSubmit}>
               <FormControl mb={4} isInvalid={formik.errors.nama ? true : false}>
                 <FormLabel>
-                  Nama Foto Sampel<RequiredForm />
+                  Nama Foto Sampel
+                  <RequiredForm />
                 </FormLabel>
                 <Input
                   name="nama"
@@ -142,7 +143,7 @@ export default function TambahFotoSampelModal() {
                   Unggah Foto Sampel
                   <RequiredForm />
                 </FormLabel>
-                <FilesInput
+                <FileInput
                   formik={formik}
                   name={"fotoSampel"}
                   accept={".jpg, .jpeg, .png"}

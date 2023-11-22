@@ -37,10 +37,7 @@ export default function VerifikasiPembayaranModal({ noreg }: Props) {
   };
 
   //   TODO get bukti pembayaran
-  const [data] = useState([
-    "/images/buktiPembayaranExample.png",
-    "/images/buktiPembayaranExample.png",
-  ]);
+  const [data] = useState("/images/buktiPembayaranExample.png");
 
   const tolakColor = useColorModeValue("red.500", "red.200");
 
@@ -82,18 +79,15 @@ export default function VerifikasiPembayaranModal({ noreg }: Props) {
           <ModalHeader>Verifikasi Pembayaran</ModalHeader>
 
           <ModalBody>
-            <HStack mb={4} gap={4} overflowX={"auto"}>
-              {data?.map((d, i) => (
-                <Image
-                  key={i}
-                  src={d}
-                  onClick={() => {
-                    window.open(d, "_blank");
-                  }}
-                  cursor={"pointer"}
-                />
-              ))}
-            </HStack>
+            <Image
+              src={data}
+              onClick={() => {
+                window.open(data, "_blank");
+              }}
+              cursor={"pointer"}
+              mb={4}
+              borderRadius={8}
+            />
 
             <form id="verifikasiBerkasForm" onSubmit={formik.handleSubmit}>
               <FormControl isInvalid={formik.errors.verifikasi ? true : false}>

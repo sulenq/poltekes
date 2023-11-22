@@ -157,7 +157,7 @@ select {
   max-width: 450px !important;
 }
 .alert {
-  width: 100% !important;
+  min-width: 100% !important;
   border-radius: 8px;
 }
 .css-o807cm[data-active],
