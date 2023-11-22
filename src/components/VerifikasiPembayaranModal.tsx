@@ -2,7 +2,6 @@ import {
   Button,
   FormControl,
   FormErrorMessage,
-  HStack,
   Image,
   Modal,
   ModalBody,
