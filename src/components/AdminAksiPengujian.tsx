@@ -1,4 +1,4 @@
-import { Button, Text } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import React from "react";
 import VerifikasiBerkasModal from "../components/VerifikasiBerkasModal";
 import InputKontrakTagihanModal from "./InputKontrakTagihanModal";

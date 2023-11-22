@@ -9,6 +9,7 @@ import {
   FormErrorMessage,
   FormLabel,
   Icon,
+  Input,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -37,11 +38,13 @@ export default function TambahFotoSampelModal() {
     validateOnChange: false,
 
     initialValues: {
+      nama: "",
       fotoSampel: "",
       keterangan: "",
     },
 
     validationSchema: yup.object().shape({
+      nama: yup.string().required("Nama Foto Harus diisi"),
       fotoSampel: yup
         .array()
         .required("Foto Sampel harus diunggah minimal 1")
@@ -119,6 +122,18 @@ export default function TambahFotoSampelModal() {
             </Alert>
 
             <form id="fotoSampelForm" onSubmit={formik.handleSubmit}>
+              <FormControl mb={4} isInvalid={formik.errors.nama ? true : false}>
+                <FormLabel>
+                  Nama Foto Sampel<RequiredForm />
+                </FormLabel>
+                <Input
+                  name="nama"
+                  onChange={formik.handleChange}
+                  placeholder="Masukkan nama foto"
+                />
+                <FormErrorMessage>{formik.errors.nama}</FormErrorMessage>
+              </FormControl>
+
               <FormControl
                 isInvalid={formik.errors.fotoSampel ? true : false}
                 mb={4}

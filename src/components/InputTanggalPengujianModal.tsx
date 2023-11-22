@@ -17,6 +17,7 @@ import React from "react";
 import useBackOnClose from "../utils/useBackOnClose";
 import * as yup from "yup";
 import { useFormik } from "formik";
+import RequiredForm from "./RequiredForm";
 
 type Props = {
   noreg: number;
@@ -68,7 +69,10 @@ export default function InputTanggalPengujianModal({ noreg }: Props) {
               <FormControl
                 isInvalid={formik.errors.tanggalPengujian ? true : false}
               >
-                <FormLabel>Tanggal Pengujian</FormLabel>
+                <FormLabel>
+                  Tanggal Pengujian
+                  <RequiredForm />
+                </FormLabel>
                 <Input
                   type="date"
                   name="tangalPengujian"

@@ -127,7 +127,7 @@ export default function InputKontrakTagihanModal({ noreg }: Props) {
                 isInvalid={formik.errors.fileKontrak ? true : false}
               >
                 <FormLabel>
-                  Unggah File Kontrak <RequiredForm />
+                  Unggah File Kontrak<RequiredForm />
                 </FormLabel>
                 <FilesInput name="fileKontrak" formik={formik} />
                 <FormErrorMessage>{formik.errors.fileKontrak}</FormErrorMessage>

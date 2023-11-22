@@ -17,7 +17,7 @@ export default function RequireAuth({ children }: Props) {
     } else {
       navigate("/");
     }
-  }, [children]);
+  }, [children, navigate, userData]);
 
   return page;
 }

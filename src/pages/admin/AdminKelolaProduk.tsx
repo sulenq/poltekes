@@ -10,7 +10,6 @@ import {
   InputGroup,
   InputLeftElement,
   Text,
-  VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { CaretLeft, CaretRight, MagnifyingGlass } from "@phosphor-icons/react";

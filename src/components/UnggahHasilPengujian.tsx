@@ -21,6 +21,7 @@ import useBackOnClose from "../utils/useBackOnClose";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import FilesInput from "./FilesInput";
+import RequiredForm from "./RequiredForm";
 
 type Props = {
   noreg: number;
@@ -96,7 +97,10 @@ export default function UnggahHasilPengujian({ noreg }: Props) {
               <FormControl
                 isInvalid={formik.errors.hasilPengujian ? true : false}
               >
-                <FormLabel>Unggah Hasil Pengujian</FormLabel>
+                <FormLabel>
+                  Unggah Hasil Pengujian
+                  <RequiredForm />
+                </FormLabel>
                 <FilesInput
                   name="hasilPengujian"
                   formik={formik}

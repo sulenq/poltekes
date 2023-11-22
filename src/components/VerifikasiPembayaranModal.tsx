@@ -13,7 +13,6 @@ import {
   ModalOverlay,
   Radio,
   RadioGroup,
-  SimpleGrid,
   Text,
   Textarea,
   VStack,
@@ -83,7 +82,7 @@ export default function VerifikasiPembayaranModal({ noreg }: Props) {
           <ModalHeader>Verifikasi Pembayaran</ModalHeader>
 
           <ModalBody>
-            <HStack mb={4} gap={4}  overflowX={"auto"}>
+            <HStack mb={4} gap={4} overflowX={"auto"}>
               {data?.map((d, i) => (
                 <Image
                   key={i}
