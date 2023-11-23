@@ -76,7 +76,7 @@ export default function AdminDashboardsTransaksiTerbaru() {
                 <Td>{d.nama}</Td>
                 <Td>{d.produk}</Td>
                 <Td textAlign={"center"}>
-                  <Badge w={"100%"} className="badge" colorScheme="orange">
+                  <Badge className="statusBadge" colorScheme="orange">
                     {d.status}
                   </Badge>
                 </Td>

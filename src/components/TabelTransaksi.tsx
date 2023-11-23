@@ -146,8 +146,7 @@ export default function TabelTransaksi() {
                 </Td>
                 <Td textAlign={"center"}>
                   <Badge
-                    w={"100%"}
-                    className="badge"
+                    className="statusBadge"
                     colorScheme={statusBadgeColor(d.status)}
                   >
                     {d.status}

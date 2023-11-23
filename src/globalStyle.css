@@ -218,12 +218,6 @@ select {
   cursor: default;
 }
 
-.badge {
-  border-radius: 8px !important;
-  padding: 4px 16px !important;
-  text-transform: none !important;
-}
-
 .accordionItem {
   border-radius: 16px;
   border: 1px solid var(--divider);
@@ -298,6 +292,10 @@ select {
   width: 100%;
   justify-content: space-between;
   gap: 16px !important;
+}
+.statusBadge {
+  width: 100%;
+  max-width: 300px ;
 }
 
 /* Media Querries */

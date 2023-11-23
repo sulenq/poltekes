@@ -105,11 +105,7 @@ export default function TabelRiwayatPengujian() {
                 {d.tagihan !== null ? `Rp ${fn(d.tagihan)}` : "-"}
               </Td>
               <Td textAlign={"center"}>
-                <Badge
-                  w={"100%"}
-                  className="badge"
-                  colorScheme={statusBadgeColor(d.status)}
-                >
+                <Badge w={"100%"} colorScheme={statusBadgeColor(d.status)}>
                   {d.status}
                 </Badge>
               </Td>

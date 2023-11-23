@@ -84,6 +84,13 @@ export const globalTheme = extendTheme({
   },
 
   components: {
+    Badge: {
+      baseStyle: (props) => ({
+        p: "4px 16px",
+        borderRadius: 8,
+        textTransform: "none",
+      }),
+    },
     Drawer: {
       baseStyle: (props) => ({
         dialog: {
@@ -206,8 +213,8 @@ export const globalTheme = extendTheme({
         color: "w",
         "--popper-arrow-bg": "#0097e8",
         borderRadius: 8,
-        px:4,
-        py:2
+        px: 4,
+        py: 2,
       },
     },
 
