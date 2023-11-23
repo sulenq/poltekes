@@ -193,7 +193,7 @@ export default function SignupModal() {
                 mb={4}
               >
                 <FormLabel>
-                  Nomor ponsel
+                  Nomor Ponsel
                   <RequiredForm />
                 </FormLabel>
                 <Input
