@@ -73,8 +73,12 @@ export default function AdminDashboardsTransaksiTerbaru() {
                 <Td isNumeric>{i + 1}</Td>
                 <Td>{d.id.toString().padStart(3, "0")}</Td>
                 <Td whiteSpace={"nowrap"}>{d.tanggalOrder}</Td>
-                <Td>{d.nama}</Td>
-                <Td>{d.produk}</Td>
+                <Td>
+                  <Text w={"160px"}>{d.nama}</Text>
+                </Td>
+                <Td>
+                  <Text w={"200px"}>{d.produk}</Text>
+                </Td>
                 <Td textAlign={"center"}>
                   <Badge className="statusBadge" colorScheme="orange">
                     {d.status}
