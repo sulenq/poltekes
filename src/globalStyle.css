@@ -173,7 +173,7 @@ select {
   font-size: 12px !important;
 }
 
-.scrollX::-webkit-scrollbar {
+/* .scrollX::-webkit-scrollbar {
   height: 10px;
 }
 
@@ -194,10 +194,9 @@ select {
 
 .scrollX::-webkit-scrollbar-track,
 .scrollY::-webkit-scrollbar-track {
-  /* background-color: var(--divider2); */
   background-color: transparent;
   border-radius: 0 0 8px 8px;
-}
+} */
 
 .breadcrumb {
   width: fit-content;
@@ -295,7 +294,7 @@ select {
 }
 .statusBadge {
   width: 100%;
-  max-width: 300px ;
+  max-width: 300px;
 }
 
 /* Media Querries */
