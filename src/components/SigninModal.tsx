@@ -48,8 +48,6 @@ export default function SigninModal() {
     }),
 
     onSubmit: (values, { resetForm }) => {
-      console.log(values);
-
       const data = {
         username: values.username,
         password: values.password,
@@ -67,7 +65,6 @@ export default function SigninModal() {
 
         try {
           const response = await axios.request(options);
-          console.log(response.data);
           setCookie("userData", JSON.stringify(response.data.data));
 
           if (values.isAdmin) {
