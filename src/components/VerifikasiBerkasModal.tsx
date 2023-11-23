@@ -63,7 +63,7 @@ export default function VerifikasiBerkasModal({ noreg }: Props) {
         Verifikasi Berkas
       </Button>
 
-      <Modal isOpen={isOpen} onClose={handleOnClose} size={"xl"}>
+      <Modal isOpen={isOpen} onClose={handleOnClose}>
         <ModalOverlay />
 
         <ModalContent>

@@ -129,7 +129,7 @@ export default function TabelKelolaProduk() {
               </Td>
               <Td>
                 <Tooltip label={d.deskripsi} placement="bottom-start">
-                  <Text w={"300px"} noOfLines={2} fontSize={[12, null, 14]}>
+                  <Text noOfLines={2} fontSize={[12, null, 14]}>
                     {d.deskripsi}
                   </Text>
                 </Tooltip>

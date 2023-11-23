@@ -56,7 +56,7 @@ export default function InputTanggalPengujianModal({ noreg }: Props) {
         Input Tanggal Pengujian
       </Button>
 
-      <Modal isOpen={isOpen} onClose={handleOnClose} size={"xl"}>
+      <Modal isOpen={isOpen} onClose={handleOnClose}>
         <ModalOverlay />
 
         <ModalContent>
