@@ -74,7 +74,7 @@ export default function SigninModal() {
           }
         } catch (error) {
           console.log(error);
-          alert("Something wrong, try refreshing the page  or comeback later");
+          // alert("Something wrong, try refreshing the page  or comeback later");
         } finally {
           setLoading(false);
         }
