@@ -67,11 +67,11 @@ export default function SigninModal() {
           const response = await axios.request(options);
           setCookie("userData", JSON.stringify(response.data.data));
 
-          // if (values.isAdmin) {
-          //   navigate("/admin");
-          // } else {
-          //   navigate("/customer");
-          // }
+          if (values.isAdmin) {
+            navigate("/admin");
+          } else {
+            navigate("/customer");
+          }
         } catch (error) {
           console.log(error);
           // alert("Something wrong, try refreshing the page  or comeback later");
@@ -81,11 +81,11 @@ export default function SigninModal() {
       }
       signin();
 
-      if (values.isAdmin) {
-        navigate("/admin");
-      } else {
-        navigate("/customer");
-      }
+      // if (values.isAdmin) {
+      //   navigate("/admin");
+      // } else {
+      //   navigate("/customer");
+      // }
     },
   });
 
