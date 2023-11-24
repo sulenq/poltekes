@@ -48,43 +48,37 @@ export default function SigninModal() {
     }),
 
     onSubmit: (values, { resetForm }) => {
-      // const data = {
-      //   username: values.username,
-      //   password: values.password,
-      // };
+      const data = {
+        username: values.username,
+        password: values.password,
+      };
 
-      // const options = {
-      //   method: "post",
-      //   baseUrl: process.env.REACT_APP_BASE_URL,
-      //   url: "https://development.avanafish.com/api/login",
-      //   data: data,
-      // };
+      const options = {
+        method: "post",
+        baseUrl: process.env.REACT_APP_BASE_URL,
+        url: "https://development.avanafish.com/api/login",
+        data: data,
+      };
 
-      // async function signin() {
-      //   setLoading(true);
+      async function signin() {
+        setLoading(true);
 
-      //   try {
-      //     const response = await axios.request(options);
-      //     setCookie("userData", JSON.stringify(response.data.data));
+        try {
+          const response = await axios.request(options);
+          setCookie("userData", JSON.stringify(response.data.data));
 
-      //     if (values.isAdmin) {
-      //       navigate("/admin");
-      //     } else {
-      //       navigate("/customer");
-      //     }
-      //   } catch (error) {
-      //     console.log(error);
-      //   } finally {
-      //     setLoading(false);
-      //   }
-      // }
-      // signin();
-
-      if (values.isAdmin) {
-        navigate("/admin");
-      } else {
-        navigate("/customer");
+          if (values.isAdmin) {
+            navigate("/admin");
+          } else {
+            navigate("/customer");
+          }
+        } catch (error) {
+          console.log(error);
+        } finally {
+          setLoading(false);
+        }
       }
+      signin();
     },
   });
 
