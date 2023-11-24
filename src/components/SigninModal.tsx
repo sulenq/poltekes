@@ -20,8 +20,8 @@ import {
   Link as ChakraLink,
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
-import React, { useRef, useState } from "react";
 import * as yup from "yup";
+import React, { useRef, useState } from "react";
 import PasswordInput from "./PasswordInput";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
