@@ -16,7 +16,7 @@ import { iconSize } from "../const/sizes";
 import useSortKelolaProduk from "../globalState/useSortKelolaProduk";
 
 export default function SortKelolaProduk() {
-  const { setSortBy, setSortOrder } = useSortKelolaProduk();
+  const { sortBy, sortOrder, setSortBy, setSortOrder } = useSortKelolaProduk();
 
   return (
     <Menu>
@@ -26,12 +26,7 @@ export default function SortKelolaProduk() {
         variant={"outline"}
         colorScheme="ap"
         pr={"12px"}
-        rightIcon={
-          <Icon
-            as={CaretDown}
-            fontSize={iconSize}
-          />
-        }
+        rightIcon={<Icon as={CaretDown} fontSize={iconSize} />}
       >
         Urutkan
       </MenuButton>
@@ -46,12 +41,14 @@ export default function SortKelolaProduk() {
               setSortOrder("asc");
             }}
           >
-            <HStack className="sortItem">
+            <HStack
+              className="sortItem"
+              color={
+                sortBy === "namaProduk" && sortOrder === "asc" ? "p.500" : ""
+              }
+            >
               <Text>A-Z</Text>
-              <Icon
-                as={ArrowUp}
-                fontSize={iconSize}
-              />
+              <Icon as={ArrowUp} fontSize={iconSize} />
             </HStack>
           </MenuItem>
           <MenuItem
@@ -60,12 +57,14 @@ export default function SortKelolaProduk() {
               setSortOrder("desc");
             }}
           >
-            <HStack className="sortItem">
+            <HStack
+              className="sortItem"
+              color={
+                sortBy === "namaProduk" && sortOrder === "desc" ? "p.500" : ""
+              }
+            >
               <Text>Z-A</Text>
-              <Icon
-                as={ArrowDown}
-                fontSize={iconSize}
-              />
+              <Icon as={ArrowDown} fontSize={iconSize} />
             </HStack>
           </MenuItem>
         </MenuGroup>
@@ -79,12 +78,14 @@ export default function SortKelolaProduk() {
               setSortOrder("asc");
             }}
           >
-            <HStack className="sortItem">
+            <HStack
+              className="sortItem"
+              color={
+                sortBy === "kategori" && sortOrder === "asc" ? "p.500" : ""
+              }
+            >
               <Text>A-Z</Text>
-              <Icon
-                as={ArrowUp}
-                fontSize={iconSize}
-              />
+              <Icon as={ArrowUp} fontSize={iconSize} />
             </HStack>
           </MenuItem>
           <MenuItem
@@ -93,12 +94,14 @@ export default function SortKelolaProduk() {
               setSortOrder("desc");
             }}
           >
-            <HStack className="sortItem">
+            <HStack
+              className="sortItem"
+              color={
+                sortBy === "kategori" && sortOrder === "desc" ? "p.500" : ""
+              }
+            >
               <Text>Z-A</Text>
-              <Icon
-                as={ArrowDown}
-                fontSize={iconSize}
-              />
+              <Icon as={ArrowDown} fontSize={iconSize} />
             </HStack>
           </MenuItem>
         </MenuGroup>
@@ -112,12 +115,12 @@ export default function SortKelolaProduk() {
               setSortOrder("asc");
             }}
           >
-            <HStack className="sortItem">
+            <HStack
+              className="sortItem"
+              color={sortBy === "harga" && sortOrder === "asc" ? "p.500" : ""}
+            >
               <Text>Rendah-Tinggi</Text>
-              <Icon
-                as={ArrowUp}
-                fontSize={iconSize}
-              />
+              <Icon as={ArrowUp} fontSize={iconSize} />
             </HStack>
           </MenuItem>
           <MenuItem
@@ -126,12 +129,12 @@ export default function SortKelolaProduk() {
               setSortOrder("desc");
             }}
           >
-            <HStack className="sortItem">
+            <HStack
+              className="sortItem"
+              color={sortBy === "harga" && sortOrder === "desc" ? "p.500" : ""}
+            >
               <Text>Tinggi-Rendah</Text>
-              <Icon
-                as={ArrowDown}
-                fontSize={iconSize}
-              />
+              <Icon as={ArrowDown} fontSize={iconSize} />
             </HStack>
           </MenuItem>
         </MenuGroup>

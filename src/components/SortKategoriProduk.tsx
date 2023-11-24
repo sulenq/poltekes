@@ -15,7 +15,7 @@ import { iconSize } from "../const/sizes";
 import useSortKategoriProduk from "../globalState/useSortKategoriProduk";
 
 export default function SortKategoriProduk() {
-  const { setSortOrder } = useSortKategoriProduk();
+  const { sortBy, sortOrder, setSortOrder } = useSortKategoriProduk();
 
   return (
     <Menu>
@@ -25,12 +25,7 @@ export default function SortKategoriProduk() {
         variant={"outline"}
         colorScheme="ap"
         pr={"12px"}
-        rightIcon={
-          <Icon
-            as={CaretDown}
-            fontSize={iconSize}
-          />
-        }
+        rightIcon={<Icon as={CaretDown} fontSize={iconSize} />}
       >
         Urutkan
       </MenuButton>
@@ -44,12 +39,14 @@ export default function SortKategoriProduk() {
               setSortOrder("asc");
             }}
           >
-            <HStack className="sortItem">
+            <HStack
+              className="sortItem"
+              color={
+                sortBy === "namaKategori" && sortOrder === "asc" ? "p.500" : ""
+              }
+            >
               <Text>A-Z</Text>
-              <Icon
-                as={ArrowUp}
-                fontSize={iconSize}
-              />
+              <Icon as={ArrowUp} fontSize={iconSize} />
             </HStack>
           </MenuItem>
           <MenuItem
@@ -57,12 +54,14 @@ export default function SortKategoriProduk() {
               setSortOrder("desc");
             }}
           >
-            <HStack className="sortItem">
+            <HStack
+              className="sortItem"
+              color={
+                sortBy === "namaKategori" && sortOrder === "desc" ? "p.500" : ""
+              }
+            >
               <Text>Z-A</Text>
-              <Icon
-                as={ArrowDown}
-                fontSize={iconSize}
-              />
+              <Icon as={ArrowDown} fontSize={iconSize} />
             </HStack>
           </MenuItem>
         </MenuGroup>

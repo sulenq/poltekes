@@ -15,7 +15,7 @@ import { iconSize } from "../const/sizes";
 import useSortTransaksi from "../globalState/useSortTransaksi";
 
 export default function SortTransaksi() {
-  const { setSortOrder } = useSortTransaksi();
+  const { sortBy, sortOrder, setSortOrder } = useSortTransaksi();
 
   return (
     <Menu>
@@ -25,12 +25,7 @@ export default function SortTransaksi() {
         variant={"outline"}
         colorScheme="ap"
         pr={"12px"}
-        rightIcon={
-          <Icon
-            as={CaretDown}
-            fontSize={iconSize}
-          />
-        }
+        rightIcon={<Icon as={CaretDown} fontSize={iconSize} />}
       >
         Urutkan
       </MenuButton>
@@ -44,12 +39,14 @@ export default function SortTransaksi() {
               setSortOrder("asc");
             }}
           >
-            <HStack className="sortItem">
+            <HStack
+              className="sortItem"
+              color={
+                sortBy === "tanggalOrder" && sortOrder === "asc" ? "p.500" : ""
+              }
+            >
               <Text>Terdahulu-Terbaru</Text>
-              <Icon
-                as={ArrowUp}
-                fontSize={iconSize}
-              />
+              <Icon as={ArrowUp} fontSize={iconSize} />
             </HStack>
           </MenuItem>
 
@@ -58,12 +55,14 @@ export default function SortTransaksi() {
               setSortOrder("desc");
             }}
           >
-            <HStack className="sortItem">
+            <HStack
+              className="sortItem"
+              color={
+                sortBy === "tanggalOrder" && sortOrder === "desc" ? "p.500" : ""
+              }
+            >
               <Text>Terbaru-Terdahulu</Text>
-              <Icon
-                as={ArrowDown}
-                fontSize={iconSize}
-              />
+              <Icon as={ArrowDown} fontSize={iconSize} />
             </HStack>
           </MenuItem>
         </MenuGroup>

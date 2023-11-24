@@ -16,7 +16,7 @@ import { iconSize } from "../const/sizes";
 import useSortCustomer from "../globalState/useSortCustomer";
 
 export default function SortCustomer() {
-  const { setSortBy, setSortOrder } = useSortCustomer();
+  const { sortBy, sortOrder, setSortBy, setSortOrder } = useSortCustomer();
 
   return (
     <Menu>
@@ -26,12 +26,7 @@ export default function SortCustomer() {
         variant={"outline"}
         colorScheme="ap"
         pr={"12px"}
-        rightIcon={
-          <Icon
-            as={CaretDown}
-            fontSize={iconSize}
-          />
-        }
+        rightIcon={<Icon as={CaretDown} fontSize={iconSize} />}
       >
         Urutkan
       </MenuButton>
@@ -46,12 +41,14 @@ export default function SortCustomer() {
               setSortOrder("asc");
             }}
           >
-            <HStack className="sortItem">
+            <HStack
+              className="sortItem"
+              color={
+                sortBy === "namaLengkap" && sortOrder === "asc" ? "p.500" : ""
+              }
+            >
               <Text>A-Z</Text>
-              <Icon
-                as={ArrowUp}
-                fontSize={iconSize}
-              />
+              <Icon as={ArrowUp} fontSize={iconSize} />
             </HStack>
           </MenuItem>
 
@@ -61,31 +58,73 @@ export default function SortCustomer() {
               setSortOrder("desc");
             }}
           >
-            <HStack className="sortItem">
+            <HStack
+              className="sortItem"
+              color={
+                sortBy === "namaLengkap" && sortOrder === "desc" ? "p.500" : ""
+              }
+            >
               <Text>Z-A</Text>
-              <Icon
-                as={ArrowDown}
-                fontSize={iconSize}
-              />
+              <Icon as={ArrowDown} fontSize={iconSize} />
             </HStack>
           </MenuItem>
         </MenuGroup>
 
         <MenuDivider />
 
-        <MenuGroup title="Instansi/Perusahaan">
+        <MenuGroup title="Username">
+          <MenuItem
+            onClick={() => {
+              setSortBy("username");
+              setSortOrder("asc");
+            }}
+          >
+            <HStack
+              className="sortItem"
+              color={
+                sortBy === "username" && sortOrder === "asc" ? "p.500" : ""
+              }
+            >
+              <Text>A-Z</Text>
+              <Icon as={ArrowUp} fontSize={iconSize} />
+            </HStack>
+          </MenuItem>
+
+          <MenuItem
+            onClick={() => {
+              setSortBy("username");
+              setSortOrder("desc");
+            }}
+          >
+            <HStack
+              className="sortItem"
+              color={
+                sortBy === "username" && sortOrder === "desc" ? "p.500" : ""
+              }
+            >
+              <Text>Z-A</Text>
+              <Icon as={ArrowDown} fontSize={iconSize} />
+            </HStack>
+          </MenuItem>
+        </MenuGroup>
+
+        <MenuDivider />
+
+        <MenuGroup title="Instansi">
           <MenuItem
             onClick={() => {
               setSortBy("instansi");
               setSortOrder("asc");
             }}
           >
-            <HStack className="sortItem">
+            <HStack
+              className="sortItem"
+              color={
+                sortBy === "instansi" && sortOrder === "asc" ? "p.500" : ""
+              }
+            >
               <Text>A-Z</Text>
-              <Icon
-                as={ArrowUp}
-                fontSize={iconSize}
-              />
+              <Icon as={ArrowUp} fontSize={iconSize} />
             </HStack>
           </MenuItem>
 
@@ -95,12 +134,14 @@ export default function SortCustomer() {
               setSortOrder("desc");
             }}
           >
-            <HStack className="sortItem">
+            <HStack
+              className="sortItem"
+              color={
+                sortBy === "instansi" && sortOrder === "desc" ? "p.500" : ""
+              }
+            >
               <Text>Z-A</Text>
-              <Icon
-                as={ArrowDown}
-                fontSize={iconSize}
-              />
+              <Icon as={ArrowDown} fontSize={iconSize} />
             </HStack>
           </MenuItem>
         </MenuGroup>

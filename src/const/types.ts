@@ -15,7 +15,7 @@ export type SortOrder = "asc" | "desc";
 
 export type SortByKelolaProduk = "namaProduk" | "kategori" | "harga";
 
-export type SortByCustomer = "namaLengkap" | "instansi";
+export type SortByCustomer = "namaLengkap" | "instansi" | "username";
 
 export type userData = {
   alamat_institusi: string;

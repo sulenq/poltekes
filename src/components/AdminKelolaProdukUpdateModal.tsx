@@ -74,18 +74,12 @@ export default function AdminKelolaProdukUpdateModal({ id }: Props) {
     <>
       <MenuItem onClick={onOpen}>
         <HStack>
-          <Icon
-            as={PencilSimpleLine}
-            fontSize={iconSize}
-          />
+          <Icon as={PencilSimpleLine} fontSize={iconSize} />
           <Text>Ubah</Text>
         </HStack>
       </MenuItem>
 
-      <Modal
-        isOpen={isOpen}
-        onClose={handleOnClose}
-      >
+      <Modal isOpen={isOpen} onClose={handleOnClose}>
         <ModalOverlay />
 
         <ModalContent>
@@ -94,16 +88,14 @@ export default function AdminKelolaProdukUpdateModal({ id }: Props) {
           <ModalHeader>Ubah Produk</ModalHeader>
 
           <ModalBody>
-            <form
-              id="updateProdukForm"
-              onSubmit={formik.handleSubmit}
-            >
+            <form id="updateProdukForm" onSubmit={formik.handleSubmit}>
               <FormControl
                 mb={4}
                 isInvalid={formik.errors.namaProduk ? true : false}
               >
                 <FormLabel>
-                  Nama Produk <RequiredForm />
+                  Nama Produk
+                  <RequiredForm />
                 </FormLabel>
                 <Input
                   name="namaProduk"
@@ -119,7 +111,8 @@ export default function AdminKelolaProdukUpdateModal({ id }: Props) {
                 isInvalid={formik.errors.kategori ? true : false}
               >
                 <FormLabel>
-                  Kategori <RequiredForm />
+                  Kategori
+                  <RequiredForm />
                 </FormLabel>
                 <Select
                   name="kategori"
@@ -139,7 +132,8 @@ export default function AdminKelolaProdukUpdateModal({ id }: Props) {
                 isInvalid={formik.errors.harga ? true : false}
               >
                 <FormLabel>
-                  Harga <RequiredForm />
+                  Harga
+                  <RequiredForm />
                 </FormLabel>
                 <Input
                   name="harga"
@@ -154,7 +148,8 @@ export default function AdminKelolaProdukUpdateModal({ id }: Props) {
 
               <FormControl isInvalid={formik.errors.deskripsi ? true : false}>
                 <FormLabel>
-                  Deskripsi <RequiredForm />
+                  Deskripsi
+                  <RequiredForm />
                 </FormLabel>
                 <Textarea
                   name="deskripsi"
