@@ -79,6 +79,12 @@ export default function SigninModal() {
         }
       }
       signin();
+
+      if (values.isAdmin) {
+        navigate("/admin");
+      } else {
+        navigate("/customer");
+      }
     },
   });
 
