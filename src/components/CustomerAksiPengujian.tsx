@@ -36,6 +36,8 @@ export default function CustomerAksiPengujian(props: any) {
       );
     case "Tagihan Belum Dibayar":
       return <BayarTagihanModal noreg={noreg} />;
+    case "Verifikasi Pembayaran Ditolak":
+      return <BayarTagihanModal noreg={noreg} />;
     case "Pengujian Selesai":
       return (
         <Button w={"100%"} colorScheme="ap" className="lg-clicky">
