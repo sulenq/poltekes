@@ -39,7 +39,7 @@ import { useFormik } from "formik";
 import { checkBoxTextMt } from "../const/sizes";
 import useBackOnClose from "../utils/useBackOnClose";
 
-export default function BayarTagihanModal(props: any) {
+export default function UnggahBerkasLanjutan(props: any) {
   //   const noreg = props.noreg;
   const { isOpen, onOpen, onClose } = useDisclosure();
   useBackOnClose(isOpen, onClose);
@@ -56,11 +56,29 @@ export default function BayarTagihanModal(props: any) {
     validateOnChange: false,
 
     initialValues: {
+      berkasKontrak: "",
       buktiPembayaran: "",
       agreement: false,
     },
 
     validationSchema: yup.object().shape({
+      berkasKontrak: yup
+        .array()
+        .required("Berkas Kontrak yang sudah ditanadatangani harus diunggah")
+        .test(
+          "fileType",
+          "Hanya file PDF, JPG, PNG yang diperbolehkan",
+          (value) =>
+            value.every(
+              (file) =>
+                file.type === "application/pdf" ||
+                file.type === "image/jpeg" ||
+                file.type === "image/png"
+            )
+        )
+        .test("fileSize", "Ukuran maksimal file adalah 1 MB", (value) =>
+          value.every((file) => file.size <= 1000000)
+        ),
       buktiPembayaran: yup
         .array()
         .required("Bukti Pembayaran harus diunggah")
@@ -106,7 +124,7 @@ export default function BayarTagihanModal(props: any) {
         className="lg-clicky"
         onClick={onOpen}
       >
-        Bayar Tagihan
+        Unggah Berkas Lanjutan
       </Button>
 
       <Modal
@@ -250,6 +268,19 @@ export default function BayarTagihanModal(props: any) {
             </Accordion>
 
             <form id="buktiPembayaranForm" onSubmit={formik.handleSubmit}>
+              <FormControl
+                mb={4}
+                isInvalid={formik.errors.berkasKontrak ? true : false}
+              >
+                <FormLabel>
+                  Unggah Berkas Kontrak <RequiredForm />
+                </FormLabel>
+                <FilesInput formik={formik} name="berkasKontrak" />
+                <FormErrorMessage>
+                  {formik.errors.berkasKontrak}
+                </FormErrorMessage>
+              </FormControl>
+
               <FormControl
                 mb={4}
                 isInvalid={formik.errors.buktiPembayaran ? true : false}
