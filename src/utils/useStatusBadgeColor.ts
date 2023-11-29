@@ -11,6 +11,9 @@ const useStatusBadgeColor = (status: string) => {
       return "green";
     case "Berkas Ditolak":
     case "Berkas Belum Lengkap":
+    case "Verifikasi Berkas Ditolak":
+    case "Verifikasi Pembayaran Ditolak":
+    case "Belum Memilih Metode Uji":
       return "red";
   }
 };

@@ -11,6 +11,13 @@ export default function TabelRiwayatPengujian() {
 
   const data = [
     {
+      id: 11,
+      tanggalOrder: "12-11-2023",
+      nama: "Jolitos Kurniawan",
+      tagihan: null,
+      status: "Belum Memilih Metode Uji",
+    },
+    {
       id: 1,
       tanggalOrder: "12-11-2023",
       nama: "Jolitos Kurniawan",
@@ -18,11 +25,18 @@ export default function TabelRiwayatPengujian() {
       status: "Berkas Belum Lengkap",
     },
     {
-      id: 2,
+      id: 4,
       tanggalOrder: "12-11-2023",
       nama: "Jolitos Kurniawan",
       tagihan: null,
       status: "Verifikasi Berkas",
+    },
+    {
+      id: 9,
+      tanggalOrder: "12-11-2023",
+      nama: "Nanditos Maryadi",
+      tagihan: null,
+      status: "Verifikasi Berkas Ditolak",
     },
     {
       id: 3,
@@ -32,11 +46,18 @@ export default function TabelRiwayatPengujian() {
       status: "Tagihan Belum Dibayar",
     },
     {
-      id: 4,
+      id: 2,
       tanggalOrder: "12-12-2023",
       nama: "Naomi Sinaga",
       tagihan: 2000000,
       status: "Verifikasi Pembayaran",
+    },
+    {
+      id: 10,
+      tanggalOrder: "12-12-2023",
+      nama: "Naomi Sinaga",
+      tagihan: 2000000,
+      status: "Verifikasi Pembayaran Ditolak",
     },
     {
       id: 5,
@@ -46,7 +67,7 @@ export default function TabelRiwayatPengujian() {
       status: "Pembayaran Diverifikasi",
     },
     {
-      id: 6,
+      id: 8,
       tanggalOrder: "12-12-2023",
       nama: "Naomi Sinaga",
       tagihan: 2000000,
@@ -60,7 +81,7 @@ export default function TabelRiwayatPengujian() {
       status: "Dalam Pengujian",
     },
     {
-      id: 8,
+      id: 6,
       tanggalOrder: "12-12-2023",
       nama: "Naomi Sinaga",
       tagihan: 2000000,

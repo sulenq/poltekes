@@ -10,6 +10,18 @@ export default function CustomerAksiPengujian(props: any) {
   switch (status) {
     default:
       return <Text>-</Text>;
+    case "Belum Memilih Metode Uji":
+      return (
+        <Button
+          w={"100%"}
+          colorScheme="ap"
+          className="lg-clicky"
+          as={Link}
+          to={"/customer/pengujian/pendaftaran-pengujian/1/pilih-metode-uji"}
+        >
+          Pilih Metode Uji
+        </Button>
+      );
     case "Berkas Belum Lengkap":
       return (
         <Button
