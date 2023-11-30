@@ -20,6 +20,7 @@ export default function CustomerAksiPengujian(props: any) {
           className="lg-clicky"
           as={Link}
           to={"/customer/pengujian/pendaftaran-pengujian/1/pilih-metode-uji"}
+          fontSize={["13px !important", null, "15px !important"]}
         >
           Pilih Metode Uji
         </Button>
@@ -32,6 +33,7 @@ export default function CustomerAksiPengujian(props: any) {
           className="lg-clicky"
           as={Link}
           to={"/customer/pengujian/pendaftaran-pengujian/1/unggah-berkas"}
+          fontSize={["13px !important", null, "15px !important"]}
         >
           Unggah Berkas
         </Button>
@@ -44,6 +46,7 @@ export default function CustomerAksiPengujian(props: any) {
           className="lg-clicky"
           as={Link}
           to={"/customer/pengujian/pendaftaran-pengujian/1/unggah-berkas"}
+          fontSize={["13px !important", null, "15px !important"]}
         >
           Unggah Berkas
         </Button>
