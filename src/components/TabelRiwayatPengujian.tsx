@@ -64,7 +64,7 @@ export default function TabelRiwayatPengujian() {
       tanggalOrder: "12-12-2023",
       nama: "Naomi Sinaga",
       tagihan: 2000000,
-      status: "Pembayaran Diverifikasi",
+      status: "Berkas Lanjutan Diverifikasi",
     },
     {
       id: 8,
