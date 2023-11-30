@@ -26,9 +26,16 @@ import PasswordInput from "./PasswordInput";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { setCookie } from "typescript-cookie";
+import useBackOnClose from "../utils/useBackOnClose";
 
 export default function SigninModal() {
   const { isOpen, onClose, onOpen } = useDisclosure();
+  useBackOnClose(isOpen, onClose);
+  const handleOnClose = () => {
+    onClose();
+    window.history.back();
+  };
+
   const modalContentRef = useRef(null);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -101,7 +108,7 @@ export default function SigninModal() {
 
       <Modal
         isOpen={isOpen}
-        onClose={onClose}
+        onClose={handleOnClose}
         initialFocusRef={modalContentRef}
         size={"lg"}
       >
@@ -191,12 +198,14 @@ export default function SigninModal() {
                   color={"p.500"}
                   cursor={"pointer"}
                   onClick={() => {
-                    onClose();
+                    handleOnClose();
                     const signupButton = document.querySelector(
                       "#signupButton"
                     ) as HTMLButtonElement;
                     if (signupButton) {
-                      signupButton.click();
+                      setTimeout(() => {
+                        signupButton.click();
+                      }, 50);
                     }
                   }}
                 >

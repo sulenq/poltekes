@@ -26,9 +26,16 @@ import PasswordInput from "./PasswordInput";
 import * as yup from "yup";
 import { checkBoxTextMt } from "../const/sizes";
 import RequiredForm from "./RequiredForm";
+import useBackOnClose from "../utils/useBackOnClose";
 
 export default function SignupModal() {
   const { isOpen, onClose, onOpen } = useDisclosure();
+  useBackOnClose(isOpen, onClose);
+  const handleOnClose = () => {
+    onClose();
+    window.history.back();
+  };
+
   const modalContentRef = useRef(null);
 
   const formik = useFormik({
@@ -86,7 +93,7 @@ export default function SignupModal() {
 
       <Modal
         isOpen={isOpen}
-        onClose={onClose}
+        onClose={handleOnClose}
         initialFocusRef={modalContentRef}
         scrollBehavior="inside"
         size={"lg"}
@@ -282,12 +289,14 @@ export default function SignupModal() {
                   color={"p.500"}
                   cursor={"pointer"}
                   onClick={() => {
-                    onClose();
-                    const signupButton = document.querySelector(
+                    handleOnClose();
+                    const signinButton = document.querySelector(
                       "#signinButton"
                     ) as HTMLButtonElement;
-                    if (signupButton) {
-                      signupButton.click();
+                    if (signinButton) {
+                      setTimeout(() => {
+                        signinButton.click();
+                      }, 50);
                     }
                   }}
                 >
