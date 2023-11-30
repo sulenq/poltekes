@@ -79,10 +79,11 @@ export default function DetailTransaksiAdminModal({ noreg, status }: Props) {
 
   const handleCta = () => {
     const cta = document.getElementById(`${status} - ${noreg}`);
-    handleOnClose();
+    onClose();
+    window.history.back();
     setTimeout(() => {
       cta?.click();
-    }, 1);
+    }, 100);
   };
 
   return (
