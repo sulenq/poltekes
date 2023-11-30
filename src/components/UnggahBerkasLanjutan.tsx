@@ -155,6 +155,36 @@ export default function UnggahBerkasLanjutan(props: any) {
                   fontSize={[18, null, 20]}
                   fontWeight={600}
                 >
+                  Unduh Berkas Kontrak Anda Disini
+                </AlertTitle>
+
+                <AlertDescription>
+                  <Text mb={4}>
+                    Silahkan klik tombol dibawah ini untuk mengunduh berkas
+                    kontrak anda.
+                  </Text>
+                </AlertDescription>
+
+                <Button colorScheme="blue" className="lg-clicky">
+                  Unduh Berkas
+                </Button>
+              </Box>
+            </Alert>
+
+            <Alert
+              variant={"left-accent"}
+              mb={4}
+              alignItems={"flex-start"}
+              minW={"100% !important"}
+              borderRadius={8}
+            >
+              <Box w={"100%"}>
+                <AlertTitle
+                  color={"blue.500"}
+                  mb={2}
+                  fontSize={[18, null, 20]}
+                  fontWeight={600}
+                >
                   Tagihan Pembayaran Anda!!
                 </AlertTitle>
 
