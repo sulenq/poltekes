@@ -2,7 +2,6 @@ import {
   Button,
   FormControl,
   FormErrorMessage,
-  Image,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -18,7 +17,7 @@ import {
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 import useBackOnClose from "../utils/useBackOnClose";
 import * as yup from "yup";
 import { useFormik } from "formik";
@@ -27,7 +26,7 @@ type Props = {
   noreg: number;
 };
 
-export default function VerifikasiPembayaranModal({ noreg }: Props) {
+export default function VerifikasiBerkasLanjutan({ noreg }: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   useBackOnClose(isOpen, onClose);
   const handleOnClose = () => {
@@ -36,8 +35,6 @@ export default function VerifikasiPembayaranModal({ noreg }: Props) {
   };
 
   //   TODO get bukti pembayaran
-  const [data] = useState("/images/buktiPembayaranExample.png");
-
   const tolakColor = useColorModeValue("red.500", "red.200");
 
   const formik = useFormik({
@@ -65,8 +62,9 @@ export default function VerifikasiPembayaranModal({ noreg }: Props) {
         colorScheme="ap"
         className="lg-clicky"
         onClick={onOpen}
+        id={`Verifikasi Berkas Lanjutan - ${noreg}`}
       >
-        Verifikasi Pembayaran
+        Verifikasi Berkas Lanjutan
       </Button>
 
       <Modal isOpen={isOpen} onClose={handleOnClose}>
@@ -75,10 +73,10 @@ export default function VerifikasiPembayaranModal({ noreg }: Props) {
         <ModalContent>
           <ModalCloseButton />
 
-          <ModalHeader>Verifikasi Pembayaran</ModalHeader>
+          <ModalHeader>Verifikasi Berkas Lanjutan</ModalHeader>
 
           <ModalBody>
-            <Image
+            {/* <Image
               src={data}
               onClick={() => {
                 window.open(data, "_blank");
@@ -86,7 +84,7 @@ export default function VerifikasiPembayaranModal({ noreg }: Props) {
               cursor={"pointer"}
               mb={4}
               borderRadius={8}
-            />
+            /> */}
 
             <form id="verifikasiBerkasForm" onSubmit={formik.handleSubmit}>
               <FormControl isInvalid={formik.errors.verifikasi ? true : false}>

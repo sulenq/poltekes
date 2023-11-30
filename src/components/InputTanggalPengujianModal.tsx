@@ -52,6 +52,7 @@ export default function InputTanggalPengujianModal({ noreg }: Props) {
         colorScheme="ap"
         className="lg-clicky"
         onClick={onOpen}
+        id={`Berkas Lanjutan Diverifikasi - ${noreg}`}
       >
         Input Tanggal Pengujian
       </Button>

@@ -12,7 +12,7 @@ import {
 import React, { useEffect, useState } from "react";
 import useScreenWidth from "../utils/useGetScreenWidth";
 import AdminAksiPengujian from "./AdminAksiPengujian";
-import DetailTransaksiAdminModal from "./DetailTransaksiModal";
+import DetailTransaksiAdminModal from "./DetailTransaksiAdminModal";
 import useStatusBadgeColor from "../utils/useStatusBadgeColor";
 import useSortTransaksi from "../globalState/useSortTransaksi";
 import useCompareValues from "../utils/useCompareValues";
@@ -53,12 +53,20 @@ export default function TabelTransaksi() {
       status: "Verifikasi Berkas Ditolak",
     },
     {
+      id: 10,
+      tanggalOrder:
+        "Fri Nov 12 2023 16:52:28 GMT+0700 (Western Indonesia Time)",
+      nama: "Panjul Simonsely",
+      produk: "Pengujian X",
+      status: "Berkas Diverifikasi",
+    },
+    {
       id: 3,
       tanggalOrder:
         "Fri Nov 12 2023 16:52:28 GMT+0700 (Western Indonesia Time)",
       nama: "Panjul Simonsely",
       produk: "Pengujian X",
-      status: "Unggah Berkas Lanjutan",
+      status: "Berkas Lanjutan Belum Diunggah",
     },
     {
       id: 4,
@@ -179,7 +187,7 @@ export default function TabelTransaksi() {
                   <AdminAksiPengujian status={d.status} noreg={d.id} />
                 </Td>
                 <Td isNumeric w={"40px"}>
-                  <DetailTransaksiAdminModal id={d.id} />
+                  <DetailTransaksiAdminModal noreg={d.id} status={d.status} />
                 </Td>
               </Tr>
             );

@@ -48,7 +48,7 @@ export default function CustomerAksiPengujian(props: any) {
           Unggah Berkas
         </Button>
       );
-    case "Unggah Berkas Lanjutan":
+    case "Berkas Lanjutan Belum Diunggah":
       return <UnggahBerkasLanjutan noreg={noreg} />;
     case "Verifikasi Berkas Lanjutan Ditolak":
       return <UnggahBerkasLanjutan noreg={noreg} />;

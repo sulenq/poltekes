@@ -20,12 +20,17 @@ import React from "react";
 import useBackOnClose from "../utils/useBackOnClose";
 
 type Props = {
-  id: number;
+  noreg: number;
+  status: string;
 };
 
-export default function DetailTransaksiModal({ id }: Props) {
+export default function DetailTransaksiAdminModal({ noreg, status }: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   useBackOnClose(isOpen, onClose);
+  const handleOnClose = () => {
+    onClose();
+    window.history.back();
+  };
 
   const data = {
     produk: "Pengujian X - Ajigile",
@@ -47,9 +52,35 @@ export default function DetailTransaksiModal({ id }: Props) {
     buktiPembayaran: "/images/buktiPembayaranExample.png",
   };
 
-  const handleOnClose = () => {
+  const statusActionValid = [
+    "Verifikasi Berkas",
+    "Berkas Diverifikasi",
+    "Verifikasi Berkas Lanjutan",
+    "Berkas Lanjutan Diverifikasi",
+    "Dalam Pengujian",
+  ];
+
+  const buttonLabel = (status: string) => {
+    switch (status) {
+      default:
+        return <Text>-</Text>;
+      case "Verifikasi Berkas":
+        return "Verifikasi Berkas";
+      case "Berkas Diverifikasi":
+        return "Input Kontrak & Tagihan";
+      case "Verifikasi Berkas Lanjutan":
+        return "Verifikasi Berkas Lanjutan";
+      case "Berkas Lanjutan Diverifikasi":
+        return "Input Tanggal Pengujian";
+      case "Dalam Pengujian":
+        return "Unggah Hasil Pengujian";
+    }
+  };
+
+  const handleCta = () => {
+    const cta = document.getElementById(`${status} - ${noreg}`);
     onClose();
-    window.history.back();
+    cta?.click();
   };
 
   return (
@@ -80,7 +111,9 @@ export default function DetailTransaksiModal({ id }: Props) {
             <SimpleGrid columns={2} gap={4} mb={6}>
               <Box>
                 <Text>No. Registrasi</Text>
-                <Text fontWeight={500}>{id.toString().padStart(3, "0")}</Text>
+                <Text fontWeight={500}>
+                  {noreg.toString().padStart(3, "0")}
+                </Text>
               </Box>
 
               <Box>
@@ -207,7 +240,7 @@ export default function DetailTransaksiModal({ id }: Props) {
             </Box>
           </ModalBody>
 
-          <ModalFooter>
+          <ModalFooter gap={2}>
             <Button
               variant={"outline"}
               colorScheme="ap"
@@ -216,6 +249,16 @@ export default function DetailTransaksiModal({ id }: Props) {
             >
               Keluar
             </Button>
+
+            {statusActionValid.includes(status) && (
+              <Button
+                colorScheme="ap"
+                className="lg-clicky"
+                onClick={handleCta}
+              >
+                {buttonLabel(status)}
+              </Button>
+            )}
           </ModalFooter>
         </ModalContent>
       </Modal>

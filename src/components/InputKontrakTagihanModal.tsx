@@ -91,6 +91,7 @@ export default function InputKontrakTagihanModal({ noreg }: Props) {
         colorScheme={"ap"}
         className="lg-clicky"
         onClick={onOpen}
+        id={`Berkas Diverifikasi - ${noreg}`}
       >
         Input Kontrak & Tagihan
       </Button>

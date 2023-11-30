@@ -59,6 +59,7 @@ export default function VerifikasiBerkasModal({ noreg }: Props) {
         colorScheme="ap"
         className="lg-clicky"
         onClick={onOpen}
+        id={`Verifikasi Berkas - ${noreg}`}
       >
         Verifikasi Berkas
       </Button>

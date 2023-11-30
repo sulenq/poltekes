@@ -64,11 +64,12 @@ export default function UnggahHasilPengujian({ noreg }: Props) {
         colorScheme="ap"
         className="lg-clicky"
         onClick={onOpen}
+        id={`Dalam Pengujian - ${noreg}`}
       >
         Unggah Hasil Pengujian
       </Button>
 
-      <Modal isOpen={isOpen} onClose={handleOnClose} size={'xl'}>
+      <Modal isOpen={isOpen} onClose={handleOnClose} size={"xl"}>
         <ModalOverlay />
 
         <ModalContent>

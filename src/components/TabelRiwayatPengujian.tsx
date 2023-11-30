@@ -39,11 +39,18 @@ export default function TabelRiwayatPengujian() {
       status: "Verifikasi Berkas Ditolak",
     },
     {
+      id: 9,
+      tanggalOrder: "12-11-2023",
+      nama: "Nanditos Maryadi",
+      tagihan: null,
+      status: "Berkas Diverifikasi",
+    },
+    {
       id: 3,
       tanggalOrder: "10-12-2023",
       nama: "Karlitos Bechkam",
       tagihan: 2400000,
-      status: "Unggah Berkas Lanjutan",
+      status: "Berkas Lanjutan Belum Diunggah",
     },
     {
       id: 2,
@@ -71,7 +78,7 @@ export default function TabelRiwayatPengujian() {
       tanggalOrder: "12-12-2023",
       nama: "Naomi Sinaga",
       tagihan: 2000000,
-      status: "Tanggal Pengujian - 12/12/2023",
+      status: "Tanggal Pengujian - 12 Des 2023",
     },
     {
       id: 7,

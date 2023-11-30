@@ -4,9 +4,7 @@ const useStatusBadgeColor = (status: string) => {
       return "blue";
     case "Verifikasi Berkas":
     case "Verifikasi Berkas Lanjutan":
-    case "Unggah Berkas Lanjutan":
       return "orange";
-    case "Berkas Diverifikasi":
     case "Pengujian Selesai":
       return "green";
     case "Berkas Ditolak":
@@ -14,6 +12,7 @@ const useStatusBadgeColor = (status: string) => {
     case "Verifikasi Berkas Ditolak":
     case "Verifikasi Berkas Lanjutan Ditolak":
     case "Metode Uji Belum Dipilih":
+    case "Berkas Lanjutan Belum Diunggah":
       return "red";
   }
 };
