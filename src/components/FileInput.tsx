@@ -76,6 +76,7 @@ export default function FileInput(props: Props) {
                 noOfLines={1}
                 fontSize={[12, null, 14]}
                 whiteSpace={"normal"}
+                textAlign={"left"}
               >
                 {formik.values[name].length > 0
                   ? formik.values[name]

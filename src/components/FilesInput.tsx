@@ -63,7 +63,7 @@ export default function FilesInput(props: Props) {
             <Text fontSize={[12, null, 14]}>Pilih File</Text>
           </HStack>
 
-          <Box px={4} py={2} maxW={"260px"}>
+          <Box px={4} py={2}>
             <Tooltip
               label={
                 formik.values[name].length > 0
@@ -77,7 +77,6 @@ export default function FilesInput(props: Props) {
                 noOfLines={1}
                 fontSize={[12, null, 14]}
                 whiteSpace={"normal"}
-                maxW={"260px"}
               >
                 {formik.values[name].length > 0
                   ? formik.values[name]

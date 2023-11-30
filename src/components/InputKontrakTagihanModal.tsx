@@ -24,12 +24,12 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import useBackOnClose from "../utils/useBackOnClose";
-import FilesInput from "./FilesInput";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import RequiredForm from "./RequiredForm";
 import useFormatNumber from "../utils/useFormatNumber";
 import useReverseFormatNumber from "../utils/useReverseFormatNumber";
+import FileInput from "./FileInput";
 
 type Props = {
   noreg: number;
@@ -48,7 +48,7 @@ export default function InputKontrakTagihanModal({ noreg }: Props) {
 
     initialValues: {
       fileKontrak: "",
-      tagihanTambahan: null,
+      tagihanTambahan: undefined,
     },
 
     validationSchema: yup.object().shape({
@@ -131,7 +131,7 @@ export default function InputKontrakTagihanModal({ noreg }: Props) {
                   Unggah File Kontrak
                   <RequiredForm />
                 </FormLabel>
-                <FilesInput name="fileKontrak" formik={formik} />
+                <FileInput name="fileKontrak" formik={formik} />
                 <FormErrorMessage>{formik.errors.fileKontrak}</FormErrorMessage>
               </FormControl>
 
@@ -147,10 +147,14 @@ export default function InputKontrakTagihanModal({ noreg }: Props) {
                     name="tagihanTambahan"
                     placeholder="Masukkan tagihan tambahan"
                     onChange={(e) => {
-                      formik.setFieldValue(
-                        "tagihanTambahan",
-                        rfn(e.target.value)
-                      );
+                      if (e.target.value === "") {
+                        formik.setFieldValue("tagihanTambahan", undefined);
+                      } else {
+                        formik.setFieldValue(
+                          "tagihanTambahan",
+                          rfn(e.target.value)
+                        );
+                      }
                     }}
                     value={
                       formik.values.tagihanTambahan
