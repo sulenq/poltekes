@@ -21,6 +21,14 @@ export default function TabelTransaksi() {
   //   TODO get data
   const [initialData] = useState([
     {
+      id: 9,
+      tanggalOrder:
+        "Fri Nov 10 2023 16:52:28 GMT+0700 (Western Indonesia Time)",
+      nama: "Panjul Simonsely",
+      produk: "Pengujian X",
+      status: "Metode Uji Belum Dipilih",
+    },
+    {
       id: 1,
       tanggalOrder:
         "Fri Nov 10 2023 16:52:28 GMT+0700 (Western Indonesia Time)",
@@ -37,12 +45,20 @@ export default function TabelTransaksi() {
       status: "Verifikasi Berkas",
     },
     {
+      id: 10,
+      tanggalOrder:
+        "Fri Nov 12 2023 16:52:28 GMT+0700 (Western Indonesia Time)",
+      nama: "Panjul Simonsely",
+      produk: "Pengujian X",
+      status: "Verifikasi Berkas Ditolak",
+    },
+    {
       id: 3,
       tanggalOrder:
         "Fri Nov 12 2023 16:52:28 GMT+0700 (Western Indonesia Time)",
       nama: "Panjul Simonsely",
       produk: "Pengujian X",
-      status: "Tagihan Belum Dibayar",
+      status: "Unggah Berkas Lanjutan",
     },
     {
       id: 4,
@@ -50,16 +66,23 @@ export default function TabelTransaksi() {
         "Fri Nov 13 2023 16:52:28 GMT+0700 (Western Indonesia Time)",
       nama: "Panjul Simonsely",
       produk: "Pengujian X",
-      status: "Verifikasi Pembayaran",
+      status: "Verifikasi Berkas Lanjutan",
     },
-
+    {
+      id: 4,
+      tanggalOrder:
+        "Fri Nov 13 2023 16:52:28 GMT+0700 (Western Indonesia Time)",
+      nama: "Panjul Simonsely",
+      produk: "Pengujian X",
+      status: "Verifikasi Berkas Lanjutan Ditolak",
+    },
     {
       id: 5,
       tanggalOrder:
         "Fri Nov 14 2023 16:52:28 GMT+0700 (Western Indonesia Time)",
       nama: "Panjul Simonsely",
       produk: "Pengujian X",
-      status: "Pembayaran Diverifikasi",
+      status: "Berkas Lanjutan Diverifikasi",
     },
     {
       id: 6,

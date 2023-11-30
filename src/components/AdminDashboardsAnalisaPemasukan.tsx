@@ -70,7 +70,7 @@ export default function AdminDashboardsAnalisaPemasukan() {
   };
 
   // TODO get data
-  const [data] = useState([8.2, 10.6, 5.9, 11]);
+  const [data] = useState([47000500, 38500000.537, 5900000, 78000000]);
   const labels = getLabel(periode);
   const xLabel = getXLabel(periode);
   const chartData = {
@@ -119,7 +119,7 @@ export default function AdminDashboardsAnalisaPemasukan() {
         <HStack justifySelf={["flex-start", "flex-end", "flex-end"]}>
           <Icon as={Circle} weight={"fill"} color={"p.600"} />
 
-          <Text fontSize={[10, null, 12]}>total pemasukan (juta)</Text>
+          <Text fontSize={[10, null, 12]}>total pemasukan</Text>
         </HStack>
       </SimpleGrid>
 

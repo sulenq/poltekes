@@ -13,7 +13,7 @@ const useStatusBadgeColor = (status: string) => {
     case "Berkas Belum Lengkap":
     case "Verifikasi Berkas Ditolak":
     case "Verifikasi Berkas Lanjutan Ditolak":
-    case "Belum Memilih Metode Uji":
+    case "Metode Uji Belum Dipilih":
       return "red";
   }
 };

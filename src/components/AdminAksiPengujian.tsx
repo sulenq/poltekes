@@ -18,9 +18,9 @@ export default function AdminAksiPengujian(props: any) {
       return <VerifikasiBerkasModal noreg={noreg} />;
     case "Tagihan Belum Dibayar":
       return <InputKontrakTagihanModal noreg={noreg} />;
-    case "Verifikasi Pembayaran":
+    case "Verifikasi Berkas Lanjutan":
       return <VerifikasiPembayaranModal noreg={noreg} />;
-    case "Pembayaran Diverifikasi":
+    case "Berkas Lanjutan Diverifikasi":
       return <InputTanggalPengujianModal noreg={noreg} />;
     case "Dalam Pengujian":
       return <UnggahHasilPengujian noreg={noreg} />;

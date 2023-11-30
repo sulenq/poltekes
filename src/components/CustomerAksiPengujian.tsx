@@ -12,7 +12,7 @@ export default function CustomerAksiPengujian(props: any) {
   switch (status) {
     default:
       return <Text>-</Text>;
-    case "Belum Memilih Metode Uji":
+    case "Metode Uji Belum Dipilih":
       return (
         <Button
           w={"100%"}

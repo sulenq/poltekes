@@ -15,7 +15,7 @@ export default function TabelRiwayatPengujian() {
       tanggalOrder: "12-11-2023",
       nama: "Jolitos Kurniawan",
       tagihan: null,
-      status: "Belum Memilih Metode Uji",
+      status: "Metode Uji Belum Dipilih",
     },
     {
       id: 1,
