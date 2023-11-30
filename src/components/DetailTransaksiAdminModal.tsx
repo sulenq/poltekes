@@ -83,7 +83,7 @@ export default function DetailTransaksiAdminModal({ noreg, status }: Props) {
     window.history.back();
     setTimeout(() => {
       cta?.click();
-    }, 100);
+    }, 50);
   };
 
   return (
