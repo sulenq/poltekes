@@ -202,11 +202,11 @@ export default function PendaftaranPengujian() {
                     fontSize={[18, null, 20]}
                     mb={1}
                   >
-                    Unduh Berkas Kontrak Anda Disini!!
+                    Unduh Template Excel File Pendukung Anda Disini!!
                   </AlertTitle>
                   <AlertDescription mb={3}>
-                    Silahkan klik tombol dibawah ini untuk mengunduh berkas
-                    kontrak anda.
+                    Silahkan klik tombol dibawah ini untuk mengunduh Excel untuk
+                    File Pendukung anda.
                   </AlertDescription>
                   <Button colorScheme="blue" className="lg-clicky">
                     Unduh Berkas
@@ -214,10 +214,6 @@ export default function PendaftaranPengujian() {
                 </Alert>
 
                 <TambahFilePendukungModal />
-
-                <Text color={"red.400"} mb={4}>
-                  *Berkas Kontrak Wajib di Unggah
-                </Text>
 
                 <DividerFullHorizontal mb={4} />
 
