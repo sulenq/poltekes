@@ -34,6 +34,7 @@ import DividerFullHorizontal from "../../components/DividerFullHorizontal";
 export default function PendaftaranPengujian() {
   const sw = useScreenWidth();
   const tabListColor = useColorModeValue("white", "black");
+  const textHelperFotoSampelColor = useColorModeValue("red.500", "red.200");
 
   return (
     <CustomerContainer active={"Pengujian"}>
@@ -168,7 +169,7 @@ export default function PendaftaranPengujian() {
 
                 <TambahFotoSampelModal />
 
-                <Text color={"red.400"} mb={4}>
+                <Text color={textHelperFotoSampelColor} mb={4}>
                   *Minimal 1 foto sampel
                 </Text>
 
