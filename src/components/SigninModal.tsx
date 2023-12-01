@@ -17,7 +17,6 @@ import {
   Text,
   VStack,
   useDisclosure,
-  Link as ChakraLink,
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import * as yup from "yup";
@@ -153,19 +152,7 @@ export default function SigninModal() {
                 <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
               </FormControl>
 
-              <Text mb={4}>
-                Lupa kata sandi?{" "}
-                <ChakraLink
-                  href={"/reset-password"}
-                  isExternal
-                  color={"p.500"}
-                  fontWeight={600}
-                >
-                  Reset
-                </ChakraLink>
-              </Text>
-
-              <HStack>
+              <HStack mb={4}>
                 <Text fontWeight={500}>Pegawai</Text>
                 <Switch
                   colorScheme="ap"
@@ -174,6 +161,30 @@ export default function SigninModal() {
                   }}
                 />
               </HStack>
+
+              <Text textAlign={"center"} mb={-1}>
+                Lupa kata sandi?{" "}
+                <span
+                  style={{
+                    color: "var(--p500)",
+                    fontWeight: 600,
+                    cursor: "pointer",
+                  }}
+                  onClick={() => {
+                    handleOnClose();
+                    const signupButton = document.querySelector(
+                      "#resetPassword"
+                    ) as HTMLButtonElement;
+                    if (signupButton) {
+                      setTimeout(() => {
+                        signupButton.click();
+                      }, 50);
+                    }
+                  }}
+                >
+                  Reset
+                </span>
+              </Text>
             </form>
           </ModalBody>
 
@@ -194,7 +205,7 @@ export default function SigninModal() {
               <HStack justify={"center"} gap={1}>
                 <Text>Belum Daftar?</Text>
                 <Text
-                  fontWeight={500}
+                  fontWeight={600}
                   color={"p.500"}
                   cursor={"pointer"}
                   onClick={() => {

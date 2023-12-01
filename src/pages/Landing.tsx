@@ -12,6 +12,7 @@ import Container from "../components/Container";
 import LandingNav from "../components/LandingNav";
 import Faq from "../components/Faq";
 import Footer from "../components/Footer";
+import ResetPasswordModal from "../components/ResetPasswordModal";
 
 export default function Landing() {
   const navBg = useColorModeValue("white", "dark");
@@ -29,6 +30,7 @@ export default function Landing() {
       >
         <Container justify={"center"}>
           <LandingNav />
+          <ResetPasswordModal />
         </Container>
       </Box>
 
