@@ -20,14 +20,9 @@ export default function AdminDashboardsPeriodicFilter() {
         as={Button}
         colorScheme="ap"
         w={"140px"}
-        rightIcon={
-          <Icon
-            as={CaretDown}
-            fontSize={iconSize}
-          />
-        }
+        rightIcon={<Icon as={CaretDown} fontSize={iconSize} />}
       >
-        {periode}
+        {`${periode} ini`}
       </MenuButton>
       <MenuList
         minW={"140px"}
@@ -35,7 +30,7 @@ export default function AdminDashboardsPeriodicFilter() {
       >
         <MenuItem
           onClick={() => {
-            setPeriode("Minggu Ini");
+            setPeriode("Minggu");
           }}
         >
           Minggu Ini
@@ -43,7 +38,7 @@ export default function AdminDashboardsPeriodicFilter() {
 
         <MenuItem
           onClick={() => {
-            setPeriode("Bulan Ini");
+            setPeriode("Bulan");
           }}
         >
           Bulan Ini
@@ -51,7 +46,7 @@ export default function AdminDashboardsPeriodicFilter() {
 
         <MenuItem
           onClick={() => {
-            setPeriode("Tahun Ini");
+            setPeriode("Tahun");
           }}
         >
           Tahun Ini

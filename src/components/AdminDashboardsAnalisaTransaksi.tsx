@@ -37,11 +37,11 @@ export default function AdminDashboardsAnalisaTransaksi() {
   const { periode } = useAdminDashboardsPeriodicFilter();
   const getLabel = (periode: DashboardsPeriode) => {
     switch (periode) {
-      case "Minggu Ini":
+      case "Minggu":
         return ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"];
-      case "Bulan Ini":
+      case "Bulan":
         return [1, 2, 3, 4];
-      case "Tahun Ini":
+      case "Tahun":
         return [
           "Jan",
           "Feb",
@@ -60,11 +60,11 @@ export default function AdminDashboardsAnalisaTransaksi() {
   };
   const getXLabel = (periode: DashboardsPeriode) => {
     switch (periode) {
-      case "Minggu Ini":
+      case "Minggu":
         return "Hari";
-      case "Bulan Ini":
+      case "Bulan":
         return "Minggu ke-";
-      case "Tahun Ini":
+      case "Tahun":
         return "Bulan";
     }
   };

@@ -9,7 +9,7 @@ export type LandingNavItemType = {
   icon: any;
 };
 
-export type DashboardsPeriode = "Minggu Ini" | "Bulan Ini" | "Tahun Ini";
+export type DashboardsPeriode = "Minggu" | "Bulan" | "Tahun";
 
 export type SortOrder = "asc" | "desc";
 

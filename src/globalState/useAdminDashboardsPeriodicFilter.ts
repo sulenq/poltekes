@@ -10,7 +10,7 @@ type Actions = {
 };
 
 const useAdminDashboardsPeriodicFilter = create<State & Actions>((set) => ({
-  periode: "Bulan Ini",
+  periode: "Bulan",
   setPeriode: (periode) => set(() => ({ periode: periode })),
 }));
 

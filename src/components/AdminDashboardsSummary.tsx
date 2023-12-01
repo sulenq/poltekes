@@ -6,6 +6,7 @@ import {
   Icon,
   SimpleGrid,
   Text,
+  Tooltip,
   useColorModeValue,
 } from "@chakra-ui/react";
 import {
@@ -19,6 +20,7 @@ import {
 import React from "react";
 import { iconSize } from "../const/sizes";
 import useFormatNumber from "../utils/useFormatNumber";
+import useAdminDashboardsPeriodicFilter from "../globalState/useAdminDashboardsPeriodicFilter";
 
 export default function DashboardsSummary() {
   const data = {
@@ -45,6 +47,7 @@ export default function DashboardsSummary() {
   };
   const bg = useColorModeValue("white", "dark");
   const fn = useFormatNumber;
+  const { periode } = useAdminDashboardsPeriodicFilter();
 
   return (
     <SimpleGrid columns={[1, 2, 2, 4]} gap={4} w={"100%"}>
@@ -54,20 +57,28 @@ export default function DashboardsSummary() {
             <Icon as={UsersThree} weight="fill" fontSize={[22, null, 24]} />
           </Center>
 
-          <Badge
-            p={2}
-            borderRadius={8}
-            colorScheme={data.totalCustomer.pertumbuhan ? "ap" : "red"}
-            fontWeight={400}
+          <Tooltip
+            label={`${periode} ini ${
+              data.totalCustomer.pertumbuhan ? "naik" : "turun"
+            } ${data.totalCustomer.rate}% dari ${periode} lalu`}
+            openDelay={500}
+            bg={data.totalCustomer.pertumbuhan ? "green.500" : "red.500"}
           >
-            <HStack>
-              <Icon
-                as={data.totalCustomer.pertumbuhan ? ArrowUp : ArrowDown}
-                fontSize={iconSize}
-              />
-              <Text>{data.totalCustomer.rate}%</Text>
-            </HStack>
-          </Badge>
+            <Badge
+              p={2}
+              borderRadius={8}
+              colorScheme={data.totalCustomer.pertumbuhan ? "ap" : "red"}
+              fontWeight={400}
+            >
+              <HStack>
+                <Icon
+                  as={data.totalCustomer.pertumbuhan ? ArrowUp : ArrowDown}
+                  fontSize={iconSize}
+                />
+                <Text>{data.totalCustomer.rate}%</Text>
+              </HStack>
+            </Badge>
+          </Tooltip>
         </HStack>
 
         <Text fontWeight={500} mb={4}>
@@ -85,20 +96,28 @@ export default function DashboardsSummary() {
             <Icon as={Package} weight="fill" fontSize={[22, null, 24]} />
           </Center>
 
-          <Badge
-            p={2}
-            borderRadius={8}
-            colorScheme={data.totalPemasukan.pertumbuhan ? "ap" : "red"}
-            fontWeight={400}
+          <Tooltip
+            label={`${periode} ini ${
+              data.totalPemasukan.pertumbuhan ? "naik" : "turun"
+            } ${data.totalPemasukan.rate}% dari ${periode} lalu`}
+            openDelay={500}
+            bg={data.totalPemasukan.pertumbuhan ? "green.500" : "red.500"}
           >
-            <HStack>
-              <Icon
-                as={data.totalPemasukan.pertumbuhan ? ArrowUp : ArrowDown}
-                fontSize={iconSize}
-              />
-              <Text>{data.totalPemasukan.rate}%</Text>
-            </HStack>
-          </Badge>
+            <Badge
+              p={2}
+              borderRadius={8}
+              colorScheme={data.totalPemasukan.pertumbuhan ? "ap" : "red"}
+              fontWeight={400}
+            >
+              <HStack>
+                <Icon
+                  as={data.totalPemasukan.pertumbuhan ? ArrowUp : ArrowDown}
+                  fontSize={iconSize}
+                />
+                <Text>{data.totalPemasukan.rate}%</Text>
+              </HStack>
+            </Badge>
+          </Tooltip>
         </HStack>
 
         <Text fontWeight={500} mb={4}>
@@ -116,20 +135,28 @@ export default function DashboardsSummary() {
             <Icon as={TestTube} weight="fill" fontSize={[22, null, 24]} />
           </Center>
 
-          <Badge
-            p={2}
-            borderRadius={8}
-            colorScheme={data.totalPengujian.pertumbuhan ? "ap" : "red"}
-            fontWeight={400}
+          <Tooltip
+            label={`${periode} ini ${
+              data.totalPengujian.pertumbuhan ? "naik" : "turun"
+            } ${data.totalPengujian.rate}% dari ${periode} lalu`}
+            openDelay={500}
+            bg={data.totalPengujian.pertumbuhan ? "green.500" : "red.500"}
           >
-            <HStack>
-              <Icon
-                as={data.totalPengujian.pertumbuhan ? ArrowUp : ArrowDown}
-                fontSize={iconSize}
-              />
-              <Text>{data.totalPengujian.rate}%</Text>
-            </HStack>
-          </Badge>
+            <Badge
+              p={2}
+              borderRadius={8}
+              colorScheme={data.totalPengujian.pertumbuhan ? "ap" : "red"}
+              fontWeight={400}
+            >
+              <HStack>
+                <Icon
+                  as={data.totalPengujian.pertumbuhan ? ArrowUp : ArrowDown}
+                  fontSize={iconSize}
+                />
+                <Text>{data.totalPengujian.rate}%</Text>
+              </HStack>
+            </Badge>
+          </Tooltip>
         </HStack>
 
         <Text fontWeight={500} mb={4}>
@@ -147,20 +174,28 @@ export default function DashboardsSummary() {
             <Icon as={Receipt} weight="fill" fontSize={[22, null, 24]} />
           </Center>
 
-          <Badge
-            p={2}
-            borderRadius={8}
-            colorScheme={data.totalTransaksi.pertumbuhan ? "ap" : "red"}
-            fontWeight={400}
+          <Tooltip
+            label={`${periode} ini ${
+              data.totalTransaksi.pertumbuhan ? "naik" : "turun"
+            } ${data.totalTransaksi.rate}% dari ${periode} lalu`}
+            openDelay={500}
+            bg={data.totalTransaksi.pertumbuhan ? "green.500" : "red.500"}
           >
-            <HStack>
-              <Icon
-                as={data.totalTransaksi.pertumbuhan ? ArrowUp : ArrowDown}
-                fontSize={iconSize}
-              />
-              <Text>{data.totalTransaksi.rate}%</Text>
-            </HStack>
-          </Badge>
+            <Badge
+              p={2}
+              borderRadius={8}
+              colorScheme={data.totalTransaksi.pertumbuhan ? "ap" : "red"}
+              fontWeight={400}
+            >
+              <HStack>
+                <Icon
+                  as={data.totalTransaksi.pertumbuhan ? ArrowUp : ArrowDown}
+                  fontSize={iconSize}
+                />
+                <Text>{data.totalTransaksi.rate}%</Text>
+              </HStack>
+            </Badge>
+          </Tooltip>
         </HStack>
 
         <Text fontWeight={500} mb={4}>
