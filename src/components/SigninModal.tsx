@@ -61,8 +61,8 @@ export default function SigninModal() {
 
       const options = {
         method: "post",
-        baseUrl: process.env.REACT_APP_BASE_URL,
-        url: "https://development.avanafish.com/api/login",
+        baseURL: process.env.REACT_APP_BASE_URL,
+        url: "api/login",
         data: data,
       };
 
@@ -85,12 +85,6 @@ export default function SigninModal() {
         }
       }
       signin();
-
-      if (values.isAdmin) {
-        navigate("/admin");
-      } else {
-        navigate("/customer");
-      }
     },
   });
 

@@ -1,23 +1,45 @@
-// import React, { useState, useEffect } from "react";
-// import FullPageLogo from "../components/FullPageLogo";
-// import { getCookie } from "typescript-cookie";
-// import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import FullPageLogo from "../components/FullPageLogo";
+import { getCookie } from "typescript-cookie";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 type Props = { children: JSX.Element };
 
 export default function RequireAuth({ children }: Props) {
-  // const [page, setPage] = useState(<FullPageLogo />);
-  // const navigate = useNavigate();
+  const [page, setPage] = useState(<FullPageLogo />);
+  // const [loading, setLoading] = useState(false);
 
-  // const userData = getCookie("userData");
+  const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (userData) {
-  //     setPage(children);
-  //   } else {
-  //     navigate("/");
-  //   }
-  // }, [children, navigate, userData]);
+  const userData = getCookie("userData");
 
-  return children;
+  useEffect(() => {
+    const options = {
+      method: "get",
+      baseURL: process.env.REACT_APP_BASE_URL,
+      url: "api/user/logindata  ",
+    };
+
+    async function auth() {
+      // setLoading(true);
+
+      try {
+        const response = await axios.request(options);
+        console.log(response);
+        if (response.status === 200) {
+          setPage(children);
+        } else {
+          navigate("/customer");
+        }
+      } catch (error) {
+        console.log(error);
+      } finally {
+        // setLoading(false);
+      }
+    }
+    auth();
+  }, [children, navigate, userData]);
+
+  return page;
 }
