@@ -1,17 +1,21 @@
 import { Box, HStack, Text } from "@chakra-ui/react";
-import React, { useState, useEffect } from "react";
-import { getCookie } from "typescript-cookie";
-import { userData } from "../const/types";
+import React, { useState } from "react";
 
 export default function InformasiAkun() {
-  const [data, setData] = useState<userData | null>(null);
-
-  useEffect(() => {
-    const userDataCookie = getCookie("userData");
-    if (userDataCookie) {
-      setData(JSON.parse(userDataCookie));
-    }
-  }, []);
+  const dummy = {
+    id: 6,
+    name: "Reza Hashfi Hawari",
+    username: "rezahawari123",
+    email: "rezahawari19@gmail.com",
+    role: "2",
+    jenis: "Umum",
+    institusi: "Poltekes",
+    alamat_institusi: "Semarang",
+    hp: "082352222001",
+    created_at: "2023-11-07T14:44:32.000000Z",
+    updated_at: "2023-11-07T14:44:32.000000Z",
+  };
+  const [data] = useState(dummy);
 
   return (
     <Box>

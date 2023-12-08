@@ -23,8 +23,6 @@ import * as yup from "yup";
 import React, { useRef, useState } from "react";
 import PasswordInput from "./PasswordInput";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { setCookie } from "typescript-cookie";
 import useBackOnClose from "../utils/useBackOnClose";
 
 export default function SigninModal() {
@@ -54,37 +52,14 @@ export default function SigninModal() {
     }),
 
     onSubmit: (values, { resetForm }) => {
-      const data = {
-        username: values.username,
-        password: values.password,
-      };
+      console.log(values);
+      setLoading(true);
 
-      const options = {
-        method: "post",
-        baseURL: process.env.REACT_APP_BASE_URL,
-        url: "api/login",
-        data: data,
-      };
-
-      async function signin() {
-        setLoading(true);
-
-        try {
-          const response = await axios.request(options);
-          setCookie("userData", JSON.stringify(response.data.data));
-
-          if (values.isAdmin) {
-            navigate("/admin");
-          } else {
-            navigate("/customer");
-          }
-        } catch (error) {
-          console.log(error);
-        } finally {
-          setLoading(false);
-        }
+      if (values.isAdmin) {
+        navigate("/admin");
+      } else {
+        navigate("/customer");
       }
-      signin();
     },
   });
 
